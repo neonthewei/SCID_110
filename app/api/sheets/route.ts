@@ -8,6 +8,7 @@ const sheetsService = new GoogleSheetsService(googleSheetsConfig);
 export async function GET() {
   try {
     const initialized = await sheetsService.init();
+    
     if (!initialized) {
       return NextResponse.json({ error: 'Failed to initialize Google Sheets' }, { status: 500 });
     }
