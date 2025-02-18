@@ -7,34 +7,40 @@ import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { getAllWorks, type WorkCategory } from "@/data/designers"
 
+// Import background images
+import frame1Bg from '@/public/frame.png'
+import frame2Bg from '@/public/frame2.png'
+import frame3Bg from '@/public/frame3.png'
+import frame4Bg from '@/public/frame4.png'
+
 const categories = [
   {
     id: "舒適巢",
     name: "25°S",
     title: "舒適巢",
     description: "打造溫馨舒適的生活空間",
-    gradient: "bg-[url('/frame.png')] bg-cover bg-center bg-no-repeat bg-origin-center",
+    gradient: `bg-[url('${frame1Bg.src}')] bg-cover bg-center bg-no-repeat bg-origin-center`,
   },
   {
     id: "溫工藝",
     name: "50°S",
     title: "溫工藝",
     description: "傳統工藝與現代設計的完美融合",
-    gradient: "bg-[url('/frame2.png')] bg-cover bg-center",
+    gradient: `bg-[url('${frame2Bg.src}')] bg-cover bg-center`,
   },
   {
     id: "熱對話",
     name: "80°S",
     title: "熱對話",
     description: "促進深度交流與互動",
-    gradient: "bg-[url('/frame3.png')] bg-cover bg-center",
+    gradient: `bg-[url('${frame3Bg.src}')] bg-cover bg-center`,
   },
   {
     id: "冷火花",
     name: "-20°S",
     title: "冷火花",
     description: "激發創新思維的火花",
-    gradient: "bg-[url('/frame4.png')] bg-cover bg-center",
+    gradient: `bg-[url('${frame4Bg.src}')] bg-cover bg-center`,
   },
 ]
 
