@@ -13,28 +13,28 @@ const categories = [
     name: "25°S",
     title: "舒適巢",
     description: "打造溫馨舒適的生活空間",
-    gradient: "bg-[url('/frame0.png')] md:bg-cover md:bg-center bg-[length:150%_100%] bg-left bg-no-repeat bg-origin-center",
+    image: "/frame0.png",
   },
   {
     id: "溫工藝",
     name: "50°S",
     title: "溫工藝",
     description: "傳統工藝與現代設計的完美融合",
-    gradient: "bg-[url('/frame1.png')] bg-cover bg-center",
+    image: "/frame1.png",
   },
   {
     id: "熱對話",
     name: "80°S",
     title: "熱對話",
     description: "促進深度交流與互動",
-    gradient: "bg-[url('/kkk.png')] bg-cover bg-center",
+    image: "/kkk.png",
   },
   {
     id: "冷火花",
     name: "-20°S",
     title: "冷火花",
     description: "激發創新思維的火花",
-    gradient: "bg-[url('/ggg.png')] bg-cover bg-center",
+    image: "/ggg.png",
   },
 ]
 
@@ -144,12 +144,19 @@ export default function AllWorksContent() {
         <AnimatePresence initial={false} mode="sync">
           <motion.div
             key={activeCategory}
-            className={`absolute inset-0 bg-gradient-to-r ${currentCategory?.gradient}`}
+            className="absolute inset-0 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
+            <Image
+              src={currentCategory?.image || ""}
+              alt={currentCategory?.title || ""}
+              fill
+              className="object-cover md:object-center object-left"
+              style={{ objectPosition: isMobile ? "25% center" : "center" }}
+            />
             {/* Add some decorative elements in background */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute -left-10 top-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
