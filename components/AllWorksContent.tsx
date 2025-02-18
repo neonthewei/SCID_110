@@ -7,40 +7,34 @@ import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { getAllWorks, type WorkCategory } from "@/data/designers"
 
-// Import background images
-import frame1Bg from '@/public/frame.png'
-import frame2Bg from '@/public/frame2.png'
-import frame3Bg from '@/public/frame3.png'
-import frame4Bg from '@/public/frame4.png'
-
 const categories = [
   {
     id: "舒適巢",
     name: "25°S",
     title: "舒適巢",
     description: "打造溫馨舒適的生活空間",
-    gradient: `bg-[url('${frame1Bg.src}')] bg-cover bg-center bg-no-repeat bg-origin-center`,
+    image: "/frame0.png",
   },
   {
     id: "溫工藝",
     name: "50°S",
     title: "溫工藝",
     description: "傳統工藝與現代設計的完美融合",
-    gradient: `bg-[url('${frame2Bg.src}')] bg-cover bg-center`,
+    image: "/frame1.png",
   },
   {
     id: "熱對話",
     name: "80°S",
     title: "熱對話",
     description: "促進深度交流與互動",
-    gradient: `bg-[url('${frame3Bg.src}')] bg-cover bg-center`,
+    image: "/kkk.png",
   },
   {
     id: "冷火花",
     name: "-20°S",
     title: "冷火花",
     description: "激發創新思維的火花",
-    gradient: `bg-[url('${frame4Bg.src}')] bg-cover bg-center`,
+    image: "/ggg.png",
   },
 ]
 
@@ -50,8 +44,24 @@ export default function AllWorksContent() {
   const [activeCategory, setActiveCategory] = useState(categoryFromUrl || categories[0].id)
   const [activeItemId, setActiveItemId] = useState<string | null>(null)
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down')
+  const [isMobile, setIsMobile] = useState(false)
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right')
   const lastScrollY = useRef(0)
   const allWorks = getAllWorks()
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const isMobileView = window.innerWidth < 768
+      if (isMobile !== isMobileView) {
+        setIsMobile(isMobileView)
+        setActiveItemId(null)
+      }
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [isMobile])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +76,7 @@ export default function AllWorksContent() {
 
   useEffect(() => {
     const currentWorks = allWorks.filter(work => work.category === activeCategory)
-    if (currentWorks && currentWorks.length > 0) {
+    if (currentWorks && currentWorks.length > 0 && !activeItemId) {
       setActiveItemId(currentWorks[0].id)
     }
   }, [activeCategory, allWorks])
@@ -85,15 +95,14 @@ export default function AllWorksContent() {
             const rect = entry.boundingClientRect
             const viewHeight = window.innerHeight
             const elementCenter = rect.top + rect.height / 2
-            const viewCenter = viewHeight * (scrollDirection === 'down' ? 0.7 : 0.3)
+            const viewCenter = viewHeight / 2
             const distanceFromCenter = Math.abs(elementCenter - viewCenter)
 
-            if (distanceFromCenter < rect.height * 0.25) {
+            if (distanceFromCenter < rect.height * 0.5) {
               setActiveItemId(entry.target.id)
             }
-          } else if (entry.target.id === activeItemId) {
-            const currentWorks = allWorks.filter(work => work.category === activeCategory)
-            if (entry.target.id !== currentWorks[0].id || scrollDirection === 'up') {
+          } else {
+            if (entry.target.id === activeItemId) {
               setActiveItemId(null)
             }
           }
@@ -101,7 +110,7 @@ export default function AllWorksContent() {
       },
       {
         threshold: [0, 0.25, 0.5, 0.75, 1],
-        rootMargin: scrollDirection === 'down' ? '-50% 0px -10% 0px' : '-10% 0px -50% 0px'
+        rootMargin: '-20% 0px -20% 0px'
       }
     )
 
@@ -109,18 +118,20 @@ export default function AllWorksContent() {
     elements.forEach((el) => observer.observe(el))
 
     return () => observer.disconnect()
-  }, [activeCategory, activeItemId, scrollDirection, allWorks])
+  }, [activeCategory, activeItemId])
 
   const currentCategoryIndex = categories.findIndex((c) => c.id === activeCategory)
   const currentCategory = categories.find((c) => c.id === activeCategory)
   const filteredWorks = allWorks.filter(work => work.category === activeCategory)
 
   const handlePrevCategory = () => {
+    setSlideDirection('right')
     const newIndex = (currentCategoryIndex - 1 + categories.length) % categories.length
     setActiveCategory(categories[newIndex].id)
   }
 
   const handleNextCategory = () => {
+    setSlideDirection('left')
     const newIndex = (currentCategoryIndex + 1) % categories.length
     setActiveCategory(categories[newIndex].id)
   }
@@ -133,12 +144,19 @@ export default function AllWorksContent() {
         <AnimatePresence initial={false} mode="sync">
           <motion.div
             key={activeCategory}
-            className={`absolute inset-0 bg-gradient-to-r ${currentCategory?.gradient}`}
+            className="absolute inset-0 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
+            <Image
+              src={currentCategory?.image || ""}
+              alt={currentCategory?.title || ""}
+              fill
+              className="object-cover md:object-center object-left"
+              style={{ objectPosition: isMobile ? "25% center" : "center" }}
+            />
             {/* Add some decorative elements in background */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute -left-10 top-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
@@ -154,33 +172,37 @@ export default function AllWorksContent() {
         <div className="relative z-10 h-full flex flex-col items-center justify-start p-4 pt-12 md:px-12 md:pt-10">
           {/* Mobile Category Title */}
           <div className="md:hidden text-center w-full mb-8">
-            <h1 className="text-2xl font-bold text-white mb-2">{currentCategory?.title}系列</h1>
-            <p className="text-white/80 text-base">{currentCategory?.description}</p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCategory}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h1 className="text-2xl font-bold text-white mb-2">{currentCategory?.title}系列</h1>
+                <p className="text-white/80 text-base">{currentCategory?.description}</p>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Mobile Category Selector */}
           <div className="flex items-center justify-between gap-4 md:hidden w-full">
             <button
               onClick={handlePrevCategory}
-              className="p-2 rounded-full bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white hover:bg-black/20 transition-colors border border-white/30"
+              className="p-2 rounded-full bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white hover:bg-black/20 active:scale-95 transition-all duration-200 border border-white/30"
               aria-label="Previous category"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="flex-1 px-6 py-3 rounded-full font-semibold text-center bg-black/15 backdrop-blur-md backdrop-saturate-150 text-white border border-white/30"
-            >
+            <div className="flex-1 px-6 py-3 rounded-full font-semibold text-center bg-black/15 backdrop-blur-md backdrop-saturate-150 text-white border border-white/30">
               {currentCategory?.name}
-            </motion.div>
+            </div>
 
             <button
               onClick={handleNextCategory}
-              className="p-2 rounded-full bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white hover:bg-black/20 transition-colors border border-white/30"
+              className="p-2 rounded-full bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white hover:bg-black/20 active:scale-95 transition-all duration-200 border border-white/30"
               aria-label="Next category"
             >
               <ChevronRight className="w-6 h-6" />
@@ -250,7 +272,7 @@ export default function AllWorksContent() {
                     md:inset-x-0 md:bottom-0 md:items-start md:justify-end"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-t transition-opacity duration-300 
-                    ${activeItemId === work.id ? 'opacity-100 md:opacity-0' : 'opacity-0'} 
+                    ${isMobile && activeItemId === work.id ? 'opacity-100' : 'opacity-0'} 
                     md:group-hover:opacity-100 ${
                     work.category === '舒適巢' ? 'from-[#8CBB28]/70 to-transparent' :
                     work.category === '溫工藝' ? 'from-[#DA6615]/70 to-transparent' :
@@ -259,10 +281,10 @@ export default function AllWorksContent() {
                   }`} />
                   
                   <div className={`relative w-full px-4 pt-32 pb-3 md:px-4 md:pt-32 md:pb-3 md:flex md:flex-col md:items-start transition-transform duration-300 
-                    ${activeItemId === work.id ? 'translate-y-0' : 'translate-y-4'} 
+                    ${isMobile && activeItemId === work.id ? 'translate-y-0' : 'translate-y-8'} 
                     md:group-hover:translate-y-0`}>
-                    <div className={`w-full md:px-4 px-3 py-2
-                      ${activeItemId === work.id ? 'opacity-100 md:opacity-0' : 'opacity-0'} 
+                    <div className={`w-full md:px-4 px-3 py-2 transition-opacity duration-300
+                      ${isMobile && activeItemId === work.id ? 'opacity-100' : 'opacity-0'} 
                       md:group-hover:opacity-100`}>
                       <p className="text-lg leading-tight text-center text-white mb-1">
                         {work.title.main}
