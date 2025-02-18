@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence, PanInfo } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface CatalogViewerProps {
   images: {
@@ -53,9 +54,25 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
   }
 
   return (
-    <div className="w-full mt-16">
+    <div className="w-full">
       {/* 主要預覽圖 */}
-      <div className="relative aspect-square w-full md:w-2/3 lg:w-1/2 mx-auto overflow-hidden touch-pan-x">
+      <div className="relative aspect-square w-full mx-auto overflow-hidden touch-pan-x group">
+        {/* Navigation Buttons */}
+        <button
+          onClick={handlePrevious}
+          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/10 hover:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden md:flex items-center justify-center z-10"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="w-6 h-6 text-black" />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/10 hover:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden md:flex items-center justify-center z-10"
+          aria-label="Next image"
+        >
+          <ChevronRight className="w-6 h-6 text-black" />
+        </button>
+
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
@@ -87,6 +104,7 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
             />
           </motion.div>
         </AnimatePresence>
+
         {/* 固定在容器右下角的頁碼 */}
         <div className="absolute bottom-4 right-4 z-10 text-sm text-white bg-black/50 rounded-full w-12 h-6 flex items-center justify-center md:hidden">
           {currentIndex + 1} / {images.length}
@@ -95,36 +113,31 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
 
       {/* 桌面版縮圖列表 */}
       <div className="hidden md:block max-w-4xl mx-auto mt-3">
-        <motion.div 
-          className="flex justify-center gap-2 overflow-x-auto py-1 px-4 no-scrollbar"
-          initial={false}
-        >
+        <div className="flex justify-center gap-2 overflow-x-auto py-1 px-4 no-scrollbar">
           {images.map((image, index) => (
-            <motion.button
+            <button
               key={index}
               onClick={() => {
                 setDirection(index > currentIndex ? 1 : -1)
                 setCurrentIndex(index)
               }}
-              className={`flex-shrink-0 relative w-16 aspect-square rounded-2xl overflow-hidden
+              className={`flex-shrink-0 relative w-12 aspect-square rounded-xl overflow-hidden
                 ${currentIndex === index 
                   ? 'ring-2 ring-black' 
                   : 'hover:ring-2 hover:ring-gray-300'}
-                transition-all duration-200`}
-              whileHover={{ opacity: 0.8 }}
-              whileTap={{ opacity: 0.6 }}
-              transition={{ duration: 0.2 }}
+                transition-all duration-200 hover:opacity-80 active:opacity-60`}
             >
               <Image
                 src={image.url}
                 alt={image.alt}
                 fill
-                className="object-cover"
-                sizes="64px"
+                className="object-cover pointer-events-none"
+                sizes="48px"
+                draggable={false}
               />
-            </motion.button>
+            </button>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Fullscreen Modal */}

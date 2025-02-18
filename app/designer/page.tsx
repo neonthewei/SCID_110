@@ -16,23 +16,24 @@ const gradients = [
 export default function DesignerPage() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
-  const [activeDesignerId, setActiveDesignerId] = useState<number | null>(null)
+  const [activeDesignerId, setActiveDesignerId] = useState<string | null>(null)
   const [showHint, setShowHint] = useState(true)
 
   useEffect(() => {
     setIsLoaded(true)
     const timer = setTimeout(() => {
       setShowHint(false)
-    }, 2000) // 4 秒後消失
+    }, 2000) // 2 秒後消失
 
     return () => clearTimeout(timer)
   }, [])
 
   const filteredDesigners = designers.filter(designer => 
-    designer.nameZh.toLowerCase().includes(searchQuery.toLowerCase())
+    designer.name.zh.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    designer.name.pinyin.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
-  const handleDesignerClick = (designerId: number) => {
+  const handleDesignerClick = (designerId: string) => {
     setActiveDesignerId(activeDesignerId === designerId ? null : designerId)
   }
 
@@ -77,12 +78,27 @@ export default function DesignerPage() {
               <div className="bg-white transform transition-all duration-300 w-full mx-auto rounded-2xl overflow-hidden relative aspect-[3/4]">
                 <Image
                   src={designer.image || "/placeholder.svg?height=600&width=400"}
-                  alt={designer.nameZh}
+                  alt={designer.name.zh}
                   fill
                   className="object-cover transition-transform duration-300 sm:group-hover:scale-105"
                 />
                 <div 
-                  className={`absolute inset-0 transition-all duration-500 delay-100 bg-gradient-to-r from-sky-300/90 to-rose-300/90
+                  className={`absolute inset-0 transition-all duration-500 delay-100 bg-gradient-to-r
+                    ${designer.works[0] && designer.works[0].category === '舒適巢' ? 'from-[#8CBB28]/70' : 
+                      designer.works[0] && designer.works[0].category === '溫工藝' ? 'from-[#DA6615]/70' :
+                      designer.works[0] && designer.works[0].category === '熱對話' ? 'from-[#C3206D]/70' :
+                      'from-[#3DB5E9]/70'}
+                    ${designer.works[1] ? 
+                      designer.works[1].category === '舒適巢' ? 'to-[#8CBB28]/70' : 
+                      designer.works[1].category === '溫工藝' ? 'to-[#DA6615]/70' :
+                      designer.works[1].category === '熱對話' ? 'to-[#C3206D]/70' :
+                      'to-[#3DB5E9]/70'
+                      : 
+                      designer.works[0].category === '舒適巢' ? 'to-[#8CBB28]/70' : 
+                      designer.works[0].category === '溫工藝' ? 'to-[#DA6615]/70' :
+                      designer.works[0].category === '熱對話' ? 'to-[#C3206D]/70' :
+                      'to-[#3DB5E9]/70'
+                    }
                     ${activeDesignerId === designer.id ? 'sm:opacity-100 opacity-100' : 'sm:group-hover:opacity-100 opacity-0'}
                     h-3/4 bottom-0 top-auto [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_10%,black_70%_100%,transparent_100%)]`}
                 />
@@ -92,7 +108,7 @@ export default function DesignerPage() {
                       activeDesignerId === designer.id ? 'sm:opacity-0 opacity-0' : 'sm:group-hover:opacity-0 opacity-100'
                     } flex flex-col justify-center items-center text-white bg-black/15 backdrop-blur-md backdrop-saturate-150 rounded-xl border border-white/30 transition-all duration-500 ease-in-out`}>
                       <h2 className="text-base font-bold leading-none">
-                        {designer.nameZh}
+                        {designer.name.zh}
                       </h2>
                     </div>
                     <div className={`absolute inset-0 grid grid-cols-2 gap-2 ${
@@ -100,18 +116,28 @@ export default function DesignerPage() {
                     } transition-all duration-500 ease-in-out transform ${
                       activeDesignerId === designer.id ? 'sm:translate-y-0 translate-y-0' : 'sm:group-hover:translate-y-0 translate-y-2'
                     }`}>
-                      <Link
-                        href={`/designer/${designer.id}/work1`}
-                        className="flex items-center justify-center h-full px-4 py-2 bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white rounded-xl font-medium text-base transform transition-all duration-300 hover:bg-black/20 border border-white/30"
-                      >
-                        -10˚C
-                      </Link>
-                      <Link
-                        href={`/designer/${designer.id}/work2`}
-                        className="flex items-center justify-center h-full px-4 py-2 bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white rounded-xl font-medium text-base transform transition-all duration-300 hover:bg-black/20 border border-white/30"
-                      >
-                        95˚C
-                      </Link>
+                      {designer.works[0] && (
+                        <Link
+                          href={`/work/${designer.works[0].id}?from=designer&id=${designer.id}`}
+                          className="flex items-center justify-center h-full px-4 py-2 bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white rounded-xl font-medium text-base transform transition-all duration-300 hover:bg-black/20 border border-white/30"
+                        >
+                          {designer.works[0].category === "舒適巢" && "25°S"}
+                          {designer.works[0].category === "溫工藝" && "50°S"}
+                          {designer.works[0].category === "熱對話" && "80°S"}
+                          {designer.works[0].category === "冷火花" && "-20°S"}
+                        </Link>
+                      )}
+                      {designer.works[1] && (
+                        <Link
+                          href={`/work/${designer.works[1].id}?from=designer&id=${designer.id}`}
+                          className="flex items-center justify-center h-full px-4 py-2 bg-black/10 backdrop-blur-md backdrop-saturate-150 text-white rounded-xl font-medium text-base transform transition-all duration-300 hover:bg-black/20 border border-white/30"
+                        >
+                          {designer.works[1].category === "舒適巢" && "25°S"}
+                          {designer.works[1].category === "溫工藝" && "50°S"}
+                          {designer.works[1].category === "熱對話" && "80°S"}
+                          {designer.works[1].category === "冷火花" && "-20°S"}
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>

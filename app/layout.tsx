@@ -1,12 +1,16 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Noto_Sans_TC } from "next/font/google"
 import Header from "../components/Header"
 import BackToTopButton from "../components/ScrollToTop"
 import type React from "react"
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ["latin"] })
+const notoSansTC = Noto_Sans_TC({ 
+  weight: ['400', '500', '700'],
+  subsets: ["latin"],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Design Graduate Portfolio",
@@ -20,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={notoSansTC.className}>
         <Header />
         <BackToTopButton />
         <main className="pt-16">{children}</main>
