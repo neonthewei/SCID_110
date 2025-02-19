@@ -106,7 +106,7 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
         </AnimatePresence>
 
         {/* 固定在容器右下角的頁碼 */}
-        <div className="absolute bottom-4 right-4 z-10 text-sm text-white bg-black/50 rounded-full w-12 h-6 flex items-center justify-center md:hidden">
+        <div className="absolute bottom-4 right-8 z-10 text-sm text-white bg-black/50 rounded-full w-12 h-6 flex items-center justify-center md:hidden">
           {currentIndex + 1} / {images.length}
         </div>
       </div>

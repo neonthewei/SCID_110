@@ -83,7 +83,7 @@ export const designers: Designer[] = [
       zh: "王小明",
       pinyin: "Wang Xiao Ming"
     },
-    image: "/face/name_a108130056.jpg",
+    image: "/face/name_1.jpg",
     works: [
       {
         id: "warm-craft-1",
@@ -128,7 +128,7 @@ export const designers: Designer[] = [
       zh: "李小華",
       pinyin: "Li Xiao Hua"
     },
-    image: "/face/name_a110130041.jpg",
+    image: "/face/name_2.jpg",
     works: [
       {
         id: "comfort-nest-1",
@@ -170,7 +170,7 @@ export const designers: Designer[] = [
       zh: "張小芳",
       pinyin: "Zhang Xiao Fang"
     },
-    image: "/face/name_a110130048.jpg",
+    image: "/face/name_3.jpg",
     works: [
       {
         id: "hot-dialogue-1",
@@ -213,7 +213,7 @@ export const designers: Designer[] = [
       zh: "陳小雨",
       pinyin: "Chen Xiao Yu"
     },
-    image: "/face/name_a110130057.jpg",
+    image: "/face/name_4.jpg",
     works: [
       {
         id: "cold-spark-1",
@@ -257,7 +257,7 @@ export const designers: Designer[] = [
       zh: "林雅婷",
       pinyin: "Lin Ya Ting"
     },
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/face/name_5.jpg",
     works: [
       {
         id: "comfort-nest-5",
@@ -300,7 +300,7 @@ export const designers: Designer[] = [
       zh: "黃志明",
       pinyin: "Huang Zhi Ming"
     },
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/face/name_6.jpg",
     works: [
       {
         id: "hot-dialogue-6",

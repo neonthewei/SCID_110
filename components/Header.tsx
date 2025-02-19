@@ -3,19 +3,46 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
+
+const exhibitionAreas = [
+  {
+    id: "shih-chien",
+    name: "實踐展區",
+    gradient: "from-rose-400 via-fuchsia-500 to-indigo-500",
+  },
+  {
+    id: "milan",
+    name: "米蘭展區",
+    gradient: "from-emerald-400 via-teal-500 to-cyan-500",
+  },
+  {
+    id: "young-designers",
+    name: "新一代展區",
+    gradient: "from-amber-400 via-orange-500 to-pink-600",
+  },
+]
 
 const menuItems = [
   { href: "/all-works", label: "作品總覽" },
   { href: "/designer", label: "設計師" },
-  { href: "/online-exhibition", label: "展覽資訊" },
+  { 
+    href: "#", 
+    label: "展覽資訊",
+    children: exhibitionAreas.map(area => ({
+      href: `/online-exhibition/${area.id}`,
+      label: area.name,
+      gradient: area.gradient
+    }))
+  },
   { href: "/book-tour", label: "預約導覽" },
 ]
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
 
   const toggleMenu = () => {
@@ -59,15 +86,53 @@ export default function Header() {
               <nav className="flex items-center h-full">
                 <ul className="flex space-x-3 h-full">
                   {menuItems.map((item) => (
-                    <li key={item.href} className="h-full">
-                      <Link
-                        href={item.href}
-                        className={`px-4 h-full flex items-center transition-colors duration-300 ${
-                          pathname === item.href ? "text-gray-900 font-semibold" : "text-gray-500 hover:text-gray-700"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
+                    <li key={item.href} className="h-full relative group">
+                      {item.children ? (
+                        <div
+                          className="pl-4 pr-2 h-full flex items-center gap-1 cursor-pointer group"
+                          onMouseEnter={() => setActiveDropdown(item.href)}
+                          onMouseLeave={() => setActiveDropdown(null)}
+                        >
+                          <span className={`transition-colors duration-300 ${
+                            pathname.includes('/online-exhibition') ? "text-gray-900 font-semibold" : "text-gray-500 group-hover:text-gray-700"
+                          }`}>{item.label}</span>
+                          <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-gray-700" />
+                          
+                          {/* Dropdown Menu */}
+                          <AnimatePresence>
+                            {activeDropdown === item.href && (
+                              <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 10 }}
+                                transition={{ duration: 0.2 }}
+                                className="absolute top-full left-0 w-36 py-3 bg-white shadow-xl rounded-2xl overflow-hidden"
+                              >
+                                {item.children.map((child) => (
+                                  <Link
+                                    key={child.href}
+                                    href={child.href}
+                                    className={`block mx-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-300 rounded-xl ${
+                                      pathname === child.href ? "bg-gray-50 font-semibold" : ""
+                                    }`}
+                                  >
+                                    {child.label}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className={`px-4 h-full flex items-center transition-colors duration-300 ${
+                            pathname === item.href ? "text-gray-900 font-semibold" : "text-gray-500 hover:text-gray-700"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -125,21 +190,53 @@ export default function Header() {
               <nav className="p-4">
                 <ul className="flex flex-col space-y-2">
                   {menuItems.map((item, index) => (
-                    <motion.li
-                      key={item.href}
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.2, delay: index * 0.05 }}
-                    >
-                      <Link
-                        href={item.href}
-                        className="block hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
-                        onClick={closeMenu}
+                    item.children ? (
+                      <motion.div
+                        key={item.href}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                        className="space-y-2"
                       >
-                        {item.label}
-                      </Link>
-                    </motion.li>
+                        <div className="px-6 py-2 text-sm text-gray-500">
+                          {item.label}
+                        </div>
+                        {item.children.map((child, childIndex) => (
+                          <motion.li
+                            key={child.href}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -10 }}
+                            transition={{ duration: 0.2, delay: (index + childIndex) * 0.05 }}
+                          >
+                            <Link
+                              href={child.href}
+                              className="block hover:bg-gray-50 px-8 py-3 text-center transition-colors duration-300 rounded-xl"
+                              onClick={closeMenu}
+                            >
+                              {child.label}
+                            </Link>
+                          </motion.li>
+                        ))}
+                      </motion.div>
+                    ) : (
+                      <motion.li
+                        key={item.href}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                      >
+                        <Link
+                          href={item.href}
+                          className="block hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
+                          onClick={closeMenu}
+                        >
+                          {item.label}
+                        </Link>
+                      </motion.li>
+                    )
                   ))}
                   <motion.li
                     initial={{ opacity: 0, y: -10 }}

@@ -386,7 +386,7 @@ export default function DesignerPage() {
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-[#B3346F] via-[#A5297F] to-[#FFFFFF]"></div>
           </div>
 
-          <div className="mt-8 flex justify-center px-4 sm:px-8">
+          <div className="mt-8 flex justify-center px-4 sm:px-8 pb-16">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-16 lg:gap-x-80">
               {/* Column 1: 3 teams */}
               <div className="space-y-6 lg:-ml-8 w-[330px]">
@@ -394,7 +394,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">總幹事</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">余美欣</span>
                         <span className="text-[#9D9D9D] text-sm">Mei-Hsin Yu</span>
@@ -411,7 +411,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">主視覺設計與執行</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">蔡宜靜</span>
                         <span className="text-[#9D9D9D] text-sm">Yi-Ching Tsai</span>
@@ -443,7 +443,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">畢業專刊設計</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">施念真</span>
                         <span className="text-[#9D9D9D] text-sm">Nian-Zhen Shih</span>
@@ -476,7 +476,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">展場布置與設計</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">許芯瑜</span>
                         <span className="text-[#9D9D9D] text-sm">Kuo-Tsung Chen</span>
@@ -529,7 +529,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">文案撰寫、翻譯與校稿</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">林希宸</span>
                         <span className="text-[#9D9D9D] text-sm">Hsi-Chen Lin</span>
@@ -561,7 +561,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">公關活動企劃與執行</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">蔡幸奴</span>
                       </li>
@@ -597,7 +597,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">攝影與影像紀錄</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">林芸秀</span>
                         <span className="text-[#9D9D9D] text-sm">Yun-Shiu Lin</span>
@@ -625,7 +625,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">網站設計與規劃</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">戴抒瑜</span>
                         <span className="text-[#9D9D9D] text-sm">Shu-Yu Tai</span>
@@ -650,7 +650,7 @@ export default function DesignerPage() {
                 <div className="pb-6 border-b border-dashed border-[#9D9D9D]/50">
                   <div className="flex">
                     <h3 className="text-[#7D7D7D] w-40 flex-shrink-0 text-left text-sm">總務</h3>
-                    <ul className="space-y-2 min-w-[280px]">
+                    <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">陳胤羽</span>
                         <span className="text-[#9D9D9D] text-sm">Yin-Yu Chen</span>

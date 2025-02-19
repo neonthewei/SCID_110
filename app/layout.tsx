@@ -13,7 +13,7 @@ const notoSansTC = Noto_Sans_TC({
 })
 
 export const metadata: Metadata = {
-  title: "Design Graduate Portfolio",
+  title: "實踐工設2025畢業展 | ˚Sense",
   description: "Showcasing my design work and skills",
 }
 
