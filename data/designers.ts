@@ -83,7 +83,7 @@ export const designers: Designer[] = [
       zh: "王小明",
       pinyin: "Wang Xiao Ming"
     },
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/face/name_a108130056.jpg",
     works: [
       {
         id: "warm-craft-1",
@@ -128,7 +128,7 @@ export const designers: Designer[] = [
       zh: "李小華",
       pinyin: "Li Xiao Hua"
     },
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/face/name_a110130041.jpg",
     works: [
       {
         id: "comfort-nest-1",
@@ -161,23 +161,6 @@ export const designers: Designer[] = [
             "/placeholder.svg?height=400&width=600"
           ]
         }
-      },
-      {
-        id: "warm-craft-3",
-        title: {
-          main: "竹韻",
-          sub: "Bamboo Rhythm"
-        },
-        description: "以傳統竹編工藝為基礎，結合現代設計語言，創造出具有韻律感的燈具系列，展現竹材的柔韌之美。",
-        category: "溫工藝",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
       }
     ]
   },
@@ -187,7 +170,7 @@ export const designers: Designer[] = [
       zh: "張小芳",
       pinyin: "Zhang Xiao Fang"
     },
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/face/name_a110130048.jpg",
     works: [
       {
         id: "hot-dialogue-1",
@@ -230,7 +213,7 @@ export const designers: Designer[] = [
       zh: "陳小雨",
       pinyin: "Chen Xiao Yu"
     },
-    image: "/placeholder.svg?height=400&width=300",
+    image: "/face/name_a110130057.jpg",
     works: [
       {
         id: "cold-spark-1",

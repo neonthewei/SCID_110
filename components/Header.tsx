@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -9,7 +10,7 @@ import { usePathname } from "next/navigation"
 const menuItems = [
   { href: "/all-works", label: "作品總覽" },
   { href: "/designer", label: "設計師" },
-  { href: "/online-exhibition", label: "線上展覽" },
+  { href: "/online-exhibition", label: "展覽資訊" },
   { href: "/book-tour", label: "預約導覽" },
 ]
 
@@ -40,42 +41,50 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 h-16">
-        <div className="container mx-auto px-4 h-full">
-          <div className="flex items-center justify-between h-full">
+        <div className="h-full max-w-[1920px] mx-auto">
+          <div className="flex items-center justify-between h-full px-4">
             {/* Logo */}
-            <Link href="/" className="text-xl font-bold text-gray-800">
-              SCID 110
+            <Link href="/" className="text-xl font-bold text-gray-800 w-[120px] pl-2">
+              <Image
+                src="/logo/logo.png"
+                alt="SENSE Logo"
+                width={80}
+                height={32}
+                className="object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex justify-center items-center h-full flex-1">
-              <ul className="flex space-x-6 h-full">
-                {menuItems.map((item) => (
-                  <li key={item.href} className="h-full">
-                    <Link
-                      href={item.href}
-                      className={`px-4 h-full flex items-center transition-colors duration-300 ${
-                        pathname === item.href ? "text-gray-900 font-semibold" : "text-gray-500 hover:text-gray-700"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <div className="hidden lg:flex items-center gap-6">
+              <nav className="flex items-center h-full">
+                <ul className="flex space-x-3 h-full">
+                  {menuItems.map((item) => (
+                    <li key={item.href} className="h-full">
+                      <Link
+                        href={item.href}
+                        className={`px-4 h-full flex items-center transition-colors duration-300 ${
+                          pathname === item.href ? "text-gray-900 font-semibold" : "text-gray-500 hover:text-gray-700"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
-            {/* Book Tour Button */}
-            <Link
-              href="/buy-catalog"
-              className={`hidden lg:flex items-center h-10 px-6 transition duration-300 rounded-2xl ${
-                pathname === "/buy-catalog" 
-                  ? "bg-gray-100 text-gray-900 font-semibold" 
-                  : "bg-black text-white hover:bg-gray-800"
-              }`}
-            >
-              購買專刊
-            </Link>
+              {/* Book Tour Button */}
+              <Link
+                href="/buy-catalog"
+                className={`flex items-center h-10 px-6 transition duration-300 rounded-2xl ${
+                  pathname === "/buy-catalog" 
+                    ? "bg-gray-100 text-gray-900 font-semibold" 
+                    : "bg-black text-white hover:bg-gray-800"
+                }`}
+              >
+                購買專刊
+              </Link>
+            </div>
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center gap-3">

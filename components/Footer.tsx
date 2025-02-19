@@ -1,8 +1,14 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
+  const pathname = usePathname()
+  const isBookTourPage = pathname === '/book-tour'
+
   return (
-    <footer className="w-full py-6 bg-neutral-50">
+    <footer className={`w-full py-6 bg-neutral-50 relative ${isBookTourPage ? 'md:fixed md:bottom-0 md:left-0 md:right-0' : ''} z-50`}>
       <div className="container mx-auto px-4 sm:px-6">
         {/* Content */}
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">

@@ -136,6 +136,45 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
+      
+      {/* 導購專刊 CTA */}
+      <div className="container mx-auto px-4 mt-20 mb-12">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl h-[110px]">
+            <div className="flex h-full flex-col md:flex-row items-center">
+              {/* 圖片容器 */}
+              <div className="w-[120px] relative aspect-[3/4] ml-5">
+                <Image
+                  src="/book.png"
+                  alt="2024年度專刊《TEMPO_BOND 棒_節奏》"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              
+              {/* 文字內容 */}
+              <div className="flex-1 flex flex-col md:flex-row items-center justify-between px-5 gap-4">
+                <div className="text-center md:text-left">
+                  <h2 className="text-white text-lg font-bold leading-none mb-1">
+                    想一窺作品背後的秘辛？
+                  </h2>
+                  <p className="text-gray-300 text-sm">
+                    購買我們的2024年度專刊《TEMPO_BOND 棒_節奏》!
+                  </p>
+                </div>
+                <Link 
+                  href="/buy-catalog"
+                  className="inline-flex items-center px-5 py-1.5 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200 group whitespace-nowrap text-sm"
+                >
+                  <span className="mr-2">手刀前往</span>
+                  <ArrowLeft className="w-4 h-4 rotate-[225deg] transform transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

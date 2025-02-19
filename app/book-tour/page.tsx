@@ -35,11 +35,27 @@ const TIME_SLOTS = [
   { value: '16:00', label: '下午 04:00' }
 ];
 
+const BACKGROUND_IMAGES = [
+  '/reserve/reserve_bg_1.png',
+  '/reserve/reserve_bg_2.png',
+  '/reserve/reserve_bg_3.png'
+];
+
 export default function BookTourPage() {
   const [bookings, setBookings] = useState<BookingResponse[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
+  const [showBookings, setShowBookings] = useState(false);
+  const [fallingImages, setFallingImages] = useState<Array<{ 
+    id: number; 
+    src: string; 
+    left: number; 
+    duration: number;
+    size: number;
+    driftX: number;
+    isClockwise: boolean;
+  }>>([]);
   const { register, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<TourBooking>({
     defaultValues: {
       date: AVAILABLE_DATES[0],
@@ -53,6 +69,29 @@ export default function BookTourPage() {
 
   const watchDate = watch('date');
   const watchTime = watch('time');
+
+  // Initialize falling images
+  useEffect(() => {
+    const images = Array.from({ length: 8 }, (_, index) => {
+      // 隨機分布在整個螢幕寬度
+      const left = Math.random() * 100;
+      // 隨機漂移距離 (-100px 到 100px)
+      const driftX = -100 + Math.random() * 200;
+      // 較慢的下落速度
+      const duration = 20 + Math.random() * 15;
+      
+      return {
+        id: index,
+        src: BACKGROUND_IMAGES[index % BACKGROUND_IMAGES.length],
+        left,
+        duration,
+        size: 500,
+        driftX,
+        isClockwise: Math.random() < 0.5
+      };
+    });
+    setFallingImages(images);
+  }, []);
 
   // 讀取預約記錄
   const fetchBookings = async () => {
@@ -132,15 +171,52 @@ export default function BookTourPage() {
     setCurrentStep(1);
   };
 
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() === 'p') {
+        setShowBookings(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-6">
-          <p className="text-gray-600 text-base">填寫表單,預約實踐展區導覽</p>
+    <div className="bg-gray-50 relative min-h-screen md:min-h-0 md:h-[calc(100vh-8rem)]">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {fallingImages.map((image) => (
+          <img
+            key={image.id}
+            src={image.src}
+            alt=""
+            className={`${image.isClockwise ? 'snow-image' : 'snow-image-reverse'}`}
+            style={{
+              left: `${image.left}%`,
+              width: `${image.size}px`,
+              animationDuration: `${image.duration}s`,
+              '--drift-x': `${image.driftX}px`
+            } as React.CSSProperties}
+          />
+        ))}
+      </div>
+      <div className="max-w-4xl mx-auto relative z-10 w-full px-4 sm:px-6 lg:px-8 py-4">
+        <div className="text-center mb-10 mt-5">
+          <h1 className="text-2xl font-medium text-black mb-4">填寫預約表單</h1>
+          <div className="block sm:hidden">
+            <p className="text-[#7D7D7D] font-regular text-sm">展覽期間，每週二和五的下午13:30開始</p>
+            <p className="text-[#7D7D7D] font-regular text-sm">精華導覽40分鐘，一起窺探展區精選作品。</p>
+          </div>
+          <div className="hidden sm:block">
+            <p className="text-[#7D7D7D] font-regular text-sm">展覽期間 (04/27 - 05/07) 每週二和五的下午13:30開始</p>
+            <p className="text-[#7D7D7D] font-regular text-sm">精華導覽40分鐘，一起窺探展區精選作品，了解作品核心與價值。</p>
+          </div>
         </div>
 
         {/* 預約表單 */}
-        <div className="bg-white shadow rounded-2xl p-6 mb-8">
+        <div className="bg-white shadow rounded-2xl p-6 mb-4">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             {/* 步驟指示器 */}
             <div className="flex items-center justify-center mb-8">
@@ -324,39 +400,56 @@ export default function BookTourPage() {
           </form>
         </div>
 
-        {/* 預約記錄列表 */}
-        <div className="bg-white shadow rounded-2xl p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">最近預約記錄</h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">姓名</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">日期</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">時間</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">人數</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {bookings.map((booking, index) => (
-                  <tr key={index}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{booking.name}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {new Date(booking.date).toLocaleDateString('zh-TW', {
-                        year: 'numeric',
-                        month: '2-digit',
-                        day: '2-digit',
-                        weekday: 'long'
-                      })}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.time}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.participants}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        {/* 注意事項 */}
+        <div className="bg-white shadow rounded-2xl p-6 mb-8">
+          <p className="text-sm font-medium text-gray-900 mb-3">注意事項</p>
+          <ul className="space-y-2.5">
+            <li className="flex items-center text-sm text-gray-500">
+              <span className="w-1 h-1 bg-gray-400 rounded-full mr-2"></span>
+              務必注意資訊填寫正確
+            </li>
+            <li className="flex items-center text-sm text-gray-500">
+              <span className="w-1 h-1 bg-gray-400 rounded-full mr-2"></span>
+              預約成功會於2天內以EMAIL通知
+            </li>
+          </ul>
         </div>
+
+        {/* 預約記錄列表 */}
+        {showBookings && (
+          <div className="bg-white shadow rounded-2xl p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">最近預約記錄</h2>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">姓名</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">日期</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">時間</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">人數</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {bookings.map((booking, index) => (
+                    <tr key={index}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{booking.name}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {new Date(booking.date).toLocaleDateString('zh-TW', {
+                          year: 'numeric',
+                          month: '2-digit',
+                          day: '2-digit',
+                          weekday: 'long'
+                        })}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.time}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{booking.participants}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

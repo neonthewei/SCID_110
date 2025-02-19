@@ -9,13 +9,6 @@ import { getAllWorks, type WorkCategory } from "@/data/designers"
 
 const categories = [
   {
-    id: "舒適巢",
-    name: "25°S",
-    title: "舒適巢",
-    description: "打造溫馨舒適的生活空間",
-    image: "/frame0.png",
-  },
-  {
     id: "溫工藝",
     name: "50°S",
     title: "溫工藝",
@@ -23,11 +16,11 @@ const categories = [
     image: "/frame1.png",
   },
   {
-    id: "熱對話",
-    name: "80°S",
-    title: "熱對話",
-    description: "促進深度交流與互動",
-    image: "/kkk.png",
+    id: "舒適巢",
+    name: "25°S",
+    title: "舒適巢",
+    description: "打造溫馨舒適的生活空間",
+    image: "/frame0.png",
   },
   {
     id: "冷火花",
@@ -35,6 +28,13 @@ const categories = [
     title: "冷火花",
     description: "激發創新思維的火花",
     image: "/ggg.png",
+  },
+  {
+    id: "熱對話",
+    name: "80°S",
+    title: "熱對話",
+    description: "促進深度交流與互動",
+    image: "/kkk.png",
   },
 ]
 
@@ -148,14 +148,16 @@ export default function AllWorksContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
           >
             <Image
               src={currentCategory?.image || ""}
               alt={currentCategory?.title || ""}
               fill
               className="object-cover md:object-center object-left"
-              style={{ objectPosition: isMobile ? "25% center" : "center" }}
+              style={{ 
+                objectPosition: isMobile ? "25% center" : "center"
+              }}
             />
             {/* Add some decorative elements in background */}
             <div className="absolute inset-0 overflow-hidden">
@@ -210,7 +212,7 @@ export default function AllWorksContent() {
           </div>
 
           {/* Desktop Category Tabs */}
-          <div className="hidden md:flex flex-col items-start justify-center w-full">
+          <div className="hidden md:flex flex-col items-start justify-center w-full pl-16 pt-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentCategory?.id}
@@ -229,7 +231,7 @@ export default function AllWorksContent() {
                 <div key={category.id}>
                   <button
                     onClick={() => setActiveCategory(category.id)}
-                    className={`w-[120px] px-4 py-2 rounded-[20px] overflow-hidden transition-all duration-300 text-lg whitespace-nowrap border
+                    className={`w-[160px] px-4 py-2 rounded-[20px] overflow-hidden transition-all duration-300 text-lg whitespace-nowrap border
                       ${
                         activeCategory === category.id
                           ? "bg-black/20 backdrop-blur-md backdrop-saturate-150 text-white border-white/50"
@@ -246,7 +248,7 @@ export default function AllWorksContent() {
       </motion.div>
 
       {/* Works Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mt-4 sm:mt-8 px-4 sm:px-8 md:px-12 pb-12 sm:pb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-8 px-3 sm:px-4 md:px-4 pb-12 sm:pb-16">
         <AnimatePresence mode="wait">
           {filteredWorks.map((work, index) => (
             <motion.div
@@ -256,14 +258,14 @@ export default function AllWorksContent() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.2, delay: index * 0.02 }}
-              className="work-card group relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-2xl"
+              className="work-card group relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-xl"
             >
               <Link href={`/work/${work.id}`} className="block w-full h-full">
                 <Image
                   src={work.images.main || "/placeholder.svg"}
                   alt={work.title.main}
                   fill
-                  className={`object-cover transition-transform duration-500 rounded-2xl
+                  className={`object-cover transition-transform duration-500 rounded-xl
                     ${activeItemId === work.id ? 'scale-110 md:scale-100' : ''} 
                     md:group-hover:scale-110`}
                 />

@@ -2,17 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  @apply tracking-wider; /* 您可以改成 tracking-wide, tracking-wider 或其他值 */
 }
 
-.gradient-text {
-  background: linear-gradient(to right, #ec4899, #8b5cf6, #22c55e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-pink-500 via-purple-500 to-green-500 bg-clip-text text-transparent;
+  }
 }
 
 @layer utilities {
@@ -24,5 +29,184 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+}
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slow-spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+@keyframes fall-reverse {
+  from {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(100vh) rotate(-360deg);
+  }
+}
+
+@keyframes float-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-100%) rotate(var(--rotation));
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(var(--rotation));
+    opacity: 0;
+  }
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) translateX(var(--drift-x));
+    opacity: 0;
+  }
+}
+
+@keyframes snow-fall-reverse {
+  0% {
+    transform: translateY(-100vh) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(-360deg) translateX(var(--drift-x));
+    opacity: 0;
+  }
+}
+
+.rain-drop {
+  opacity: 0;
+  animation: rain-fall 10s linear infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.animate-slow-spin {
+  animation: slow-spin 45s linear infinite;
+  transform-origin: center center;
+}
+
+.animate-slow-spin-reverse {
+  animation: slow-spin-reverse 45s linear infinite;
+  transform-origin: center center;
+}
+
+.bg-image-container {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: 20%;
+  transform: translateY(-50%);
+}
+
+.bg-image-left {
+  left: -80%;
+}
+
+.bg-image-right {
+  right: -80%;
+}
+
+@screen sm {
+  .bg-image-left {
+    left: -40%;
+  }
+  .bg-image-right {
+    right: -40%;
+  }
+}
+
+@screen md {
+  .bg-image-left {
+    left: -20%;
+  }
+  .bg-image-right {
+    right: -20%;
+  }
+}
+
+.falling-image {
+  position: fixed;
+  animation: fall linear infinite;
+}
+
+.falling-image-reverse {
+  position: fixed;
+  animation: fall-reverse linear infinite;
+}
+
+.snow-image {
+  position: fixed;
+  animation: snow-fall linear infinite;
+  opacity: 0;
+  will-change: transform;
+}
+
+.snow-image-reverse {
+  position: fixed;
+  animation: snow-fall-reverse linear infinite;
+  opacity: 0;
+  will-change: transform;
 }
 
