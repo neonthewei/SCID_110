@@ -33,27 +33,29 @@ const categories = [
 
 export default function ProjectCategories() {
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
-          {categories.map((category) => (
-            <Link key={category.id} href={`/all-works?category=${category.id}`} className="block group">
-              <div className="text-center transform transition-transform duration-300 hover:-translate-y-2">
-                <div className="mb-4 sm:mb-6 relative">
-                  <div 
-                    className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl transform transition-transform duration-300 group-hover:scale-110 bg-gradient-to-r ${category.gradient}`}
-                  />
+    <div className="w-full bg-[#F2F2F2]">
+      <section id="projects" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+            {categories.map((category) => (
+              <Link key={category.id} href={`/all-works?category=${category.id}`} className="block group">
+                <div className="text-center transform transition-transform duration-300 hover:-translate-y-2">
+                  <div className="mb-4 sm:mb-6 relative">
+                    <div 
+                      className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-2xl transform transition-transform duration-300 group-hover:scale-110 bg-gradient-to-r ${category.gradient}`}
+                    />
+                  </div>
+                  <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                    {category.title}
+                  </h2>
+                  <p className="text-sm sm:text-base text-gray-600">{category.description}</p>
                 </div>
-                <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                  {category.title}
-                </h2>
-                <p className="text-sm sm:text-base text-gray-600">{category.description}</p>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 

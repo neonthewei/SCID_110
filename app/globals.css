@@ -106,6 +106,13 @@
     @apply border-border;
   }
 
+  /* Hide native cursor */
+  html, 
+  body, 
+  * {
+    cursor: none !important;
+  }
+
   body {
     @apply bg-background text-foreground tracking-wider;
     font-family: Arial, Helvetica, sans-serif;
@@ -310,5 +317,22 @@
   animation: snow-fall-reverse linear infinite;
   opacity: 0;
   will-change: transform;
+}
+
+/* Cursor Styles */
+.cursor {
+  pointer-events: none;
+  
+  &__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+    
+    circle {
+      fill: #f7f8fa;
+    }
+  }
 }
 

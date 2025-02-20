@@ -49,6 +49,16 @@ export default function AllWorksContent() {
   const lastScrollY = useRef(0)
   const allWorks = getAllWorks()
 
+  // 檢查 localStorage 中的分類
+  useEffect(() => {
+    const savedCategory = localStorage.getItem('selectedCategory')
+    if (savedCategory) {
+      setActiveCategory(savedCategory)
+      // 清除 localStorage，避免影響下次正常訪問
+      localStorage.removeItem('selectedCategory')
+    }
+  }, [])
+
   useEffect(() => {
     const checkMobile = () => {
       const isMobileView = window.innerWidth < 768

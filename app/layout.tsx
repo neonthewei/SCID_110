@@ -5,6 +5,7 @@ import Header from "../components/Header"
 import BackToTopButton from "../components/ScrollToTop"
 import type React from "react"
 import Footer from '@/components/Footer'
+import CustomCursor from '@/components/CustomCursor'
 
 const notoSansTC = Noto_Sans_TC({ 
   weight: ['400', '500', '700'],
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSansTC.className}>
+        <CustomCursor />
         <Header />
         <BackToTopButton />
         <main className="pt-16">{children}</main>

@@ -116,7 +116,14 @@ export default function Header() {
                                       pathname === child.href ? "bg-gray-50 font-semibold" : ""
                                     }`}
                                   >
-                                    {child.label}
+                                    <div className="flex items-center justify-between">
+                                      {child.label}
+                                      {child.label === "實踐展區" && (
+                                        <span className="ml-2 px-1.5 py-0.3 text-[10px] font-bold bg-blue-100 text-blue-600 rounded-lg">
+                                          3D
+                                        </span>
+                                      )}
+                                    </div>
                                   </Link>
                                 ))}
                               </motion.div>
