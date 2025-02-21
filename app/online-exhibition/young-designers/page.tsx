@@ -32,22 +32,24 @@ export default function YoungDesignersExhibition() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white absolute bottom-16 left-28"
+            className="text-white absolute bottom-16 px-4 md:px-8 lg:px-16"
           >
-            <h1 className="text-[36px] font-semibold mb-2">
-              新一代展區 YODEX, Taiwan
-            </h1>
-            <p className="text-[18px]">2025 新一代設計展展出作品</p>
+            <div className="max-w-[1280px] mx-auto">
+              <h1 className="text-[36px] font-semibold mb-2">
+                新一代展區 YODEX, Taiwan
+              </h1>
+              <p className="text-[18px]">2025 新一代設計展展出作品</p>
+            </div>
           </motion.div>
         </div>
       </div>
 
       {/* Info Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+      <div className="px-4 md:px-8 lg:px-16 py-16">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="flex flex-col md:flex-row gap-16">
             {/* Left Column - Exhibition Details */}
-            <div className="w-[300px] flex-shrink-0">
+            <div className="w-full md:w-[350px] flex-shrink-0">
               <div className="pb-2">
                 <div className="flex">
                   <h3 className="text-[#7D7D7D] w-16 flex-shrink-0 text-left text-sm">日期</h3>
@@ -82,8 +84,8 @@ export default function YoungDesignersExhibition() {
       </div>
 
       {/* Image Grid Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <div className="px-4 md:px-8 lg:px-16 py-16">
+        <div className="max-w-[1280px] mx-auto space-y-16">
           {/* First Image Group */}
           <div className="grid grid-cols-2 gap-8">
             <div className="space-y-4">

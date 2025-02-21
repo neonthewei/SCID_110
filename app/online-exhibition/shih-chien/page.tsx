@@ -32,22 +32,24 @@ export default function ShihChienExhibition() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white absolute bottom-16 left-28"
+            className="text-white absolute bottom-16 px-4 md:px-8 lg:px-16"
           >
-            <h1 className="text-[36px] font-semibold mb-2">
-              實踐展區 Shih Chien, Taipei
-            </h1>
-            <p className="text-[18px]">2025 實踐大學工業產品設計學系畢業展</p>
+            <div className="max-w-[1280px] mx-auto">
+              <h1 className="text-[36px] font-semibold mb-2">
+                實踐展區 Shih Chien, Taipei
+              </h1>
+              <p className="text-[18px]">2025 實踐大學工業產品設計學系畢業展</p>
+            </div>
           </motion.div>
         </div>
       </div>
 
       {/* Info Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+      <div className="px-4 md:px-8 lg:px-16 py-16">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="flex flex-col md:flex-row gap-16">
             {/* Left Column - Exhibition Details */}
-            <div className="w-[350px] flex-shrink-0">
+            <div className="w-full md:w-[350px] flex-shrink-0">
               <div className="pb-2">
                 <div className="flex">
                   <h3 className="text-[#7D7D7D] w-16 flex-shrink-0 text-left text-sm">日期</h3>
@@ -83,8 +85,8 @@ export default function ShihChienExhibition() {
       </div>
 
       {/* 3D Virtual Tour Section */}
-      <div className="container mx-auto px-4 py-16 border-t border-[#9D9D9D]/10">
-        <div className="max-w-7xl mx-auto">
+      <div className="px-4 md:px-8 lg:px-16 py-16">
+        <div className="max-w-[1280px] mx-auto">
           <h2 className="text-2xl font-bold text-[#7D7D7D] mb-8">3D 虛擬展場</h2>
           <div className="relative aspect-[16/9] w-full">
             <iframe
@@ -100,8 +102,8 @@ export default function ShihChienExhibition() {
       </div>
 
       {/* Image Grid Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <div className="px-4 md:px-8 lg:px-16 py-16">
+        <div className="max-w-[1280px] mx-auto space-y-16">
           {/* First Image Group */}
           <div className="grid grid-cols-2 gap-8">
             <div className="space-y-4">
