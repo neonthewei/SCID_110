@@ -222,7 +222,7 @@ export default function AllWorksContent() {
           </div>
 
           {/* Desktop Category Tabs */}
-          <div className="hidden md:flex flex-col items-start justify-center w-full pl-16 pt-6">
+          <div className="hidden md:flex flex-col items-start justify-center w-full md:px-12 lg:pl-12 xl:pl-16 pt-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentCategory?.id}
@@ -258,7 +258,7 @@ export default function AllWorksContent() {
       </motion.div>
 
       {/* Works Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-8 px-3 sm:px-4 md:px-4 pb-12 sm:pb-16">
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 mt-4 sm:mt-8 px-3 sm:px-8 md:px-12 lg:px-24 xl:px-24 pb-12 sm:pb-16">
         <AnimatePresence mode="popLayout">
           {filteredWorks.map((work, index) => (
             <motion.div
@@ -267,7 +267,7 @@ export default function AllWorksContent() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.2, delay: index * 0.02 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               className="work-card group relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-xl"
             >
               <Link href={`/work/${work.id}`} className="block w-full h-full">
@@ -285,12 +285,7 @@ export default function AllWorksContent() {
                 >
                   <div className={`absolute inset-0 bg-gradient-to-t transition-opacity duration-300 
                     ${isMobile && activeItemId === work.id ? 'opacity-100' : 'opacity-0'} 
-                    md:group-hover:opacity-100 ${
-                    work.category === '舒適巢' ? 'from-[#8CBB28]/70 to-transparent' :
-                    work.category === '溫工藝' ? 'from-[#DA6615]/70 to-transparent' :
-                    work.category === '熱對話' ? 'from-[#C3206D]/70 to-transparent' :
-                    'from-[#3DB5E9]/70 to-transparent'
-                  }`} />
+                    md:group-hover:opacity-100 from-black/80 to-transparent`} />
                   
                   <div className={`relative w-full px-4 pt-32 pb-3 md:px-4 md:pt-32 md:pb-3 md:flex md:flex-col md:items-start transition-transform duration-300 
                     ${isMobile && activeItemId === work.id ? 'translate-y-0' : 'translate-y-8'} 
@@ -298,11 +293,11 @@ export default function AllWorksContent() {
                     <div className={`w-full md:px-4 px-3 py-2 transition-opacity duration-300
                       ${isMobile && activeItemId === work.id ? 'opacity-100' : 'opacity-0'} 
                       md:group-hover:opacity-100`}>
-                      <p className="text-lg leading-tight text-center text-white mb-1">
+                      <p className="text-lg leading-tight text-center mb-1 text-white font-medium">
                         {work.title.main}
                       </p>
                       {work.title.sub && (
-                        <p className="text-white/80 text-sm leading-tight text-center">
+                        <p className="text-sm leading-tight text-center text-gray-300">
                           {work.title.sub}
                         </p>
                       )}

@@ -43,14 +43,17 @@ const menuItems = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [showExhibitionSubmenu, setShowExhibitionSubmenu] = useState(false)
   const pathname = usePathname()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+    setShowExhibitionSubmenu(false)
   }
 
   const closeMenu = () => {
     setIsMenuOpen(false)
+    setShowExhibitionSubmenu(false)
   }
 
   useEffect(() => {
@@ -71,7 +74,7 @@ export default function Header() {
         <div className="h-full max-w-[1920px] mx-auto">
           <div className="flex items-center justify-between h-full px-4">
             {/* Logo */}
-            <Link href="/" className="text-xl font-bold text-gray-800 w-[120px] pl-2">
+            <Link href="/" className="text-xl font-bold text-gray-800 w-[120px] pl-2" onClick={closeMenu}>
               <Image
                 src="/logo/logo.png"
                 alt="SENSE Logo"
@@ -161,7 +164,12 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center gap-3">
               <span className="text-gray-600 text-sm">
-                {pathname === "/buy-catalog" ? "購買專刊" : menuItems.find(item => item.href === pathname)?.label || "首頁"}
+                {pathname === "/buy-catalog" 
+                  ? "購買專刊" 
+                  : pathname.startsWith('/online-exhibition/') 
+                    ? exhibitionAreas.find(area => pathname.includes(area.id))?.name || "首頁"
+                    : menuItems.find(item => item.href === pathname)?.label || "首頁"
+                }
               </span>
               <motion.button
                 className="p-2 text-gray-600 hover:text-gray-800 transition-colors duration-300"
@@ -195,71 +203,96 @@ export default function Header() {
               className="lg:hidden fixed inset-x-4 top-20 bg-white rounded-3xl shadow-lg z-50"
             >
               <nav className="p-4">
-                <ul className="flex flex-col space-y-2">
-                  {menuItems.map((item, index) => (
-                    item.children ? (
-                      <motion.div
-                        key={item.href}
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2, delay: index * 0.05 }}
-                        className="space-y-2"
+                {showExhibitionSubmenu ? (
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <button
+                        onClick={() => setShowExhibitionSubmenu(false)}
+                        className="flex items-center text-gray-600 px-4 py-2"
                       >
-                        <div className="px-6 py-2 text-sm text-gray-500">
-                          {item.label}
-                        </div>
-                        {item.children.map((child, childIndex) => (
-                          <motion.li
-                            key={child.href}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -10 }}
-                            transition={{ duration: 0.2, delay: (index + childIndex) * 0.05 }}
-                          >
-                            <Link
-                              href={child.href}
-                              className="block hover:bg-gray-50 px-8 py-3 text-center transition-colors duration-300 rounded-xl"
-                              onClick={closeMenu}
-                            >
-                              {child.label}
-                            </Link>
-                          </motion.li>
-                        ))}
-                      </motion.div>
-                    ) : (
-                      <motion.li
-                        key={item.href}
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2, delay: index * 0.05 }}
-                      >
-                        <Link
-                          href={item.href}
-                          className="block hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
-                          onClick={closeMenu}
+                        <ChevronDown className="w-5 h-5 rotate-90 mr-1" />
+                        返回
+                      </button>
+                    </div>
+                    <ul className="flex flex-col space-y-2 mt-2">
+                      {exhibitionAreas.map((area, index) => (
+                        <motion.li
+                          key={area.id}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -10 }}
+                          transition={{ duration: 0.2, delay: index * 0.05 }}
                         >
-                          {item.label}
-                        </Link>
-                      </motion.li>
-                    )
-                  ))}
-                  <motion.li
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2, delay: menuItems.length * 0.05 }}
-                  >
-                    <Link
-                      href="/buy-catalog"
-                      className="block bg-black text-white px-6 py-3 text-center hover:bg-gray-800 transition-colors duration-300 rounded-2xl"
-                      onClick={closeMenu}
+                          <Link
+                            href={`/online-exhibition/${area.id}`}
+                            className="block hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
+                            onClick={closeMenu}
+                          >
+                            <div className="flex items-center justify-center">
+                              {area.name}
+                              {area.name === "實踐展區" && (
+                                <span className="ml-2 px-1.5 py-0.3 text-[10px] font-bold bg-blue-100 text-blue-600 rounded-lg">
+                                  3D
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <ul className="flex flex-col space-y-2">
+                    {menuItems.map((item, index) => (
+                      item.children ? (
+                        <motion.li
+                          key={item.href}
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2, delay: index * 0.05 }}
+                        >
+                          <button
+                            onClick={() => setShowExhibitionSubmenu(true)}
+                            className="w-full hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
+                          >
+                            {item.label}
+                          </button>
+                        </motion.li>
+                      ) : (
+                        <motion.li
+                          key={item.href}
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2, delay: index * 0.05 }}
+                        >
+                          <Link
+                            href={item.href}
+                            className="block hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
+                            onClick={closeMenu}
+                          >
+                            {item.label}
+                          </Link>
+                        </motion.li>
+                      )
+                    ))}
+                    <motion.li
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2, delay: menuItems.length * 0.05 }}
                     >
-                      購買專刊
-                    </Link>
-                  </motion.li>
-                </ul>
+                      <Link
+                        href="/buy-catalog"
+                        className="block bg-black text-white px-6 py-3 text-center hover:bg-gray-800 transition-colors duration-300 rounded-2xl"
+                        onClick={closeMenu}
+                      >
+                        購買專刊
+                      </Link>
+                    </motion.li>
+                  </ul>
+                )}
               </nav>
             </motion.div>
           </>

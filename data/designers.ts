@@ -94,7 +94,7 @@ export const designers: Designer[] = [
         description: "將同一個最小單位做多種合併嘗試，透過顏色與造型的穿插創造出一系列具有穿花意象的結構燈具組。",
         category: "溫工藝",
         images: {
-          main: "/placeholder.svg?height=600&width=800",
+          main: "/2025011500076.jpg",
           details: [
             "/placeholder.svg?height=400&width=600",
             "/placeholder.svg?height=400&width=600",

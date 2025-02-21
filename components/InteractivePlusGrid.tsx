@@ -40,6 +40,10 @@ const InteractivePlusGrid = () => {
         const maxContentWidth = 1200;
         const minContentWidth = 320;
         
+        // Get window height and calculate aspect ratio
+        const windowHeight = window.innerHeight;
+        const aspectRatio = windowWidth / windowHeight;
+        
         // Calculate content width based on window size
         let newContentWidth = Math.min(windowWidth * 0.85, maxContentWidth);
         newContentWidth = Math.max(newContentWidth, minContentWidth);
@@ -49,7 +53,16 @@ const InteractivePlusGrid = () => {
         
         // Calculate total grid height (actual space occupied by circles)
         const totalGridHeight = spacing * (gridHeight - 1); // Height between first and last circle
-        const canvasHeight = totalGridHeight + spacing * 2.5; // Increased from 3 to 5 for more vertical space
+        
+        // Adjust canvas height based on aspect ratio
+        let canvasHeight;
+        if (aspectRatio >= 1.7) { // 16:9 screens
+            canvasHeight = totalGridHeight + spacing * 3;
+        } else if (aspectRatio >= 1.5) { // 16:10 and 3:2 screens (like MacBook Pro)
+            canvasHeight = totalGridHeight + spacing * 1.8;
+        } else { // 4:3 and other screens
+            canvasHeight = totalGridHeight + spacing * 3;
+        }
         
         // Calculate circle radius based on content width
         const newRadius = Math.max((newContentWidth / maxContentWidth) * 50, 25);
@@ -486,13 +499,6 @@ const InteractivePlusGrid = () => {
                         height: '100%'
                     }}
                 />
-                <div className="absolute left-8 bottom-0 w-72">
-                    <img 
-                        src="/logo/logo4x.png" 
-                        alt="Sense Logo" 
-                        className="w-full h-auto"
-                    />
-                </div>
             </div>
             <div className="w-full relative">
                 <div 
@@ -511,6 +517,13 @@ const InteractivePlusGrid = () => {
                 <div className="w-full h-96 bg-black" />
             </div>
             <div className="w-full h-96 bg-black" />
+            <div className="absolute left-8 top-[43%] w-72 z-30">
+                <img 
+                    src="/logo/logo4x.png" 
+                    alt="Sense Logo" 
+                    className="w-full h-auto"
+                />
+            </div>
         </div>
     );
 };

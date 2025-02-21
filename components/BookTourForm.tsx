@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 interface TourBooking {
@@ -35,33 +35,12 @@ const TIME_SLOTS = [
   { value: '16:00', label: '下午 04:00' }
 ];
 
-const BACKGROUND_IMAGES = [
-  '/reserve/reserve_bg_4.png',
-  '/reserve/reserve_bg_1.png',
-  '/reserve/reserve_bg_2.png',
-  '/reserve/reserve_bg_3.png',
-  
-];
-
-export default function BookTourPage() {
+export default function BookTourForm() {
   const [bookings, setBookings] = useState<BookingResponse[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
-  const [showBookings, setShowBookings] = useState(false);
-  const [isSmallHeight, setIsSmallHeight] = useState(false);
-  const [fallingImages, setFallingImages] = useState<Array<{
-    id: number;
-    src: string;
-    left: string;
-    delay: number;
-    size: number;
-    duration: number;
-    createdAt?: number;
-    imageIndex: number;
-  }>>([]);
-  const imageCounterRef = useRef(0);
-  const uniqueIdCounterRef = useRef(0);
+
   const { register, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<TourBooking>({
     defaultValues: {
       date: AVAILABLE_DATES[0],
@@ -75,94 +54,6 @@ export default function BookTourPage() {
 
   const watchDate = watch('date');
   const watchTime = watch('time');
-
-  // 檢查視窗高度
-  useEffect(() => {
-    const checkHeight = () => {
-      setIsSmallHeight(window.innerHeight < 900);
-    };
-
-    checkHeight();
-    window.addEventListener('resize', checkHeight);
-    return () => window.removeEventListener('resize', checkHeight);
-  }, []);
-
-  // Initialize falling images
-  useEffect(() => {
-    const startTime = Date.now();
-
-    const getUniqueId = () => {
-      uniqueIdCounterRef.current += 1;
-      return uniqueIdCounterRef.current;
-    };
-
-    const generateImage = (forceSide?: 'left' | 'right', forceImageIndex?: number) => {
-      const imageIndex = forceImageIndex !== undefined ? 
-        forceImageIndex : 
-        imageCounterRef.current % BACKGROUND_IMAGES.length;
-      
-      // 根據指定或交替決定左右側
-      const isLeftSide = forceSide ? 
-        forceSide === 'left' : 
-        imageIndex % 2 === 0;
-      
-      const position = isLeftSide ? 
-        `${-10 + Math.random() * 25}%` : // 左側 -10-15%
-        `${55 + Math.random() * 35}%`; // 右側 55-90%
-      
-      return {
-        id: getUniqueId(),
-        src: BACKGROUND_IMAGES[imageIndex],
-        left: position,
-        delay: 0,
-        size: 500,
-        duration: 20 + Math.random() * 10,
-        createdAt: Date.now(),
-        imageIndex
-      };
-    };
-
-    // 初始化空陣列
-    setFallingImages([]);
-
-    // 定期添加新圖片
-    const interval = setInterval(() => {
-      setFallingImages(prev => {
-        const now = Date.now();
-        // 先過濾掉已經完成動畫的圖片
-        const filteredImages = prev.filter(img => {
-          const imgAge = now - (img.createdAt || startTime);
-          return imgAge < (img.duration * 1000);
-        });
-
-        // 計算下一個圖片的索引
-        const currentImages = filteredImages.slice(-2);
-        const lastImageIndex = currentImages.length > 0 ? 
-          (currentImages[currentImages.length - 1].imageIndex + 1) % BACKGROUND_IMAGES.length : 
-          0;
-        const nextImageIndex = (lastImageIndex + 1) % BACKGROUND_IMAGES.length;
-
-        // 生成兩張新圖片，確保它們分別在左右兩側
-        const firstImage = {
-          ...generateImage('left', lastImageIndex),
-          delay: 0
-        };
-
-        const secondImage = {
-          ...generateImage('right', nextImageIndex),
-          delay: 1.5 // 減少延遲到1.5秒
-        };
-
-        return [
-          ...filteredImages,
-          firstImage,
-          secondImage
-        ];
-      });
-    }, 3000); // 每3秒生成一組新圖片
-
-    return () => clearInterval(interval);
-  }, []);
 
   // 讀取預約記錄
   const fetchBookings = async () => {
@@ -178,14 +69,15 @@ export default function BookTourPage() {
     }
   };
 
-  useEffect(() => {
-    fetchBookings();
-  }, []);
-
   // 當日期改變時，重置時間選擇
   useEffect(() => {
     setValue('time', '');
   }, [watchDate, setValue]);
+
+  // 在組件掛載時獲取預約記錄
+  useEffect(() => {
+    fetchBookings();
+  }, []);
 
   // 取得可用的時段
   const getAvailableTimeSlots = (date: string) => {
@@ -242,87 +134,16 @@ export default function BookTourPage() {
     setCurrentStep(1);
   };
 
-  useEffect(() => {
-    const handleKeyPress = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'p') {
-        setShowBookings(prev => !prev);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
-
   return (
-    <div className={`
-      bg-gray-50 relative overflow-hidden
-      ${isSmallHeight ? 'min-h-full pb-32' : 'min-h-screen md:min-h-0 md:h-[calc(100vh-8rem)]'}
-    `}>
-      <style jsx global>{`
-        @keyframes fallAndRotate {
-          0% {
-            transform: translateY(-40vh) rotate(0deg);
-            opacity: 0;
-          }
-          3% {
-            opacity: 0.6;
-          }
-          97% {
-            opacity: 0.6;
-          }
-          100% {
-            transform: translateY(300vh) rotate(360deg);
-            opacity: 0;
-          }
-        }
-
-        .falling-image {
-          position: fixed;
-          pointer-events: none;
-          z-index: 10;
-          will-change: transform;
-          top: 0;
-          opacity: 0;
-          width: 300px;
-        }
-
-        @media (min-width: 768px) {
-          .falling-image {
-            width: 500px;
-          }
-        }
-      `}</style>
-
-      {fallingImages.map((image) => (
-        <img
-          key={image.id}
-          src={image.src}
-          alt=""
-          className="falling-image"
-          style={{
-            left: image.left,
-            animation: `fallAndRotate ${image.duration}s linear ${image.delay}s forwards`
-          }}
-        />
-      ))}
-
-      <div className="max-w-4xl mx-auto relative z-[20] w-full px-4 sm:px-6 lg:px-8 py-4">
-        <div className="text-center mb-10 mt-5">
-          <h1 className="text-title mb-4">填寫預約表單</h1>
-          <div className="block sm:hidden">
-            <p className="text-body text-[#7D7D7D]">展覽期間，每週二和五的下午13:30開始</p>
-            <p className="text-body text-[#7D7D7D]">精華導覽40分鐘，一起窺探展區精選作品。</p>
-          </div>
-          <div className="hidden sm:block">
-            <p className="text-body text-[#7D7D7D]">展覽期間 (04/27 - 05/07) 每週二和五的下午13:30開始</p>
-            <p className="text-body text-[#7D7D7D]">精華導覽40分鐘，一起窺探展區精選作品，了解作品核心與價值。</p>
-          </div>
+    <div className="bg-gray-50 relative">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-4">預約導覽</h2>
+          <p className="text-gray-600">展覽期間 (04/27 - 05/07) 每週二和五的下午13:30開始</p>
+          <p className="text-gray-600">精華導覽40分鐘，一起窺探展區精選作品，了解作品核心與價值。</p>
         </div>
 
-        {/* 預約表單 */}
-        <div className="bg-white shadow rounded-2xl p-6 mb-4">
+        <div className="bg-white shadow rounded-2xl p-6">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             {/* 步驟指示器 */}
             <div className="flex items-center justify-center mb-8">
@@ -350,7 +171,7 @@ export default function BookTourPage() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 gap-6">
                   <div>
-                    <label className="block text-body text-gray-700">參觀日期</label>
+                    <label className="block text-subtitle text-gray-700">參觀日期</label>
                     <select
                       {...register('date', { required: '請選擇參觀日期' })}
                       className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-body"
@@ -370,7 +191,7 @@ export default function BookTourPage() {
                   </div>
 
                   <div>
-                    <label className="block text-body text-gray-700 mb-3">參觀時間</label>
+                    <label className="block text-subtitle text-gray-700 mb-3">參觀時間</label>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                       {timeSlots.map(slot => (
                         <div key={slot.value} className="flex-grow">
@@ -390,7 +211,7 @@ export default function BookTourPage() {
                               }
                             `}
                           >
-                            <span className={`text-body
+                            <span className={`text-subtitle
                               ${!slot.available ? 'text-gray-300' : 
                                 'text-gray-900 peer-checked:text-black peer-checked:font-semibold'
                               }
@@ -425,7 +246,7 @@ export default function BookTourPage() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label className="block text-body text-gray-700">姓名</label>
+                    <label className="block text-subtitle text-gray-700">姓名</label>
                     <input
                       type="text"
                       {...register('name', { required: '請輸入姓名' })}
@@ -435,7 +256,7 @@ export default function BookTourPage() {
                   </div>
 
                   <div>
-                    <label className="block text-body text-gray-700">電子郵件</label>
+                    <label className="block text-subtitle text-gray-700">電子郵件</label>
                     <input
                       type="email"
                       {...register('email', { 
@@ -451,7 +272,7 @@ export default function BookTourPage() {
                   </div>
 
                   <div>
-                    <label className="block text-body text-gray-700">電話</label>
+                    <label className="block text-subtitle text-gray-700">電話</label>
                     <input
                       type="tel"
                       {...register('phone', { required: '請輸入電話號碼' })}
@@ -461,7 +282,7 @@ export default function BookTourPage() {
                   </div>
 
                   <div>
-                    <label className="block text-body text-gray-700">參觀人數</label>
+                    <label className="block text-subtitle text-gray-700">參觀人數</label>
                     <input
                       type="number"
                       {...register('participants', { 
@@ -489,14 +310,14 @@ export default function BookTourPage() {
                   <button
                     type="button"
                     onClick={handlePrevStep}
-                    className="inline-flex justify-center rounded-2xl border border-gray-300 bg-white py-3 px-6 text-body text-gray-700 shadow-sm hover:bg-gray-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                    className="inline-flex justify-center rounded-2xl border border-gray-300 bg-white py-3 px-6 text-subtitle text-gray-700 shadow-sm hover:bg-gray-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                   >
                     返回
                   </button>
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="inline-flex justify-center rounded-2xl border border-transparent bg-black py-3 px-6 text-body text-white shadow-sm hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:bg-black"
+                    className="inline-flex justify-center rounded-2xl border border-transparent bg-black py-3 px-6 text-subtitle text-white shadow-sm hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:bg-black"
                   >
                     {isLoading ? '提交中...' : '提交預約'}
                   </button>
@@ -507,7 +328,7 @@ export default function BookTourPage() {
         </div>
 
         {/* 注意事項 */}
-        <div className="bg-white shadow rounded-2xl p-6 mb-8">
+        <div className="bg-white shadow rounded-2xl p-6 mt-4">
           <p className="text-subtitle text-gray-900 mb-3">注意事項</p>
           <ul className="space-y-2.5">
             <li className="flex items-center text-body text-gray-500">
@@ -520,44 +341,7 @@ export default function BookTourPage() {
             </li>
           </ul>
         </div>
-
-        {/* 預約記錄列表 */}
-        {showBookings && (
-          <div className="bg-white shadow rounded-2xl p-6">
-            <h2 className="text-title mb-4">最近預約記錄</h2>
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">姓名</th>
-                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">日期</th>
-                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">時間</th>
-                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">人數</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {bookings.map((booking, index) => (
-                    <tr key={index}>
-                      <td className="px-6 py-4 whitespace-nowrap text-body text-gray-900">{booking.name}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-body text-gray-500">
-                        {new Date(booking.date).toLocaleDateString('zh-TW', {
-                          year: 'numeric',
-                          month: '2-digit',
-                          day: '2-digit',
-                          weekday: 'long'
-                        })}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-body text-gray-500">{booking.time}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-body text-gray-500">{booking.participants}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
-}
-
+} 
