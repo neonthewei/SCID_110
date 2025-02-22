@@ -258,7 +258,7 @@ export default function AllWorksContent() {
       </motion.div>
 
       {/* Works Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 mt-4 sm:mt-8 px-3 sm:px-8 md:px-12 lg:px-24 xl:px-24 pb-12 sm:pb-16">
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 mt-4 sm:mt-8 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-16 pb-12 sm:pb-16 max-w-screen-2xl mx-auto">
         <AnimatePresence mode="popLayout">
           {filteredWorks.map((work, index) => (
             <motion.div

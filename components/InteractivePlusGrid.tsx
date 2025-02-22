@@ -5,7 +5,8 @@ import gsap from 'gsap';
 import { useRouter } from 'next/navigation';
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
+import { AnimatePresence } from 'framer-motion';
 
 class Circle {
     x: number = 0;
@@ -203,11 +204,6 @@ const LargeMorphingCircle = ({ category, index, imageUrl, onHover, activeIndex }
                 ref={canvasRef}
                 className="w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-                <span className={`text-white text-2xl font-bold transition-opacity duration-500 ${(isHovered || activeIndex === index) ? 'opacity-100' : 'opacity-0'}`}>
-                    {category}
-                </span>
-            </div>
         </div>
     );
 };
@@ -261,6 +257,7 @@ const InteractivePlusGrid = () => {
     const [canScroll, setCanScroll] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number>(0);
     const [activeIndex, setActiveIndex] = useState<number>(0); // 追蹤當前激活的圓形
+    const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('left');
 
     const { scrollYProgress } = useScroll({
         target: conceptRef,
@@ -773,30 +770,41 @@ const InteractivePlusGrid = () => {
     };
 
     return (
-        <div className="w-full flex flex-col items-center relative">
+        <div className="w-full flex flex-col items-center relative overflow-x-hidden">
             <div className="w-full flex justify-center items-center bg-[#F2F2F2] relative">
-                <canvas
-                    ref={canvasRef}
-                    style={{ 
-                        width: '100%', 
-                        height: '100%'
-                    }}
-                />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-30">
-                    <motion.button
-                        onClick={scrollToExhibitionConcept}
-                        className="text-black p-2 rounded-full hover:bg-black/10 transition-colors"
-                        animate={{
-                            y: [0, 10, 0]
+                {/* Mobile Image */}
+                <div className="block md:hidden w-full">
+                    <img 
+                        src="/Group 16.png" 
+                        alt="Sense Mobile Header"
+                        className="w-full h-auto"
+                    />
+                </div>
+                {/* Desktop Interactive Canvas */}
+                <div className="hidden md:block w-full">
+                    <canvas
+                        ref={canvasRef}
+                        style={{ 
+                            width: '100%', 
+                            height: '100%'
                         }}
-                        transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
-                    >
-                        <ChevronDown size={32} />
-                    </motion.button>
+                    />
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-30">
+                        <motion.button
+                            onClick={scrollToExhibitionConcept}
+                            className="text-black p-2 rounded-full hover:bg-black/10 transition-colors"
+                            animate={{
+                                y: [0, 10, 0]
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            <ChevronDown size={32} />
+                        </motion.button>
+                    </div>
                 </div>
             </div>
             <div className="w-full relative">
@@ -806,7 +814,7 @@ const InteractivePlusGrid = () => {
                         background: 'linear-gradient(to bottom, #F2F2F2 0%, rgba(242, 242, 242, 0.95) 15%, rgba(242, 242, 242, 0.8) 30%, rgba(242, 242, 242, 0.6) 45%, rgba(242, 242, 242, 0.4) 60%, rgba(242, 242, 242, 0.2) 75%, rgba(242, 242, 242, 0.1) 85%, transparent 100%)'
                     }}
                 />
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 flex justify-center w-screen overflow-hidden">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 flex justify-center overflow-hidden w-full">
                     <div className="flex items-start">
                         <img 
                             src="/trans.png" 
@@ -900,33 +908,46 @@ const InteractivePlusGrid = () => {
                             <p className="mt-4">每一道曲線、每一個材質選擇、每一個細節，都蘊藏著設計者的情感、溫度與對人的關懷，我們透過設計傳遞溫度、形成連結。</p>
                         </motion.div>
                     </div>
-                </div>
-                {/* Add scroll down button */}
-                <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-30">
-                    <motion.button
-                        onClick={() => {
-                            const circlesSection = document.querySelector('.large-interactive-circles');
-                            if (circlesSection) {
-                                const rect = circlesSection.getBoundingClientRect();
-                                const scrollTarget = window.pageYOffset + rect.top - 100; // Subtract 100px from the target position
-                                window.scrollTo({
-                                    top: scrollTarget,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }}
-                        className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
-                        animate={{
-                            y: [0, 10, 0]
-                        }}
-                        transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
-                    >
-                        <ChevronDown size={32} />
-                    </motion.button>
+                    {/* Second Scroll Down Button */}
+                    <div className="absolute bottom-[78px] left-1/2 transform -translate-x-1/2 z-30 hidden md:block">
+                        <motion.button
+                            onClick={() => {
+                                const circlesSection = document.querySelector('.large-interactive-circles');
+                                if (circlesSection) {
+                                    const rect = circlesSection.getBoundingClientRect();
+                                    const elementTop = window.pageYOffset + rect.top;
+                                    const elementHeight = rect.height;
+                                    const windowHeight = window.innerHeight;
+                                    const windowWidth = window.innerWidth;
+                                    
+                                    // 根據螢幕寬度調整滾動距離
+                                    let scrollDivisor;
+                                    if (windowWidth >= 1920) {
+                                        scrollDivisor = 8; // 大螢幕使用較小的除數，滾動距離較長
+                                    } else {
+                                        scrollDivisor = 6; // 一般螢幕使用較大的除數，滾動距離較短
+                                    }
+                                    
+                                    const targetScroll = elementTop - windowHeight / scrollDivisor;
+                                    window.scrollTo({
+                                        top: targetScroll,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }}
+                            className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+                            animate={{
+                                y: [0, 10, 0]
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            <ChevronDown size={32} />
+                        </motion.button>
+                    </div>
                 </div>
             </div>
             {/* <div className="absolute left-10 top-[23%] w-72 z-30">
@@ -937,13 +958,13 @@ const InteractivePlusGrid = () => {
                 />
             </div> */}
             {/* Large Interactive Circles Section */}
-            <div className="w-full bg-black py-48 relative z-30 large-interactive-circles">
-                <div className="max-w-[1000px] mx-auto px-8">
-                    <div className="flex justify-between items-center gap-4">
+            <div className="w-full bg-black py-48 relative z-30 large-interactive-circles overflow-hidden">
+                <div className="max-w-[1000px] mx-auto px-4 sm:px-8">
+                    {/* Desktop View */}
+                    <div className="hidden md:flex justify-between items-center gap-4">
                         {['溫工藝', '舒適巢', '冷火花', '熱對話'].map((category, index) => (
-                            <div className="scale-90">
+                            <div key={category} className="scale-90">
                                 <LargeMorphingCircle
-                                    key={category}
                                     category={category}
                                     index={index}
                                     imageUrl={`/ball/${index + 1}.png`}
@@ -953,9 +974,9 @@ const InteractivePlusGrid = () => {
                             </div>
                         ))}
                     </div>
-                    
-                    {/* Description Area */}
-                    <div className="h-[120px] mt-20 relative">
+
+                    {/* Desktop Description Area */}
+                    <div className="hidden md:block h-[120px] mt-20 relative">
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
@@ -965,16 +986,87 @@ const InteractivePlusGrid = () => {
                                 key={hoveredIndex}
                                 className="text-center"
                             >
-                                <p className="text-gray-400 text-sm mb-2">
+                                <h3 className="text-white text-xl font-bold mb-2">
+                                    {categoryDescriptions[hoveredIndex].title}
+                                </h3>
+                                <p className="text-gray-400 text-sm mb-1">
                                     {categoryDescriptions[hoveredIndex].temperature}
                                 </p>
-                                <p className="text-white text-xl font-bold mb-2">
-                                    {categoryDescriptions[hoveredIndex].title}
-                                </p>
-                                <p className="text-gray-300">
+                                <p className="text-gray-300 text-base">
                                     {categoryDescriptions[hoveredIndex].description}
                                 </p>
                             </motion.div>
+                        </div>
+                    </div>
+
+                    {/* Mobile View */}
+                    <div className="md:hidden relative">
+                        {/* Circle Display */}
+                        <div className="w-[300px] h-[300px] mx-auto relative">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeIndex}
+                                    initial={{ opacity: 0, x: slideDirection === 'left' ? -50 : 50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: slideDirection === 'left' ? 50 : -50 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="w-full h-full"
+                                >
+                                    <LargeMorphingCircle
+                                        category={['溫工藝', '舒適巢', '冷火花', '熱對話'][activeIndex]}
+                                        index={activeIndex}
+                                        imageUrl={`/ball/${activeIndex + 1}.png`}
+                                        onHover={handleCircleHover}
+                                        activeIndex={activeIndex}
+                                    />
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Title with Navigation Buttons */}
+                        <div className="relative mt-8">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeIndex}
+                                    initial={{ opacity: 0, x: slideDirection === 'left' ? -20 : 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: slideDirection === 'left' ? 20 : -20 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-center mb-2"
+                                >
+                                    <h3 className="text-white text-xl font-bold mb-2">
+                                        {categoryDescriptions[activeIndex].title}
+                                    </h3>
+                                    <p className="text-gray-400 text-sm mb-1">
+                                        {categoryDescriptions[activeIndex].temperature}
+                                    </p>
+                                    <p className="text-gray-300 text-base">
+                                        {categoryDescriptions[activeIndex].description}
+                                    </p>
+                                </motion.div>
+                            </AnimatePresence>
+
+                            <button
+                                onClick={() => {
+                                    setSlideDirection('right');
+                                    setActiveIndex((prev) => (prev - 1 + 4) % 4);
+                                }}
+                                className="absolute left-4 top-2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                                aria-label="Previous category"
+                            >
+                                <ChevronLeft className="w-6 h-6" />
+                            </button>
+
+                            <button
+                                onClick={() => {
+                                    setSlideDirection('left');
+                                    setActiveIndex((prev) => (prev + 1) % 4);
+                                }}
+                                className="absolute right-4 top-2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                                aria-label="Next category"
+                            >
+                                <ChevronRight className="w-6 h-6" />
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -987,7 +1079,7 @@ const InteractivePlusGrid = () => {
                         background: 'linear-gradient(to top, rgb(249, 250, 251) 0%, rgba(249, 250, 251, 0.95) 15%, rgba(249, 250, 251, 0.8) 30%, rgba(249, 250, 251, 0.6) 45%, rgba(249, 250, 251, 0.4) 60%, rgba(249, 250, 251, 0.2) 75%, rgba(249, 250, 251, 0.1) 85%, transparent 100%)'
                     }}
                 />
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10 flex justify-center w-screen overflow-hidden">
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10 flex justify-center overflow-hidden w-full">
                     <div className="flex items-end">
                         <img 
                             src="/trans.png" 

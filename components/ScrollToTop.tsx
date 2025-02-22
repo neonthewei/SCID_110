@@ -9,11 +9,6 @@ export default function BackToTopButton() {
   const isBuyCatalogPage = pathname === '/buy-catalog'
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches
 
-  // 如果是手機版購買頁，直接不顯示
-  if (isBuyCatalogPage && isMobile) {
-    return null
-  }
-
   // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
@@ -38,6 +33,11 @@ export default function BackToTopButton() {
       window.removeEventListener("scroll", toggleVisibility)
     }
   }, [])
+
+  // Move the conditional check here, after all hooks are called
+  if (isBuyCatalogPage && isMobile) {
+    return null
+  }
 
   const bottomPosition = isBuyCatalogPage ? 2 : 2 // 移除手機版的判斷，因為手機版已經不顯示了
 
