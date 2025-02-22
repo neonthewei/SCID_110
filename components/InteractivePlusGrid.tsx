@@ -345,6 +345,11 @@ const InteractivePlusGrid = () => {
 
         // 初始化滑鼠位置檢查
         const initializeMouseState = () => {
+            // 如果是移動設備，不執行初始化
+            if (window.innerWidth < 768) {
+                return;
+            }
+
             const rect = c.getBoundingClientRect();
             const event = window.event as MouseEvent | undefined;
             const initialMouseX = event?.clientX || 0;
