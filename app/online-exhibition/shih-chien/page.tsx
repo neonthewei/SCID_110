@@ -11,7 +11,7 @@ export default function ShihChienExhibition() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg"
+            src="/Shih.png"
             alt="Shih Chien Exhibition"
             fill
             className="object-cover"
@@ -103,7 +103,7 @@ export default function ShihChienExhibition() {
               height="100%"
               frameBorder="0"
               allowFullScreen
-              className="absolute inset-0"
+              className="absolute inset-0 rounded-none sm:rounded-xl"
             />
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function ShihChienExhibition() {
                   src="/placeholder.svg"
                   alt="Left image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -133,7 +133,7 @@ export default function ShihChienExhibition() {
                   src="/placeholder.svg"
                   alt="Right image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -150,7 +150,7 @@ export default function ShihChienExhibition() {
                   src="/placeholder.svg"
                   alt="Left image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -163,7 +163,7 @@ export default function ShihChienExhibition() {
                   src="/placeholder.svg"
                   alt="Right image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">

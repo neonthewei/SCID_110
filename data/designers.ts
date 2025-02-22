@@ -60,7 +60,10 @@ export interface Work {
   category: WorkCategory
   images: {
     main: string
-    details: string[]
+    details: Array<{
+      image: string
+      caption: string
+    }>
   }
 }
 
@@ -91,15 +94,19 @@ export const designers: Designer[] = [
           main: "重｜花",
           sub: "re:cHUĀn"
         },
-        description: "將同一個最小單位做多種合併嘗試，透過顏色與造型的穿插創造出一系列具有穿花意象的結構燈具組。",
+        description: "延續壓花玻璃的傳統工藝，將海棠花玻璃融入現代燈具設計，結合復古質感與當代美學。透過光線穿透壓花玻璃，營造柔和層次的光影效果，為空間增添溫暖氛圍，同時賦予經典圖騰新的設計語彙，讓傳統工藝在現代生活中展現獨特魅力。",
         category: "溫工藝",
         images: {
           main: "/2025011500076.jpg",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "壓花玻璃細節展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "燈具安裝示意圖"
+            }
           ]
         }
       },
@@ -114,9 +121,14 @@ export const designers: Designer[] = [
         images: {
           main: "/placeholder.svg?height=600&width=800",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "材質表面光影變化"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "裝置互動展示"
+            }
           ]
         }
       }
@@ -141,8 +153,14 @@ export const designers: Designer[] = [
         images: {
           main: "/placeholder.svg?height=600&width=800",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "遊戲操作示範"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "產品結構說明"
+            }
           ]
         }
       },
@@ -157,8 +175,14 @@ export const designers: Designer[] = [
         images: {
           main: "/placeholder.svg?height=600&width=800",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "凳子組合展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "材質細節特寫"
+            }
           ]
         }
       }
@@ -183,8 +207,14 @@ export const designers: Designer[] = [
         images: {
           main: "/placeholder.svg?height=600&width=800",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "軌道拼接示範"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "音樂互動效果"
+            }
           ]
         }
       },
@@ -199,9 +229,14 @@ export const designers: Designer[] = [
         images: {
           main: "/placeholder.svg?height=600&width=800",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "音牆互動展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "聲音視覺化效果"
+            }
           ]
         }
       }
@@ -226,9 +261,14 @@ export const designers: Designer[] = [
         images: {
           main: "/placeholder.svg?height=600&width=800",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "榫接結構細節"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "燈具造型變化"
+            }
           ]
         }
       },
@@ -243,439 +283,14 @@ export const designers: Designer[] = [
         images: {
           main: "/placeholder.svg?height=600&width=800",
           details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-5",
-    name: {
-      zh: "林雅婷",
-      pinyin: "Lin Ya Ting"
-    },
-    image: "/face/name_5.jpg",
-    works: [
-      {
-        id: "comfort-nest-5",
-        title: {
-          main: "綠意棲居",
-          sub: "Green Living Space"
-        },
-        description: "結合植栽與家具設計，創造出一個能讓都市人親近自然的生活空間系統，包含模組化的植物架、工作桌與收納櫃。",
-        category: "舒適巢",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "warm-craft-5",
-        title: {
-          main: "織光",
-          sub: "Woven Light"
-        },
-        description: "運用傳統編織技法結合光纖材料，創造出會隨著晝夜變化呈現不同光影效果的編織燈飾。",
-        category: "溫工藝",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-6",
-    name: {
-      zh: "黃志明",
-      pinyin: "Huang Zhi Ming"
-    },
-    image: "/face/name_6.jpg",
-    works: [
-      {
-        id: "hot-dialogue-6",
-        title: {
-          main: "聲景遊戲",
-          sub: "Soundscape Play"
-        },
-        description: "設計一系列互動式聲音裝置，讓使用者透過肢體動作創造出不同的聲音組合，體驗聲音與空間的關係。",
-        category: "熱對話",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "cold-spark-6",
-        title: {
-          main: "光譜共鳴",
-          sub: "Spectrum Resonance"
-        },
-        description: "透過特殊的光學材料與聲波感應器，創造出能夠將聲音轉化為動態光影的裝置。",
-        category: "冷火花",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-7",
-    name: {
-      zh: "張美玲",
-      pinyin: "Zhang Mei Ling"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "warm-craft-7",
-        title: {
-          main: "陶光",
-          sub: "Ceramic Light"
-        },
-        description: "結合陶藝與燈具設計，運用不同厚度的陶瓷材質來創造柔和的光影效果，展現材質的純粹之美。",
-        category: "溫工藝",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "comfort-nest-7",
-        title: {
-          main: "靜心角落",
-          sub: "Mindful Corner"
-        },
-        description: "設計一個模組化的休憩空間系統，能夠根據使用者需求快速組裝成不同的私密空間。",
-        category: "舒適巢",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-8",
-    name: {
-      zh: "劉建宏",
-      pinyin: "Liu Jian Hong"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "cold-spark-8",
-        title: {
-          main: "數位織布機",
-          sub: "Digital Loom"
-        },
-        description: "結合傳統織布技術與數位控制系統，創造出能夠自動編織複雜圖案的現代織布機。",
-        category: "冷火花",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "hot-dialogue-8",
-        title: {
-          main: "織夢機",
-          sub: "Dream Weaver"
-        },
-        description: "讓使用者通過觸控界面設計自己的織物圖案，並即時看到成品模擬效果。",
-        category: "熱對話",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-9",
-    name: {
-      zh: "陳俊宏",
-      pinyin: "Chen Jun Hong"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "comfort-nest-9",
-        title: {
-          main: "變形金剛",
-          sub: "Transformer Furniture"
-        },
-        description: "設計一系列可變形的家具，能夠根據不同時段的需求轉換成不同功能的傢俱。",
-        category: "舒適巢",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "warm-craft-9",
-        title: {
-          main: "木韻",
-          sub: "Wood Rhythm"
-        },
-        description: "運用不同木材的紋理與色澤，創造出具有音樂律動感的木製裝飾牆面。",
-        category: "溫工藝",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-10",
-    name: {
-      zh: "楊雅筑",
-      pinyin: "Yang Ya Zhu"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "hot-dialogue-10",
-        title: {
-          main: "情緒光譜",
-          sub: "Emotion Spectrum"
-        },
-        description: "透過生物感測器捕捉使用者的情緒變化，轉換成動態的光影與音效，創造出互動式的情緒表達空間。",
-        category: "熱對話",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "cold-spark-10",
-        title: {
-          main: "生物韻律",
-          sub: "Bio Rhythm"
-        },
-        description: "結合生物發光技術與環境感測器，創造出能夠對應環境變化而改變光度的生態裝置。",
-        category: "冷火花",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-11",
-    name: {
-      zh: "吳承翰",
-      pinyin: "Wu Cheng Han"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "warm-craft-11",
-        title: {
-          main: "竹影",
-          sub: "Bamboo Shadow"
-        },
-        description: "運用竹材特有的韌性與紋理，設計出一系列結合光影效果的屏風與隔間，創造出層次豐富的空間氛圍。",
-        category: "溫工藝",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "comfort-nest-11",
-        title: {
-          main: "竹居",
-          sub: "Bamboo Living"
-        },
-        description: "設計一套完整的竹製家具系統，從收納到休憩空間都能展現竹材的環保特性與自然美感。",
-        category: "舒適巢",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-12",
-    name: {
-      zh: "李佳穎",
-      pinyin: "Li Jia Ying"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "cold-spark-12",
-        title: {
-          main: "智慧織品",
-          sub: "Smart Textile"
-        },
-        description: "開發一種能夠感應溫度變化並自動調節透氣度的智慧型織物，應用於日常服飾與家居用品。",
-        category: "冷火花",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "hot-dialogue-12",
-        title: {
-          main: "織物對話",
-          sub: "Textile Dialogue"
-        },
-        description: "創造一個互動式織物展示系統，讓觀眾能夠透過觸摸不同織物來了解其特性與故事。",
-        category: "熱對話",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-13",
-    name: {
-      zh: "王思涵",
-      pinyin: "Wang Si Han"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "comfort-nest-13",
-        title: {
-          main: "光合空間",
-          sub: "Photosynthesis Space"
-        },
-        description: "設計一個結合植物生長與居家生活的智慧型溫室系統，讓都市人也能享受自給自足的樂趣。",
-        category: "舒適巢",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "warm-craft-13",
-        title: {
-          main: "植物編織",
-          sub: "Plant Weaving"
-        },
-        description: "結合植物生長特性與編織工藝，創造出會隨時間改變形態的生態藝術裝置。",
-        category: "溫工藝",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    id: "designer-14",
-    name: {
-      zh: "陳威廷",
-      pinyin: "Chen Wei Ting"
-    },
-    image: "/placeholder.svg?height=400&width=300",
-    works: [
-      {
-        id: "hot-dialogue-14",
-        title: {
-          main: "聲音花園",
-          sub: "Sound Garden"
-        },
-        description: "設計一個戶外互動裝置，讓人們能夠通過不同的觸摸方式產生自然的聲音，創造出充滿趣味的公共空間。",
-        category: "熱對話",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
-          ]
-        }
-      },
-      {
-        id: "cold-spark-14",
-        title: {
-          main: "聲波造型",
-          sub: "Sound Shaping"
-        },
-        description: "開發一種能將聲波視覺化的裝置，即時將聲音轉換成立體造型，展現聲音的視覺之美。",
-        category: "冷火花",
-        images: {
-          main: "/placeholder.svg?height=600&width=800",
-          details: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "磁浮裝置展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "光影效果呈現"
+            }
           ]
         }
       }

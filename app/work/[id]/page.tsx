@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { getWorkById, getDesignerByWorkId } from "@/data/designers"
+import { getWorkById, getDesignerByWorkId, getAllWorks, type Work } from "@/data/designers"
 
 export default function WorkDetail({ params }: { params: { id: string } }) {
   const router = useRouter()
@@ -31,7 +31,7 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative h-[70vh] bg-gray-100">
         <Image 
@@ -77,60 +77,51 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
         <div className="max-w-3xl">
           {/* Description */}
           <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
               {work.description}
             </p>
           </div>
+        </div>
 
-          {/* Additional Images Grid */}
-          {work.images.details.length > 0 && (
-            <div className="mt-16">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">作品細節</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {work.images.details.map((image, index) => (
-                  <div key={index} className="relative aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden">
+        {/* Additional Images Grid */}
+        {work.images.details.length > 0 && (
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {work.images.details.slice(0, 2).map((detail, index) => (
+                <div key={index} className="space-y-2 sm:space-y-4">
+                  <div className="relative aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden">
                     <Image
-                      src={image}
-                      alt={`${work.title.main} detail ${index + 1}`}
+                      src={detail.image}
+                      alt={detail.caption}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                ))}
-              </div>
+                  <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
+                     {detail.caption}
+                  </p>
+                </div>
+              ))}
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Project Info */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">專案資訊</h2>
-              <dl className="space-y-4">
-                <div>
-                  <dt className="text-sm font-medium text-gray-500">類別</dt>
-                  <dd className="mt-1 text-lg text-gray-900">{work.category}</dd>
-                </div>
-                <div>
-                  <dt className="text-sm font-medium text-gray-500">設計師</dt>
-                  <dd className="mt-1 text-lg text-gray-900">
-                    {designer.name.zh}
-                    <span className="text-gray-500 text-base ml-2">
-                      {designer.name.pinyin}
-                    </span>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">相關連結</h2>
-              <div className="space-y-3">
-                <Link 
-                  href={`/designer/${designer.id}`}
-                  className="inline-flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200"
-                >
-                  <span className="mr-2">作者介紹</span>
-                  <ArrowLeft className="w-4 h-4 rotate-[225deg]" />
-                </Link>
+        <div className="max-w-3xl">
+          {/* Designer Info */}
+          <div className="mt-16">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src={designer.image || "/placeholder.svg"}
+                  alt={designer.name.zh}
+                  width={48}
+                  height={48}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-[#9D9D9D] text-sm">{designer.name.zh}</span>
+                <span className="text-[#9D9D9D] text-sm">{designer.name.pinyin}</span>
               </div>
             </div>
           </div>
@@ -138,12 +129,12 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
       </div>
       
       {/* 導購專刊 CTA */}
-      <div className="container mx-auto px-4 mt-20 mb-12">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl h-[110px]">
-            <div className="flex h-full flex-col md:flex-row items-center">
+      <div className="container mx-auto px-4 mb-12">
+        <div className="max-w-3xl mx-auto relative">
+          <div className="bg-white rounded-2xl h-auto md:h-[110px] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out translate-y-10 hover:scale-[1.02] origin-center hover:border-gray-200">
+            <div className="flex flex-row items-center h-full py-0 px-4 md:px-0">
               {/* 圖片容器 */}
-              <div className="w-[120px] relative aspect-[3/4] ml-5">
+              <div className="w-[120px] md:w-[120px] relative aspect-[3/4] md:ml-5 flex-shrink-0">
                 <Image
                   src="/book.png"
                   alt="2024年度專刊《TEMPO_BOND 棒_節奏》"
@@ -154,21 +145,21 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
               </div>
               
               {/* 文字內容 */}
-              <div className="flex-1 flex flex-col md:flex-row items-center justify-between px-5 gap-4">
-                <div className="text-center md:text-left">
-                  <h2 className="text-white text-lg font-bold leading-none mb-1">
+              <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-between pl-5 md:px-5 w-full">
+                <div className="text-left md:text-left mb-2.5 md:mb-0 w-full md:w-auto">
+                  <h2 className="text-gray-900 text-[15px] md:text-lg font-bold leading-tight md:leading-none mb-1">
                     想一窺作品背後的秘辛？
                   </h2>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-500 text-xs md:text-sm">
                     購買我們的2024年度專刊《TEMPO_BOND 棒_節奏》!
                   </p>
                 </div>
                 <Link 
                   href="/buy-catalog"
-                  className="inline-flex items-center px-5 py-1.5 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200 group whitespace-nowrap text-sm"
+                  className="w-full md:w-auto flex items-center justify-center h-8 md:h-10 px-4 md:px-6 bg-black text-white hover:bg-gray-800 transition duration-300 rounded-xl md:rounded-2xl group whitespace-nowrap text-xs md:text-sm"
                 >
-                  <span className="mr-2">手刀前往</span>
-                  <ArrowLeft className="w-4 h-4 rotate-[225deg] transform transition-transform duration-200 group-hover:translate-x-1" />
+                  <span className="mr-1.5 md:mr-2">手刀前往</span>
+                  <ArrowLeft className="w-3.5 h-3.5 md:w-4 md:h-4 rotate-[225deg] transform transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -177,5 +168,23 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
       </div>
     </div>
   )
+}
+
+// 輔助函數：獲取上一個作品的 ID
+function getPreviousWorkId(currentId: string): string {
+  const allWorks = getAllWorks()
+  const currentIndex = allWorks.findIndex((work: Work) => work.id === currentId)
+  if (currentIndex === -1) return currentId
+  const prevIndex = (currentIndex - 1 + allWorks.length) % allWorks.length
+  return allWorks[prevIndex].id
+}
+
+// 輔助函數：獲取下一個作品的 ID
+function getNextWorkId(currentId: string): string {
+  const allWorks = getAllWorks()
+  const currentIndex = allWorks.findIndex((work: Work) => work.id === currentId)
+  if (currentIndex === -1) return currentId
+  const nextIndex = (currentIndex + 1) % allWorks.length
+  return allWorks[nextIndex].id
 }
 

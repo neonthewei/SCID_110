@@ -11,7 +11,7 @@ export default function YoungDesignersExhibition() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg"
+            src="/young.png"
             alt="Young Designers Exhibition"
             fill
             className="object-cover"
@@ -102,7 +102,7 @@ export default function YoungDesignersExhibition() {
                   src="/placeholder.svg"
                   alt="Left image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -115,7 +115,7 @@ export default function YoungDesignersExhibition() {
                   src="/placeholder.svg"
                   alt="Right image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -132,7 +132,7 @@ export default function YoungDesignersExhibition() {
                   src="/placeholder.svg"
                   alt="Left image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -145,7 +145,7 @@ export default function YoungDesignersExhibition() {
                   src="/placeholder.svg"
                   alt="Right image description"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-none sm:rounded-xl"
                 />
               </div>
               <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">

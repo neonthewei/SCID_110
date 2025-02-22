@@ -71,6 +71,38 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 h-16">
+        <style jsx global>{`
+          @keyframes shimmer {
+            0% {
+              transform: translateX(-150%);
+            }
+            100% {
+              transform: translateX(150%);
+            }
+          }
+          .shimmer-effect {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+          }
+          .shimmer-effect::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+              90deg,
+              transparent 0%,
+              rgba(255, 255, 255, 0) 15%,
+              rgba(255, 255, 255, 0.4) 50%,
+              rgba(255, 255, 255, 0) 85%,
+              transparent 100%
+            );
+            animation: shimmer 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          }
+        `}</style>
         <div className="h-full max-w-[1920px] mx-auto">
           <div className="flex items-center justify-between h-full px-4">
             {/* Logo */}
@@ -85,19 +117,19 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-4">
               <nav className="flex items-center h-full">
-                <ul className="flex space-x-3 h-full">
+                <ul className="flex space-x-2 h-full text-[15px]">
                   {menuItems.map((item) => (
                     <li key={item.href} className="h-full relative group">
                       {item.children ? (
                         <div
-                          className="pl-4 pr-2 h-full flex items-center gap-1 cursor-pointer group"
+                          className="pl-3 pr-2 h-full flex items-center gap-1 cursor-pointer group"
                           onMouseEnter={() => setActiveDropdown(item.href)}
                           onMouseLeave={() => setActiveDropdown(null)}
                         >
                           <span className={`transition-colors duration-300 ${
-                            pathname.includes('/online-exhibition') ? "text-gray-900 font-semibold" : "text-gray-500 group-hover:text-gray-700"
+                            pathname.includes('/online-exhibition') ? "text-gray-900 font-medium" : "text-gray-500 group-hover:text-gray-700"
                           }`}>{item.label}</span>
                           <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-gray-700" />
                           
@@ -109,14 +141,14 @@ export default function Header() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 10 }}
                                 transition={{ duration: 0.2 }}
-                                className="absolute top-full left-0 w-36 py-3 bg-white shadow-xl rounded-2xl overflow-hidden"
+                                className="absolute top-full left-0 w-36 py-3 bg-white shadow-xl rounded-2xl overflow-hidden text-[14px]"
                               >
                                 {item.children.map((child) => (
                                   <Link
                                     key={child.href}
                                     href={child.href}
-                                    className={`block mx-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-300 rounded-xl ${
-                                      pathname === child.href ? "bg-gray-50 font-semibold" : ""
+                                    className={`block mx-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-300 rounded-xl ${
+                                      pathname === child.href ? "bg-gray-50 font-medium" : ""
                                     }`}
                                   >
                                     <div className="flex items-center justify-between">
@@ -136,8 +168,8 @@ export default function Header() {
                       ) : (
                         <Link
                           href={item.href}
-                          className={`px-4 h-full flex items-center transition-colors duration-300 ${
-                            pathname === item.href ? "text-gray-900 font-semibold" : "text-gray-500 hover:text-gray-700"
+                          className={`px-3 h-full flex items-center transition-colors duration-300 ${
+                            pathname === item.href ? "text-gray-900 font-medium" : "text-gray-500 hover:text-gray-700"
                           }`}
                         >
                           {item.label}
@@ -151,9 +183,9 @@ export default function Header() {
               {/* Book Tour Button */}
               <Link
                 href="/buy-catalog"
-                className={`flex items-center h-10 px-6 transition duration-300 rounded-2xl ${
+                className={`flex items-center h-9 px-5 transition duration-300 rounded-2xl text-[15px] shimmer-effect ${
                   pathname === "/buy-catalog" 
-                    ? "bg-gray-100 text-gray-900 font-semibold" 
+                    ? "bg-gray-100 text-gray-900 font-medium" 
                     : "bg-black text-white hover:bg-gray-800"
                 }`}
               >
@@ -163,7 +195,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center gap-3">
-              <span className="text-gray-600 text-sm">
+              <span className="text-gray-600 text-[14px]">
                 {pathname === "/buy-catalog" 
                   ? "購買專刊" 
                   : pathname.startsWith('/online-exhibition/') 
@@ -200,21 +232,21 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden fixed inset-x-4 top-20 bg-white rounded-3xl shadow-lg z-50"
+              className="lg:hidden fixed inset-x-2 top-[4.45rem] bg-white rounded-3xl shadow-lg z-50"
             >
-              <nav className="p-4">
+              <nav className="p-3">
                 {showExhibitionSubmenu ? (
                   <div>
                     <div className="flex items-center mb-2">
                       <button
                         onClick={() => setShowExhibitionSubmenu(false)}
-                        className="flex items-center text-gray-600 px-4 py-2"
+                        className="flex items-center text-gray-600 px-3 py-2 text-[14px]"
                       >
                         <ChevronDown className="w-5 h-5 rotate-90 mr-1" />
                         返回
                       </button>
                     </div>
-                    <ul className="flex flex-col space-y-2 mt-2">
+                    <ul className="flex flex-col space-y-2 mt-2 text-[15px]">
                       {exhibitionAreas.map((area, index) => (
                         <motion.li
                           key={area.id}
@@ -225,7 +257,7 @@ export default function Header() {
                         >
                           <Link
                             href={`/online-exhibition/${area.id}`}
-                            className="block hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
+                            className="block hover:bg-gray-50 px-5 py-3 text-center transition-colors duration-300 rounded-2xl"
                             onClick={closeMenu}
                           >
                             <div className="flex items-center justify-center">
@@ -242,7 +274,7 @@ export default function Header() {
                     </ul>
                   </div>
                 ) : (
-                  <ul className="flex flex-col space-y-2">
+                  <ul className="flex flex-col space-y-2 text-[15px]">
                     {menuItems.map((item, index) => (
                       item.children ? (
                         <motion.li
@@ -254,7 +286,7 @@ export default function Header() {
                         >
                           <button
                             onClick={() => setShowExhibitionSubmenu(true)}
-                            className="w-full hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
+                            className="w-full hover:bg-gray-50 px-5 py-3 text-center transition-colors duration-300 rounded-2xl"
                           >
                             {item.label}
                           </button>
@@ -269,7 +301,7 @@ export default function Header() {
                         >
                           <Link
                             href={item.href}
-                            className="block hover:bg-gray-50 px-6 py-4 text-center transition-colors duration-300 rounded-2xl"
+                            className="block hover:bg-gray-50 px-5 py-3 text-center transition-colors duration-300 rounded-2xl"
                             onClick={closeMenu}
                           >
                             {item.label}
@@ -285,7 +317,7 @@ export default function Header() {
                     >
                       <Link
                         href="/buy-catalog"
-                        className="block bg-black text-white px-6 py-3 text-center hover:bg-gray-800 transition-colors duration-300 rounded-2xl"
+                        className="block bg-black text-white px-5 py-3 text-center hover:bg-gray-800 transition-colors duration-300 rounded-2xl shimmer-effect"
                         onClick={closeMenu}
                       >
                         購買專刊
