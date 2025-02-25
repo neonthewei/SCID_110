@@ -258,6 +258,7 @@ const InteractivePlusGrid = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number>(0);
     const [activeIndex, setActiveIndex] = useState<number>(0); // 追蹤當前激活的圓形
     const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('left');
+    const [isMobile, setIsMobile] = useState(false);
 
     const { scrollYProgress } = useScroll({
         target: conceptRef,
@@ -774,6 +775,11 @@ const InteractivePlusGrid = () => {
         }
     };
 
+    const getMobileImageUrl = (originalUrl: string) => {
+        // Add mobile suffix before the extension
+        return originalUrl.replace(/(\.[^.]+)$/, '-mobile$1');
+    };
+
     return (
         <div className="w-full flex flex-col items-center relative overflow-x-hidden">
             <div className="w-full flex justify-center items-center bg-[#F2F2F2] relative">
@@ -845,33 +851,34 @@ const InteractivePlusGrid = () => {
                     {bgImages.map((img, index) => (
                         <motion.img
                             key={`bg-${index}`}
-                            src={img}
+                            src={isMobile ? getMobileImageUrl(img) : img}
                             alt={`Background ${index}`}
+                            loading={index === currentBgIndex ? "eager" : "lazy"}
                             initial={false}
                             animate={{ 
                                 opacity: index === currentBgIndex ? (
-                                    index === 0 ? 0.4 :  // 第一張圖 (bg_4)
-                                    index === 1 ? 0.3 :  // 第二張圖 (bg_2)
-                                    index === 2 ? 0.25   // 第三張圖 (bg_3)
+                                    index === 0 ? 0.5 :  // Increased from 0.3
+                                    index === 1 ? 0.4 :  // Increased from 0.2
+                                    index === 2 ? 0.35   // Increased from 0.15
                                     : 0
                                 ) : 0,
                                 scale: index === currentBgIndex ? (
-                                    index === 1 ? 0.85 : 1
-                                ) : 0.95,
-                                rotate: [0, 360]
+                                    index === 1 ? 0.8 : 0.9
+                                ) : 0.9,
+                                rotate: isMobile ? [0, 180] : [0, 360]
                             }}
                             transition={{ 
-                                duration: 2,
+                                duration: isMobile ? 1.5 : 2,  // Faster transitions on mobile
                                 ease: "easeInOut",
                                 rotate: {
-                                    duration: 20,
+                                    duration: isMobile ? 30 : 20,  // Slower rotation on mobile
                                     ease: "linear",
                                     repeat: Infinity
                                 }
                             }}
                             className="w-[100%] sm:w-[100%] md:w-[80%] max-w-[800px] h-auto object-contain absolute sm:max-w-[800px] max-w-[400px]"
                             style={{
-                                filter: 'brightness(1.2) contrast(0.9)'
+                                filter: isMobile ? 'brightness(1.1) contrast(0.95)' : 'brightness(1.2) contrast(0.9)'
                             }}
                         />
                     ))}
@@ -888,7 +895,7 @@ const InteractivePlusGrid = () => {
                         style={{ opacity: textOpacity1 }}
                         className="mb-8 text-center"
                     >
-                        <h2 className="text-[32px] font-bold text-white tracking-wide">
+                        <h2 className="text-title text-white tracking-wide">
                             °<span className="text-white">Sense</span> 展覽概念
                         </h2>
                     </motion.div>
@@ -898,7 +905,7 @@ const InteractivePlusGrid = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
                             style={{ opacity: textOpacity2 }}
-                            className="text-[14px] leading-[24px] text-center text-gray-300"
+                            className="text-body text-center text-gray-300"
                         >
                             <p>在這個科技飛速發展、數據與算法主導生活的時代，人與人之間的連結逐漸被冷冰冰的機械感所取代，情感與溫度被稀釋成一串串代碼。</p>
                         </motion.div>
@@ -907,7 +914,7 @@ const InteractivePlusGrid = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
                             style={{ opacity: textOpacity3 }}
-                            className="text-[14px] leading-[24px] text-center text-gray-300"
+                            className="text-body text-center text-gray-300"
                         >
                             <p>然而，設計以一種悄然且柔和的姿態存在，為世界注入人性的溫暖。</p>
                             <p className="mt-4">每一道曲線、每一個材質選擇、每一個細節，都蘊藏著設計者的情感、溫度與對人的關懷，我們透過設計傳遞溫度、形成連結。</p>
@@ -991,13 +998,13 @@ const InteractivePlusGrid = () => {
                                 key={hoveredIndex}
                                 className="text-center"
                             >
-                                <h3 className="text-white text-xl font-bold mb-2">
+                                <h3 className="text-subtitle text-white font-bold mb-2">
                                     {categoryDescriptions[hoveredIndex].title}
                                 </h3>
-                                <p className="text-gray-400 text-sm mb-1">
+                                <p className="text-caption text-gray-400 mb-1">
                                     {categoryDescriptions[hoveredIndex].temperature}
                                 </p>
-                                <p className="text-gray-300 text-base">
+                                <p className="text-body text-gray-300">
                                     {categoryDescriptions[hoveredIndex].description}
                                 </p>
                             </motion.div>
@@ -1039,13 +1046,13 @@ const InteractivePlusGrid = () => {
                                     transition={{ duration: 0.3 }}
                                     className="text-center mb-2"
                                 >
-                                    <h3 className="text-white text-xl font-bold mb-2">
+                                    <h3 className="text-subtitle text-white font-bold mb-2">
                                         {categoryDescriptions[activeIndex].title}
                                     </h3>
-                                    <p className="text-gray-400 text-sm mb-1">
+                                    <p className="text-caption text-gray-400 mb-1">
                                         {categoryDescriptions[activeIndex].temperature}
                                     </p>
-                                    <p className="text-gray-300 text-base">
+                                    <p className="text-body text-gray-300">
                                         {categoryDescriptions[activeIndex].description}
                                     </p>
                                 </motion.div>
@@ -1107,7 +1114,7 @@ const InteractivePlusGrid = () => {
                 {/* CTA Button Overlay */}
                 <div className="w-full h-48 absolute bottom-32 left-0 z-30 flex items-center justify-center">
                     <button 
-                        className="bg-white text-black font-medium py-2 px-4 rounded-xl"
+                        className="bg-white text-black text-body font-medium py-2 px-4 rounded-xl"
                         onClick={() => window.location.href = '/book-tour'}
                     >
                         立即預約導覽

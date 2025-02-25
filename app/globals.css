@@ -11,19 +11,20 @@
   }
   
   .text-subtitle {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400; /* Regular */
     line-height: 1.2; /* 19.2px */
   }
   
   .text-body {
-    font-size: 14px;
+    font-size: 16
+    px;
     font-weight: 400; /* Regular */
     line-height: 1.714; /* 24px */
   }
   
   .text-caption {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 400; /* Regular */
     line-height: 1.4; /* 14px */
   }
@@ -311,6 +312,47 @@
     height: 800px;
   }
 }
+
+@media (max-width: 768px) {
+  .rain-drop {
+    animation-duration: 8s;  /* Reduce animation duration on mobile */
+  }
+
+  .falling-image {
+    animation-duration: 12s;  /* Reduce animation duration on mobile */
+  }
+
+  .snow-image {
+    animation-duration: 15s;  /* Reduce animation duration on mobile */
+  }
+
+  .animate-slow-spin {
+    animation-duration: 60s;  /* Slow down spin animation on mobile */
+  }
+
+  .animate-slow-spin-reverse {
+    animation-duration: 60s;  /* Slow down spin animation on mobile */
+  }
+}
+
+/* Add will-change for better performance */
+.rain-drop,
+.falling-image,
+.snow-image,
+.animate-slow-spin,
+.animate-slow-spin-reverse {
+  will-change: transform;
+}
+
+/* Optimize background image container for mobile */
+@media (max-width: 768px) {
+  .bg-image-container {
+    width: 400px;
+    height: 400px;
+    opacity: 0.6;  /* Reduce opacity on mobile for better performance */
+  }
+}
+
 .falling-image {
   position: fixed;
   animation: fall linear infinite;

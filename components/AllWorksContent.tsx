@@ -1,11 +1,12 @@
 "use client"
 import Image from "next/image"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { getAllWorks, type WorkCategory } from "@/data/designers"
+import { useInView } from 'react-intersection-observer';
 
 const categories = [
   {
@@ -41,13 +42,25 @@ const categories = [
 export default function AllWorksContent() {
   const searchParams = useSearchParams()
   const categoryFromUrl = searchParams.get("category")
-  const [activeCategory, setActiveCategory] = useState(categoryFromUrl || categories[0].id)
+  const [activeCategory, setActiveCategory] = useState<string>(categoryFromUrl || categories[0].id)
   const [activeItemId, setActiveItemId] = useState<string | null>(null)
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down')
   const [isMobile, setIsMobile] = useState(false)
   const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right')
   const lastScrollY = useRef(0)
   const allWorks = getAllWorks()
+  const [visibleItems, setVisibleItems] = useState<number>(12); // Initial number of items to show
+  const [ref, inView] = useInView({
+    threshold: 0,
+    triggerOnce: false
+  });
+
+  // Filter works based on active category
+  const filteredWorks = useMemo(() => {
+    return activeCategory
+      ? allWorks.filter(work => work.category === activeCategory)
+      : allWorks
+  }, [activeCategory, allWorks])
 
   // 檢查 localStorage 中的分類
   useEffect(() => {
@@ -130,9 +143,15 @@ export default function AllWorksContent() {
     return () => observer.disconnect()
   }, [activeCategory, activeItemId])
 
+  // Load more items when scrolling
+  useEffect(() => {
+    if (inView) {
+      setVisibleItems(prev => Math.min(prev + 8, filteredWorks.length));
+    }
+  }, [inView, filteredWorks.length]);
+
   const currentCategoryIndex = categories.findIndex((c) => c.id === activeCategory)
   const currentCategory = categories.find((c) => c.id === activeCategory)
-  const filteredWorks = allWorks.filter(work => work.category === activeCategory)
 
   const handlePrevCategory = () => {
     setSlideDirection('right')
@@ -260,14 +279,17 @@ export default function AllWorksContent() {
       {/* Works Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 mt-4 sm:mt-8 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-16 pb-12 sm:pb-16 max-w-screen-2xl mx-auto">
         <AnimatePresence mode="popLayout">
-          {filteredWorks.map((work, index) => (
+          {filteredWorks.slice(0, visibleItems).map((work, index) => (
             <motion.div
               key={work.id}
               id={work.id}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ 
+                duration: isMobile ? 0.3 : 0.5,  // Faster animation on mobile
+                delay: isMobile ? index * 0.03 : index * 0.05  // Shorter delay on mobile
+              }}
               className="work-card group relative aspect-[4/3] bg-gray-100 overflow-hidden rounded-xl"
             >
               <Link href={`/work/${work.id}`} className="block w-full h-full">
@@ -275,8 +297,10 @@ export default function AllWorksContent() {
                   src={work.images.main || "/placeholder.svg"}
                   alt={work.title.main}
                   fill
-                  className={`object-cover transition-transform duration-500 rounded-xl
-                    ${activeItemId === work.id ? 'scale-110 md:scale-100' : ''} 
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading={index < 4 ? "eager" : "lazy"}
+                  className={`object-cover transition-transform duration-300 rounded-xl
+                    ${activeItemId === work.id ? 'scale-105 md:scale-100' : ''} 
                     md:group-hover:scale-110`}
                 />
                 <div 
@@ -309,6 +333,11 @@ export default function AllWorksContent() {
           ))}
         </AnimatePresence>
       </div>
+      
+      {/* Load more trigger */}
+      {visibleItems < filteredWorks.length && (
+        <div ref={ref} className="h-10 w-full" />
+      )}
     </div>
   )
 }
