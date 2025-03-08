@@ -1,10 +1,10 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.scid110.com',
+  siteUrl: process.env.SITE_URL ? process.env.SITE_URL.replace(/"/g, '') : 'https://www.scid110.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     additionalSitemaps: [
-      `${process.env.SITE_URL || 'https://www.scid110.com'}/server-sitemap.xml`,
+      `${process.env.SITE_URL ? process.env.SITE_URL.replace(/"/g, '') : 'https://www.scid110.com'}/server-sitemap.xml`,
     ],
     policies: [
       {

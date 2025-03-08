@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: `${process.env.SITE_URL || 'https://www.scid110.com'}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "實踐工設2025畢業展 | ˚Sense",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "實踐工設2025畢業展 | ˚Sense",
     description: "實踐大學工業產品設計學系2025年畢業展覽，展示創新設計作品、互動裝置與產品原型。",
-    images: ["/og-image.png"],
+    images: [`${process.env.SITE_URL || 'https://www.scid110.com'}/og-image.png`],
   },
   verification: {
     google: "5WSeA982k7K2fESj0f1-gmbNNkQnf5IvxophyfelzIE",

@@ -5,8 +5,8 @@ Disallow: /api/*
 Disallow: /admin/*
 
 # Host
-Host: "https://www.scid110.com"
+Host: https://www.scid110.com
 
 # Sitemaps
-Sitemap: "https://www.scid110.com"/sitemap.xml
-Sitemap: "https://www.scid110.com"/server-sitemap.xml
+Sitemap: https://www.scid110.com/sitemap.xml
+Sitemap: https://www.scid110.com/server-sitemap.xml
