@@ -805,9 +805,8 @@ const InteractivePlusGrid = () => {
                         }}
                     />
                     <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-30">
-                        <motion.button
-                            onClick={scrollToExhibitionConcept}
-                            className="text-black p-2 rounded-full hover:bg-black/10 transition-colors"
+                        <motion.div
+                            className="text-black p-2 rounded-full"
                             animate={{
                                 y: [0, 10, 0]
                             }}
@@ -816,9 +815,10 @@ const InteractivePlusGrid = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut"
                             }}
+                            aria-hidden="true"
                         >
                             <ChevronDown size={32} />
-                        </motion.button>
+                        </motion.div>
                     </div>
                 </div>
             </div>
@@ -880,7 +880,7 @@ const InteractivePlusGrid = () => {
                                     repeat: Infinity
                                 }
                             }}
-                            className="w-[120%] sm:w-[100%] md:w-[70%] max-w-[700px] h-auto object-contain absolute sm:max-w-[700px] max-w-[400px] right-[-10%] translate-x-[50%] md:right-[-5%] md:translate-x-0 mt-[20%]"
+                            className="w-[120%] sm:w-[100%] md:w-[70%] lg:w-[65%] xl:w-[60%] 2xl:w-[55%] max-w-[700px] h-auto object-contain absolute sm:max-w-[700px] max-w-[400px] right-[-10%] translate-x-[50%] md:right-[-5%] lg:right-[-8%] xl:right-[-8%] 2xl:right-[0%] md:translate-x-0 mt-[20%] xl:mt-[15%] 2xl:mt-[10%]"
                             style={{
                                 filter: isMobile ? 'brightness(1.1) contrast(0.95)' : 'brightness(1.2) contrast(0.9)'
                             }}
@@ -892,7 +892,7 @@ const InteractivePlusGrid = () => {
                     ref={conceptRef}
                     className="w-full relative z-30 min-h-screen flex flex-col justify-center"
                 >
-                    <div className="max-w-[800px] md:ml-[12%] mx-auto px-4 relative">
+                    <div className="max-w-[800px] md:ml-[12%] lg:ml-[15%] xl:ml-[20%] 2xl:ml-[20%] mx-auto px-4 md:px-6 lg:px-8 xl:px-10 relative">
                         {/* Small rotating image above text */}
                         <div className="absolute -top-64 right-[75%] w-[300px] hidden md:block">
                             {bgImages.map((img, index) => (
@@ -958,34 +958,10 @@ const InteractivePlusGrid = () => {
                             </motion.div>
                         </div>
                     </div>
-                    {/* Second Scroll Down Button */}
+                    {/* Second Scroll Down Button - Decorative Only */}
                     <div className="absolute bottom-[78px] left-1/2 transform -translate-x-1/2 z-30 hidden md:block">
-                        <motion.button
-                            onClick={() => {
-                                const circlesSection = document.querySelector('.large-interactive-circles');
-                                if (circlesSection) {
-                                    const rect = circlesSection.getBoundingClientRect();
-                                    const elementTop = window.pageYOffset + rect.top;
-                                    const elementHeight = rect.height;
-                                    const windowHeight = window.innerHeight;
-                                    const windowWidth = window.innerWidth;
-                                    
-                                    // 根據螢幕寬度調整滾動距離
-                                    let scrollDivisor;
-                                    if (windowWidth >= 1920) {
-                                        scrollDivisor = 8; // 大螢幕使用較小的除數，滾動距離較長
-                                    } else {
-                                        scrollDivisor = 6; // 一般螢幕使用較大的除數，滾動距離較短
-                                    }
-                                    
-                                    const targetScroll = elementTop - windowHeight / scrollDivisor;
-                                    window.scrollTo({
-                                        top: targetScroll,
-                                        behavior: 'smooth'
-                                    });
-                                }
-                            }}
-                            className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+                        <motion.div
+                            className="text-white p-2 rounded-full"
                             animate={{
                                 y: [0, 10, 0]
                             }}
@@ -994,9 +970,10 @@ const InteractivePlusGrid = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut"
                             }}
+                            aria-hidden="true"
                         >
                             <ChevronDown size={32} />
-                        </motion.button>
+                        </motion.div>
                     </div>
                 </div>
             </div>

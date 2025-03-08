@@ -15,6 +15,9 @@ const notoSansTC = Noto_Sans_TC({
 export const metadata: Metadata = {
   title: "實踐工設2025畢業展 | ˚Sense",
   description: "Showcasing my design work and skills",
+  verification: {
+    google: "5WSeA982k7K2fESj0f1-gmbNNkQnf5IvxophyfelzIE",
+  },
 }
 
 export default function RootLayout({

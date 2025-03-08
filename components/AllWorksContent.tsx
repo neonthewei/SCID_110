@@ -237,7 +237,7 @@ export default function AllWorksContent() {
         {/* Gradient mask */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-30% to-gray-50 pointer-events-none" />
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-start p-4 pt-8 md:px-12 md:pt-6">
+        <div className="relative z-10 h-full flex flex-col items-center justify-start p-4 pt-8 md:px-[5%] md:pt-6">
           {/* Mobile Category Title */}
           <div className="md:hidden text-center w-full mb-4 relative mt-4">
             <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
@@ -307,7 +307,7 @@ export default function AllWorksContent() {
           </div>
 
           {/* Desktop Category Tabs */}
-          <div className="hidden md:flex flex-col items-start justify-center w-full md:px-12 lg:pl-12 xl:pl-16 pt-6">
+          <div className="hidden md:flex flex-col items-start justify-center w-full md:px-[5%] lg:px-[5%] xl:px-[5%] pt-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentCategory?.id}
@@ -377,7 +377,7 @@ export default function AllWorksContent() {
       </motion.div>
 
       {/* Works Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-y-12 gap-x-3 sm:gap-y-16 sm:gap-x-4 mt-4 sm:mt-8 px-6 sm:px-8 pb-12 sm:pb-16 max-w-screen-2xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-y-12 gap-x-3 sm:gap-y-16 sm:gap-x-4 mt-4 sm:mt-8 px-[5%] sm:px-[5%] md:px-[5%] lg:px-[5%] xl:px-[5%] pb-12 sm:pb-16 w-full">
         <AnimatePresence mode="popLayout">
           {filteredWorks.slice(0, visibleItems).map((work, index) => (
             <motion.div
