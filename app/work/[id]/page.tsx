@@ -51,6 +51,20 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
   const work = getWorkById(params.id)
   const designer = work ? getDesignerByWorkId(params.id) : undefined
 
+  // 處理返回按鈕點擊事件
+  const handleBackClick = useCallback(() => {
+    if (fromDesigner) {
+      router.push(`/designer`)
+    } else {
+      // 如果有作品分類，保存到localStorage
+      if (work && work.category) {
+        localStorage.setItem('selectedCategory', work.category)
+      }
+      // 導航到作品總覽頁面
+      router.push('/all-works')
+    }
+  }, [fromDesigner, router, work])
+
   // Auto-play functionality
   useEffect(() => {
     if (isHovered) return;
@@ -103,20 +117,20 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
       {/* Main content container */}
       <div className="relative z-10">
         {/* Navigation */}
-        <div className="container mx-auto px-4 py-6">
+        <div className="container py-6">
           <button
-            onClick={() => fromDesigner ? router.push(`/designer`) : router.back()}
+            onClick={handleBackClick}
             className="flex items-center text-black hover:text-gray-600 transition-colors duration-200"
             aria-label="返回"
             tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && (fromDesigner ? router.push(`/designer`) : router.back())}
+            onKeyDown={(e) => e.key === 'Enter' && handleBackClick()}
           >
             <ArrowLeft className="mr-2" size={24} />
           </button>
         </div>
 
         {/* Product Display Section */}
-        <div className="container mx-auto px-4 pb-12">
+        <div className="container pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12">
             {/* Product Image */}
             <div className="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-2 lg:mb-0">
@@ -199,8 +213,8 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
         </div>
 
         {/* 5S Design Concept Section */}
-        <div className="py-32">
-          <div className="container mx-auto px-4">
+        <div className="pt-[100px] pb-32">
+          <div className="container">
             <h2 className="text-[24px] font-medium mb-8" style={{ color: themeColor }}>5°S 設計概念</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -292,7 +306,7 @@ export default function WorkDetail({ params }: { params: { id: string } }) {
 
         {/* 導購專刊 CTA */}
         {false && (
-          <div className="container mx-auto px-4 mb-12 relative z-10">
+          <div className="container mb-12 relative z-10">
             <div className="max-w-3xl mx-auto relative">
               <div className="bg-white rounded-2xl h-[150px] md:h-[110px] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out translate-y-10 hover:scale-[1.02] origin-center hover:border-gray-200">
                 <div className="flex flex-row items-center h-full py-4 md:py-0 px-4 md:px-0">

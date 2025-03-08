@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
 import { AnimatePresence } from 'framer-motion';
+import React from 'react';
 
 class Circle {
     x: number = 0;
@@ -211,27 +212,27 @@ const LargeMorphingCircle = ({ category, index, imageUrl, onHover, activeIndex }
 const categoryDescriptions = [
     {
         title: '溫工藝',
-        temperature: '29°C～35°C',
+        temperature: '29°S～35°S',
         description: '工藝與材料',
-        longDescription: '工藝與材料的細膩專注，恰如手工製作時的手心溫度，溫暖且貼近人心。這是個展現與材料之間溫柔互動的展區，每件作品都如同一個細心呵護的故事，透過雙手傳遞溫度。'
+        longDescription: '工藝與材料的細膩專注，恰如手工製作時的手心溫度，溫暖且貼近人心。'
     },
     {
         title: '舒適巢',
-        temperature: '32°C～38°C',
-        description: '空間與家具',
-        longDescription: '空間與家具的溫度，源於對生活的深刻理解與關懷。在這裡，每一件作品都致力於創造舒適的居住體驗，將溫暖注入生活空間，讓家成為療癒身心的溫柔港灣。'
+        temperature: '19°S～25°S',
+        description: '家居與兒童',
+        longDescription: '室溫穩定而舒適，均勻地散布於空間中，帶來安心與放鬆。'
     },
     {
         title: '冷火花',
-        temperature: '25°C～31°C',
-        description: '科技與互動',
-        longDescription: '科技與互動的冷靜思考中，迸發出創新的火花。這個展區展現了理性與感性的完美結合，透過互動科技，創造出既智慧又富有溫度的使用體驗。'
+        temperature: '5°S、130～140°S',
+        description: '科技與載具',
+        longDescription: '冰冷的材質勾勒出理性的輪廓，內裡卻蘊含精密的技術與人性化的考量。'
     },
     {
         title: '熱對話',
-        temperature: '35°C～41°C',
-        description: '社會與溝通',
-        longDescription: '社會與溝通的熱切對話，展現設計與社會脈動的緊密連結。在這裡，每件作品都是一次深刻的社會對話，傳遞著設計師對社會的關懷與期待。'
+        temperature: '85°S～100°S',
+        description: '社會與推測',
+        longDescription: '有價值的對話不僅是交換觀點，更是讓思維層層加溫。'
     }
 ];
 

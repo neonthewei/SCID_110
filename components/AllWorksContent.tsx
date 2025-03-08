@@ -11,38 +11,38 @@ import { useInView } from 'react-intersection-observer';
 const categories = [
   {
     id: "溫工藝",
-    name: "29°C～35°C",
+    name: "29°S～35°S",
     title: "溫工藝",
     subtitle: "工藝與材料",
-    description: "工藝與材料的細膩專注，恰如手工製作時的手心溫度，溫暖且貼近人心。",
-    longDescription: "這是一個展現設計者與材料之間溫柔互動的展區，透過雙手傳遞溫度。",
+    description: "用雙手傳遞溫暖，塑造希望的形狀。這不僅是藝術，更是一種人與物之間的流動——",
+    longDescription: "從手心到物品，讓關懷不再只是語言，而是得以觸摸的溫度。",
     image: "/workbg/workbg1.png",
   },
   {
     id: "舒適巢",
-    name: "32°C～38°C",
+    name: "19°S～25°S",
     title: "舒適巢",
-    subtitle: "空間與家具",
-    description: "空間與家具的溫度，源於對生活的深刻理解與關懷。",
-    longDescription: "在這裡，每一件作品都致力於創造舒適的居住體驗，將溫暖注入生活空間。",
+    subtitle: "家居與兒童",
+    description: "室溫穩定而舒適，均勻地散布於空間中，帶來安心與放鬆。",
+    longDescription: "指尖觸碰木質與織物，感受微妙的溫差變化，讓身體自然沉浸在柔和與安穩之中。",
     image: "/workbg/workbg2.png",
   },
   {
     id: "冷火花",
-    name: "25°C～31°C",
+    name: "5°S、130～140°S",
     title: "冷火花",
-    subtitle: "科技與互動",
-    description: "科技與互動的冷靜思考中，迸發出創新的火花。",
-    longDescription: "這個展區展現了理性與感性的完美結合，透過互動科技，創造出既智慧又富有溫度的使用體驗。",
+    subtitle: "科技與載具",
+    description: "冰冷的材質勾勒出理性的輪廓，內裡卻蘊含精密的技術與人性化的考量。",
+    longDescription: "每次觸碰都能感受到隱藏其中的細緻，讓科技與生活在低調與溫暖之間達成微妙的平衡。",
     image: "/workbg/workbg3.png",
   },
   {
     id: "熱對話",
-    name: "35°C～41°C",
+    name: "85°S～100°S",
     title: "熱對話",
-    subtitle: "社會與溝通",
-    description: "社會與溝通的熱切對話，展現設計與社會脈動的緊密連結。",
-    longDescription: "在這裡，每件作品都是一次深刻的社會對話，傳遞著設計師對社會的關懷與期待。",
+    subtitle: "社會與推測",
+    description: "有價值的對話不僅是交換觀點，更是讓思維層層加溫。",
+    longDescription: "文化的演進、議題的探索、未來的推測，皆在不斷升溫的對話中翻騰、交融。",
     image: "/workbg/borkbg4.png",
   },
 ]
@@ -56,7 +56,6 @@ export default function AllWorksContent() {
   const [isMobile, setIsMobile] = useState(false)
   const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right')
   const [isHovered, setIsHovered] = useState(false)
-  const [isAutoSequence, setIsAutoSequence] = useState(false)
   const lastScrollY = useRef(0)
   const allWorks = getAllWorks()
   const [visibleItems, setVisibleItems] = useState<number>(12); // Initial number of items to show
@@ -167,40 +166,18 @@ export default function AllWorksContent() {
     setSlideDirection('right')
     const newIndex = (currentCategoryIndex - 1 + categories.length) % categories.length
     setActiveCategory(categories[newIndex].id)
-    // Auto sequence will be triggered by useEffect
   }
 
   const handleNextCategory = () => {
     setSlideDirection('left')
     const newIndex = (currentCategoryIndex + 1) % categories.length
     setActiveCategory(categories[newIndex].id)
-    // Auto sequence will be triggered by useEffect
   }
 
   const runAutoSequence = () => {
-    setIsAutoSequence(true)
-    setIsHovered(false)
-    
-    // After 2 seconds, show description
-    setTimeout(() => {
-      if (!isMobile) {
-        setIsHovered(true)
-      }
-      
-      // After another 2 seconds, show title again
-      setTimeout(() => {
-        setIsHovered(false)
-        setIsAutoSequence(false)
-      }, 2000)
-    }, 2000)
+    // Function kept for backward compatibility
+    // No implementation needed as we're removing auto sequence
   }
-
-  // Run auto sequence whenever activeCategory changes
-  useEffect(() => {
-    if (!isMobile) {
-      runAutoSequence()
-    }
-  }, [activeCategory])
 
   return (
     <div className="relative min-h-screen bg-gray-50">
@@ -268,8 +245,8 @@ export default function AllWorksContent() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
                 className="relative h-[70px] md:h-[80px] overflow-hidden px-16"
-                onMouseEnter={() => isMobile || isAutoSequence ? null : setIsHovered(true)}
-                onMouseLeave={() => isMobile || isAutoSequence ? null : setIsHovered(false)}
+                onMouseEnter={() => !isMobile && setIsHovered(true)}
+                onMouseLeave={() => !isMobile && setIsHovered(false)}
               >
                 <AnimatePresence mode="wait">
                   {isMobile || !isHovered ? (
@@ -316,8 +293,8 @@ export default function AllWorksContent() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
                 className="mb-2 text-left w-full relative h-[80px] overflow-hidden"
-                onMouseEnter={() => isAutoSequence ? null : setIsHovered(true)}
-                onMouseLeave={() => isAutoSequence ? null : setIsHovered(false)}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               >
                 <AnimatePresence mode="wait">
                   {!isHovered ? (
@@ -358,7 +335,16 @@ export default function AllWorksContent() {
                   <button
                     onClick={() => {
                       setActiveCategory(category.id)
-                      // No need to call runAutoSequence here as it will be triggered by the useEffect
+                    }}
+                    onMouseEnter={() => {
+                      if (!isMobile && category.id === activeCategory) {
+                        setIsHovered(true)
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (!isMobile) {
+                        setIsHovered(false)
+                      }
                     }}
                     className={`w-[140px] px-3 py-1.5 rounded-[16px] overflow-hidden transition-all duration-300 text-base whitespace-nowrap border
                       ${
@@ -376,64 +362,67 @@ export default function AllWorksContent() {
         </div>
       </motion.div>
 
-      {/* Works Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-y-12 gap-x-3 sm:gap-y-16 sm:gap-x-4 mt-4 sm:mt-8 px-[5%] sm:px-[5%] md:px-[5%] lg:px-[5%] xl:px-[5%] pb-12 sm:pb-16 w-full">
-        <AnimatePresence mode="popLayout">
-          {filteredWorks.slice(0, visibleItems).map((work, index) => (
-            <motion.div
-              key={work.id}
-              id={work.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ 
-                duration: isMobile ? 0.3 : 0.5,
-                delay: isMobile ? index * 0.03 : index * 0.05
-              }}
-              className="work-card group relative"
-            >
-              <Link href={`/work/${work.id}`} className="block">
-                <div className="aspect-[4/3] relative overflow-hidden rounded-md">
-                  <Image
-                    src={work.images.main || "/placeholder.svg"}
-                    alt={work.title.main}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    loading={index < 4 ? "eager" : "lazy"}
-                    className={`object-cover transition-transform duration-300 rounded-md
-                      ${activeItemId === work.id ? 'scale-105 md:scale-100' : ''} 
-                      md:group-hover:scale-110`}
-                  />
-                </div>
-                <motion.div 
-                  className="mt-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ 
-                    duration: isMobile ? 0.3 : 0.5,
-                    delay: isMobile ? index * 0.03 : index * 0.05
-                  }}
-                >
-                  <p className="text-base leading-tight text-left mb-1.5 text-gray-900 font-medium">
-                    {work.title.main}
-                  </p>
-                  {work.title.sub && (
-                    <p className="text-sm leading-tight text-left text-gray-500">
-                      {work.title.sub}
+      {/* Works Grid Container */}
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        {/* Works Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-y-12 gap-x-3 sm:gap-y-16 sm:gap-x-4 mt-4 sm:mt-8 pb-12 sm:pb-16 w-full">
+          <AnimatePresence mode="popLayout">
+            {filteredWorks.slice(0, visibleItems).map((work, index) => (
+              <motion.div
+                key={work.id}
+                id={work.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ 
+                  duration: isMobile ? 0.3 : 0.5,
+                  delay: isMobile ? index * 0.03 : index * 0.05
+                }}
+                className="work-card group relative"
+              >
+                <Link href={`/work/${work.id}`} className="block">
+                  <div className="aspect-[4/3] relative overflow-hidden rounded-md">
+                    <Image
+                      src={work.images.main || "/placeholder.svg"}
+                      alt={work.title.main}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading={index < 4 ? "eager" : "lazy"}
+                      className={`object-cover transition-transform duration-300 rounded-md
+                        ${activeItemId === work.id ? 'scale-105 md:scale-100' : ''} 
+                        md:group-hover:scale-110`}
+                    />
+                  </div>
+                  <motion.div 
+                    className="mt-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ 
+                      duration: isMobile ? 0.3 : 0.5,
+                      delay: isMobile ? index * 0.03 : index * 0.05
+                    }}
+                  >
+                    <p className="text-base leading-tight text-left mb-1.5 text-gray-900 font-normal">
+                      {work.title.main}
                     </p>
-                  )}
-                </motion.div>
-              </Link>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+                    {work.title.sub && (
+                      <p className="text-sm leading-tight text-left text-gray-500">
+                        {work.title.sub}
+                      </p>
+                    )}
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+        
+        {/* Load more trigger */}
+        {visibleItems < filteredWorks.length && (
+          <div ref={ref} className="h-10 w-full" />
+        )}
       </div>
-      
-      {/* Load more trigger */}
-      {visibleItems < filteredWorks.length && (
-        <div ref={ref} className="h-10 w-full" />
-      )}
     </div>
   )
 }

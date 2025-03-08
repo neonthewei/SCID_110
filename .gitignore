@@ -28,3 +28,6 @@ next-env.d.ts
 
 # credentials
 directed-symbol-441909-s8-e9593b3b1d46.json
+
+# browser tools
+/browser-tools-mcp

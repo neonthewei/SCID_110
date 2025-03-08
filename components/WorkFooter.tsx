@@ -40,7 +40,7 @@ const WorkFooter = ({ workId, categoryImage, categoryName }: WorkFooterProps) =>
 
   return (
     <footer className="w-full py-12 z-[30] relative">
-      <div className="container mx-auto px-4 relative z-[20]">
+      <div className="container relative z-[20]">
         {/* Navigation */}
         {navigation && (
           <div className="max-w-7xl mx-auto">
