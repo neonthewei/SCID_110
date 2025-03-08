@@ -136,7 +136,7 @@ const Footer = () => {
           <div className="hidden md:flex justify-between items-center">
             {/* Address and Email */}
             <div className="text-neutral-700 font-light flex items-center gap-6 whitespace-nowrap">
-              <span className="text-sm font-medium text-neutral-900">Shih Chien University</span>
+              <span className="text-sm font-medium text-neutral-900">實踐工設110屆</span>
               <span className="text-sm text-neutral-400">|</span>
               <span className="text-sm">No. 70, Dazhi St., Zhongshan Dist., Taipei City, 104</span>
               <span className="text-sm text-neutral-400">|</span>
@@ -193,7 +193,7 @@ const Footer = () => {
           <div className="md:hidden space-y-6">
             {/* Address */}
             <div className="text-center">
-              <span className="text-sm font-medium text-neutral-900 block mb-2">Shih Chien University</span>
+              <span className="text-sm font-medium text-neutral-900 block mb-2">實踐工設110屆</span>
               <span className="text-xs text-neutral-700 block">No. 70, Dazhi St., Zhongshan Dist., Taipei City, 104</span>
               <a 
                 href="mailto:scid@g2.usc.edu.tw" 

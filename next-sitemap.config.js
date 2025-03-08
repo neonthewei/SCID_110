@@ -1,13 +1,24 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://scid-110.vercel.app', // Updated to match your actual domain
+  siteUrl: process.env.SITE_URL || 'https://www.scid110.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     additionalSitemaps: [
-      'https://scid-110.vercel.app/server-sitemap.xml', // Updated to match your actual domain
+      `${process.env.SITE_URL || 'https://www.scid110.com'}/server-sitemap.xml`,
+    ],
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/*', '/admin/*'],
+      },
     ],
   },
-  exclude: ['/api/*', '/admin/*'], // Add paths you want to exclude
-  generateIndexSitemap: false,
+  exclude: ['/api/*', '/admin/*', '/server-sitemap.xml'],
+  generateIndexSitemap: true,
   outDir: 'public',
+  changefreq: 'weekly',
+  priority: 0.7,
+  sitemapSize: 5000,
+  autoLastmod: true,
 } 

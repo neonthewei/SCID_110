@@ -214,27 +214,60 @@ const categoryDescriptions = [
         title: '溫工藝',
         temperature: '29°S～35°S',
         description: '工藝與材料',
-        longDescription: '工藝與材料的細膩專注，恰如手工製作時的手心溫度，溫暖且貼近人心。'
+        longDescription: '用雙手傳遞溫暖，塑造希望的形狀。這不僅是藝術，更是一種人與物之間的流動——從手心到物品，讓關懷不再只是語言，而是得以觸摸的溫度。'
     },
     {
         title: '舒適巢',
         temperature: '19°S～25°S',
         description: '家居與兒童',
-        longDescription: '室溫穩定而舒適，均勻地散布於空間中，帶來安心與放鬆。'
+        longDescription: '室溫穩定而舒適，均勻地散布於空間中，帶來安心與放鬆。指尖觸碰木質與織物，感受微妙的溫差變化，讓身體自然沉浸在柔和與安穩之中。'
     },
     {
         title: '冷火花',
         temperature: '5°S、130～140°S',
         description: '科技與載具',
-        longDescription: '冰冷的材質勾勒出理性的輪廓，內裡卻蘊含精密的技術與人性化的考量。'
+        longDescription: '冰冷的材質勾勒出理性的輪廓，內裡卻蘊含精密的技術與人性化的考量。每次觸碰都能感受到隱藏其中的細緻，讓科技與生活在低調與溫暖之間達成微妙的平衡。'
     },
     {
         title: '熱對話',
         temperature: '85°S～100°S',
         description: '社會與推測',
-        longDescription: '有價值的對話不僅是交換觀點，更是讓思維層層加溫。'
+        longDescription: '有價值的對話不僅是交換觀點，更是讓思維層層加溫。文化的演進、議題的探索、未來的推測，皆在不斷升溫的對話中翻騰、交融。'
     }
 ];
+
+// 添加一個輔助函數來處理文本中的破折號換行
+const formatDescription = (text: string) => {
+    // 在破折號處分割文本
+    const parts = text.split('——');
+    if (parts.length === 2) {
+        return (
+            <>
+                {parts[0]}——<br />{parts[1]}
+            </>
+        );
+    }
+    
+    // 在句號處分割文本
+    const sentences = text.split('。');
+    if (sentences.length > 1) {
+        return (
+            <>
+                {sentences.map((sentence, index) => (
+                    index < sentences.length - 1 ? 
+                        <React.Fragment key={index}>
+                            {sentence}。<br />
+                        </React.Fragment> : 
+                        <React.Fragment key={index}>
+                            {sentence}
+                        </React.Fragment>
+                ))}
+            </>
+        );
+    }
+    
+    return text;
+};
 
 const InteractivePlusGrid = () => {
     const router = useRouter();
@@ -1021,7 +1054,7 @@ const InteractivePlusGrid = () => {
                                     {categoryDescriptions[hoveredIndex].title}
                                 </h3>
                                 <p className="text-body text-gray-400 max-w-[700px] mx-auto leading-relaxed">
-                                    {categoryDescriptions[hoveredIndex].longDescription}
+                                    {formatDescription(categoryDescriptions[hoveredIndex].longDescription)}
                                 </p>
                             </motion.div>
                         </div>
@@ -1069,7 +1102,7 @@ const InteractivePlusGrid = () => {
                                         {categoryDescriptions[activeIndex].title}
                                     </h3>
                                     <p className="text-body text-gray-400 max-w-[600px] mx-auto leading-relaxed">
-                                        {categoryDescriptions[activeIndex].longDescription}
+                                        {formatDescription(categoryDescriptions[activeIndex].longDescription)}
                                     </p>
                                 </motion.div>
                             </AnimatePresence>

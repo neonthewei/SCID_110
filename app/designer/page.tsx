@@ -223,11 +223,11 @@ export default function DesignerPage() {
               {/* First Row */}
               <div className="flex flex-wrap gap-6 px-12 sm:px-8 md:px-16 lg:px-24 lg:min-w-[1200px]">
                 {[
-                  { name: { zh: "何信坤", en: "Quen Ho" }, img: "/teacher/teacher1.png" },
-                  { name: { zh: "丑宛茹", en: "Wan-Ru Chou" }, img: "/teacher/teacher2.png" },
-                  { name: { zh: "朱旭正", en: "Hsu-Cheng Chu" }, img: "/teacher/teacher3.png" },
-                  { name: { zh: "林曉瑛", en: "Sally Lin" }, img: "/teacher/teacher4.png" },
-                  { name: { zh: "孫崇實", en: "Chung-Shih Sun" }, img: "/teacher/teacher9.png" }
+                  { name: { zh: "何信坤", en: "Quen Ho" }, img: "/teacher/teacher1.jpg" },
+                  { name: { zh: "丑宛茹", en: "Wan-Ru Chou" }, img: "/teacher/teacher2.jpg" },
+                  { name: { zh: "朱旭正", en: "Hsu-Cheng Chu" }, img: "/teacher/teacher3.jpg" },
+                  { name: { zh: "林曉瑛", en: "Sally Lin" }, img: "/teacher/teacher4.jpg" },
+                  { name: { zh: "孫崇實", en: "Chung-Shih Sun" }, img: "/teacher/teacher9.jpg" }
                 ].map((advisor, index) => (
                   <div key={index} className={`flex items-center gap-4 w-full ${index === 0 ? 'sm:w-[150px]' : 'sm:w-[180px]'}`}>
                     <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
@@ -249,10 +249,10 @@ export default function DesignerPage() {
               {/* Second Row */}
               <div className="flex flex-wrap gap-6 px-12 sm:px-8 md:px-16 lg:px-24">
                 {[
-                  { name: { zh: "徐景亭", en: "Gina Hsu" }, img: "/teacher/teacher5.png" },
-                  { name: { zh: "陳禧冠", en: "Shi-Kuan Chen" }, img: "/teacher/teacher6.png" },
-                  { name: { zh: "宮保睿", en: "Paul Gong" }, img: "/teacher/teacher7.png" },
-                  { name: { zh: "曾熙凱", en: "Shi-Kai Tseng" }, img: "/teacher/teacher8.png" }
+                  { name: { zh: "徐景亭", en: "Gina Hsu" }, img: "/teacher/teacher5.jpg" },
+                  { name: { zh: "陳禧冠", en: "Shi-Kuan Chen" }, img: "/teacher/teacher6.jpg" },
+                  { name: { zh: "宮保睿", en: "Paul Gong" }, img: "/teacher/teacher7.jpg" },
+                  { name: { zh: "曾熙凱", en: "Shi-Kai Tseng" }, img: "/teacher/teacher8.jpg" }
                 ].map((advisor, index) => (
                   <div key={index} className={`flex items-center gap-4 w-full ${index === 0 ? 'sm:w-[150px]' : 'sm:w-[180px]'}`}>
                     <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
@@ -329,6 +329,8 @@ export default function DesignerPage() {
                       </li>
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">方恩銘</span>
+                        <span className="text-[#9D9D9D] text-sm">En-Ming Fang</span>
+
                       </li>
                     </ul>
                   </div>
@@ -348,13 +350,19 @@ export default function DesignerPage() {
                         <span className="text-[#9D9D9D] text-sm">Ya-Yun Cheng</span>
                       </li>
                       <li className="flex items-baseline gap-2">
-                        <span className="text-[#9D9D9D] text-sm">丁芷萌</span>
+
+                        <span className="text-[#9D9D9D] text-sm">丁芷晴</span>
+                        <span className="text-[#9D9D9D] text-sm">Chih-Ching Ting</span>
+
                       </li>
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">李語彤</span>
+                        <span className="text-[#9D9D9D] text-sm">Yu-Tung Lee</span>
+
                       </li>
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">梁丁元</span>
+                        <span className="text-[#9D9D9D] text-sm">Ting-Yuan Liang</span>
                       </li>
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">趙雅寧</span>
@@ -374,7 +382,7 @@ export default function DesignerPage() {
                     <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">許芯瑜</span>
-                        <span className="text-[#9D9D9D] text-sm">Kuo-Tsung Chen</span>
+                        <span className="text-[#9D9D9D] text-sm">Xin-Yu Xu</span>
                       </li>
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">黃皓予</span>
@@ -458,14 +466,15 @@ export default function DesignerPage() {
                     <h3 className="text-[#7D7D7D] w-28 flex-shrink-0 text-left text-sm break-keep whitespace-pre-line leading-5">公關企劃</h3>
                     <ul className="space-y-2 min-w-[200px]">
                       <li className="flex items-baseline gap-2">
-                        <span className="text-[#9D9D9D] text-sm">蔡幸奴</span>
+                        <span className="text-[#9D9D9D] text-sm">蔡幸妏</span>
+                        <span className="text-[#9D9D9D] text-sm">Hsin-Nu Tsai</span>
                       </li>
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">陳育楷</span>
                         <span className="text-[#9D9D9D] text-sm">Yu-Kai Chen</span>
                       </li>
                       <li className="flex items-baseline gap-2">
-                        <span className="text-[#9D9D9D] text-sm">王闐蒙</span>
+                        <span className="text-[#9D9D9D] text-sm">王闥蒙</span>
                         <span className="text-[#9D9D9D] text-sm">Ta-Meng Wang</span>
                       </li>
                       <li className="flex items-baseline gap-2">
@@ -473,7 +482,7 @@ export default function DesignerPage() {
                         <span className="text-[#9D9D9D] text-sm">Yi-Wen Fang</span>
                       </li>
                       <li className="flex items-baseline gap-2">
-                        <span className="text-[#9D9D9D] text-sm">夏禹璐</span>
+                        <span className="text-[#9D9D9D] text-sm">夏聿璐</span>
                         <span className="text-[#9D9D9D] text-sm">Yu-Lu Xia</span>
                       </li>
                       <li className="flex items-baseline gap-2">
@@ -481,7 +490,7 @@ export default function DesignerPage() {
                         <span className="text-[#9D9D9D] text-sm">Hui-Hsin Shaw</span>
                       </li>
                       <li className="flex items-baseline gap-2">
-                        <span className="text-[#9D9D9D] text-sm">蘇瑾萱</span>
+                        <span className="text-[#9D9D9D] text-sm">蘇秦萱</span>
                         <span className="text-[#9D9D9D] text-sm">Chin-Hsuan Su</span>
                       </li>
                     </ul>
@@ -502,7 +511,8 @@ export default function DesignerPage() {
                         <span className="text-[#9D9D9D] text-sm">Che-Chia Hsu</span>
                       </li>
                       <li className="flex items-baseline gap-2">
-                        <span className="text-[#9D9D9D] text-sm">郭宗成</span>
+                        <span className="text-[#9D9D9D] text-sm">郭宗宬</span>
+                        <span className="text-[#9D9D9D] text-sm">Chung-Cheng Kuo</span>
                       </li>
                       <li className="flex items-baseline gap-2">
                         <span className="text-[#9D9D9D] text-sm">張哲維</span>
