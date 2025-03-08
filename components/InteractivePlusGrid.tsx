@@ -210,24 +210,28 @@ const LargeMorphingCircle = ({ category, index, imageUrl, onHover, activeIndex }
 
 const categoryDescriptions = [
     {
-        title: 'MildCraft（溫工藝）',
-        temperature: '29°S～35°S',
-        description: '工藝與材料'
+        title: '溫工藝',
+        temperature: '29°C～35°C',
+        description: '工藝與材料',
+        longDescription: '工藝與材料的細膩專注，恰如手工製作時的手心溫度，溫暖且貼近人心。這是個展現與材料之間溫柔互動的展區，每件作品都如同一個細心呵護的故事，透過雙手傳遞溫度。'
     },
     {
-        title: 'CozyNest（舒適巢）',
-        temperature: '32°S～38°S',
-        description: '空間與家具'
+        title: '舒適巢',
+        temperature: '32°C～38°C',
+        description: '空間與家具',
+        longDescription: '空間與家具的溫度，源於對生活的深刻理解與關懷。在這裡，每一件作品都致力於創造舒適的居住體驗，將溫暖注入生活空間，讓家成為療癒身心的溫柔港灣。'
     },
     {
-        title: 'ColdSpark（冷火花）',
-        temperature: '25°S～31°S',
-        description: '科技與互動'
+        title: '冷火花',
+        temperature: '25°C～31°C',
+        description: '科技與互動',
+        longDescription: '科技與互動的冷靜思考中，迸發出創新的火花。這個展區展現了理性與感性的完美結合，透過互動科技，創造出既智慧又富有溫度的使用體驗。'
     },
     {
-        title: 'HotTalk（熱對話）',
-        temperature: '35°S～41°S',
-        description: '社會與溝通'
+        title: '熱對話',
+        temperature: '35°C～41°C',
+        description: '社會與溝通',
+        longDescription: '社會與溝通的熱切對話，展現設計與社會脈動的緊密連結。在這裡，每件作品都是一次深刻的社會對話，傳遞著設計師對社會的關懷與期待。'
     }
 ];
 
@@ -847,7 +851,7 @@ const InteractivePlusGrid = () => {
                 <div className="w-full h-48 bg-black" />
             </div>
             <div className="w-full bg-black relative" ref={containerRef}>
-                <div className="absolute inset-0 flex items-center justify-center overflow-visible">
+                <div className="absolute inset-0 flex items-center justify-end overflow-visible">
                     {bgImages.map((img, index) => (
                         <motion.img
                             key={`bg-${index}`}
@@ -876,7 +880,7 @@ const InteractivePlusGrid = () => {
                                     repeat: Infinity
                                 }
                             }}
-                            className="w-[100%] sm:w-[100%] md:w-[80%] max-w-[800px] h-auto object-contain absolute sm:max-w-[800px] max-w-[400px]"
+                            className="w-[120%] sm:w-[100%] md:w-[70%] max-w-[700px] h-auto object-contain absolute sm:max-w-[700px] max-w-[400px] right-[-10%] translate-x-[50%] md:right-[-5%] md:translate-x-0 mt-[20%]"
                             style={{
                                 filter: isMobile ? 'brightness(1.1) contrast(0.95)' : 'brightness(1.2) contrast(0.9)'
                             }}
@@ -886,39 +890,73 @@ const InteractivePlusGrid = () => {
                 {/* Exhibition Concept */}
                 <div 
                     ref={conceptRef}
-                    className="w-full max-w-[592px] mx-auto px-4 py-40 relative z-30 min-h-screen flex flex-col justify-center"
+                    className="w-full relative z-30 min-h-screen flex flex-col justify-center"
                 >
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        style={{ opacity: textOpacity1 }}
-                        className="mb-8 text-center"
-                    >
-                        <h2 className="text-title text-white tracking-wide">
-                            °<span className="text-white">Sense</span> 展覽概念
-                        </h2>
-                    </motion.div>
-                    <div className="space-y-12">
+                    <div className="max-w-[800px] md:ml-[12%] mx-auto px-4 relative">
+                        {/* Small rotating image above text */}
+                        <div className="absolute -top-64 right-[75%] w-[300px] hidden md:block">
+                            {bgImages.map((img, index) => (
+                                <motion.img
+                                    key={`small-bg-${index}`}
+                                    src={img}
+                                    alt="Small Rotating Background"
+                                    className="w-full h-auto object-contain absolute top-0 left-0"
+                                    initial={false}
+                                    animate={{ 
+                                        opacity: index === ((currentBgIndex + 2) % bgImages.length) ? 0.3 : 0,
+                                        rotate: -360
+                                    }}
+                                    transition={{ 
+                                        opacity: {
+                                            duration: 1.5,
+                                            ease: "easeInOut"
+                                        },
+                                        rotate: {
+                                            duration: 15,
+                                            ease: "linear",
+                                            repeat: Infinity
+                                        }
+                                    }}
+                                    style={{
+                                        filter: 'brightness(1.2) contrast(0.9)'
+                                    }}
+                                />
+                            ))}
+                        </div>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.6 }}
-                            style={{ opacity: textOpacity2 }}
-                            className="text-body text-center text-gray-300"
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            style={{ opacity: textOpacity1 }}
+                            className="mb-8 md:text-left text-center"
                         >
-                            <p>在這個科技飛速發展、數據與算法主導生活的時代，人與人之間的連結逐漸被冷冰冰的機械感所取代，情感與溫度被稀釋成一串串代碼。</p>
+                            <h2 className="text-title text-white tracking-wide">
+                                °<span className="text-white">Sense</span> 展覽概念
+                            </h2>
                         </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.8 }}
-                            style={{ opacity: textOpacity3 }}
-                            className="text-body text-center text-gray-300"
-                        >
-                            <p>然而，設計以一種悄然且柔和的姿態存在，為世界注入人性的溫暖。</p>
-                            <p className="mt-4">每一道曲線、每一個材質選擇、每一個細節，都蘊藏著設計者的情感、溫度與對人的關懷，我們透過設計傳遞溫度、形成連結。</p>
-                        </motion.div>
+                        <div className="space-y-12 max-w-[600px] md:max-w-full mx-auto">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.6 }}
+                                style={{ opacity: textOpacity2 }}
+                                className="text-body text-gray-300 space-y-0 md:text-left text-center"
+                            >
+                                <p>「溫度」承載著互動的軌跡，透過觸碰映現；</p>
+                                <p>「感知」詮釋了主觀的體驗，藉由設計成型。在兩者的交互作用下，°S 成為我們報以世界的情感單位。</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.8 }}
+                                style={{ opacity: textOpacity3 }}
+                                className="text-body text-gray-300 space-y-0 md:text-left text-center"
+                            >
+                                <p>面對世界的廣闊，我們懷抱最真誠而純粹的心、謙卑與同理，</p>
+                                <p>以設計的手法為所見與聞注入暖意。</p>
+                                <p>溫度是相對也是絕對，是對話的依據，是情感的證明，如同我們以設計付諸於萬物的注目與熱情。</p>
+                            </motion.div>
+                        </div>
                     </div>
                     {/* Second Scroll Down Button */}
                     <div className="absolute bottom-[78px] left-1/2 transform -translate-x-1/2 z-30 hidden md:block">
@@ -998,14 +1036,14 @@ const InteractivePlusGrid = () => {
                                 key={hoveredIndex}
                                 className="text-center"
                             >
-                                <h3 className="text-subtitle text-white font-bold mb-2">
+                                <p className="text-caption text-gray-400 mb-3">
+                                    {categoryDescriptions[hoveredIndex].temperature} | {categoryDescriptions[hoveredIndex].description}
+                                </p>
+                                <h3 className="text-[1.5rem] leading-tight text-white font-bold mb-5">
                                     {categoryDescriptions[hoveredIndex].title}
                                 </h3>
-                                <p className="text-caption text-gray-400 mb-1">
-                                    {categoryDescriptions[hoveredIndex].temperature}
-                                </p>
-                                <p className="text-body text-gray-300">
-                                    {categoryDescriptions[hoveredIndex].description}
+                                <p className="text-body text-gray-400 max-w-[700px] mx-auto leading-relaxed">
+                                    {categoryDescriptions[hoveredIndex].longDescription}
                                 </p>
                             </motion.div>
                         </div>
@@ -1046,14 +1084,14 @@ const InteractivePlusGrid = () => {
                                     transition={{ duration: 0.3 }}
                                     className="text-center mb-2"
                                 >
-                                    <h3 className="text-subtitle text-white font-bold mb-2">
+                                    <p className="text-caption text-gray-400 mb-3">
+                                        {categoryDescriptions[activeIndex].temperature} | {categoryDescriptions[activeIndex].description}
+                                    </p>
+                                    <h3 className="text-subtitle text-white font-bold mb-3">
                                         {categoryDescriptions[activeIndex].title}
                                     </h3>
-                                    <p className="text-caption text-gray-400 mb-1">
-                                        {categoryDescriptions[activeIndex].temperature}
-                                    </p>
-                                    <p className="text-body text-gray-300">
-                                        {categoryDescriptions[activeIndex].description}
+                                    <p className="text-body text-gray-400 max-w-[600px] mx-auto leading-relaxed">
+                                        {categoryDescriptions[activeIndex].longDescription}
                                     </p>
                                 </motion.div>
                             </AnimatePresence>
@@ -1114,9 +1152,12 @@ const InteractivePlusGrid = () => {
                 {/* CTA Button Overlay */}
                 <div className="w-full h-48 absolute bottom-32 left-0 z-30 flex items-center justify-center">
                     <button 
-                        className="bg-white text-black text-body font-medium py-2 px-4 rounded-xl"
+                        className="bg-white text-black text-body font-medium py-2 px-4 rounded-[18px] flex items-center gap-2"
                         onClick={() => window.location.href = '/book-tour'}
                     >
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 10H17M17 10L12 5M17 10L12 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                         立即預約導覽
                     </button>
                 </div>

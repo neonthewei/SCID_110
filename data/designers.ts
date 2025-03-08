@@ -131,6 +131,50 @@ export const designers: Designer[] = [
             }
           ]
         }
+      },
+      {
+        id: "warm-craft-3",
+        title: {
+          main: "竹織燈影",
+          sub: "Bamboo Light Weaving"
+        },
+        description: "結合傳統竹編工藝與現代照明設計，創造出層次豐富的光影效果。每一片竹片都經過精心編織，在光線照射下呈現出獨特的光影紋理。",
+        category: "溫工藝",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "竹編工藝細節"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "燈光效果展示"
+            }
+          ]
+        }
+      },
+      {
+        id: "hot-dialogue-3",
+        title: {
+          main: "聲音織布機",
+          sub: "Sound Weaving Loom"
+        },
+        description: "這是一個將聲音視覺化的互動裝置，透過感應器捕捉環境聲音，即時轉換成動態織紋投影，創造出聲音與視覺的對話空間。",
+        category: "熱對話",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "互動裝置運作展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "織紋投影效果"
+            }
+          ]
+        }
       }
     ]
   },
@@ -182,6 +226,50 @@ export const designers: Designer[] = [
             {
               image: "/placeholder.svg?height=400&width=600",
               caption: "材質細節特寫"
+            }
+          ]
+        }
+      },
+      {
+        id: "cold-spark-3",
+        title: {
+          main: "光譜共鳴",
+          sub: "Spectrum Resonance"
+        },
+        description: "透過特殊的光學材料與聲音感應技術，創造出能夠隨著音樂節奏變化的光影裝置，將聽覺體驗轉化為視覺饗宴。",
+        category: "冷火花",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "光影變化展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "互動效果示範"
+            }
+          ]
+        }
+      },
+      {
+        id: "warm-craft-4",
+        title: {
+          main: "陶光映影",
+          sub: "Ceramic Light Mapping"
+        },
+        description: "運用傳統陶藝技法，製作出獨特的鏤空陶瓷燈具，光線穿過精心設計的孔洞，在牆面上投射出豐富的光影圖案。",
+        category: "溫工藝",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "陶瓷工藝細節"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "光影效果展示"
             }
           ]
         }
@@ -239,6 +327,50 @@ export const designers: Designer[] = [
             }
           ]
         }
+      },
+      {
+        id: "comfort-nest-5",
+        title: {
+          main: "織夢椅",
+          sub: "Dream Weaving Chair"
+        },
+        description: "採用特殊編織技術，將傳統藤編工藝與現代家具設計結合，創造出既舒適又富有藝術感的休閒椅。",
+        category: "舒適巢",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "編織工藝細節"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "椅子整體展示"
+            }
+          ]
+        }
+      },
+      {
+        id: "cold-spark-4",
+        title: {
+          main: "數位織影",
+          sub: "Digital Shadow Weaving"
+        },
+        description: "結合數位投影與互動感應技術，創造出能與觀眾互動的光影裝置，讓人彷彿置身於流動的光織物中。",
+        category: "冷火花",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "互動效果展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "投影藝術呈現"
+            }
+          ]
+        }
       }
     ]
   },
@@ -290,6 +422,266 @@ export const designers: Designer[] = [
             {
               image: "/placeholder.svg?height=400&width=600",
               caption: "光影效果呈現"
+            }
+          ]
+        }
+      },
+      {
+        id: "warm-craft-5-d4",
+        title: {
+          main: "溫度織錄",
+          sub: "Temperature Weaving"
+        },
+        description: "運用感溫材料與傳統編織工藝，創造出能夠隨環境溫度變化而改變圖案的織品裝置，展現科技與工藝的完美結合。",
+        category: "溫工藝",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "溫感變化展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "織品細節特寫"
+            }
+          ]
+        }
+      },
+      {
+        id: "hot-dialogue-4",
+        title: {
+          main: "聲光對話",
+          sub: "Sound Light Dialogue"
+        },
+        description: "這是一個結合聲音與光影的互動裝置，能夠捕捉使用者的聲音，並將其轉化為動態的光影效果，創造出獨特的感官體驗。",
+        category: "熱對話",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "互動效果展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "聲音視覺化呈現"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    id: "designer-5",
+    name: {
+      zh: "林雅婷",
+      pinyin: "Lin Ya Ting"
+    },
+    image: "/face2/colorful5.jpg",
+    works: [
+      {
+        id: "warm-craft-5-d5",
+        title: {
+          main: "竹韻",
+          sub: "Bamboo Rhythm"
+        },
+        description: "結合傳統竹編工藝與現代音響設計，創造出獨特的自然聲學體驗。竹材的多孔結構與特殊編織方式，賦予音響溫潤的音質。",
+        category: "溫工藝",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "竹編工藝細節"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "音響效果展示"
+            }
+          ]
+        }
+      },
+      {
+        id: "comfort-nest-5-d5",
+        title: {
+          main: "光織椅",
+          sub: "Light Weaving Chair"
+        },
+        description: "採用特殊光纖織物，打造出會隨環境光線變化的座椅。在不同時段呈現出不同的視覺效果，為空間增添活力。",
+        category: "舒適巢",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "織物細節"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "光效展示"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    id: "designer-6",
+    name: {
+      zh: "陳俊宏",
+      pinyin: "Chen Jun Hong"
+    },
+    image: "/face2/colorful6.jpg",
+    works: [
+      {
+        id: "cold-spark-6",
+        title: {
+          main: "智慧花園",
+          sub: "Smart Garden"
+        },
+        description: "結合IoT技術的智慧植物培育系統，透過感測器監測植物生長狀況，自動調節光照、溫度和濕度，實現智慧化的居家園藝。",
+        category: "冷火花",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "系統介面"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "植物生長展示"
+            }
+          ]
+        }
+      },
+      {
+        id: "hot-dialogue-6",
+        title: {
+          main: "聲光對話",
+          sub: "Sound Light Dialogue"
+        },
+        description: "互動式聲光裝置，能夠捕捉使用者的聲音並轉換為動態光影，創造出獨特的感官體驗。",
+        category: "熱對話",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "互動展示"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "光效變化"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    id: "designer-7",
+    name: {
+      zh: "黃詩涵",
+      pinyin: "Huang Shi Han"
+    },
+    image: "/face2/colorful7.jpg",
+    works: [
+      {
+        id: "comfort-nest-7",
+        title: {
+          main: "模組化收納櫃",
+          sub: "Modular Storage"
+        },
+        description: "創新的模組化收納系統，可根據使用者需求自由組合，適應不同空間和收納需求。",
+        category: "舒適巢",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "組裝示範"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "收納展示"
+            }
+          ]
+        }
+      },
+      {
+        id: "warm-craft-7",
+        title: {
+          main: "織影",
+          sub: "Weaving Shadow"
+        },
+        description: "結合傳統編織工藝與現代投影技術，創造出動態變化的光影藝術裝置。",
+        category: "溫工藝",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "編織細節"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "投影效果"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    id: "designer-8",
+    name: {
+      zh: "王建明",
+      pinyin: "Wang Jian Ming"
+    },
+    image: "/face2/colorful8.jpg",
+    works: [
+      {
+        id: "cold-spark-8",
+        title: {
+          main: "環保能源椅",
+          sub: "Eco Energy Chair"
+        },
+        description: "融合太陽能與人體動能發電技術的創新座椅，可將日常活動轉換為清潔能源。",
+        category: "冷火花",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "能源轉換系統"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "使用展示"
+            }
+          ]
+        }
+      },
+      {
+        id: "hot-dialogue-8",
+        title: {
+          main: "共享閱讀空間",
+          sub: "Shared Reading Space"
+        },
+        description: "可變形的公共閱讀空間設計，促進社區交流與知識分享。",
+        category: "熱對話",
+        images: {
+          main: "/placeholder.svg?height=600&width=800",
+          details: [
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "空間配置"
+            },
+            {
+              image: "/placeholder.svg?height=400&width=600",
+              caption: "使用場景"
             }
           ]
         }

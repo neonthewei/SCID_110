@@ -1,108 +1,48 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
 import { getAllWorks, type Work } from "@/data/designers"
 
-const Footer = () => {
+interface WorkFooterProps {
+  workId: string;
+  categoryImage: string;
+  categoryName: string;
+}
+
+const WorkFooter = ({ workId, categoryImage, categoryName }: WorkFooterProps) => {
   const pathname = usePathname()
-  const isBookTourPage = pathname === '/book-tour'
-  const isBuyCatalogPage = pathname === '/buy-catalog'
-  const [isSticky, setIsSticky] = useState(true);
-
-  // Check if current page is in online exhibition section
-  const isExhibitionPage = pathname.startsWith('/online-exhibition/')
-  // Check if current page is work detail page
-  const isWorkPage = pathname.startsWith('/work/')
-  const workId = isWorkPage ? pathname.split('/')[2] : null
   
-  // Define navigation links based on current path
+  // Get navigation links for work detail page
   const getNavigationLinks = () => {
-    if (isExhibitionPage) {
-      const exhibitionPaths = [
-        '/online-exhibition/young-designers',
-        '/online-exhibition/milan',
-        '/online-exhibition/shih-chien'
-      ]
-      
-      const currentIndex = exhibitionPaths.indexOf(pathname)
-      if (currentIndex === -1) return null
+    const allWorks = getAllWorks()
+    const currentIndex = allWorks.findIndex((work: Work) => work.id === workId)
+    if (currentIndex === -1) return null
 
-      const totalPages = exhibitionPaths.length
-      
-      const prevIndex = (currentIndex - 1 + totalPages) % totalPages
-      const nextIndex = (currentIndex + 1) % totalPages
+    const totalWorks = allWorks.length
+    const prevIndex = (currentIndex - 1 + totalWorks) % totalWorks
+    const nextIndex = (currentIndex + 1) % totalWorks
 
-      const getLabel = (path: string) => {
-        if (path.includes('young-designers')) return '新一代展區'
-        if (path.includes('milan')) return '米蘭展區'
-        return '實踐展區'
-      }
-
-      return {
-        prev: {
-          path: exhibitionPaths[prevIndex],
-          label: getLabel(exhibitionPaths[prevIndex])
-        },
-        next: {
-          path: exhibitionPaths[nextIndex],
-          label: getLabel(exhibitionPaths[nextIndex])
-        }
-      }
-    } else if (isWorkPage && workId) {
-      const allWorks = getAllWorks()
-      const currentIndex = allWorks.findIndex((work: Work) => work.id === workId)
-      if (currentIndex === -1) return null
-
-      const totalWorks = allWorks.length
-      const prevIndex = (currentIndex - 1 + totalWorks) % totalWorks
-      const nextIndex = (currentIndex + 1) % totalWorks
-
-      return {
-        prev: {
-          path: `/work/${allWorks[prevIndex].id}`,
-          label: '上一個作品'
-        },
-        next: {
-          path: `/work/${allWorks[nextIndex].id}`,
-          label: '下一個作品'
-        }
+    return {
+      prev: {
+        path: `/work/${allWorks[prevIndex].id}`,
+        label: '上一個作品'
+      },
+      next: {
+        path: `/work/${allWorks[nextIndex].id}`,
+        label: '下一個作品'
       }
     }
-
-    return null
   }
 
   const navigation = getNavigationLinks()
 
-  useEffect(() => {
-    const checkHeight = () => {
-      const minHeight = 900;
-      setIsSticky(window.innerHeight >= minHeight);
-    };
-
-    if (isBookTourPage) {
-      checkHeight();
-      window.addEventListener('resize', checkHeight);
-      return () => window.removeEventListener('resize', checkHeight);
-    }
-  }, [isBookTourPage]);
-
-  // Hide footer on work detail pages with specific IDs
-  if (isWorkPage && workId) {
-    return null;
-  }
-
   return (
-    <footer className={`
-      w-full py-12 z-[30] 
-      ${isBookTourPage ? (isSticky ? 'md:fixed md:bottom-0 md:left-0 md:right-0' : 'relative') : 'relative'}
-      ${isBuyCatalogPage ? 'hidden md:block' : ''}
-    `}>
+    <footer className="w-full py-12 z-[30] relative">
       <div className="container mx-auto px-4 relative z-[20]">
         {/* Navigation */}
-        {(isExhibitionPage || isWorkPage) && navigation && (
+        {navigation && (
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center mb-6">
               <Link 
@@ -131,7 +71,6 @@ const Footer = () => {
 
         {/* Content */}
         <div className="max-w-7xl mx-auto">
-          {!isExhibitionPage && !isWorkPage && <div className="w-full h-px bg-neutral-200 mb-6 relative z-[1]"></div>}
           {/* Desktop Content */}
           <div className="hidden md:flex justify-between items-center">
             {/* Address and Email */}
@@ -245,8 +184,21 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      {/* Bottom-left Category Image - Inside the footer */}
+      <div className="absolute left-0 bottom-0 overflow-visible pointer-events-none" style={{ zIndex: 5 }}>
+        <div className="w-[420px] h-[420px] md:w-[560px] md:h-[520px] -ml-60 md:-ml-48 -mb-12 md:-mb-72 animate-slow-spin pointer-events-auto">
+          <Image
+            src={categoryImage}
+            alt={categoryName}
+            width={560}
+            height={560}
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </div>
     </footer>
   )
 }
 
-export default Footer 
+export default WorkFooter 

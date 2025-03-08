@@ -28,9 +28,7 @@ export default function RootLayout({
         <Header />
         <BackToTopButton />
         <main className="pt-16">{children}</main>
-        <div className="h-16">
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   )

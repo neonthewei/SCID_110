@@ -142,7 +142,7 @@ export default function DesignerPage() {
                   }
                 }}
               >
-                <div className="bg-white transform transition-all duration-300 w-full mx-auto rounded-2xl overflow-hidden relative aspect-[3/4]">
+                <div className="bg-white transform transition-all duration-300 w-full mx-auto rounded-lg overflow-hidden relative aspect-[3/4]">
                   <Image
                     src={designer.image || "/placeholder.svg?height=600&width=400"}
                     alt={designer.name.zh}
