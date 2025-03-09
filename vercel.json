@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "scid-110.vercel.app"
+        }
+      ],
+      "destination": "https://www.scid110.com/$1",
+      "permanent": true
+    }
+  ]
+} 
