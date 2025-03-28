@@ -81,7 +81,7 @@ export default function ShihChienExhibition() {
                         日期
                       </h3>
                       <p className="text-[#9D9D9D] text-[13px] sm:text-sm">
-                        2025.04.24 - 2025.05.07
+                        2025.4.24 - 5.7 / 2025.5.14 - 5.18
                       </p>
                     </div>
                   </div>
