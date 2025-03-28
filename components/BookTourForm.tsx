@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 
 interface TourBooking {
   name: string;
@@ -22,17 +22,17 @@ interface BookingResponse {
 }
 
 const AVAILABLE_DATES = [
-  '2025-02-13',
-  '2025-02-14',
-  '2025-02-15',
-  '2025-02-16',
-  '2025-02-17'
+  "2025-02-13",
+  "2025-02-14",
+  "2025-02-15",
+  "2025-02-16",
+  "2025-02-17",
 ];
 
 const TIME_SLOTS = [
-  { value: '10:00', label: '上午 10:00' },
-  { value: '14:00', label: '下午 02:00' },
-  { value: '16:00', label: '下午 04:00' }
+  { value: "10:00", label: "上午 10:00", available: true, remainingSpots: 15 },
+  { value: "14:00", label: "下午 02:00", available: true, remainingSpots: 15 },
+  { value: "16:00", label: "下午 04:00", available: true, remainingSpots: 15 },
 ];
 
 export default function BookTourForm() {
@@ -41,37 +41,44 @@ export default function BookTourForm() {
   const [error, setError] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
 
-  const { register, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<TourBooking>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm<TourBooking>({
     defaultValues: {
       date: AVAILABLE_DATES[0],
-      time: '',
-      name: '',
-      email: '',
-      phone: '',
-      participants: undefined
-    }
+      time: "",
+      name: "",
+      email: "",
+      phone: "",
+      participants: undefined,
+    },
   });
 
-  const watchDate = watch('date');
-  const watchTime = watch('time');
+  const watchDate = watch("date");
+  const watchTime = watch("time");
 
   // 讀取預約記錄
   const fetchBookings = async () => {
     try {
-      const response = await fetch('/api/sheets');
+      const response = await fetch("/api/sheets");
       const data = await response.json();
       if (data.error) {
         throw new Error(data.error);
       }
       setBookings(data.data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : '載入預約記錄失敗');
+      setError(err instanceof Error ? err.message : "載入預約記錄失敗");
     }
   };
 
   // 當日期改變時，重置時間選擇
   useEffect(() => {
-    setValue('time', '');
+    setValue("time", "");
   }, [watchDate, setValue]);
 
   // 在組件掛載時獲取預約記錄
@@ -82,12 +89,12 @@ export default function BookTourForm() {
   // 取得可用的時段
   const getAvailableTimeSlots = (date: string) => {
     if (!date) return [];
-    const dateBookings = bookings.filter(booking => booking.date === date);
-    const bookedTimes = new Set(dateBookings.map(booking => booking.time));
-    
-    return TIME_SLOTS.map(slot => ({
+    const dateBookings = bookings.filter((booking) => booking.date === date);
+    const bookedTimes = new Set(dateBookings.map((booking) => booking.time));
+
+    return TIME_SLOTS.map((slot) => ({
       ...slot,
-      available: !bookedTimes.has(slot.value)
+      available: !bookedTimes.has(slot.value),
     }));
   };
 
@@ -96,10 +103,10 @@ export default function BookTourForm() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/sheets', {
-        method: 'POST',
+      const response = await fetch("/api/sheets", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -111,9 +118,9 @@ export default function BookTourForm() {
 
       reset(); // 重置表單
       fetchBookings(); // 重新讀取預約記錄
-      alert('預約成功！我們會盡快與您聯繫。');
+      alert("預約成功！我們會盡快與您聯繫。");
     } catch (err) {
-      setError(err instanceof Error ? err.message : '預約提交失敗');
+      setError(err instanceof Error ? err.message : "預約提交失敗");
     } finally {
       setIsLoading(false);
     }
@@ -139,8 +146,12 @@ export default function BookTourForm() {
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">預約導覽</h2>
-          <p className="text-gray-600">展覽期間 (04/27 - 05/07) 每週二和五的下午13:30開始</p>
-          <p className="text-gray-600">精華導覽40分鐘，一起窺探展區精選作品，了解作品核心與價值。</p>
+          <p className="text-gray-600">
+            展覽期間 (04/27 - 05/07) 每週二和五的下午13:30開始
+          </p>
+          <p className="text-gray-600">
+            精華導覽40分鐘，一起窺探展區精選作品，了解作品核心與價值。
+          </p>
         </div>
 
         <div className="bg-white shadow rounded-2xl p-6">
@@ -149,19 +160,47 @@ export default function BookTourForm() {
             <div className="flex items-center justify-center mb-8">
               <div className="flex flex-col items-center sm:flex-row sm:items-center">
                 <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                  <span className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-subtitle transition-colors duration-300 ${
-                    currentStep === 1 ? 'border-black bg-black text-white' : 'border-gray-300'
-                  }`}>1</span>
-                  <span className={`block sm:ml-2 mt-2 sm:mt-0 text-subtitle text-center ${currentStep === 1 ? 'text-black' : 'text-gray-400'}`}>選擇時間</span>
+                  <span
+                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-subtitle transition-colors duration-300 ${
+                      currentStep === 1
+                        ? "border-black bg-black text-white"
+                        : "border-gray-300"
+                    }`}
+                  >
+                    1
+                  </span>
+                  <span
+                    className={`block sm:ml-2 mt-2 sm:mt-0 text-subtitle text-center ${
+                      currentStep === 1 ? "text-black" : "text-gray-400"
+                    }`}
+                  >
+                    選擇時間
+                  </span>
                 </div>
               </div>
-              <div className={`w-12 sm:w-16 h-0.5 mx-2 sm:mx-4 self-start mt-4 sm:mt-0 sm:self-center transition-colors duration-300 ${currentStep === 2 ? 'bg-black' : 'bg-gray-300'}`} />
+              <div
+                className={`w-12 sm:w-16 h-0.5 mx-2 sm:mx-4 self-start mt-4 sm:mt-0 sm:self-center transition-colors duration-300 ${
+                  currentStep === 2 ? "bg-black" : "bg-gray-300"
+                }`}
+              />
               <div className="flex flex-col items-center sm:flex-row sm:items-center">
                 <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                  <span className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-subtitle transition-colors duration-300 ${
-                    currentStep === 2 ? 'border-black bg-black text-white' : 'border-gray-300'
-                  }`}>2</span>
-                  <span className={`block sm:ml-2 mt-2 sm:mt-0 text-subtitle text-center ${currentStep === 2 ? 'text-black' : 'text-gray-400'}`}>填寫資料</span>
+                  <span
+                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-subtitle transition-colors duration-300 ${
+                      currentStep === 2
+                        ? "border-black bg-black text-white"
+                        : "border-gray-300"
+                    }`}
+                  >
+                    2
+                  </span>
+                  <span
+                    className={`block sm:ml-2 mt-2 sm:mt-0 text-subtitle text-center ${
+                      currentStep === 2 ? "text-black" : "text-gray-400"
+                    }`}
+                  >
+                    填寫資料
+                  </span>
                 </div>
               </div>
             </div>
@@ -171,59 +210,94 @@ export default function BookTourForm() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 gap-6">
                   <div>
-                    <label className="block text-subtitle text-gray-700">參觀日期</label>
+                    <label className="block text-subtitle text-gray-700">
+                      參觀日期
+                    </label>
                     <select
-                      {...register('date', { required: '請選擇參觀日期' })}
+                      {...register("date", { required: "請選擇參觀日期" })}
                       className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-body"
                     >
-                      {AVAILABLE_DATES.map(date => (
+                      {AVAILABLE_DATES.map((date) => (
                         <option key={date} value={date}>
-                          {new Date(date).toLocaleDateString('zh-TW', { 
-                            year: 'numeric',
-                            month: '2-digit',
-                            day: '2-digit',
-                            weekday: 'long'
+                          {new Date(date).toLocaleDateString("zh-TW", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                            weekday: "long",
                           })}
                         </option>
                       ))}
                     </select>
-                    {errors.date && <p className="mt-1 text-caption text-red-600">{errors.date.message}</p>}
+                    {errors.date && (
+                      <p className="mt-1 text-caption text-red-600">
+                        {errors.date.message}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-subtitle text-gray-700 mb-3">參觀時間</label>
+                    <label className="block text-subtitle text-gray-700 mb-3">
+                      參觀時間
+                    </label>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                      {timeSlots.map(slot => (
+                      {timeSlots.map((slot) => (
                         <div key={slot.value} className="flex-grow">
                           <input
                             type="radio"
                             id={slot.value}
                             value={slot.value}
                             disabled={!slot.available}
-                            {...register('time', { required: '請選擇參觀時間' })}
+                            {...register("time", {
+                              required: "請選擇參觀時間",
+                            })}
                             className="peer sr-only"
                           />
                           <label
                             htmlFor={slot.value}
-                            className={`group flex items-center justify-center px-4 py-3 border-2 rounded-2xl w-full h-[60px]
-                              ${!slot.available ? 'bg-gray-50 border-gray-100 cursor-not-allowed' : 
-                                'cursor-pointer hover:bg-gray-50 border-gray-200 hover:border-gray-300 peer-checked:bg-white peer-checked:border-black peer-checked:border-[2.5px]'
+                            className={`group relative flex flex-col items-center justify-center px-4 py-3 border-2 rounded-2xl w-full h-[75px] transition-all duration-200
+                              ${
+                                !slot.available
+                                  ? "bg-gray-50 border-gray-100 cursor-not-allowed"
+                                  : "cursor-pointer hover:shadow-sm hover:bg-gray-50 border-gray-200 hover:border-gray-300 peer-checked:bg-gray-50 peer-checked:border-black peer-checked:border-[2.5px] peer-checked:shadow-sm"
                               }
                             `}
                           >
-                            <span className={`text-subtitle
-                              ${!slot.available ? 'text-gray-300' : 
-                                'text-gray-900 peer-checked:text-black peer-checked:font-semibold'
+                            {slot.available && (
+                              <div className="absolute top-1 right-1 w-3 h-3 rounded-full hidden peer-checked:block bg-black"></div>
+                            )}
+                            <span
+                              className={`text-subtitle
+                              ${
+                                !slot.available
+                                  ? "text-gray-300"
+                                  : "text-gray-900 peer-checked:text-black peer-checked:font-semibold"
                               }
-                            `}>
+                            `}
+                            >
                               {slot.label}
+                              {slot.available && (
+                                <span className="block text-caption text-gray-500 mt-1">
+                                  剩餘{" "}
+                                  <span className="font-medium text-gray-700">
+                                    {slot.remainingSpots}
+                                  </span>{" "}
+                                  位
+                                </span>
+                              )}
+                              {!slot.available && slot.remainingSpots <= 0 && (
+                                <span className="block text-caption text-gray-300 mt-1">
+                                  已額滿
+                                </span>
+                              )}
                             </span>
                           </label>
                         </div>
                       ))}
                     </div>
                     {errors.time && (
-                      <p className="mt-2 text-caption text-red-600">{errors.time.message}</p>
+                      <p className="mt-2 text-caption text-red-600">
+                        {errors.time.message}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -246,53 +320,77 @@ export default function BookTourForm() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label className="block text-subtitle text-gray-700">姓名</label>
+                    <label className="block text-subtitle text-gray-700">
+                      姓名
+                    </label>
                     <input
                       type="text"
-                      {...register('name', { required: '請輸入姓名' })}
+                      {...register("name", { required: "請輸入姓名" })}
                       className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-body"
                     />
-                    {errors.name && <p className="mt-1 text-caption text-red-600">{errors.name.message}</p>}
+                    {errors.name && (
+                      <p className="mt-1 text-caption text-red-600">
+                        {errors.name.message}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-subtitle text-gray-700">電子郵件</label>
+                    <label className="block text-subtitle text-gray-700">
+                      電子郵件
+                    </label>
                     <input
                       type="email"
-                      {...register('email', { 
-                        required: '請輸入電子郵件',
+                      {...register("email", {
+                        required: "請輸入電子郵件",
                         pattern: {
                           value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: '請輸入有效的電子郵件地址'
-                        }
+                          message: "請輸入有效的電子郵件地址",
+                        },
                       })}
                       className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-body"
                     />
-                    {errors.email && <p className="mt-1 text-caption text-red-600">{errors.email.message}</p>}
+                    {errors.email && (
+                      <p className="mt-1 text-caption text-red-600">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-subtitle text-gray-700">電話</label>
+                    <label className="block text-subtitle text-gray-700">
+                      電話
+                    </label>
                     <input
                       type="tel"
-                      {...register('phone', { required: '請輸入電話號碼' })}
+                      {...register("phone", { required: "請輸入電話號碼" })}
                       className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-body"
                     />
-                    {errors.phone && <p className="mt-1 text-caption text-red-600">{errors.phone.message}</p>}
+                    {errors.phone && (
+                      <p className="mt-1 text-caption text-red-600">
+                        {errors.phone.message}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-subtitle text-gray-700">參觀人數</label>
+                    <label className="block text-subtitle text-gray-700">
+                      參觀人數
+                    </label>
                     <input
                       type="number"
-                      {...register('participants', { 
-                        required: '請輸入參觀人數',
-                        min: { value: 1, message: '至少1人' },
-                        max: { value: 20, message: '最多20人' }
+                      {...register("participants", {
+                        required: "請輸入參觀人數",
+                        min: { value: 1, message: "至少1人" },
+                        max: { value: 20, message: "最多20人" },
                       })}
                       className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-body"
                     />
-                    {errors.participants && <p className="mt-1 text-caption text-red-600">{errors.participants.message}</p>}
+                    {errors.participants && (
+                      <p className="mt-1 text-caption text-red-600">
+                        {errors.participants.message}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -319,7 +417,7 @@ export default function BookTourForm() {
                     disabled={isLoading}
                     className="inline-flex justify-center rounded-2xl border border-transparent bg-black py-3 px-6 text-subtitle text-white shadow-sm hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:bg-black"
                   >
-                    {isLoading ? '提交中...' : '提交預約'}
+                    {isLoading ? "提交中..." : "提交預約"}
                   </button>
                 </div>
               </div>
@@ -344,4 +442,4 @@ export default function BookTourForm() {
       </div>
     </div>
   );
-} 
+}
