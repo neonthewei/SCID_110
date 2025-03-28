@@ -80,12 +80,14 @@ const LargeMorphingCircle = ({
   imageUrl,
   onHover,
   activeIndex,
+  isLowerGrid = false,
 }: {
   category: string;
   index: number;
   imageUrl: string;
   onHover: (isHovered: boolean, index: number) => void;
   activeIndex: number;
+  isLowerGrid?: boolean;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const circle = useRef<Circle>(new Circle());
@@ -132,7 +134,7 @@ const LargeMorphingCircle = ({
       ctx.clearRect(0, 0, size, size);
       circle.current.animationTime = (Date.now() * 0.005) % 100;
 
-      // 增加悬停时的变形强度，增强视觉效果
+      // Keep the hover-based morph strength variation
       const morphStrength = isHovered ? 0.4 : 0.3;
       circle.current.morphStrength +=
         (morphStrength - circle.current.morphStrength) * 0.15;
@@ -224,7 +226,11 @@ const LargeMorphingCircle = ({
         ctx.clip();
 
         // Set opacity based on hover state
-        const imageOpacity = isHovered || activeIndex === index ? 1 : 0.15;
+        const imageOpacity = isLowerGrid
+          ? 1
+          : isHovered || activeIndex === index
+          ? 1
+          : 0.15;
         ctx.globalAlpha = imageOpacity;
 
         // Draw the image
@@ -242,19 +248,29 @@ const LargeMorphingCircle = ({
         // Add inner glow - 增强发光效果
         const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, baseRadius);
 
-        if (isHovered || activeIndex === index) {
-          // 悬停时的强烈发光效果 - 也往内移动
+        if (isLowerGrid) {
+          // For lower grid circles, use the more subtle hover-state gradient
+          // regardless of hover state
           gradient.addColorStop(0.5, "rgba(255, 255, 255, 0)");
           gradient.addColorStop(0.7, "rgba(255, 255, 255, 0.18)");
           gradient.addColorStop(0.85, "rgba(255, 255, 255, 0.25)");
           gradient.addColorStop(1, "rgba(255, 255, 255, 0.35)");
         } else {
-          // 正常状态的发光效果 - 中心透明度高，边缘完全不透明
-          gradient.addColorStop(0.3, "rgba(255, 255, 255, 0)");
-          gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.05)");
-          gradient.addColorStop(0.7, "rgba(255, 255, 255, 0.3)");
-          gradient.addColorStop(0.85, "rgba(255, 255, 255, 0.6)");
-          gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
+          // For top grid circles, keep the hover-dependent gradient
+          if (isHovered || activeIndex === index) {
+            // 悬停时的强烈发光效果 - 也往内移动
+            gradient.addColorStop(0.5, "rgba(255, 255, 255, 0)");
+            gradient.addColorStop(0.7, "rgba(255, 255, 255, 0.18)");
+            gradient.addColorStop(0.85, "rgba(255, 255, 255, 0.25)");
+            gradient.addColorStop(1, "rgba(255, 255, 255, 0.35)");
+          } else {
+            // 正常状态的发光效果 - 中心透明度高，边缘完全不透明
+            gradient.addColorStop(0.3, "rgba(255, 255, 255, 0)");
+            gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.05)");
+            gradient.addColorStop(0.7, "rgba(255, 255, 255, 0.3)");
+            gradient.addColorStop(0.85, "rgba(255, 255, 255, 0.6)");
+            gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
+          }
         }
 
         ctx.fillStyle = gradient;
@@ -272,7 +288,7 @@ const LargeMorphingCircle = ({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [index, isHovered, activeIndex, imageUrl]);
+  }, [index, isHovered, activeIndex, imageUrl, isLowerGrid]);
 
   return (
     <div
@@ -610,6 +626,7 @@ const InteractivePlusGrid = () => {
 
       // Update opacity with smooth transition - using the same easing as scale
       const targetOpacity = circle.isHovered ? 1 : 0.15;
+      // Only do the transition for top grid circles
       circle.opacity += (targetOpacity - circle.opacity) * 0.15;
 
       // Update text opacity with smooth transition
@@ -700,7 +717,7 @@ const InteractivePlusGrid = () => {
       const enText = category.enName;
 
       // Calculate font size proportional to circle size
-      const enFontSize = Math.round(baseRadius.current * 0.28);
+      const enFontSize = Math.round(baseRadius.current * 0.36);
 
       // Set font for English text - use FuturaCyrillicBook font with normal weight instead of bold
       context.font = `normal ${enFontSize}px 'FuturaCyrillicBook', 'Futura', sans-serif`;
@@ -1137,7 +1154,7 @@ const InteractivePlusGrid = () => {
           ref={conceptRef}
           className="w-full relative z-30 min-h-screen flex flex-col justify-center"
         >
-          <div className="max-w-[800px] md:ml-[12%] lg:ml-[15%] xl:ml-[20%] 2xl:ml-[20%] mx-auto px-4 md:px-6 lg:px-8 xl:px-10 relative">
+          <div className="max-w-[800px] md:max-w-[850px] lg:max-w-[900px] xl:max-w-[1000px] 2xl:max-w-[1100px] md:ml-[12%] lg:ml-[15%] xl:ml-[18%] 2xl:ml-[16%] mx-auto px-4 md:px-6 lg:px-8 xl:px-10 relative">
             {/* Small rotating image above text */}
             <div className="absolute -top-64 right-[75%] w-[300px] hidden md:block">
               {bgImages.map((img, index) => (
@@ -1256,6 +1273,7 @@ const InteractivePlusGrid = () => {
                   }
                   onHover={handleCircleHover}
                   activeIndex={activeIndex}
+                  isLowerGrid={true}
                 />
               </div>
             ))}
@@ -1316,6 +1334,7 @@ const InteractivePlusGrid = () => {
                     }
                     onHover={handleCircleHover}
                     activeIndex={activeIndex}
+                    isLowerGrid={true}
                   />
                 </motion.div>
               </AnimatePresence>
