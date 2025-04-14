@@ -1,0 +1,45 @@
+{
+  "id": "a110130015",
+  "name": {
+    "zh": "黃皓予",
+    "pinyin": "Hao-Yu Huang"
+  },
+  "image": "/face/a110130015_face.webp",
+  "social": {
+    "email": "danielhhy@gmail.com",
+    "instagram": "https://www.instagram.com/hhaoyvv_",
+    "behance": "https://www.behance.net/8d9b701c"
+  },
+  "works": [
+    {
+      "id": "a110130015_work1",
+      "order": 18,
+      "title": {
+        "main": "MOTOLIFT",
+        "sub": "都市電能跑旅",
+        "main_en": "MOTOLIFT",
+        "sub_en": "Urban E-Tourer"
+      },
+      "description": "MOTOLIFT 是一款電動跑旅，透過電動化整合前方儲物空間，提供騎士收納個人與日常用品。不僅強化配重，增強騎乘穩定性，它也重新定義現代電動機車。\n\n",
+      "longDescription": "MOTOLIFT整合隱藏式的前置物箱，既保留車輛流線未來感，亦提升日常實用性。置物箱位於車輛重心附近，有助於提升日常通勤的穩定性。騎士可存放隨身物品或雨具，以應對都市通勤需求，亦可收納安全帽、手套與工具，滿足長途騎行需求。\n\n透過新的收納設計，使機車兼具實用性與靈活性，成為日常與旅途的可靠夥伴。\n",
+      "english": "MOTOLIFT is an electric touring scooter that integrates a front storage space for personal and daily items, enhancing weight distribution and riding stability. It redefines the modern electric motorcycle, offering a more practical and stable riding experience.\n\n",
+      "english_detail": "MOTOLIFT integrates a hidden front storage compartment, maintaining a sleek design while enhancing practicality. Positioned near the center of gravity, it improves stability for daily commuting and long trips, offering space for personal items, rain gear, helmets, gloves, and tools.\n",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130015_work1_main.webp",
+        "preview": "/preview/a110130015_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130015_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130015_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130015_work1_detail3.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

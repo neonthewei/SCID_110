@@ -1,0 +1,69 @@
+{
+  "id": "a110130013",
+  "name": {
+    "zh": "王可安",
+    "pinyin": "Ko- An Wang"
+  },
+  "image": "/face/a110130013_face.webp",
+  "social": {
+    "email": "annie57255725@gmail.com",
+    "instagram": "https://www.instagram.com/kkawg2",
+    "behance": "https://www.behance.net/98b7279d"
+  },
+  "works": [
+    {
+      "id": "a110130013_work1",
+      "order": 14,
+      "title": {
+        "main": "布料工藝燈具",
+        "sub": "布料工藝燈具",
+        "main_en": "Nukumo",
+        "sub_en": "Hand-sewn wrinkled fabric lamp"
+      },
+      "description": "透過細緻的手工縫製，讓光線在布料的皺摺間變化，創造層次豐富的視覺效果。燈光穿透皺褶肌理，形成柔和且有趣的光影，為空間增添獨特氛圍。\n",
+      "longDescription": "皺摺紋理不僅承載了傳統工藝的溫度，也是時間在布料上的刻畫，為展現日式工藝美學與現代極簡設計的融合，帶有自然紋理與侘寂美學的「手作感」和「時間流逝的痕跡」的概念。\n\n在手工縫製與光影的交互作用下，透過光的投射形成流動般的視覺效果，既增強視覺層次感，又賦予作品動態與觸感美感，讓靜態的材質擁有動態的生命力。",
+      "english": "Through delicate hand stitching, light changes within the folds of the fabric, creating a layered visual effect. The light penetrates the textured pleats, forming soft and intriguing shadows that add a unique atmosphere to the space.",
+      "english_detail": "The pleated texture carries the warmth of traditional craftsmanship and the passage of time, blending Japanese craft aesthetics with modern minimalism. \n\nThe projection creates a flowing visual effect through hand stitching and light, adding depth, dynamic beauty, and a tactile sense, giving static material life.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130013_work1_main.webp",
+        "preview": "/preview/a110130013_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130013_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130013_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130013_work2",
+      "order": 11,
+      "title": {
+        "main": "水泥擴香氣氛燈",
+        "sub": "光與香氣重塑空間的感知",
+        "main_en": "Atmos",
+        "sub_en": "Light and fragrance redefine the perception of space"
+      },
+      "description": "融合光影、氣味與材質的水泥香氛吊燈，為居住空間帶來感官體驗。水泥的穩重與都市感，在剛與柔之間取得和諧平衡，讓燈不僅是照明工具，更是感知生活的媒介。",
+      "longDescription": "水泥具吸水性又有氣孔的特性，正好符合擴香的特性，能夠吸附液態的精油再釋放香氣。利用其特性，並結合了燈具創造出滿足嗅覺及視覺的療癒體驗。將光、氣味與材質結合，創造出一種能夠激發感官共鳴的家居體驗。\n\n透過建築材料－水泥與光的搭配加上氣味，詮釋居住空間的個性。結合現代風格和實用性，讓風格燈具多一種感官體驗",
+      "english": "The cement-scented pendant light blends light, scent, and texture, offering a unique and immersive sensory experience. Its solid, urban feel beautifully balances rigidity and softness, making it not just for illumination but also a medium for experiencing life.",
+      "english_detail": "Cement’s absorbent and porous nature makes it ideal for diffusing essential oils. Combined with lighting, it creates a therapeutic experience for sight and smell. \n\nThis blend of light, scent, and texture enhances a space’s personality, merging modern style with practicality.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130013_work2_main.webp",
+        "preview": "/preview/a110130013_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130013_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130013_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "a10913055",
+  "name": {
+    "zh": "許芯瑜",
+    "pinyin": "Xin-Yu Xu"
+  },
+  "image": "/face/a10913055_face.webp",
+  "social": {
+    "email": "xxu6338@gmail.com",
+    "instagram": "https://www.instagram.com/shush_xu",
+    "behance": "https://www.behance.net/c1f9f520"
+  },
+  "works": [
+    {
+      "id": "a10913055_work1",
+      "order": 21,
+      "title": {
+        "main": "TOTE cart",
+        "sub": "兒童載物滑板車",
+        "main_en": "TOTE cart",
+        "sub_en": "Children's cargo scooter"
+      },
+      "description": "考慮兒童在戶外活動時喜歡蒐集物品或攜帶背包、玩具，TOTE cart 提供兒童更多載物的選擇，讓滑板車可以在公園或露營地等戶外場景使用探索不同的環境。",
+      "longDescription": "針對7至9歲的兒童，他們正處於探索自我和周圍世界的階段，鼓勵他們進行戶外活動，體驗自由與成就感，也讓家長在旅途中更加輕鬆能專心享受與孩子一起度過的戶外時光。\n\n在造型上為了吸引兒童的目光以淺藍色為主。金屬骨架設計展現現代感，加上可愛的圓彎管造型，讓整體風格既時尚又富有童趣，符合孩子們的喜好。",
+      "english": "The TOTE cart provides children with more carrying options, allowing scooters to be used in outdoor settings like parks or campsites and enhancing their ability to explore different environments while carrying toys, backpacks, or collected items.",
+      "english_detail": "This product promotes outdoor exploration for children aged 7 to 9. It offers freedom and achievement while allowing parents to enjoy relaxing outdoor time. \n\nThe light blue design, modern metal frame, and playful curved tubes appeal to children's tastes, combining style with fun.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a10913055_work1_main.webp",
+        "preview": "/preview/a10913055_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a10913055_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a10913055_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a10913055_work2",
+      "order": 22,
+      "title": {
+        "main": "Ding.",
+        "sub": "兒童戶外探索背包",
+        "main_en": "Ding.",
+        "sub_en": "Children's outdoor exploration backpack"
+      },
+      "description": "這款背包為愛探險的孩子設計，除了提供足夠的空間攜帶採集工具外，還有採集箱和試管，孩子戶外探索的成果輕鬆地帶回家。讓孩子在戶外活動中發現更多、學習更多！",
+      "longDescription": "透過整合工具組和收集觀察箱，背包不再只是攜帶工具，更成為一個多功能的探索裝備。結合實用性與教育性，不僅提供孩子們探索和學習自然界的機會，還能提升他們的觀察力和動手能力。\n\n背包的設計考量到兒童的身體結構，肩帶和腰帶調整成符合孩童的尺寸，以確保背包穩固貼合，減少負擔，讓孩子在長時間探索時保持舒適。",
+      "english": "This backpack is designed for adventurous kids, with space for collection tools, a collection box, and test tubes, making it easy to bring outdoor discoveries home. It lets children discover and learn more during outdoor activities!",
+      "english_detail": "The backpack combines a toolset and observation box, making it a multifunctional exploration gear that enhances children's observation, learning, and hands-on skills. Designed for comfort, its adjustable straps ensure a secure fit, reducing strain during long exploration sessions.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a10913055_work2_main.webp",
+        "preview": "/preview/a10913055_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a10913055_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a10913055_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

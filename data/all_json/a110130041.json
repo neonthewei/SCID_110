@@ -1,0 +1,69 @@
+{
+  "id": "a110130041",
+  "name": {
+    "zh": "葉芯妤",
+    "pinyin": "Xin-Yu Ye"
+  },
+  "image": "/face/a110130041_face.webp",
+  "social": {
+    "email": "annaye77777@gmail.com",
+    "instagram": "https://www.instagram.com/__xinyu.ye/",
+    "behance": "https://www.behance.net/b752b228"
+  },
+  "works": [
+    {
+      "id": "a110130041_work1",
+      "order": 6,
+      "title": {
+        "main": "浮花．嶺",
+        "sub": "傳統壓花壁燈",
+        "main_en": "フワリ-ン",
+        "sub_en": "Traditional Embossed Wall Lamp"
+      },
+      "description": "將海棠花圖騰融入燈具設計，結合復古與現代美學。光線穿透玻璃，營造柔和光影層次，為空間增添溫暖氛圍，賦予經典紋樣新語彙，展現傳統工藝在現代生活的魅力。",
+      "longDescription": "台灣傳統的壓花玻璃已經停產，曾經隨處可見的這些玻璃，如今成為承載時代記憶的珍貴復古素材。\n\n它們不僅反映了台灣特有的美學與工藝，也見證了歲月流轉下的生活軌跡。本設計旨在重新賦予這些老舊材料新的生命，透過創新的拼接與轉化方式，將原本平面的壓花玻璃組合為立體結構，使其在現代空間中展現嶄新的應用價值。",
+      "english": "Blending vintage and modern aesthetics, this lighting design features a begonia flower motif, reinterpreting a classic pattern with contemporary craftsmanship. As light filters through textured glass, it creates soft, layered shadows, adding depth and warmth to any space.",
+      "english_detail": "Taiwan's traditional embossed glass is no longer in production, yet it remains a precious vintage material reflecting local aesthetics and craftsmanship. \n\nThis design revitalizes it through innovative splicing, transforming flat glass into a three-dimensional structure, bringing new value to modern spaces.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130041_work1_main.webp",
+        "preview": "/preview/a110130041_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130041_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130041_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130041_work2",
+      "order": 6,
+      "title": {
+        "main": "兒童兩用蹺蹺椅",
+        "sub": "在家也能玩的蹺蹺板",
+        "main_en": "Tippy",
+        "sub_en": "A Seesaw That Can Be Played With At Home"
+      },
+      "description": "這款設計將蹺蹺板與兒童長椅結合，透過手把與椅腳的調節，讓產品能在遊戲與休憩間自由轉換。孩子在家中不僅能享受蹺蹺板帶來的樂趣，還能擁有穩固舒適的座椅。",
+      "longDescription": "隨著現代家庭生活方式的轉變，孩子們在戶外活動的時間常受到限制，因此Tippy透過創新的轉換設計，讓孩子無論晴天或雨天，都能在家中享受豐富的遊戲體驗，發展運動能力與創造力，同時減少家長對安全的顧慮。\n\n氣候變遷使天氣變化無常，影響孩子的戶外活動時間。本產品透過可轉換設計，讓孩子無論天候如何，都能在家遊玩。",
+      "english": "This design combines a seesaw and a bench, featuring adjustable handles and legs to easily switch between play and rest. It offers kids the fun of a seesaw while providing a stable, comfortable seat at home.",
+      "english_detail": "As modern lifestyles limit outdoor playtime, Tippy’s innovative convertible design lets kids enjoy active play indoors, fostering motor skills and creativity while easing parents’ safety concerns. \n\nAdaptable to various environments, it ensures a fun and secure play experience, regardless of the weather.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130041_work2_main.webp",
+        "preview": "/preview/a110130041_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130041_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130041_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

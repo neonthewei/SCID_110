@@ -1,0 +1,75 @@
+{
+  "id": "a110130012",
+  "name": {
+    "zh": "王闥蒙",
+    "pinyin": "Ya-Meng Wang"
+  },
+  "image": "/face/a110130012_face.webp",
+  "social": {
+    "email": "tommy403023@gmail.com",
+    "instagram": "https://instagram.com/_tommyee__",
+    "behance": "https://www.behance.net/tommy40302f393"
+  },
+  "works": [
+    {
+      "id": "a110130012_work1",
+      "order": 6,
+      "title": {
+        "main": "過五關展六相",
+        "sub": "家庭互動大富翁",
+        "main_en": "Ope&Out",
+        "sub_en": "Family Interactive Monopoly"
+      },
+      "description": "透過5個階段，引導同性戀族群與父母溝通。玩家抽牌拼接道路，完成問題與任務，逐步拉近家庭情感，不同道路任務增添樂趣，使親子關係更緊密，氛圍更溫暖。",
+      "longDescription": "起初是想讓同性戀族群與父母溝通，利用遊玩介質搭起溝通橋樑，桌遊的互動性質，能幫助自己與家人接觸、交流想法，最終能出櫃。\n\n本桌遊圍繞在5個關卡與6種面相，總共5個關卡讓你慢慢與家人拉近距離， 可分成多次遊玩。在遊玩至不同階段時，你和家人會分別展露出各3種的樣貌，更了解彼此，使感情升溫。",
+      "english": "Players draw cards to complete tasks in five stages, guiding homosexuals in communicating with their parents. The activities enhance family closeness, add fun, and create a warmer atmosphere in parent-child relationships.\n",
+      "english_detail": "The game aims to help the gay community communicate with their parents through interactive board play.\n\n It features five levels, allowing gradual closeness and multiple play sessions. During these sessions, players reveal three aspects of themselves to strengthen family relationships and foster understanding.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a110130012_work1_main.webp",
+        "preview": "/preview/a110130012_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130012_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130012_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130012_work1_detail3.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130012_work2",
+      "order": 10,
+      "title": {
+        "main": "AI兒童動物積木拼圖",
+        "sub": "AI動物拼圖",
+        "main_en": "Puzzy Animal",
+        "sub_en": "AI Animal Jigsaw"
+      },
+      "description": "提供孩童一個幻想天地，利用切割積木拚湊出剪影中的動物，配上軟體掃描即可辨識積木型態，解鎖出不同階位的物種，並將整套積木整合成可隨身攜帶的積木包。",
+      "longDescription": "積木的型態由簡單幾何構成，孩童能更天馬行空地遊玩，並搭載Python虛擬遊戲，孩童可學習到更多知識。\n\n利用同一片積木切割出的型態，讓孩子們自由拼湊出各種充滿想像力的動物，來激發他們的創造力與空間概念。同時結合了AI技術掃描辨識積木，讓孩子在遊玩的過程中學習，打造屬於自己的夢想動物王國。",
+      "english": "Create a fantasy world for children using building blocks to match animal silhouettes. Utilize software to scan block shapes, unlock different species levels, and combine all pieces into a portable building block bag for easy transport.",
+      "english_detail": "Building blocks made of simple geometric shapes encourage imaginative play. Children can create various animal forms with integrated Python virtual games, stimulating creativity and spatial awareness.\n\n AI technology scans blocks for interactive learning, enabling kids to construct their dream animal kingdom while playing.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130012_work2_main.webp",
+        "preview": "/preview/a110130012_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130012_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130012_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130012_work2_detail3.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

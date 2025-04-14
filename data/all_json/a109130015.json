@@ -1,0 +1,78 @@
+{
+  "id": "a109130015",
+  "name": {
+    "zh": "王虹勻",
+    "pinyin": "Hung-Yun Wang"
+  },
+  "image": "/face/a109130015_face.webp",
+  "social": {
+    "email": "yvonne87921650@gmail.com",
+    "instagram": "@mushroom_0514",
+    "behance": "https://www.behance.net/yvonnewang14"
+  },
+  "works": [
+    {
+      "id": "a109130015_work1",
+      "order": 1,
+      "title": {
+        "main": "幽物系列 - 家具",
+        "sub": "回應《陰翳禮讚》意象之家具設計",
+        "main_en": "Dim Series - Furniture",
+        "sub_en": "Furniture design in response to In Praise of Shadows"
+      },
+      "description": "回應《陰翳禮讚》意象之家具設計。於結構造型上創造空間，微光下物件融入幽暗，空間模糊交融呈黑中之黑的深邃。留黑即留白，提供想像、創造氛圍，以此詮釋陰翳。",
+      "longDescription": "思考過度照明的現代，省去亮光後還能發現什麼？以往我們在亮光中設計，但陰翳也有其獨特的美，在照明中被遺忘。\n\n以《陰翳禮讚》為核心，創造於低光下散發魅力的物件，使其融入幽暗。以空間為主要設計手法，微光下，物件本體空間與環境空間模糊交融呈現黑中之黑的深邃。而留黑即留白，予人想像餘地、創造氛圍，以此詮釋陰翳。",
+      "english": "In response to In Praise of Shadows, the furniture design creates space through structure, where objects blend into dim light, presenting depth within black. The absence of light becomes a canvas, offering room for imagination and atmosphere, interpreting shadow.",
+      "english_detail": "In an era of excessive lighting, what can we find when brightness is removed? Centered on In Praise of Shadows, this design creates objects that shine in low light, blending with darkness. \n\nUsing space, it reveals depth within black, offering room for imagination and interpreting the shadow's essence.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a109130015_work1_main.webp",
+        "preview": "/preview/a109130015_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130015_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130015_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a109130015_work2",
+      "order": 16,
+      "title": {
+        "main": "幽物系列 - 花器",
+        "sub": "回應《陰翳禮讚》意象之花器設計",
+        "main_en": "Dim Series - Vase",
+        "sub_en": "Vase design in response to In Praise of Shadows"
+      },
+      "description": "回應《陰翳禮讚》意象之花器設計。分別以汲取和食與陰翳的關係概念、融合建築與花器、創造無法完全看透的空間詮釋陰翳，藉此使植物在低光下散發內斂深邃的樣貌。",
+      "longDescription": "以《陰翳禮讚》為核心，創造於低光下散發魅力的物件。\n\n《 陰翳禮讚 》提及，微光下與漆器器皿中，簡單的食物顯得珍貴，套用此概念設計使植物於花器和幽暗中顯出珍貴。以建築空間為靈感，為植物創造空間及遮蔽，將其推進陰影，與陰影有所交織、互動，在不同光線和角度下呈現美感。最後透過無法以一個角度完全看透詮釋陰翳。",
+      "english": "This vase design, a response to In Praise of Shadows, draws from the relationship between light and shadow. It blends architecture with the vase to create an unseen space, allowing plants to emit a subtle, profound appearance in low light.",
+      "english_detail": "Vase design responds to In Praise of Shadows, drawing on the relationship between washoku and shadow, merging architecture with the vase, and creating a space that remains partially obscured to interpret the beauty of shadows. \n\nThis series presents a subtle and profound presence in low light.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a109130015_work2_main.webp",
+        "preview": "/preview/a109130015_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130015_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130015_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a109130015_work2_detail3.webp"
+          },
+          {
+            "image": "/detail/a109130015_work2_detail4.webp"
+          },
+          {
+            "image": "/detail/a109130015_work2_detail5.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

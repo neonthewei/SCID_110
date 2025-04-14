@@ -1,0 +1,69 @@
+{
+  "id": "a110130044",
+  "name": {
+    "zh": "陳育楷",
+    "pinyin": "Yu-Kai Chen"
+  },
+  "image": "/face/a110130044_face.webp",
+  "social": {
+    "email": "kevin09chen25@gmail.com",
+    "instagram": "https://www.instagram.com/its.justkevin__?igsh=MXNrYzlnM3hsb2Fobw%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/kevinchendesign"
+  },
+  "works": [
+    {
+      "id": "a110130044_work1",
+      "order": 15,
+      "title": {
+        "main": "Pellinflatus",
+        "sub": "生皮膨脹型態實驗家具",
+        "main_en": "Pellinflatus",
+        "sub_en": "Experimental Inflated Rawhide Furniture"
+      },
+      "description": "「生皮」具高強度延展性與韌性，本系列探索其塑形可能，透過充氣技術作為雕塑家具設計的手法，不僅凸顯材料特性，更創造介於物理與工藝間的全新視覺語言。",
+      "longDescription": "在張力與空氣作用下自然鼓脹，塑造豐滿且富力量感的形態。靈感來自身體的膨脹與延展，挑戰傳統審美框架，將「豐腴」轉化為飽滿而柔韌、自由且不受束縛的體態美感。\n\n生皮的自然紋理被完整保留，充氣後展現肌膚般的張力與膨脹感，使材料彈性成為塑形關鍵語言。這既是材質實驗，也是一場身體與美學的對話。",
+      "english": "Rawhide has high strength, ductility, and toughness. This series explores its shaping possibilities, using inflation technology as a method of sculptural furniture design. It highlights the material properties and creates a new visual language between physics and craftsmanship.",
+      "english_detail": "It expands under tension and air, creating a flexible and powerful shape. Inspired by body extension, it redefines \"plumpness\" as a form of unrestrained beauty.\n\n When inflated, the rawhide's natural texture showcases skin-like elasticity, blending material experimentation with a dialogue between body and aesthetics.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130044_work1_main.webp",
+        "preview": "/preview/a110130044_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130044_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130044_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130044_work2",
+      "order": 10,
+      "title": {
+        "main": "Pellitensio",
+        "sub": "生皮張力型態實驗燈具",
+        "main_en": "Pellitensio",
+        "sub_en": "Tensile Rawhide Experimental Lighting"
+      },
+      "description": "「生皮」具高延展性與韌性，剛性結構支撐下達精準平衡。張力驅動形態變化，流動於結構與曲線間，勾勒獨特雕塑語彙，展現材料在張力下的無限可能。",
+      "longDescription": "以脊椎結構與纖細形體的張力之美為靈感，探索材料在受力下的形態轉化。生皮於張力作用下延展，塑造緊繃且富動態感的曲線，呈現肌膚貼合骨架的結構美學。\n\n剛性結構僅作輔助，使材料於拉扯與固定間達微妙平衡，形成有機且雕塑感十足的形態。燈具不僅是照明裝置，更是張力雕塑的載體，展現材料極限下的結構張力與形態演化。\n",
+      "english": "Rawhide exhibits high ductility and toughness, achieving a precise balance within a rigid structure. Tension drives shape alteration, blending structure and curves to create a unique sculptural vocabulary and showcasing the endless possibilities of materials under tension.\n",
+      "english_detail": "Inspired by the spine's beauty, this work examines material transformation under stress. The rawhide creates dynamic curves, emphasizing the skin's aesthetic on the skeleton.\n\n The lamp embodies light and tension sculpture, illustrating structural tension and morphological evolution within material limits.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130044_work2_main.webp",
+        "preview": "/preview/a110130044_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130044_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130044_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

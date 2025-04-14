@@ -1,0 +1,42 @@
+{
+  "id": "a110130027",
+  "name": {
+    "zh": "郭啓恩",
+    "pinyin": "Chi-En Kuo"
+  },
+  "image": "/face/a110130027_face.webp",
+  "social": {
+    "email": "kuokevin1022@gmail.com",
+    "instagram": "@qien.guo",
+    "behance": "https://www.behance.net/kkm1ei01mi6"
+  },
+  "works": [
+    {
+      "id": "a110130027_work1",
+      "order": 7,
+      "title": {
+        "main": "Dualcon",
+        "sub": "雙模式年長電動代步",
+        "main_en": "Dualcon",
+        "sub_en": "Multi-supply assistive devices"
+      },
+      "description": "Dualcon是一款結合助行器與代步車的行動載具，可以針對不同場合切換模式提供支援，並確保使用者能靈活使用，提升日常活動的自主性與舒適度。",
+      "longDescription": "傳統輔具雖然各有其功能，但在不同情境下往往缺乏靈活性與適應性，難以有效解決各種行動困難。\n\n因此設計了一款專為年長者打造的雙模式代步車，結合助行與電動代步功能，可依需求與場合自由切換模式。無論是短距離步行或長距離移動，都能輕鬆應對，提升日常活動的自主性與便利性，減少對他人的依賴，讓行動更安全、舒適。",
+      "english": "Dualcon is a versatile mobility device that combines a walker and a scooter, offering mode-switching support for various situations. It ensures users can move with ease, enhancing independence, comfort, and convenience in daily activities.",
+      "english_detail": "Traditional mobility aids lack flexibility, making it difficult to address different mobility challenges. \n\nThis dual-mode device for seniors combines walking assistance and electric scooter functions, allowing easy mode switching for short or long distances, enhancing independence, safety, and comfort.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130027_work1_main.webp",
+        "preview": "/preview/a110130027_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130027_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130027_work1_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

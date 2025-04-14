@@ -1,0 +1,69 @@
+{
+  "id": "a110130008",
+  "name": {
+    "zh": "楊文儀",
+    "pinyin": "Wen-Yi Yang"
+  },
+  "image": "/face/a110130008_face.webp",
+  "social": {
+    "email": "f86463042@gmail.com",
+    "instagram": "https://www.instagram.com/_weeeenyi?igsh=NTc4MTIwNjQ2YQ==",
+    "behance": "https://www.behance.net/fda074cc"
+  },
+  "works": [
+    {
+      "id": "a110130008_work1",
+      "order": 2,
+      "title": {
+        "main": "UUUstool",
+        "sub": "羊毛氈工藝凳子組",
+        "main_en": "UUUstool",
+        "sub_en": "Felted Wool Craft Stool Set"
+      },
+      "description": "從羊毛聯想到了網球，進而聯想到了網球籃。因此決定採用裝滿網球的籃子作為設計靈感，將其轉化為一種既富有趣味又實用的家具形式。\n",
+      "longDescription": "使用羊毛氈的手法來實現造型概念，羊毛為主體材質，透過混色使整體色彩更加豐富而不死板，使用扎製的手法，不借助任何縫線或沾黏，配合網狀的結構，融合多種造型語彙，包括球體、條狀結構與鐵網。\n\n此系列包含三張高低不一的凳子，整體框架以倒U型為主要結構，底部稍微擴大，既增添了穩定性，也作為造型語言的一部分。\n",
+      "english": "Wool reminds me of tennis, which in turn reminds me of tennis baskets. By using a basket full of tennis balls as a design inspiration and transforming it into a piece of furniture that is both playful and practical.",
+      "english_detail": "The wool felt technique employs color mixing to enhance richness and flexibility. Using a tying method without stitches, various forms like spheres and strip structures are created.\n\n This series features three stools of varying heights with an inverted U-shaped frame that adds stability and design appeal.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130008_work1_main.webp",
+        "preview": "/preview/a110130008_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130008_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130008_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130008_work2",
+      "order": 4,
+      "title": {
+        "main": "WWW流光",
+        "sub": "吊燈組 / 磁吸壁燈組",
+        "main_en": "WWWgloow",
+        "sub_en": "Pendant Light Set / Magnetic Wall Lamp Set"
+      },
+      "description": "Ⅰ.曲線從U延伸至W，前後扭曲，羊毛球點綴，製成吊燈，提供兩種配色選擇。\n\nⅡ.各色小燈組，底部磁吸設計，羊毛球為開關，可吸於金屬牆面作壁燈。",
+      "longDescription": "從U形曲線拉伸為W形，並透過前後錯落的扭曲方式增添層次感。提供兩種配色選擇，以適應不同環境與氛圍。\n\n懸吊處以對比色細線纏繞，電線隱藏於管狀結構內，直連天花板，保持美觀簡潔。網格元素與鏤空中心強調視覺焦點，跳色對比增添層次感，整體造型既有趣又俏皮。將開關做成毛球的樣子，為三段式開關，可控制閃燈頻率。",
+      "english": "Ⅰ.Create a chandelier by extending the curve from U to W, twisting it, and adding small wool balls in two color options.\n\nⅡ.Design small lamp sets with magnetic bases and wool ball switches to attach metal walls as wall lamps.",
+      "english_detail": "The design transitions from a U-shaped to a W-shape, enhancing layering through staggered twists. Available in two color options, its sleek suspension features hidden wires.\n\n The grid elements and hollow center create visual focus, while a playful fur ball switch controls the flashing frequency.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130008_work2_main.webp",
+        "preview": "/preview/a110130008_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130008_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130008_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

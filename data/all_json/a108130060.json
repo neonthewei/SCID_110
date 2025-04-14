@@ -1,0 +1,69 @@
+{
+  "id": "a108130060",
+  "name": {
+    "zh": "梁丁元",
+    "pinyin": "Ting-Yuan Liang"
+  },
+  "image": "/face/a108130060_face.webp",
+  "social": {
+    "email": "ericreverie1225@gmail.com",
+    "instagram": "https://www.instagram.com/ericreverie?igsh=eGZpMWV1b3RiNzZm",
+    "behance": "https://www.behance.net/studior2"
+  },
+  "works": [
+    {
+      "id": "a108130060_work1",
+      "order": 15,
+      "title": {
+        "main": "海廢·家",
+        "sub": "利用海洋廢棄物作為海水生物的家",
+        "main_en": "Marine Debris, Home",
+        "sub_en": "Using marine debris as a habitat for marine life."
+      },
+      "description": "珊瑚在海洋廢棄物上悄然生長，廢棄物成為它們生命的根基，大自然在困境中依然堅韌的生命力。生機的背後，藏著無聲的悲鳴，若不改變，這片海洋的純淨將不復存在。",
+      "longDescription": "在這片曾經純淨的海洋中，珊瑚以無與倫比的美麗悄然綻放。然而，當我們凝視著這些光彩奪目的生物時，卻未曾注意到它們的根基，是我們曾經遺留下的廢棄物。\n\n珊瑚的生命力在廢墟中頑強綻放，象徵著生命的韌性與自然的恢復力。但這並非是希望的終點，而是警鐘的響起。改變我們對這個世界的態度，讓美麗不再建立於傷害之上。",
+      "english": "Corals quietly grow on ocean waste, with debris becoming the foundation of their life. This resilience in adversity reflects nature's strength. However, behind this vitality lies a silent cry—if nothing changes, the purity of this ocean will be lost forever.",
+      "english_detail": "Corals bloom in this once-pure ocean, yet their foundation lies in the waste we left behind. \n\nTheir vitality in the ruins symbolizes life's resilience. This is not the end of hope—it is a warning. We must change our perspective so beauty no longer comes at harm's cost.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a108130060_work1_main.webp",
+        "preview": "/preview/a108130060_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130060_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130060_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a108130060_work2",
+      "order": 20,
+      "title": {
+        "main": "光與影",
+        "sub": "利用圖騰交錯旋轉產生光影變化",
+        "main_en": "Light x Shadow",
+        "sub_en": "Use staggered rotation to produce light and shadow"
+      },
+      "description": "結合視錯覺的效果與物理性遮蔽的概念，透過設計的花紋遮蔽元素操控光與影，使得光線的投射隨著燈罩旋轉變化而有不同的光影效果，創造出動態有層次感的系列燈具。",
+      "longDescription": "Light x Shadow 光影系列燈具結合了視錯覺的效果與物理性遮蔽的概念，採用兩層特殊圖騰的壓克力管燈罩，其獨特花紋不僅美觀，還能透過花紋的遮蔽元素操控光與影。\n\n光線投射隨著燈罩旋轉變化，花紋隨時間與角度也隨之改變，營造出動態且富層次的光影效果，為空間增添層次感與動態美。",
+      "english": "The light fixture utilizes the concept of optical illusion slides, manipulating light and shadow through patterned elements. As the lampshade rotates, the projection of light changes, creating dynamic and layered effects in a series of lights.",
+      "english_detail": "The Light x Shadow series blends optical illusions with light-blocking concepts. Its dual-layer acrylic lampshade features patterns that manipulate light and shadow. \n\nAs the lampshade rotates, the light projection changes, with patterns shifting over time and angle, creating dynamic effects and depth in the space.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a108130060_work2_main.webp",
+        "preview": "/preview/a108130060_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130060_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130060_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

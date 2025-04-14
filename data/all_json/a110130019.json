@@ -1,0 +1,72 @@
+{
+  "id": "a110130019",
+  "name": {
+    "zh": "陳竹筠",
+    "pinyin": "Jhu Yun Chen"
+  },
+  "image": "/face/a110130019_face.webp",
+  "social": {
+    "email": "chen.chris092@gmail.com",
+    "instagram": "https://reurl.cc/QYbElO",
+    "behance": "https://www.behance.net/hzwchen"
+  },
+  "works": [
+    {
+      "id": "a110130019_work1",
+      "order": 1,
+      "title": {
+        "main": "S-Track",
+        "sub": "折疊式沙灘急救擔架",
+        "main_en": "S-Track",
+        "sub_en": "Foldable Beach Emergency Stretcher"
+      },
+      "description": "針對沙灘救援時，救護人員需徒手搬運的問題。S-Track採折疊設計，便於快速展開與收納，並由全地形車牽引，減少移動傷患時的阻力、提升救援效率。",
+      "longDescription": "在沙灘這類特殊地形中，救護車無法直接駛入運送傷患，迫使救援人員需依靠人力，搬運患者至救護車，不僅增加體力負擔，傷患眾多時也可能降低救援效率。\n\nS-Track可折疊結構使擔架能夠快速展開並由全地形車牽引，配備可安裝的心肺復甦裝置，在運輸過程中持續進行急救，提高救援效率與品質，為搶救生命爭取更多時間。\n",
+      "english": "Addressing the issue of traditional stretchers getting stuck in the sand during beach rescues, S-Track features a foldable design for easy deployment and storage. Towed by an all-terrain vehicle, it reduces resistance and improves rescue efficiency.\n\n",
+      "english_detail": "In challenging terrains like beaches, ambulances can't reach patients, requiring manual transport, which increases strain and slows rescue efforts. \n\nThe foldable S-Track stretcher can be quickly deployed and towed by an ATV, equipped with CPR equipment for continuous care, improving efficiency and saving lives.\n",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130019_work1_main.webp",
+        "preview": "/preview/a110130019_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130019_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130019_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130019_work1_detail3.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130019_work2",
+      "order": 19,
+      "title": {
+        "main": "PulseAid X",
+        "sub": "自動救援裝置",
+        "main_en": "PulseAid X",
+        "sub_en": "Automatic rescue device"
+      },
+      "description": "可適配大部分擔架尺寸，並穩固勾掛於其結構上。透過自動化設備，減少人工施救的體力負擔，提高穩定性，並確保患者在運輸過程中持續接受心肺復甦。",
+      "longDescription": "專為戶外與高機動救援設計，分為壓胸機與送氣面罩兩個部分，可勾掛於擔架上，透過自動化急救，減少人工施救的體力負擔，提高 CPR 的穩定性與救援效率，確保患者在被運輸的過程中持續接受心肺復甦。\n\n相較於傳統 CPR 設備，PulseAid X以適應戶外救援環境為目標，採輕量化設計，可結合急救運輸設備。",
+      "english": "PulseAid X is compatible with most stretcher sizes and securely hooks onto its structure. With automated equipment, it reduces physical strain during rescue operations, enhances stability, and ensures continuous CPR and care for patients during transport.",
+      "english_detail": "PulseAid X is designed for outdoor rescues and consists of a chest compression device and oxygen mask attached to a stretcher. It automates CPR, reducing physical strain, enhancing stability, and ensuring continuous resuscitation during transport.\n\n Lightweight and compatible with rescue equipment, it’s ideal for high-mobility operations.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130019_work2_main.webp",
+        "preview": "/preview/a110130019_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130019_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130019_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

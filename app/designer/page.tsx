@@ -178,7 +178,7 @@ export default function DesignerPage() {
                           {designer.name.zh}
                         </h2>
                       </div>
-                      <div className={`absolute inset-0 grid grid-cols-2 gap-2 ${
+                      <div className={`absolute inset-0 grid ${designer.works.length === 1 ? 'grid-cols-1' : 'grid-cols-2'} gap-2 ${
                         activeDesignerId === designer.id ? 'sm:opacity-100 opacity-100' : 'sm:group-hover:opacity-100 opacity-0'
                       }`}>
                         {designer.works[0] && (

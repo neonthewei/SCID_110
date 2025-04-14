@@ -1,0 +1,69 @@
+{
+  "id": "a110130058",
+  "name": {
+    "zh": "丁芷晴",
+    "pinyin": "Chih-Ching Ting"
+  },
+  "image": "/face/a110130058_face.webp",
+  "social": {
+    "email": "zoe104375@gmail.com",
+    "instagram": "https://www.instagram.com/d.zhiqing_0715?igsh=ODhtMWJrcDhrZHA5&utm_source=qr",
+    "behance": "https://www.behance.net/4efc465e"
+  },
+  "works": [
+    {
+      "id": "a110130058_work1",
+      "order": 1,
+      "title": {
+        "main": "泡布島",
+        "sub": "給小孩的水生動物洗澡玩具套組",
+        "main_en": "Bubbloo°",
+        "sub_en": "Water Animal Bath Toy Set for Kids"
+      },
+      "description": "為兒童設計洗澡玩具，不同種類的遊戲讓整個洗澡過程更有趣，激發孩子的好奇心與探索欲，減少對洗澡的 抗拒情緒，讓沐浴變成令人期待的歡樂時光。\n",
+      "longDescription": "大部分孩子都喜歡玩水，卻很抗拒洗澡。不少孩子到了2、3歲突然開始抗拒洗 澡。每次一洗澡就使勁哭、使勁鬧，讓爸媽對於幫小孩洗澡非常頭痛。\n\n為減少兒童對於洗澡的反感，提升孩子對洗澡的興趣，設計不同種類的遊戲讓整個洗澡過程更有趣，激發孩子的好奇心與探索欲。減少對洗澡的抗拒情緒，讓沐浴變成令人期待的歡樂時光\n",
+      "english": "Designing bath toys for children with various engaging games to make bath time more enjoyable, stimulating curiosity, exploration, and creativity, reducing resistance, and turning bathing into an anticipated, joyful, fun-filled, and educational experience that fosters play and learning.",
+      "english_detail": "Most children love playing with water but resist bath time, especially around 2 or 3 years old. They cry and fuss, making bath time stressful for parents. \n\nTo reduce resistance and increase interest, engaging games are designed to make bathing fun, turning it into an enjoyable experience.\n",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130058_work1_main.webp",
+        "preview": "/preview/a110130058_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130058_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130058_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130058_work2",
+      "order": 2,
+      "title": {
+        "main": "奇幻拍拍",
+        "sub": "兒童故事記錄器",
+        "main_en": "WonderSnap",
+        "sub_en": "Children's Story Recorder"
+      },
+      "description": "為兒童設計的生活紀錄器，由兒童記錄下自己眼中的世界。回家與父母分享當天的趣事，用AI的方式把相片轉為有趣的故事，並透過故事撥放器隨時撥放聆聽與珍藏。\n",
+      "longDescription": "生活通常由大人記錄，呈現出大人眼中的世界。但兒童看世界的方式與大人不同。讓孩子自己記錄生活中發生的趣事，再把照片重新製造成故事珍藏。\n\n兒童可以拍下生活中有趣的瞬間，回家挑選照片並與父母分享。產品會根據選取的照片和描述生成故事，並可儲存至故事播放器中，睡前投影到牆上或天花板，成為每天不同的睡前故事。\n",
+      "english": "A life recorder for children to capture the world through their eyes. They can share the day's events with parents, with AI turning photos into stories. These can be played anytime, offering a way to listen and cherish memories.",
+      "english_detail": "Life is often recorded by adults, showing their perspective. This product lets kids capture their own stories, turning photos into memories. \n\nChildren can select photos, share with parents, and the product generates stories, projected onto the wall for a unique bedtime experience.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130058_work2_main.webp",
+        "preview": "/preview/a110130058_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130058_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130058_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "a110130004",
+  "name": {
+    "zh": "余美欣",
+    "pinyin": "Mei-Hsin Yu"
+  },
+  "image": "/face/a110130004_face.webp",
+  "social": {
+    "email": "yuclaire1218@gmail.com",
+    "instagram": "https://www.instagram.com/yuclaire1218?igsh=NTc4MTIwNjQ2YQ==",
+    "behance": "https://www.behance.net/yuclaire"
+  },
+  "works": [
+    {
+      "id": "a110130004_work1",
+      "order": 3,
+      "title": {
+        "main": "Beat Buddies",
+        "sub": "AI兒童音樂創作機",
+        "main_en": "Beat Buddies",
+        "sub_en": "AI Children’s Music Creator"
+      },
+      "description": "透過AI 將聲音轉為樂器，讓哼唱成為樂器積木。將其放入音軌盤並連接編曲機，即可播放音樂！自由組合音軌盤與效果器，輕鬆創作多樣編曲，降低音樂創作門檻。",
+      "longDescription": "學習樂器與音樂創作門檻高，且實踐不易。然而，AI 與音樂的結合讓創意不再受限於技術，使更多人能自由發揮，突破限制！透過 AI 輔助，使用者只需哼唱或簡單操作，即可將靈感轉化為旋律，讓創作變得直覺、有趣且更具可玩性。\n\n不論年齡與背景，人人都能輕鬆體驗音樂創作的樂趣，發掘屬於自己的獨特聲音！",
+      "english": "Using AI, transform vocal melodies into instrument sounds, turning humming into modular blocks. Place these onto a track board and connect to a sequencer to play music. Freely combine trackboards with effects to create diverse arrangements, making music production accessible.",
+      "english_detail": "Learning music can be complex, but AI breaks technical barriers, enabling anyone to create music effortlessly. \n\nWith simple humming or actions, users can turn ideas into melodies, making music creation intuitive, fun, accessible, and inspiring for all ages and backgrounds.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a110130004_work1_main.webp",
+        "preview": "/preview/a110130004_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130004_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130004_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130004_work1_detail3.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130004_work2",
+      "order": 2,
+      "title": {
+        "main": "COLONO",
+        "sub": "顏色音樂軌道車車",
+        "main_en": "COLONO",
+        "sub_en": "Music Color Track Car"
+      },
+      "description": "將音符轉為七彩色塊，讓小朋友透過拼接軌道與色塊創作樂譜。啟動樂器造型車車放上軌道，即可播放音樂，透過顏色、造型與手動拼接，輕鬆學習與創作！",
+      "longDescription": "將音符轉換為色塊，小節則變為四拍軌道，透過拼接與連結，就能輕鬆創作一首歌曲。每種樂器都有專屬的小車車，當小車車啟動放上軌道後，即會依照排列順序播放對應的樂器聲音，讓孩子即時聆聽自己的創作！\n\n透過顏色識別、造型辨認與手動拼接的過程，不僅能提升音樂感知，更能培養創造力與邏輯思維，讓學習音樂變得直覺又有趣！",
+      "english": "Transform musical notes into colorful blocks, allowing children to create sheet music by assembling tracks and color blocks. Place an instrument-shaped vehicle on the track to play music, making learning and creation easy through colors, shapes, and manual assembly.",
+      "english_detail": "Transform musical notes into color blocks and measures into four-beat tracks. Children can create songs by assembling and connecting. \n\nEach instrument has its vehicle, which plays sounds in order when placed on the track. This fosters musical perception, creativity, and logical thinking, making learning fun and intuitive.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130004_work2_main.webp",
+        "preview": "/preview/a110130004_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130004_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130004_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130004_work2_detail3.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

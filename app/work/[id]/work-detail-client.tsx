@@ -136,7 +136,7 @@ export default function WorkDetailClient({ params }: { params: { id: string } })
             {/* Product Image */}
             <div className="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-2 lg:mb-0">
               <Image 
-                src={work.images.main} 
+                src={work.images.preview || work.images.main} 
                 alt={work.title.main} 
                 fill 
                 className="object-contain"

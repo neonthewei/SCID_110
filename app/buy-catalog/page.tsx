@@ -29,15 +29,11 @@ const previewImages = [
 
 const productImages = [
   {
-    url: '/placeholder.svg',
-    alt: 'TEMPO_BOND 棒_節奏 專刊封面'
-  },
-  {
-    url: '/placeholder.svg',
+    url: '/book/book2.jpg',
     alt: 'TEMPO_BOND 棒_節奏 專刊背面'
   },
   {
-    url: '/placeholder.svg',
+    url: '/book/book3.jpg',
     alt: 'TEMPO_BOND 棒_節奏 專刊側面'
   }
 ]

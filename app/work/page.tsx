@@ -57,7 +57,7 @@ export default function WorkPage() {
               >
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
                   <Image
-                    src={work.images.main}
+                    src={work.images.preview || work.images.main}
                     alt={work.title.main}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

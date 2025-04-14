@@ -66,9 +66,17 @@ export default function AllWorksContent() {
 
   // Filter works based on active category
   const filteredWorks = useMemo(() => {
-    return activeCategory
+    const filtered = activeCategory
       ? allWorks.filter(work => work.category === activeCategory)
       : allWorks
+    
+    // Sort works by their order property
+    return filtered.sort((a, b) => {
+      // If order is missing, default to a high number
+      const orderA = typeof a.order === 'number' ? a.order : 9999
+      const orderB = typeof b.order === 'number' ? b.order : 9999
+      return orderA - orderB
+    })
   }, [activeCategory, allWorks])
 
   // 檢查 localStorage 中的分類
@@ -180,7 +188,7 @@ export default function AllWorksContent() {
   }
 
   return (
-    <div className="relative min-h-screen bg-gray-50">
+    <div className="relative min-h-screen bg-white">
       {/* Categories with gradient background */}
       <motion.div className="relative h-[180px] md:h-[220px]" animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }}>
         {/* Full gradient background */}
@@ -212,7 +220,7 @@ export default function AllWorksContent() {
         </AnimatePresence>
 
         {/* Gradient mask */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-30% to-gray-50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-30% to-white pointer-events-none" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-start p-4 pt-8 md:px-[5%] md:pt-6">
           {/* Mobile Category Title */}
@@ -381,9 +389,9 @@ export default function AllWorksContent() {
                 className="work-card group relative"
               >
                 <Link href={`/work/${work.id}`} className="block">
-                  <div className="aspect-[4/3] relative overflow-hidden rounded-md">
+                  <div className="aspect-[3/2] relative overflow-hidden rounded-md">
                     <Image
-                      src={work.images.main || "/placeholder.svg"}
+                      src={work.images.preview || work.images.main || "/placeholder.svg"}
                       alt={work.title.main}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

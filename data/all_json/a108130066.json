@@ -1,0 +1,69 @@
+{
+  "id": "a108130066",
+  "name": {
+    "zh": "方怡文",
+    "pinyin": "Yi-Wen, Fang"
+  },
+  "image": "/face/a108130066_face.webp",
+  "social": {
+    "email": "dr.pizzaa@gmail.com",
+    "instagram": "https://www.instagram.com/yiwen_fang?igsh=cng3ZXNwcWs5ajZn",
+    "behance": "https://www.behance.net/e8cf8a4e"
+  },
+  "works": [
+    {
+      "id": "a108130066_work1",
+      "order": 8,
+      "title": {
+        "main": "映・幣",
+        "sub": "用錢做設計",
+        "main_en": "Coins with Glow",
+        "sub_en": "Design with money"
+      },
+      "description": "當大家都在用錢做設計時，我想落實真正的用錢做設計這件事。因此將金錢視為一種創作媒材，削弱符號上價值的意涵，轉而從材料層面進行詮釋。\n",
+      "longDescription": "試圖將價值轉化為一種可視化的、具體的形態。擺脫符號上的價值，重新詮釋金錢價值不僅存在於經濟層面，而是強調物質層面材料本身。因此將錢與結構作為一種存錢系統，堆疊過程使存錢可視化成一量體，以不毀損國幣為前提，最後將金錢回收。\n\n燈具作為材料表現形式，並以單元排列組合，以最少之硬幣做出量體最大化。",
+      "english": "When everyone is using money to design, I want to put real money into design. Therefore, money is regarded as a creative medium, which weakens the connotation of symbolic value and instead interprets it from the material level.\n",
+      "english_detail": "Transform value into a visual form by emphasizing the material aspect of money. Use stacking to make deposited coins visible as volume, utilizing lamps to express this material representation.\n\n Arrange lamps to maximize volume while preserving the national currency and ensuring the recoverability of the money.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a108130066_work1_main.webp",
+        "preview": "/preview/a108130066_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130066_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130066_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a108130066_work2",
+      "order": 16,
+      "title": {
+        "main": "茄芷新印象",
+        "sub": "採買也能是件很酷的事",
+        "main_en": "Gaji New Impression",
+        "sub_en": "Shopping can be a cool thing"
+      },
+      "description": "採買作為再日常不過的生活行。希望透過袋子設計，將茄芷袋本身配色和線條元素，重新組合出新的圖樣，並帶入時尚元素，使採買變得是件很酷的事。",
+      "longDescription": "茄芷袋作為台灣傳統庶民文化的重要象徵，具有強烈的符號象徵，也承載了日常生活的實用性。近年來，茄芷袋文化價值受到重新詮釋，以新手法、材質進行圖面上的嘗試，結合成現有購物袋型態，藉此將此一文化承傳。\n\n設定三種不同採買情境，針對不同購物需求所使用的購物袋進行設計，提升攜帶便利性與使用體驗。",
+      "english": "Shopping is a daily part of life. Through bag design, we hope to combine the color and line elements of the bag itself into new patterns and incorporate fashion elements to make shopping cool.",
+      "english_detail": "The shopping bag is a vital symbol of Taiwan's traditional folk culture, combining practicality with cultural significance.\n\n Recent designs incorporate new techniques and materials, featuring three shopping scenarios that enhance convenience and user experience while preserving this cultural heritage.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a108130066_work2_main.webp",
+        "preview": "/preview/a108130066_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130066_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130066_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

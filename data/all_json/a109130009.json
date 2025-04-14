@@ -1,0 +1,69 @@
+{
+  "id": "a109130009",
+  "name": {
+    "zh": "謝秉良",
+    "pinyin": "Bing-Laing Shie"
+  },
+  "image": "/face/a109130009_face.webp",
+  "social": {
+    "email": "ben97184@gmail.com",
+    "instagram": "https://www.instagram.com/ben97184/?hl=zh-tw",
+    "behance": "https://www.behance.net/benhsieh1"
+  },
+  "works": [
+    {
+      "id": "a109130009_work1",
+      "order": 11,
+      "title": {
+        "main": "可拆握把相機",
+        "sub": "可拆握把・靈活拍攝行",
+        "main_en": "TwinAxis Cam",
+        "sub_en": "Flexible shooting"
+      },
+      "description": "此相機提供靈活的握持方式，滿足攝影需求。無論是攝影、內容創作，都能提高操控體驗和拍攝自由度。其特點在於左右兩側可安裝或拆卸握把，實現更高的自訂性。\n",
+      "longDescription": "在攝影領域，模組化與人性化的設計愈發受到重視。針對攝影師對於靈活性與操控性的需求，提出一款可拆卸雙握把相機，其核心特點在於左右兩側皆可安裝或拆卸握把，實現更高的穩定性與自訂性。\n\n雙握把設計不僅提供更平衡的握持體驗，還可根據拍攝需求自由調整配置，支援橫拍與豎拍模式，滿足專業與日常使用需求。",
+      "english": "This camera offers a flexible grip to meet various photography needs. Whether for photography or content creation, it enhances control and shooting freedom. Its key feature is the detachable grips on both sides, allowing for greater customization.",
+      "english_detail": "Modular and user-friendly designs are becoming increasingly crucial in photography. This camera features detachable dual grips for enhanced stability, customization, and a well-balanced handling experience. It supports horizontal and vertical shooting, providing flexibility for professional and everyday use.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a109130009_work1_main.webp",
+        "preview": "/preview/a109130009_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130009_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130009_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a109130009_work2",
+      "order": 15,
+      "title": {
+        "main": "雙軸穩定器",
+        "sub": "結合可拆握把相機進行拍攝",
+        "main_en": "TwinAxis",
+        "sub_en": "Detachable grip "
+      },
+      "description": "此穩定器將相機和手機分別安裝在支架上，確保穩固後即可拍攝。用戶可輕鬆切換視角或同步錄影，適合專業拍攝、直播及多角度創作。",
+      "longDescription": "隨著攝影技術的進步，模組化與多功能設計成為趨勢。TwinAxis 採用可拆卸雙握把設計，讓攝影師可根據需求自由調整握把位置，提升操控性與穩定性。\n\n雙握把可搭配不同附件，滿足錄影與攝影需求。其輕量化設計與人體工學握持感，確保長時間使用時的舒適度，為專業與創作型攝影師帶來更靈活的操作體驗。\n",
+      "english": "This stabilizer securely mounts a camera and smartphone separately on the bracket, ensuring stability for smooth shooting. Users can effortlessly switch perspectives or record simultaneously, making it perfect for professional filming, live streaming, and multi-angle content creation.",
+      "english_detail": "As photography evolves, modular and multifunctional designs are trending. TwinAxis features a detachable dual-grip design for enhanced control and stability. It supports various accessories for video and photography. A lightweight build and ergonomic grip ensure comfort for extended use, offering a flexible, professional experience.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a109130009_work2_main.webp",
+        "preview": "/preview/a109130009_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130009_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130009_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "a110130043",
+  "name": {
+    "zh": "余宥璋",
+    "pinyin": "You-Zhang Yu"
+  },
+  "image": "/face/a110130043_face.webp",
+  "social": {
+    "email": "youzhangyu84@gmail.com",
+    "instagram": "https://www.instagram.com/davidahzhang?igsh=aHZmZm1kenY2NXZh&utm_source=qr",
+    "behance": "https://www.behance.net/Davidyzy"
+  },
+  "works": [
+    {
+      "id": "a110130043_work1",
+      "order": 13,
+      "title": {
+        "main": "陸分",
+        "sub": "鋼筋&水泥家具",
+        "main_en": "LIU FEN",
+        "sub_en": "Rebar & Concrete Furniture"
+      },
+      "description": "水泥支撐物常添加鋼材骨架，鋼材在水泥灌入後隱藏不見。其獨特紋理與特性若外露，不僅能展現獨特外觀，還可能發揮額外功能，為設計增添更多可能性。",
+      "longDescription": "這張椅子將原本隱藏在水泥結構中的鋼筋外露，強調鋼材特有的紋理與剛硬質感，創造出獨特的視覺張力。\n\n鋼筋的高強度支撐性不僅賦予椅子堅固穩定的結構，還突顯工業風的原始美學與特色。裸露的鋼筋線條與水泥質地相互交融，使椅子成為一件兼具實用性與藝術價值的作品，完美詮釋了材料本質的純粹之美。",
+      "english": "Cement supports often incorporate steel frameworks, hidden once the cement is poured.Exposing the steel’s unique texture not only showcases a distinctive appearance but also adds practical functionality, expanding design possibilities and enhancing the overall structure.",
+      "english_detail": "This chair exposes the steel reinforcement once hidden within the cement structure, emphasizing the steel’s unique texture and rigidity to create striking visual tension.The strong support adds stability while highlighting the raw industrial aesthetic, blending cement and steel for practicality and artistic value.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130043_work1_main.webp",
+        "preview": "/preview/a110130043_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130043_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130043_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130043_work2",
+      "order": 15,
+      "title": {
+        "main": "植草觀",
+        "sub": "植草磚燈具組",
+        "main_en": "Green N Brick",
+        "sub_en": "Grass Paver Lighting Set"
+      },
+      "description": "植草磚雖然低調，卻是綠色都市不可或缺的一部分。將平常本不起眼的植草磚以燈具的方式呈現，傳達植草磚特殊的作用與精神讓大眾更加注意綠色都市的議題。",
+      "longDescription": "透過燈具設計，將原本不起眼的植草磚轉化為視覺亮點，突顯其綠化、滲水與降溫等環保功能。燈具照亮空間，象徵植草磚在都市生態中的無聲貢獻，使大眾重新思考綠色基礎建設的重要性。此設計期望大眾對永續發展的關注，讓植草磚不只是鋪面材料，成為城市與自然共存的象徵，使環保理念融入生活，促進人與環境的和諧共生。",
+      "english": "Grass pavers, though understated, are an essential part of green cities. By presenting these often-overlooked pavers as lighting fixtures, their unique function and significance are highlighted, raising awareness of the importance of green urban development.",
+      "english_detail": "This project transforms the often-overlooked grass pavers into visual highlights through lighting design, emphasizing their eco-friendly functions like greening, water drainage, and cooling.It aims to raise awareness of sustainable infrastructure and the vital role of green spaces in urban environments.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130043_work2_main.webp",
+        "preview": "/preview/a110130043_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130043_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130043_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "a110130014",
+  "name": {
+    "zh": "曾柏偉",
+    "pinyin": "Bo-Wei Zeng"
+  },
+  "image": "/face/a110130014_face.webp",
+  "social": {
+    "email": "george1234120@gmail.com",
+    "instagram": "https://www.instagram.com/tsengg_02/",
+    "behance": "https://www.behance.net/georgetseng"
+  },
+  "works": [
+    {
+      "id": "a110130014_work1",
+      "order": 11,
+      "title": {
+        "main": "Petro",
+        "sub": "城市共行寵物載具",
+        "main_en": "Petro",
+        "sub_en": "Urban Pet Co-Mobility"
+      },
+      "description": "Petro提升了寵物主人們出遊的便利性，可輕鬆搭乘火車、地鐵等交通工具，讓主人能在城市交通環境中輕鬆地帶著寵物進行中短距離的旅行與從事休閒的戶外活動。",
+      "longDescription": "近年來，人口老齡化、少子化與疫情影響推動寵物產業成長，許多人已將寵物視為家庭成員。隨著都市生活節奏加快，越來越多人選擇帶著寵物外出，從日常散步到造訪寵物友善空間，大眾對便捷的寵物運輸方案需求大增。\n\nPetro能讓主人輕鬆攜寵出遊，無論是短程通勤還是戶外探索，皆能確保寵物與主人皆有愉悅的旅程。",
+      "english": "Petro enhances the convenience for pet owners traveling, allowing them to easily take pets on trains, subways, and other transportation. It enables owners to enjoy short to medium-distance trips and outdoor leisure activities with their pets in the city.",
+      "english_detail": "With the aging population, declining birth rates, and pandemic effects, the pet industry has grown, and many view pets as family. \n\nThe demand for convenient pet transportation has increased as urban life speeds up. Petro offers an easy solution for enjoyable trips with pets, whether commuting or outdoor.\n",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130014_work1_main.webp",
+        "preview": "/preview/a110130014_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130014_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130014_work1_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

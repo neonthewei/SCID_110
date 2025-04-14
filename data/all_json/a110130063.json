@@ -1,0 +1,81 @@
+{
+  "id": "a110130063",
+  "name": {
+    "zh": "陳文龍",
+    "pinyin": "Chan Man Lung"
+  },
+  "image": "/face/a110130063_face.webp",
+  "social": {
+    "email": "manlunggo@gmail.com",
+    "instagram": "https://www.instagram.com/manlung.chan.351/",
+    "behance": "https://www.behance.net/9ad1a906"
+  },
+  "works": [
+    {
+      "id": "a110130063_work1",
+      "order": 13,
+      "title": {
+        "main": "快速部署安全頭盔",
+        "sub": "瞬間展開的頭部防護",
+        "main_en": "Q.D.H.A.",
+        "sub_en": "Quick Deploy Head Protection"
+      },
+      "description": "當災害發生時，頭部安全十分重要，是自救的資本。以使頭盔能作為實用的防災用品為出發點，設計出特殊的折疊結構，在需要使用時瞬間展開，保護使用者的頭部。",
+      "longDescription": "自然災害發生時，保持意識清醒是自救的重中之重。如地震、海嘯等突然襲來的災害都有可能對頭部造成創傷，影響自救。\n\n頭盔作爲主流的頭部保護裝置，其尺寸和造型導致難以收納和進行配給，因此鮮少出現在公共空間。爲了提供更多的求生設備選擇，因此從造型和折疊兩方面進行考量和設計，因而展開對頭盔的設計。",
+      "english": "When a disaster occurs, head safety is critical, as is the capacity for self-rescue. To make the helmet a practical disaster prevention item in various situations, design a special form to be stored efficiently and instantly deployed when needed.",
+      "english_detail": "Being awake is the top priority of self-rescue. Sudden disasters such as earthquakes and tsunamis may cause head trauma and affect self-rescue.\n\n Helmets are hard to store and distribution, leading to their rarity in public. Foldable helmets are not intuitive, requiring design consideration for form and folding.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a110130063_work1_main.webp",
+        "preview": "/preview/a110130063_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130063_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130063_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130063_work1_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130063_work1_detail4.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130063_work2",
+      "order": 19,
+      "title": {
+        "main": "熔塑",
+        "sub": "熔接塑形家具",
+        "main_en": "M.W.F. Plastic",
+        "sub_en": "Melt, Weld and Fuse Plastic Furniture"
+      },
+      "description": "焊接是常見的金屬結合方式，同樣地塑膠也有屬於塑膠的結合方式，是為熔接，但熔接鮮少用作製作大體積產品。因此以研究材料特性和熔接而展開家具的設計。",
+      "longDescription": "熔接作為塑膠獨有的結合手法，明明存在卻只能運用在一些不起眼的零件結合上，鮮少登於大雅之堂，而同樣作為結合手法的焊接則隨處可見。\n\n為了讓熔接這一製作工藝出現在大眾眼前，研究熔接工藝在塑膠材料上的應用，挖掘該工藝的潛力，尋找合適的處理手法和成型方式，並設計出一系列家具作為可能性的證實和實踐。",
+      "english": "Welding is a common method of metal bonding. Plastics also have their own way of combining, which is fusing. However, it is rarely used to make products. Therefore, the design is developed with fusing as the research object.",
+      "english_detail": "Fusing is a unique joining technique for plastics, but it is rarely used in high-end applications when welding can be seen everywhere.\n\n In order to make the welding process appear in front of the public, design a series of furniture as proof of possibility and fulfillment.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130063_work2_main.webp",
+        "preview": "/preview/a110130063_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130063_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130063_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130063_work2_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130063_work2_detail4.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

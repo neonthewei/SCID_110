@@ -1,0 +1,81 @@
+{
+  "id": "a110130006",
+  "name": {
+    "zh": "施念貞",
+    "pinyin": "Nian-Zhen Shih"
+  },
+  "image": "/face/a110130006_face.webp",
+  "social": {
+    "email": "nshi2225@gmail.com",
+    "instagram": "https://www.instagram.com/__n.z._____/",
+    "behance": "https://www.behance.net/niann"
+  },
+  "works": [
+    {
+      "id": "a110130006_work1",
+      "order": 17,
+      "title": {
+        "main": "樹木生態玩具組",
+        "sub": "森林生態探索玩具",
+        "main_en": "TreeTales",
+        "sub_en": "Forest Ecology Exploration Toy"
+      },
+      "description": "分區場景展示臺灣低、中、高海拔的環境差異,讓兒童自由擺放具真木質感的樹木模型。在輕鬆遊戲中，直觀理解植物與環境的關係，並透過簡易說明學習基礎生態知識。",
+      "longDescription": "多數兒童生活於都市或平坦地區，難以直觀感受山區生態的多樣性，對樹木的認識多停留在常見的行道樹。\n\n透過拼裝、擺放與試錯的操作，引導兒童理解不同海拔孕育出的樹種，觀察植物與環境的關聯性。在遊戲中自由探索與組合，不僅能激發對自然的好奇心，還能逐步建立對當地環境的認識與情感連結，進而培養在地自然認同。",
+      "english": "The display highlights Taiwan's low, mid, and high-altitude environments. It allows children to freely place realistic wooden tree models. Through play, they intuitively learn the relationship between plants and their environment, gaining basic ecological knowledge.",
+      "english_detail": "Most children in urban areas struggle to grasp the diversity of mountain ecosystems, often only recognizing street trees. \n\nThrough play, they can explore different tree species and understand the relationship between plants and their environment, fostering curiosity and a connection to local nature.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130006_work1_main.webp",
+        "preview": "/preview/a110130006_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130006_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130006_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130006_work1_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130006_work1_detail4.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130006_work2",
+      "order": 2,
+      "title": {
+        "main": "模組化鳥類造型玩具",
+        "sub": "給孩子的手作鳥類世界",
+        "main_en": "Birdoo",
+        "sub_en": "A Handcrafted Bird World for Kids"
+      },
+      "description": "透過多種部件替換，孩子能輕鬆組裝出專屬的鳥兒。無論是在客廳或戶外，都能享受「拆裝、拼湊」的樂趣，隨心創造多元造型，在遊戲中激發豐富的想像力與創意。",
+      "longDescription": "利用模組化設計，透過多元鳥類造型與色彩變化的自由拼搭，引導孩子主動探索與創作，激發豐富的想像力與創意，培養對自然生態的認知與興趣。\n\n透過「頭部、身體、喙、翅膀、尾巴」等基本模組的組合，可拼裝成多種鳥類形象，結合生態啟蒙與創意拼搭，激發想像力與動手樂趣，同時初步認識不同鳥類的外形特徵與功能。",
+      "english": "By swapping various parts, children can quickly assemble their birds. Whether indoors or outdoors, they can enjoy the fun of \"disassembling and assembling\" creating diverse shapes and sparking imagination and creativity through play.",
+      "english_detail": "Using modular design, children can freely assemble birds of various shapes and colors, sparking creativity and an interest in nature. \n\nCombining basic modules like \"head, body, beak, wings, and tail,\" kids can create diverse bird shapes, blending ecological education with hands-on fun.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130006_work2_main.webp",
+        "preview": "/preview/a110130006_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130006_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130006_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130006_work2_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130006_work2_detail4.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

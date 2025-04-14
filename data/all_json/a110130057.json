@@ -1,0 +1,78 @@
+{
+  "id": "a110130057",
+  "name": {
+    "zh": "戴抒瑜",
+    "pinyin": "Tai-Shu Yu"
+  },
+  "image": "/face/a110130057_face.webp",
+  "social": {
+    "email": "dobetai22675043@gmail.com",
+    "instagram": "https://www.instagram.com/t_chi.u",
+    "behance": "https://www.behance.net/2c5f3700"
+  },
+  "works": [
+    {
+      "id": "a110130057_work1",
+      "order": 13,
+      "title": {
+        "main": "快翻咻風",
+        "sub": "玩轉版型冬季慢跑披風",
+        "main_en": "SHIFF",
+        "sub_en": "Conceptual pattern-twisting winter running cloak"
+      },
+      "description": "探索機能布料的轉換可能性，以最小面積與最快速度調整，達成最大使用功能，有效應對冬季慢跑時體溫變化與隨身物品收納需求，提高運動舒適度與便利性。",
+      "longDescription": "冬季慢跑時初始體溫較低，跑後體溫升高需脫去衣物攜帶，影響舒適度。市面產品雖主打輕薄、易收納，但仍無法解決物品累贅的問題。\n\n此設計透過翻轉布料轉換，以最小面積達成最大使用功能，能迅速調整穿戴狀態，應對體溫變化，並提供隨身物品放置機能。讓跑者在不同環境中保持靈活性，減少衣物負擔，提升運動體驗與便利性。",
+      "english": "Exploring the potential of functional fabrics, this design enables quick and efficient adjustments with minimal surface area, adapting to temperature changes during winter jogging while providing convenient storage, enhancing both comfort and practicality.",
+      "english_detail": "Winter jogging causes discomfort as body temperature rises, requiring clothes to be carried. \n\nThis design uses convertible fabric to quickly adjust to temperature changes and provide storage for personal items, reducing the burden and enhancing flexibility and comfort during runs.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130057_work1_main.webp",
+        "preview": "/preview/a110130057_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130057_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130057_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130057_work1_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130057_work1_detail4.webp"
+          },
+          {
+            "image": "/detail/a110130057_work1_detail5.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130057_work2",
+      "order": 12,
+      "title": {
+        "main": "社交光鐘",
+        "sub": "未來社交健康維持家飾",
+        "main_en": "Social Time",
+        "sub_en": "Future social health home decor"
+      },
+      "description": "透過視覺化社交狀態，結合鄧巴定律管理社交圈，提醒使用者維持實體互動，減少社交孤立導致的心理疾病風險與社交能力退化，幫助人們在虛擬與現實中取得健康平衡。",
+      "longDescription": "隨著科技發展，人們逐漸依賴透過社群平台來建立和維繫關係。然而，虛擬互動的增加卻伴隨著更深層的孤獨感，導致心理疾病問題加劇。\n\n此作品透過視覺化實體產品探索虛擬社群與現實健康的平衡，其中以家飾型態與使用情境帶入生活，讓人們更直觀地注意自身社交狀態，提醒觀者認識實體互動的價值，鼓勵維持健康的人際關係。",
+      "english": "Using Dunbar’s Law to manage social circles, this design visualizes social status, encouraging physical interactions to reduce isolation, mental health risks, and social skill decline, promoting a healthy balance between virtual and real-world connections.",
+      "english_detail": "As technology advances, people increasingly rely on social platforms, yet excessive virtual interaction often deepens loneliness and affects mental well-being. \n\nPresented as home decor, this design visualizes social status, serving as a gentle reminder to prioritize real-life interactions and cultivate healthier relationships.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a110130057_work2_main.webp",
+        "preview": "/preview/a110130057_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130057_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130057_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

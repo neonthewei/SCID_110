@@ -1,0 +1,72 @@
+{
+  "id": "a108130056",
+  "name": {
+    "zh": "林峻維",
+    "pinyin": "Chun-Wei Lin"
+  },
+  "image": "/face/a108130056_face.webp",
+  "social": {
+    "email": "flybear0319@gmail.com",
+    "instagram": "https://www.instagram.com/______neon/",
+    "behance": "https://www.behance.net/neonthewei"
+  },
+  "works": [
+    {
+      "id": "a108130056_work1",
+      "order": 16,
+      "title": {
+        "main": "咑噹！",
+        "sub": "AI生圖加速攝影溝通流程",
+        "main_en": "Dadan!",
+        "sub_en": "AI Mockup Tool for Photography Creative"
+      },
+      "description": "Dadan! 利用 AI 生圖技術，助產品攝影提案人員快速生成模擬圖，加速甲乙方共識。透過直覺介面拆解構圖、背景、光線，提案方式依舊自然流暢。",
+      "longDescription": "產品攝影溝通常依賴網路參考圖，客戶難以想像自身產品的實際效果，傾向「當場調整才知道」，導致現場反覆修改、拍攝超時，甚至需擇日重拍，影響合作氣氛。\n\n生成式 AI 可介入前期提案，快速生成模擬圖，讓客戶根據具體效果調整風格方向，不僅理清想法、確保預期一致，也能縮短現場調整時間，提高溝通效率。",
+      "english": "Dadan! Use AI-generated imaging to help product photography teams quickly create mock-ups, speeding up client-designer consensus. An intuitive interface breaks down composition, background, and lighting while keeping the proposal process natural and smooth.",
+      "english_detail": "Product photography often relies on reference images, making it hard for clients to visualize their products.\n\n Generative AI quickly creates mock-ups, helping clients refine their vision, align expectations, and reduce on-site adjustments, leading to smoother shoots and better efficiency.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a108130056_work1_main.webp",
+        "preview": "/preview/a108130056_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130056_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130056_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a108130056_work2",
+      "order": 14,
+      "title": {
+        "main": "流合",
+        "sub": "高斯波濺一體掃描器",
+        "main_en": "RYOMIX",
+        "sub_en": "3D Gaussian Splatting All-in-One Scanner"
+      },
+      "description": "RYOMIX 自動整合掃描結果，減少手動管理與出錯風險，提升效率與準確性。同時，統一鏡頭供電，簡化電源管理，讓臨時操作與維護更直覺便利。",
+      "longDescription": "3D Gaussian Splatting 是一種 3D 掃描技術，可透過圖像序列快速生成高精度的立體影像。目前掃描需從多角度拍攝，增加焦距、曝光不一致與設備操作負擔。\n\nRYOMIX 自動整合掃描結果，減少手動管理與出錯風險。統一鏡頭供電與數據傳輸，使操作更直覺。所有鏡頭同步焦距與曝光提升成像品質。",
+      "english": "RYOMIX automatically integrates scan results, reducing manual management and error risks while enhancing efficiency and accuracy. It also standardizes the camera power supply, simplifying power management for more intuitive operation and maintenance across various applications.",
+      "english_detail": "3D Gaussian Splatting quickly generates high-precision 3D images from image sequences. Multi-angle shots require careful focus and exposure, which a three-camera rig complicates. \n\nRYOMIX automates scan integration, reducing errors, standardizing power and data, and enabling one-click activation for better quality and efficiency.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a108130056_work2_main.webp",
+        "preview": "/preview/a108130056_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130056_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130056_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a108130056_work2_detail3.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "a110130023",
+  "name": {
+    "zh": "謝函穎",
+    "pinyin": "Han-Ying Hsieh"
+  },
+  "image": "/face/a110130023_face.webp",
+  "social": {
+    "email": "maxmaxhsieh@gmail.com",
+    "instagram": "https://instagram.com/maxsii__/",
+    "behance": "https://www.behance.net/maxhsieh"
+  },
+  "works": [
+    {
+      "id": "a110130023_work1",
+      "order": 21,
+      "title": {
+        "main": "年長者電輔三輪車",
+        "sub": "適合長者的低強度代步工具",
+        "main_en": "GENESIS",
+        "sub_en": "Low-intensity senior vehicle"
+      },
+      "description": "GENESIS兼顧年長者代步與健康。電輔自行車低強度運動優勢，體力有限也能輕鬆騎行並延長行程。低跨點、低座高與三輪結構，確保穩定，適合年長者使用。",
+      "longDescription": "目前市售的年長者載具未能有效解決下肢退化問題，反而讓使用者加重依賴。然而，年長者出門的主要目的是促進健康。\n\nGENESIS 讓日常代步兼顧健康，結合電輔低強度運動優勢，使體力有限者也能輕鬆騎行並延長行程。透過低跨點、低座高與優化騎乘幾何設計，搭配三輪結構，確保穩定性，更適合年長者使用。",
+      "english": "GENESIS offers mobility and health benefits for seniors with an electric-assisted bike, ensuring easy cycling and extended range. Its low step-through, low seat, and three-wheel design provide enhanced stability, making it ideal for older users.",
+      "english_detail": "Current senior mobility devices often worsen lower limb degeneration, increasing dependence. \n\nGENESIS promotes both mobility and health, combining electric-assisted low-intensity exercise. Its low step-through, seat height, optimized geometry, and three-wheel design ensure stability and suitability for seniors.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130023_work1_main.webp",
+        "preview": "/preview/a110130023_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130023_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130023_work1_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

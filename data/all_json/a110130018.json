@@ -1,0 +1,45 @@
+{
+  "id": "a110130018",
+  "name": {
+    "zh": "郭宗宬",
+    "pinyin": "Tsung-Cheng Kuo"
+  },
+  "image": "/face/a110130018_face.webp",
+  "social": {
+    "email": "zongkuo1324@gmail.com",
+    "instagram": "https://www.instagram.com/terryk_1324?igsh=MXkxMGUyOWVyY2pscw%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/0fd4556e"
+  },
+  "works": [
+    {
+      "id": "a110130018_work1",
+      "order": 9,
+      "title": {
+        "main": "FlexiGo",
+        "sub": "輕型移動載具",
+        "main_en": "FlexiGo",
+        "sub_en": "Lightweight Mobility Vehicle"
+      },
+      "description": "FlexiGo擁有輕巧且穩固的框架，不同於笨重且需要他人幫助的輪椅，這款設計讓使用者能獨立操作。不受環境影響，結構可折疊收納，便於在家或戶外暫時安置。",
+      "longDescription": "對於行動不便的人來說，一款減少體力負擔的輔助工具至關重要。然而，市面上的助行器有許多限制，因此這次設計透過雙重折疊機構，打破傳統滑板車僅能單次折疊的限制。\n\n不僅確保展開時的結構穩定與安全，折疊後更能有效縮小體積，提升收納便利性。整體車架採用輕量化設計，最大程度保留必要結構，同時確保整體穩定性。",
+      "english": "FlexiGo features a lightweight yet sturdy frame, unlike bulky wheelchairs that require assistance. This design allows users to operate it independently. Its foldable structure enables easy storage, making it convenient for temporary placement at home or outdoors.",
+      "english_detail": "A tool that reduces physical strain is essential for those with mobility challenges. This design incorporates a dual-folding mechanism, overcoming the limitations of traditional single-folding scooters and improving storage convenience. It ensures stability, safety, and a lightweight frame while retaining structural support.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130018_work1_main.webp",
+        "preview": "/preview/a110130018_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130018_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130018_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130018_work1_detail3.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

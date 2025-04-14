@@ -1,0 +1,81 @@
+{
+  "id": "a109130068",
+  "name": {
+    "zh": "何之翔",
+    "pinyin": "Chih-Hsiang Ho"
+  },
+  "image": "/face/a109130068_face.webp",
+  "social": {
+    "email": "collinho1234@gmail.com",
+    "instagram": "https://www.instagram.com/collinho0306?igsh=MWNhbmhkdWc3dHM0ag%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/collinho03f3be"
+  },
+  "works": [
+    {
+      "id": "a109130068_work1",
+      "order": 9,
+      "title": {
+        "main": "Charybdis",
+        "sub": "海洋垃圾收集器",
+        "main_en": "Charybdis",
+        "sub_en": "Ocean Debris Collection Device"
+      },
+      "description": "Charybdis 利用洋流特性清理漂浮垃圾，能追蹤漂流路徑、自主回收並導航至沿岸回收站分類。側邊儲存垃圾時吸收波浪能量，減少侵蝕並具消波效益。\n",
+      "longDescription": "Charybdis 結合洋流特性，專為清理漂浮垃圾而設計。透過感測器與洋流數據分析，能追蹤垃圾漂流路徑，主動移至污染熱點進行回收，並配合當地設施進行分類處理。\n\n由於垃圾儲存於兩側，它在移動時能部分吸收波浪能量，減少近岸水域的侵蝕影響，讓清理過程同時發揮消波作用，為環境帶來雙重效益。",
+      "english": "Charybdis uses the characteristics of ocean currents to clean up floating garbage. It tracks the drifting path, recycles autonomously, and navigates to coastal recycling stations for sorting. The side storage absorbs wave energy, reduces erosion, and has wave-breaking benefits.",
+      "english_detail": "Charybdis targets floating garbage by utilizing sensors and ocean current data to identify pollution hotspots for proactive cleanup.\n\n It stores rubbish on both sides, which absorbs wave energy, reducing erosion in nearshore waters while providing effective recycling and environmental benefits.\n",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a109130068_work1_main.webp",
+        "preview": "/preview/a109130068_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130068_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130068_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a109130068_work1_detail3.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a109130068_work2",
+      "order": 21,
+      "title": {
+        "main": "Augeas",
+        "sub": "回收材淨灘組",
+        "main_en": "Augeas",
+        "sub_en": "Recycled Plastic Beach Cleanup Kit"
+      },
+      "description": "將回收塑膠熔化再製，塑造海浪意象，並製成淨灘工具，重返海岸清理垃圾。讓海廢轉化為今日的清理工具，實現廢棄物再生循環，持續推動淨灘行動。",
+      "longDescription": "利用海洋與海岸回收的塑膠廢棄物，重新熔化並實驗不同厚薄與融合方式，塑造成海浪意象的淨灘設備，賦予廢棄塑膠新生命。Augeas 輕便耐腐，適用於沙灘與海洋垃圾清理。\n\n每件產品不僅是清理工具，更承載著從污染到修復的環保故事，鼓勵更多人參與淨灘行動，實現資源再生循環，讓過去的海廢成為今日守護海洋的力量。",
+      "english": "Recycled plastic is melted and shaped into beach cleaning tools, helping to remove garbage from the coast. This process transforms marine waste into effective cleaning solutions, promoting waste recycling and ongoing beach cleaning efforts.",
+      "english_detail": "Using recycled plastic waste from the ocean, we create lightweight, corrosion-resistant beach cleaning equipment inspired by waves.\n\n Each product embodies a story of environmental protection, encouraging participation in beach cleanups and promoting resource recycling to transform marine waste into a force for ocean protection.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a109130068_work2_main.webp",
+        "preview": "/preview/a109130068_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130068_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130068_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a109130068_work2_detail3.webp"
+          },
+          {
+            "image": "/detail/a109130068_work2_detail4.webp"
+          },
+          {
+            "image": "/detail/a109130068_work2_detail5.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "a110130002",
+  "name": {
+    "zh": "鄭雅云",
+    "pinyin": "Cheng-Ya Yun"
+  },
+  "image": "/face/a110130002_face.webp",
+  "social": {
+    "email": "tracy20030619@gmail.com",
+    "instagram": "https://www.instagram.com/yyyun_19?igsh=MW1uNHQyNnNnbnJrYg%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/f75dc289"
+  },
+  "works": [
+    {
+      "id": "a110130002_work1",
+      "order": 13,
+      "title": {
+        "main": "Rolling Rescue",
+        "sub": "兒童手眼平衡玩具",
+        "main_en": "Rolling Rescue",
+        "sub_en": "Hand-Eye Balance Toy for Kids"
+      },
+      "description": "以手眼協調訓練為核心，透過觀察與雙手調整角度，使小球順利滾動，提升靈活性、專注力與解決問題能力，同時培養探索思考、動作協調及合作能力。",
+      "longDescription": "手眼協調是兒童成長的重要基礎，影響自理、學習與運動能力。4-8歲正處於手眼協調與精細動作發展的關鍵期，適當的遊戲與活動能強化靈活性、專注力與解決問題能力。\n\n透過遊戲引導孩子觀察、調整策略並協同操作，提升探索思考與動作協調能力。多人遊玩模式使孩子在互動中學習協作、分享與解決問題。",
+      "english": "Children adjust angles to roll the ball, focusing on hand-eye coordination, enhancing flexibility, focus, and problem-solving skills. This activity also encourages creativity, exploration, movement coordination, and teamwork and strengthens cognitive development, helping children develop essential life skills.",
+      "english_detail": "Hand-eye coordination is essential for children's development, influencing self-care, learning, and physical abilities. Between ages 4 and 8, children undergo critical development in this area, with suitable activities enhancing flexibility, focus, and problem-solving. \n\nGames guide children to observe, adjust strategies, and collaborate, boosting exploration, coordination, and teamwork skills.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130002_work1_main.webp",
+        "preview": "/preview/a110130002_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130002_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130002_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130002_work1_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130002_work1_detail4.webp"
+          },
+          {
+            "image": "/detail/a110130002_work1_detail5.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130002_work2",
+      "order": 8,
+      "title": {
+        "main": "GlowAxis",
+        "sub": "模組化燈具",
+        "main_en": "GlowAxis",
+        "sub_en": "Modular Lighting Fixture"
+      },
+      "description": "靈感來自軌道燈的靈活性與衣帽架形態，打造樹狀模組化燈具。採用正負極導電軌道技術，燈具可自由調整位置，任意放置於軌道上，打造個性化居家照明。",
+      "longDescription": "以軌道燈的靈活性為靈感，結合居家衣帽架的形態，融入模組化與互動設計概念，打造出樹狀模組化燈具。\n\n透過正負極導電軌道技術，壤使用者可根據需求自由變換燈光模組，使燈光能隨空間與情境變化而適應，創造獨特且個性化的照明體驗，不僅提升居家環境的靈活性，也使燈具成為兼具功能與美感的空間亮點。",
+      "english": "Inspired by the flexibility of track lighting and the shape of a coat rack, this modular tree-shaped light uses electrode track technology. The light can be freely adjusted and placed anywhere along the track, creating personalized home lighting.",
+      "english_detail": "This tree-shaped modular light integrates interactive design and is inspired by track lighting and coat racks. \n\nUsing electrode track technology, users can adjust light modules, adapting to different spaces and situations. It creates a unique, personalized lighting experience, enhancing functionality and aesthetics.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130002_work2_main.webp",
+        "preview": "/preview/a110130002_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130002_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130002_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130002_work2_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130002_work2_detail4.webp"
+          },
+          {
+            "image": "/detail/a110130002_work2_detail5.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

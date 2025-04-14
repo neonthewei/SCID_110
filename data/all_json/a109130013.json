@@ -1,0 +1,72 @@
+{
+  "id": "a109130013",
+  "name": {
+    "zh": "謝宇昕",
+    "pinyin": "Yu-Hsin Hsieh"
+  },
+  "image": "/face/a109130013_face.webp",
+  "social": {
+    "email": "yuhsin900908@gmail.com",
+    "instagram": "https://docs.google.com/spreadsheets/d/15a12AVnmPEJHDkkAsx39bH9xv3lq0K8JP_5ARyRqryo/edit?gid=0#gid=0",
+    "behance": "https://www.behance.net/95a1178a"
+  },
+  "works": [
+    {
+      "id": "a109130013_work1",
+      "order": 3,
+      "title": {
+        "main": "都市機能快穿雨衣",
+        "sub": "騎士專用雨衣",
+        "main_en": "PerPluiva",
+        "sub_en": "Rider-Specific Raincoat"
+      },
+      "description": "因應驟雨，騎士臨停路邊穿著雨衣甚不方便，獨特的剪裁設計，實現雨衣快速穿脫。結合拼接的配件，讓騎士根據氣候變化靈活調整穿著方式。",
+      "longDescription": "在台灣，四季皆有降雨，摩托車騎士會攜帶雨衣以應對驟雨。由於騎士在市區內騎乘頻率較高，因此雨衣的包覆性與穿脫速度尤為重要。\n\n 此外，為了讓雨衣成為騎士的時尚配件，重新設計了雨衣的版型與穿著方式。 雨衣以套入式穿著，再扣上腰帶，最後拉上側面拉鍊即可立即穿上。此設計為騎士不須脫鞋，減少穿著時間。",
+      "english": "Riders often find it inconvenient to stop and put on a raincoat in response to sudden rain. The unique cut design allows for quick wearing and removal. With detachable accessories, riders can adjust their attire flexibly according to weather changes.",
+      "english_detail": "In Taiwan, where rain is frequent year-round, motorcyclists carry raincoats for sudden showers. \n\nQuick wearing and coverage are essential for high-riding frequency in urban areas. The raincoat features a slip-on design, fastened with a waist belt and side zipper.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a109130013_work1_main.webp",
+        "preview": "/preview/a109130013_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130013_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130013_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a109130013_work1_detail3.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a109130013_work2",
+      "order": 9,
+      "title": {
+        "main": "戲水救生泳衣",
+        "sub": "兒童戲水浮板兼防護裝備",
+        "main_en": "FloatyFish",
+        "sub_en": "Children's Float Board and Protective Gear"
+      },
+      "description": "兒童溺水時因慌張情緒而忘記自救步驟。穿著兼具救生浮板的泳衣後，戲水時浮板作為輔助工具；溺水時抓住救生浮板，浮於水上實現自救，從而提高安全性，減少危險。",
+      "longDescription": "兒童不諳水性，於深水池遊玩，且缺乏成人監護，不慎嗆水導致溺水，因此穿著戲水救生衣尤為重要。\n\n考量到兒童戲水裝備應輕便且活動性高，市面上穿戴式救生衣，既不美觀且影響兒童戲水體驗。因此以泳圈、浮板等戲水裝備，與救生衣結合，達成救生浮板浮於兒童身側，既可於戲水時提供浮力支撐身體，又可實現兒童自救。",
+      "english": "Children often forget self-rescue steps during drowning due to panic. This swimsuit integrates a life-saving float, aiding in water play. In case of drowning, grabbing the float helps the child stay afloat, enhancing safety and reducing risk.",
+      "english_detail": "Children with limited swimming skills are at risk of drowning when playing in deep water without adult supervision.\n\n Traditional life vests are bulky and hinder play. This design integrates swim aids like floats and life jackets, providing buoyancy and enabling self-rescue for enhanced safety.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a109130013_work2_main.webp",
+        "preview": "/preview/a109130013_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130013_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130013_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

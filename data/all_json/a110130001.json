@@ -1,0 +1,69 @@
+{
+  "id": "a110130001",
+  "name": {
+    "zh": "魏丹葳",
+    "pinyin": "Dan-Wei Wei"
+  },
+  "image": "/face/a110130001_face.webp",
+  "social": {
+    "email": "danwei0704@gmail.com",
+    "instagram": "https://www.instagram.com/danweii74/",
+    "behance": "https://www.behance.net/14d68df0"
+  },
+  "works": [
+    {
+      "id": "a110130001_work1",
+      "order": 20,
+      "title": {
+        "main": "METO_l",
+        "sub": "金屬應用編織椅具",
+        "main_en": "METO_l",
+        "sub_en": "Metal Woven Chair Furniture"
+      },
+      "description": "透過多種金加工方式將圓管與扁材合而為一，使圓管的支撐性與扁材的舒適性融合設計。整體擷取竹編的五角編織手法，使其以最簡約的線條呈現具現代感的家居設備。",
+      "longDescription": "這個設計是以圓扁金屬結合而成的編織支撐家具。在前期走訪與觀察竹製家居的過程中，發現大多竹製品的風格都稍顯「原始感」，認為是材料本身的有機感使其在現代家庭裝潢中稍顯格格不入。\n\n因此設想用精加工的金屬材質表面效果來做出現代感，並思考如何發揮金屬性質，透過焊接彎合等加工方式處理良好地代替竹做編織。",
+      "english": "This design combines round tubes and flat materials through various metalworking techniques to merge structural support with comfort. Inspired by the five-strand bamboo weaving method, it transforms traditional craftsmanship into sleek, modern lines, creating elegant and contemporary home furniture.",
+      "english_detail": "This design combines round and flat metal elements in a woven support structure. Bamboo furniture often feels too “raw” for modern interiors, so this concept uses finely processed metal for a contemporary look.\n\n It recreates bamboo weaving with a refined metal approach through welding and bending.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130001_work1_main.webp",
+        "preview": "/preview/a110130001_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130001_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130001_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130001_work2",
+      "order": 12,
+      "title": {
+        "main": "re:cHUĀn",
+        "sub": "單元編織系列燈具",
+        "main_en": "re:cHUĀn",
+        "sub_en": "Modular Woven Lighting Series"
+      },
+      "description": "擷取傳統竹編的五角編手法，以多個同一最小編織單元重複結合，發展出多種組合，並透過顏色、材質與造型進行變換，創造出一系列具有竹編穿花意象的結構燈具組。",
+      "longDescription": "在編織竹球的過程中，觀察到五角編的特殊彎曲弧度，進而進行翻摺與合併等嘗試。將其視為一個個基本單元，試驗各種單元間的結合方式，創造出一系列以多個五角編為單元的結構燈具。\n\n其中融入竹編技法中的穿花概念，利用銅金燦燦的光澤與霧面塑膠相互穿梭，實驗兩者異材質搭配的平衡比例，使其呈現高級與優雅兼具的質感。",
+      "english": "Inspired by traditional five-strand bamboo weaving, this design combines repeating units to form various patterns. Through color, material, and shape variations, it creates a series of structural lighting fixtures reflecting the elegance of bamboo weaving.",
+      "english_detail": "The curvature of the five-strand weave inspired folding and merging experiments while weaving bamboo spheres. Using it as a basic unit, the design forms structural lighting fixtures. Blending brass’s shine with matte plastic achieves a refined, elegant balance.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130001_work2_main.webp",
+        "preview": "/preview/a110130001_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130001_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130001_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

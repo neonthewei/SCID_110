@@ -1,0 +1,69 @@
+{
+  "id": "a108130063",
+  "name": {
+    "zh": "方恩銘",
+    "pinyin": "En-Ming Fang"
+  },
+  "image": "/face/a108130063_face.webp",
+  "social": {
+    "email": "908472101tony@gmail.como",
+    "instagram": "https://www.instagram.com/tonyming04",
+    "behance": "https://www.behance.net/908472101tfd14"
+  },
+  "works": [
+    {
+      "id": "a108130063_work1",
+      "order": 2,
+      "title": {
+        "main": "舒緩星球",
+        "sub": "筋膜放鬆器具套組",
+        "main_en": "Dorma",
+        "sub_en": "Fascia Relaxation Device Set"
+      },
+      "description": "模組化的按摩球透過可變結構可自由組裝，適應瑜伽動作與按摩筋膜同步協作，使放鬆與運動恢復相互融合，實現靈活順應身體狀態的釋放體驗。同時融合居家環境氛圍。",
+      "longDescription": "模組化按摩球運用可變結構設計，自由組裝適應瑜伽動作與筋膜放鬆技術，實現動靜結合的恢復體驗。多角度適配結構調整受力分佈，提升放鬆效率。模組化吸頭提供不同紋理與硬度，精準針對肌群需求。\n\n此外，造型與材質融合居家環境語彙，運用觸感友善的表面工藝與靜謐色調，使恢復過程融入日常，營造沉浸式放鬆氛圍。",
+      "english": "The modular massage balls have a variable structure that adapts to yoga movements and fascia massage, merging relaxation with exercise recovery. This offers a flexible release experience, adjusting to the body’s condition while blending into the home environment.",
+      "english_detail": "The modular massage balls feature a variable structure, adapting to yoga movements and fascia techniques for recovery. Adjustable attachments provide textures for targeted muscle relief. \n\nThe design blends with home aesthetics, using touch-friendly finishes and calming tones for an immersive relaxation atmosphere.\n",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a108130063_work1_main.webp",
+        "preview": "/preview/a108130063_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130063_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130063_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a108130063_work2",
+      "order": 10,
+      "title": {
+        "main": "多模態助行杖",
+        "sub": "不同環境需求的助行杖組件整合",
+        "main_en": "Versa",
+        "sub_en": "Modular Fumctional Cane Components"
+      },
+      "description": "助行杖可根據需求調整不同形態結構，覆蓋康復到復健過程的多種需求，從肘拐到前臂拐到凳子的切換來提供復健輔助，同時有不同觸地接頭實現多環境的適應性。",
+      "longDescription": "模組化助行杖採用可變結構設計，透過自由組合滿足康復至復健不同階段輔助需求。核心機制支持從肘拐、前臂拐至附帶坐凳模式的靈活切換，適應使用者行走穩定性與支撐需求變化。\n\n可更換觸地接頭，涵蓋多種地面環境，提升適應性與安全性。產品結構兼顧輕量與強度，符合人體工學並融入日常使用考量，使康復過程更具與舒適性。",
+      "english": "The walking cane adjusts to different forms based on needs, covering all stages of rehabilitation. It switches between elbow crutch, forearm crutch, and stool for support, with various ground-contact tips ensuring adaptability to different environments.",
+      "english_detail": "The modular walking cane is flexible, supporting rehabilitation through adaptable modes such as elbow crutch, forearm crutch, and stool. \n\nInterchangeable ground contact tips enhance safety and adaptability for various surfaces. Lightweight, ergonomic, and durable, it ensures a comfortable, daily-use rehabilitation experience.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a108130063_work2_main.webp",
+        "preview": "/preview/a108130063_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130063_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130063_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "a108130202",
+  "name": {
+    "zh": "夏聿璐",
+    "pinyin": "Yu-Lu Hsia"
+  },
+  "image": "/face/a108130202_face.webp",
+  "social": {
+    "email": "sharon90813@gmail.com",
+    "instagram": "https://www.instagram.com/yulu_0813/",
+    "behance": "https://www.behance.net/lulu293"
+  },
+  "works": [
+    {
+      "id": "a108130202_work1",
+      "order": 17,
+      "title": {
+        "main": "MUFFA-specchio",
+        "sub": "用更精小尺寸的模具做油壓，挑戰產品的可能性",
+        "main_en": "MUFFA-specchio",
+        "sub_en": "Smaller-sized molds present multiple possibilities"
+      },
+      "description": "Specchio 強調金屬模具油壓技術不僅限於基本形態，還能透過摺紙去做造型發想，突破原有的簡單造型，找到更複雜的折法及結構，呈現多元可能性。\n\n",
+      "longDescription": "台灣傳統工業技法金屬油壓，specchio系列突破不只是單純油壓技術，透過複雜的折板、結構以及更細小尺寸的模具做出此產品，整體營造出金屬的冰冷感。Specchio強調金屬模具油壓技術不僅限於基本形態，還能透過更複雜的折法與結構呈現多元可能性。外觀上用摺紙去造型發想，從摺紙中找到不一樣的結構。\n",
+      "english": "Specchio emphasizes that metal mold hydraulic technology is not limited to basic forms but can also be used to create shapes through origami, breaking through the original simple shapes, finding more complex folding methods and structures, and presenting multiple possibilities.\n",
+      "english_detail": "Taiwan's Specchio series utilizes advanced metal hydraulic pressure techniques with complex folding plates and smaller molds, creating a distinctive cold metal aesthetic.Inspired by origami, it demonstrates that metal mold hydraulic technology can go beyond basic forms to explore diverse structural possibilities.\n",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a108130202_work1_main.webp",
+        "preview": "/preview/a108130202_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130202_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130202_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a108130202_work1_detail3.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a108130202_work2",
+      "order": 9,
+      "title": {
+        "main": "MUFFA-tata",
+        "sub": "以烘焙模具造型油壓出的趣味椅子組合",
+        "main_en": "MUFFA-tata",
+        "sub_en": "A fun chair set shaped like baking molds"
+      },
+      "description": "透過油壓模具精確壓出尖角和圓弧設計，展現獨特美感與功能性。坐墊用鮮豔的顏色，營造出輕快、愉悅的氛圍，讓整體設計如同蛋糕溢出椅身，帶來趣味的視覺體驗。\n",
+      "longDescription": "油壓模具本質上是幾何形狀的組合，透過不同尺寸的模具製作出不同效果，因此在造型上不想要用太困難且複雜的方式呈現。我選擇了一尖一圓的模具，並透過紙模型的測試，找到最適合的尺寸。\n\n圓模具的製作則非常困難，隨著椅子的長度越高，焊接的難度也越高。在前期的紙模型製作上不止要考慮比例問題，同時還要兼顧製作的可行性。",
+      "english": "The unique beauty and functionality of the sharp corners and arcs are pressed through hydraulic molds. Bright seat cushion colors create a light atmosphere, giving the design a delightful, cake-like appearance for an interesting visual experience.",
+      "english_detail": "Hydraulic molds combine geometric shapes to create various effects. I selected a simple mold with one point and one circle, testing paper models to find the right size.Producing circular molds is challenging, particularly with longer chairs, so proportions, and feasibility must be carefully considered early on.\n",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a108130202_work2_main.webp",
+        "preview": "/preview/a108130202_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130202_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130202_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

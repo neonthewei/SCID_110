@@ -1,0 +1,69 @@
+{
+  "id": "a110130048",
+  "name": {
+    "zh": "林冠宇",
+    "pinyin": "Kuan-Yu Lin"
+  },
+  "image": "/face/a110130048_face.webp",
+  "social": {
+    "email": "l8956237@gmail.com",
+    "instagram": "https://www.instagram.com/lat775/",
+    "behance": "https://www.behance.net/6d97aae3"
+  },
+  "works": [
+    {
+      "id": "a110130048_work1",
+      "order": 1,
+      "title": {
+        "main": "捷節",
+        "sub": "共享單車安全帽系統",
+        "main_en": "NODE",
+        "sub_en": "Bike Helmet Sharing System"
+      },
+      "description": "台灣單車騎士事故頻傳，但佩戴安全帽者寥寥無幾。NODE 針對共享單車設計智能安全帽租借系統，透過緊湊收納與tpu抗衝擊結構，確保便捷、衛生與安全性。",
+      "longDescription": "台灣被稱為「單車地獄」，自行車道時常騎到一半消失，單車騎士被迫與汽機車爭道，危險重重。\n\n如今，Ubike已成為許多人生活不可或缺的公共運輸工具，然而全國自行車死傷事件不斷攀升，佩戴安全帽的共享單車使用者卻寥寥無幾。本設計針對此問題提出了便捷的安全帽租借系統，以降低使用門檻。",
+      "english": "With frequent cycling accidents in Taiwan and few riders wearing helmets, NODE designs a smart helmet rental system for shared bikes. Featuring compact storage and a TPU impact-resistant structure, it ensures convenience, hygiene, and safety.",
+      "english_detail": "Taiwan’s cycling infrastructure is incomplete, forcing riders to share roads with motor vehicles, creating safety risks. \n\nWhile Ubike is essential for many, cycling accidents continue to rise, yet few shared bike users wear helmets. This design introduces a convenient helmet rental system to improve safety and accessibility.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a110130048_work1_main.webp",
+        "preview": "/preview/a110130048_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130048_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130048_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130048_work2",
+      "order": 20,
+      "title": {
+        "main": "鴴-赤翎",
+        "sub": "雙型態靜音吉他",
+        "main_en": "Avocet-Redwing",
+        "sub_en": "Dual-Mode Silent Guitar"
+      },
+      "description": "採用模組化結構，旅途中攜帶輕量琴身，有效降低體積與重量；家用嵌入音響底座，無需額外設備即可演奏。雙模式設計適應多元彈奏場景，兼顧便攜性與流暢演奏體驗。",
+      "longDescription": "這款旅行靜音吉他的設計靈感源自台灣冬候鳥——高蹺鴴。每年冬季，成群的高蹺鴴遷徙至台灣的濕地，以其修長的雙腿、輕盈的身姿點 綴著台灣的冬季風景。\n\n這樣的遷徙旅程讓人聯想到現代人四處旅行、探索世界的心情，直至返鄉，能夠有自己的歸屬。而這款吉他正是為 那些愛好音樂、渴望自由的旅人而設計。",
+      "english": "Featuring a modular design, this instrument offers a lightweight, compact body for travel and an integrated speaker base for home use. Its dual-mode design ensures portability and a seamless playing experience across various settings.",
+      "english_detail": "Inspired by the black-winged stilt, a migratory bird gracing Taiwan’s wetlands each winter, this travel silent guitar embodies exploration and belonging.\n\nLike these birds, it’s made for music lovers who seek freedom and adventure yet always return home.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130048_work2_main.webp",
+        "preview": "/preview/a110130048_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130048_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130048_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

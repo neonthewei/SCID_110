@@ -1,0 +1,42 @@
+{
+  "id": "a110130021",
+  "name": {
+    "zh": "成品宜",
+    "pinyin": "Pin-Yi Cheng"
+  },
+  "image": "/face/a110130021_face.webp",
+  "social": {
+    "email": "joy92.2.24@gmail.com",
+    "instagram": "https://www.instagram.com/joy92224?igsh=MTJqdmM5dmM1aHNqZA%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/3eb93a9b"
+  },
+  "works": [
+    {
+      "id": "a110130021_work1",
+      "order": 22,
+      "title": {
+        "main": "磚專",
+        "sub": "複合媒材台灣花磚家具",
+        "main_en": "Zhuān Zhuān",
+        "sub_en": "Mixed media Taiwanese tile furniture"
+      },
+      "description": "「磚專」結合台灣花磚文化、傳統板凳元素，以布料呈現花磚圖案。透過家具，傳遞花磚祝福意涵，讓歷史與在地情感融入生活，展現永續與創新文化價值。",
+      "longDescription": "運用毛線、氈材等柔軟媒材，重新詮釋花磚，打破傳統磁磚的硬質形象。結合刺繡、拼接等技法，賦予花磚全新立體感、觸感與視覺層次。\n\n家具設計汲取台灣傳統板凳、紳士椅等經典元素，展現地方特色並喚起情感共鳴。家具骨架選用台灣杉木，營造自然質樸氛圍。這樣的設計，將花磚祈福寓意融入生活，創造實用美感兼具的家俱。",
+      "english": "\"Zhuān Zhuān\" blends Taiwan's floral tile culture with traditional bench elements, using fabric to display patterns. It conveys the blessings of floral tiles, integrating history and local\nemotions into daily life while promoting sustainable, innovative cultural values.",
+      "english_detail": "This design reinterprets floral tiles with yarn and felt, adding texture and depth through embroidery and patchwork.\n\n Inspired by Taiwan's traditional benches and chairs, it evokes local culture. It features a natural Taiwan cedar frame for a warm, rustic atmosphere.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130021_work1_main.webp",
+        "preview": "/preview/a110130021_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130021_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130021_work1_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

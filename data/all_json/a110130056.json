@@ -1,0 +1,72 @@
+{
+  "id": "a110130056",
+  "name": {
+    "zh": "李語彤",
+    "pinyin": "Yu-Tung Lee"
+  },
+  "image": "/face/a110130056_face.webp",
+  "social": {
+    "email": "lee.yu.tung0114@gmail.com",
+    "instagram": "https://www.instagram.com/yutoa_0114?igsh=NzQzaHc2bmczY3p2&utm_source=qr",
+    "behance": "https://www.behance.net/3b8c13e3"
+  },
+  "works": [
+    {
+      "id": "a110130056_work1",
+      "order": 14,
+      "title": {
+        "main": "Dotties",
+        "sub": "互動式繪本音樂玩具",
+        "main_en": "Dotties",
+        "sub_en": "Interactive picture book music toy"
+      },
+      "description": "Dotties是一套音樂玩具，簡單造型樂器加上繪本，音階配合故事角色，提升記憶連結，降低音樂門檻，讓孩童輕鬆有趣的學習音樂，是最棒的音樂啟蒙玩具教材！",
+      "longDescription": "Dotties 是一款將 音樂學習 與 繪本故事 結合的互動式音樂玩具。音符化作故事角色，讓孩子透過生動的故事學習音樂。搭配簡單易上手的樂器與精美繪本，Dotties 幫助孩子建立音階與角色的記憶連結，降低音樂學習門檻。\n\nDotties 為孩子打造一個充滿樂趣的音樂啟蒙體驗，培養對音樂的興趣與感受力！",
+      "english": "Dotties is a music toy set that pairs simple instruments with storybooks, using character-based scales to enhance memory and make learning music fun and accessible for children. The perfect music education tool for early childhood!",
+      "english_detail": "Dotties is an interactive music toy that blends music learning with storybooks. By turning musical notes into characters, it helps children easily connect scales with stories, making music fun and accessible while fostering a love for music and developing musical sensitivity.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130056_work1_main.webp",
+        "preview": "/preview/a110130056_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130056_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130056_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130056_work2",
+      "order": 8,
+      "title": {
+        "main": "BandSync",
+        "sub": "樂團模擬合成器",
+        "main_en": "BandSync",
+        "sub_en": "Band Analog Synthesizer"
+      },
+      "description": "統整練團過程，結合個人練習成果與練團需求，簡化練習步驟、增加效益。節省了時間與金錢成本，並突破空間限制，還能詳細記錄練習過程，優化並提升練團效率。",
+      "longDescription": "總是找不到大家都有空的時間練團？租用練團室耗時又昂貴？BandSync 讓團員無需聚在實體練團室，就能完成合奏、記錄練習過程，並切換不同練習版本。\n\n透過整合個人練習成果與團練需求，簡化練習流程、提升效率。它不僅節省時間與金錢成本，突破空間限制，還能詳細記錄練習進度，為樂團提供更便捷的選擇。",
+      "english": "The rehearsal process is streamlined by combining individual practice results with rehearsal needs, simplifying steps and increasing efficiency. It saves time and costs, overcomes spatial limits, and allows detailed recording of the practice process, optimizing rehearsal effectiveness.",
+      "english_detail": "英文詳述（40-48）\nStruggling to find time for band practice or afford a practice room? BandSync allows members to rehearse, record sessions, and switch between versions remotely. \n\nIt integrates individual practice with group needs, saving time and costs, overcoming spatial limitations, and offering detailed progress tracking for more efficient rehearsals.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130056_work2_main.webp",
+        "preview": "/preview/a110130056_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130056_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130056_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130056_work2_detail3.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

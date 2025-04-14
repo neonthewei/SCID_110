@@ -1,0 +1,69 @@
+{
+  "id": "a110130017",
+  "name": {
+    "zh": "陳宗楠",
+    "pinyin": "Zong-Nan Chen"
+  },
+  "image": "/face/a110130017_face.webp",
+  "social": {
+    "email": "zonec2002@gmail.com",
+    "instagram": "https://www.instagram.com/zone_c_01?igsh=MWxjaG5mZTNpNndrMA%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/zone-c"
+  },
+  "works": [
+    {
+      "id": "a110130017_work1",
+      "order": 17,
+      "title": {
+        "main": "城市模組休閒鞋",
+        "sub": "在城市中自由切換形式",
+        "main_en": "Urban Module",
+        "sub_en": "Adapt to the City, Shift with Ease"
+      },
+      "description": "採無膠合模組化設計，靈活適應都市生活。可拆卸後跟讓鞋瞬間轉換為穆勒鞋，滿足不同場景。選用環保材質與穩固綁帶系統，兼顧機能、美學與永續理念。",
+      "longDescription": "採無膠模組化設計，透過可拆卸後跟實現包覆鞋到便鞋的流暢轉換。鞋面與鞋底以 Lock & Lace 系統串聯，無需黏合確保穩固連接，提升耐用與環保性。\n\n設計語彙強調流暢輪廓與雕塑感，前傾剪影塑造俐落動感，雙針縫線創造自然摺痕，增強視覺包覆並突顯結構。無斷點消除鞋面與鞋底界線，呈現一體化的都市風格。",
+      "english": "Urban Module features a glue-free modular design that adapts to urban life. The detachable heel transforms the shoe into a mule for different settings. Made with eco-friendly materials and a sturdy lacing system, it balances functionality, aesthetics, and sustainability.\n",
+      "english_detail": "Urban Module features a glue-free modular design, allowing a smooth transition from enclosed shoes to mules with a detachable heel. \n\nThe Lock & Lace system secures the upper and sole without adhesives, enhancing durability and sustainability while emphasizing smooth contours and dynamic silhouette for an integrated urban style.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130017_work1_main.webp",
+        "preview": "/preview/a110130017_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130017_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130017_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130017_work2",
+      "order": 2,
+      "title": {
+        "main": "花瓣椅",
+        "sub": "以花瓣作為靈感的椅子",
+        "main_en": "Petalori",
+        "sub_en": "Chair inspired by petals"
+      },
+      "description": "以花瓣般的結構為靈感，從中心向外延展並彎出拱形，以覆蓋與扣合的方式形成穩定結構。椅面以兩層帆布夾棉線，呈現水波紋的連續圖案，營造舒適輕鬆的室內氛圍。",
+      "longDescription": "以花瓣為靈感，透過弧形結構向下彎折，形成包覆且穩固的形態。表面以雙層帆布夾棉線縫製，創造水波般的連續紋理，強調視覺上的流動，也增添細膩的觸感體驗。\n\n設計上兼具柔軟與結構，透過拼接覆蓋，使布料自然貼合形體，展現層次變化。整體造型宛如含苞待放的花朵，擁有輕盈且具包覆感的坐感，為空間帶來舒適的氛圍。",
+      "english": "Inspired by petal structures, the design extends outward from the center, arching to form a stable structure through covering and fastening. The seat features two layers of canvas with cotton threads, creating a ripple pattern for a relaxed indoor atmosphere.",
+      "english_detail": "Inspired by petals, the design bends downward through an arched structure, forming a wrapped shape. \n\nThe double-layered canvas with cotton stitching creates a ripple texture, adding visual flow and a tactile experience. The form resembles a blooming flower, offering light, enveloping seating, and comfort.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130017_work2_main.webp",
+        "preview": "/preview/a110130017_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130017_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130017_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

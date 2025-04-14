@@ -1,0 +1,78 @@
+{
+  "id": "a110130003",
+  "name": {
+    "zh": "許哲嘉",
+    "pinyin": "Che-Chia Hsu"
+  },
+  "image": "/face/a110130003_face.webp",
+  "social": {
+    "email": "hsuchechiajonathan@gmail.com",
+    "instagram": " ",
+    "behance": "https://www.behance.net/f0a9d7f8"
+  },
+  "works": [
+    {
+      "id": "a110130003_work1",
+      "order": 1,
+      "title": {
+        "main": "小宅悠閒家具組",
+        "sub": "屬於小空間的悠閒時光",
+        "main_en": "Compact FolioSet",
+        "sub_en": "Leisure time in a small space"
+      },
+      "description": "針對小宅居住者的需求，透過折疊的手法設計一款具收納功能的家具組，在滿足小宅居住者的小空間使用需求下，也使小宅用戶在有限的空間下體驗舒適休閒時光的機會。",
+      "longDescription": "近年來越來越多人選擇居住於小坪數的房屋，然而小空間的限制可能影響居住者的生活品質，因此我針對小宅居住者，運用摺疊變形的設計手法，打造一款兼具收納功能的家具組。\n\n此家具不僅能靈活運用有限的空間，提高空間使用效率，近在確保基本生活機能的同時，也讓小宅居住者在有限的環境中依然能夠擁有舒適的休閒體驗。",
+      "english": "Design a storage-equipped furniture set using folding and transforming techniques to meet the needs of small-apartment dwellers. This set maximizes space efficiency while ensuring a comfortable and relaxing experience in limited living spaces.",
+      "english_detail": "More people choose to live in small apartments, but limited space can impact their quality of life. To address this, I designed a multifunctional furniture set with folding and transforming features to maximize space, enhance functionality, and provide a comfortable living experience in compact homes.\n",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a110130003_work1_main.webp",
+        "preview": "/preview/a110130003_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130003_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130003_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130003_work1_detail3.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130003_work2",
+      "order": 7,
+      "title": {
+        "main": "精榫之光",
+        "sub": "讓榫接活起來",
+        "main_en": "Fine Interlock Luminary",
+        "sub_en": "Make tenon joint come alive"
+      },
+      "description": "透過軟質榫接結合不同加工方式顛覆傳統木工榫接工藝既有的印象，使榫接工藝製品在造型及應用上有更多不同的可能性真正的讓它活起來。",
+      "longDescription": "傳統木榫的工藝製品造型受技術及機器限制無法有太多的變化，運用3D列印的零件進行大大小小的造測試。\n\n最終運用CNC的加工方式製造出更複雜且更精準的榫接造型，透過如此工業的製作方式，讓榫接不限於單一材料同時顛覆傳統木工榫接工藝既有的印象，使榫接工藝製品在造型及應用上有更多不同的可能性，真正的讓它活起來。",
+      "english": "This design challenges the traditional perception of woodworking joinery by combining flexible joinery with various processing techniques. It expands the possibilities of form and application, bringing joinery craftsmanship to life in new and dynamic ways.\n",
+      "english_detail": "Technical and machine constraints limit traditional wooden joinery. Using 3D-printed components for testing, we refined the design and produced complex, precise joinery through CNC machining. This approach expands material possibilities and redefines traditional woodworking, bringing joinery to life with new forms and applications.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130003_work2_main.webp",
+        "preview": "/preview/a110130003_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130003_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130003_work2_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130003_work2_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130003_work2_detail4.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

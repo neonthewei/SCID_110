@@ -1,0 +1,48 @@
+{
+  "id": "a110130055",
+  "name": {
+    "zh": "蔡宜靜",
+    "pinyin": "Yi-Ching Tsai"
+  },
+  "image": "/face/a110130055_face.webp",
+  "social": {
+    "email": "clairetsai.02@gmail.com",
+    "instagram": "https://www.instagram.com/_tsai_yc/",
+    "behance": "https://www.behance.net/yichingtsai"
+  },
+  "works": [
+    {
+      "id": "a110130055_work1",
+      "order": 4,
+      "title": {
+        "main": "Loopa",
+        "sub": "絲瓜絡塑型實驗",
+        "main_en": "Loopa",
+        "sub_en": "Loofah Plasticity Experiment Series"
+      },
+      "description": "透過絲瓜絡材質實驗，探索天然纖維的新可能。改良模具技術，使其從傳統日用轉化為現代家居，展現獨特透光性與材質張力，同時保留自然韻味，賦予全新功能與價值。",
+      "longDescription": "絲瓜絡常被作為清潔用品。研究發現其纖維紋理獨特且具延展性，蘊含更多可能性。\n\n本設計透過探討絲瓜絡的可塑性，改良工業模具技術，並運用模組化設計，使其可靈活組裝與替換，延長產品壽命。這不僅讓絲瓜絡突破傳統應用，轉化為現代家居材料，也展現其透光性、紋理美感與實用價值，在保留自然韻味的同時賦予新功能與可能性。",
+      "english": "Through experiments with loofah fiber materials, we explore new possibilities for natural fibers. Improving molding techniques transforms traditional use into modern decor, showcasing unique translucency and material tension while retaining natural charm and adding new functions and value.",
+      "english_detail": "Loofah is traditionally used for cleaning, but it's unique, flexible texture offers more potential. \n\nThis design explores loofah’s plasticity, using improved molding techniques and modular design for easy assembly and extended lifespan. It transforms into a modern home material with translucency, texture, and practical value.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a110130055_work1_main.webp",
+        "preview": "/preview/a110130055_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130055_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130055_work1_detail2.webp"
+          },
+          {
+            "image": "/detail/a110130055_work1_detail3.webp"
+          },
+          {
+            "image": "/detail/a110130055_work1_detail4.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

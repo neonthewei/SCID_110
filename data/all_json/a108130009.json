@@ -1,0 +1,69 @@
+{
+  "id": "a108130009",
+  "name": {
+    "zh": "陳胤羽",
+    "pinyin": "Yin-Yu Chen"
+  },
+  "image": "/face/a108130009_face.webp",
+  "social": {
+    "email": "dorisuu26@gmail.com",
+    "instagram": "https://www.instagram.com/doris_mdf?igsh=MXVzbjFweHdwNnd6dg%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/dorisuu26cb28"
+  },
+  "works": [
+    {
+      "id": "a108130009_work1",
+      "order": 5,
+      "title": {
+        "main": "ハイボロン ",
+        "sub": "皮革嵌接系列皮包",
+        "main_en": "HAIBOLONG",
+        "sub_en": "Leather Interlocking Bag Series"
+      },
+      "description": "運用打孔切割的方式讓皮革相互嵌接，不需任何車縫即可穩固地接合，展現獨特的紋路。從嵌接紋路為取名發想，以「海波浪」的台語音譯轉變為日文和英文作為系列名。",
+      "longDescription": "嵌接不僅有效確保結構的穩固性，還能巧妙地展現皮料在拉緊後形成的自然皺褶，突顯出獨特且細膩的皮革紋路與圖樣，避免了傳統車縫線對整體美感的干擾，讓皮革的質感更加純粹和自然。\n\n透過嘗試多種不同的工藝技法，致力於在結構設計與製程工藝上尋求創新與突破，不僅賦予皮包全新的風格，更彰顯了工藝與設計之間的巧妙平衡。",
+      "english": "The leather pieces interlock securely without stitching using perforation and cutting techniques, creating a unique pattern. The series name is inspired by the interlocking design, deriving from the Taiwanese pronunciation of \"ocean waves,\" adapted into Japanese and English.",
+      "english_detail": "The interlocking technique ensures stability while showcasing natural leather creases, enhancing its unique texture without traditional stitching. By exploring various methods, this design pushes innovation in structure and craftsmanship, giving the bag a distinct style while achieving a refined balance between artistry and function.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a108130009_work1_main.webp",
+        "preview": "/preview/a108130009_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130009_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130009_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a108130009_work2",
+      "order": 16,
+      "title": {
+        "main": "皮與骨",
+        "sub": "展現皮革的包裹、承接、裝載",
+        "main_en": "Skin and Bone",
+        "sub_en": "Present the wrapping, handling, and loading of leather"
+      },
+      "description": "透過局部硬化皮革，呈現皮膚因骨骼起伏而變化的肌理。不同程度的硬化配合皮革原有的柔軟，為皮包帶來獨特的觸感。看似柔軟流暢實則蘊含堅硬且具結構性的支撐。",
+      "longDescription": "皮膚因骨骼形狀與質感的差異而產生變化。\n\n骨骼是內在的脈絡，支撐著每一寸肌體的輪廓。皮膚柔軟、彈性十足地包裹著這份堅硬，承載著歲月的印記與外界的觸碰。它們的關係並非單純的主從，而是共生互補。骨骼的輪廓決定了皮膚的曲線，而皮膚的延展與彈性則使得骨骼的形狀得以靈動並適應變化，彼此依存，卻又各自獨立。",
+      "english": "By partially hardening the leather, the design replicates the skin’s texture as shaped by bones. This interplay of firmness and natural softness creates a distinct tactile experience, giving the bag a fluid appearance while ensuring strong structural support.",
+      "english_detail": "The skin adapts to the bones beneath, which provide structure. \n\nIts softness and elasticity allow movement and bear the marks of time. This symbiotic relationship balances definition and flexibility—the bones shape the skin’s contours, while the skin’s adaptability gives the bones fluidity and expression.",
+      "category": "溫工藝",
+      "images": {
+        "main": "/main/a108130009_work2_main.webp",
+        "preview": "/preview/a108130009_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a108130009_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a108130009_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

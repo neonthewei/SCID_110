@@ -1,0 +1,69 @@
+{
+  "id": "a110130062",
+  "name": {
+    "zh": "陳詠芯",
+    "pinyin": "Wing-Sum Chan"
+  },
+  "image": "/face/a110130062_face.webp",
+  "social": {
+    "email": "cwingsum47@gmail.com",
+    "instagram": "https://www.instagram.com/_wwwing.sum?igsh=MWwxN2E3ZXgxOWtuaA%3D%3D&utm_source=qr",
+    "behance": "https://www.behance.net/9feb3802"
+  },
+  "works": [
+    {
+      "id": "a110130062_work1",
+      "order": 4,
+      "title": {
+        "main": "Zooly | AI EcoFun",
+        "sub": "AI兒童環保遊樂組",
+        "main_en": "Zooly | AI EcoFun",
+        "sub_en": "AI Children’s Environmental Playground Set"
+      },
+      "description": "Zooly將回收廢紙轉化為動物積木，結合NFC、AI和AR技術。讓兒童通過手機感應積木學習動物資訊掃描不同季節地圖體驗AR互動，AI生成故事進行學習。",
+      "longDescription": "這是一款融合環保、科技與教育的兒童互動遊樂組，旨在啟發兒童的環保意識，讓學習更有趣。採用回收廢紙製作動物積木，透過NFC與AI技術，兒童掃描積木學習動物知識，進入四季變換的AR生態地圖。AI會根據積木組合觸發不同故事，讓虛擬與實體互動更加生動。兒童能培養創造力，理解資源再利用的價值，建立環保概念。\n",
+      "english": "Zooly transforms recycled paper into animal blocks, using NFC, AI, and AR to help children learn animal facts, explore seasonal maps in AR, and experience AI-generated stories.This combines animal knowledge with environmental awareness and creativity.",
+      "english_detail": "This interactive children's playset blends eco-friendliness, technology, and education. Made from recycled paper animal blocks, it uses NFC and AI to teach animal knowledge. Children scan the blocks to explore AR seasonal maps and experience AI-generated stories, fostering creativity and environmental awareness.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a110130062_work1_main.webp",
+        "preview": "/preview/a110130062_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130062_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130062_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a110130062_work2",
+      "order": 7,
+      "title": {
+        "main": "茄芷",
+        "sub": "臺灣文化編織燈具",
+        "main_en": "CHA-Ji",
+        "sub_en": "Taiwanese Cultural Woven Lighting"
+      },
+      "description": "以臺灣傳統茄芷袋為靈感，融合紅、綠、藍條紋與編織材質，透過縫隙投射獨特光影。使用環保材料提升可持續性。不僅是燈具更是文化傳承透過光感受臺灣日常與情感。",
+      "longDescription": "茄芷袋（臺語：Ka-Tsi̍t Tē）是臺灣常見的編織袋，以紅、綠、藍條紋為經典視覺符號。無論是市場攤販的運輸袋、或是家中角落的收納袋，茄芷袋見證了許多人的成長與生活軌跡。透過燈具的形式，讓茄芷袋的文化價值以全新方式呈現。光透過編織材質的縫隙投射，營造獨特的光影變化，喚起人們對臺灣日常的記憶與情感。",
+      "english": "Inspired by Taiwan’s traditional “chia-zhi” bag, this lamp combines red, green, and blue stripes with woven materials, casting unique light through gaps.Made from eco-friendly materials, it enhances sustainability while conveying Taiwan’s daily life and heritage.\n",
+      "english_detail": "The “chia-zhi” bag, a common woven item in Taiwan, features red, green, and blue stripes. Seen in markets and homes, it reflects many lives and memories.This lamp reimagines its cultural value, casting light and shadows that evoke Taiwan’s daily life.",
+      "category": "熱對話",
+      "images": {
+        "main": "/main/a110130062_work2_main.webp",
+        "preview": "/preview/a110130062_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a110130062_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a110130062_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

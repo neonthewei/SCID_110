@@ -1,0 +1,69 @@
+{
+  "id": "a109130020",
+  "name": {
+    "zh": "龔佳茵",
+    "pinyin": "Chia-Yin Kung"
+  },
+  "image": "/face/a109130020_face.webp",
+  "social": {
+    "email": "carol.apwon@gmail.com",
+    "instagram": "https://www.instagram.com/c.y.9179/",
+    "behance": "https://www.behance.net/chiayink"
+  },
+  "works": [
+    {
+      "id": "a109130020_work1",
+      "order": 26,
+      "title": {
+        "main": "居家拳擊器材",
+        "sub": "融入居家的解構拳擊器材",
+        "main_en": "LuminAX",
+        "sub_en": "A deconstructed boxing apparatus integrated into home decor."
+      },
+      "description": "LuminAX為一款可靈活融入家居的拳擊器材。以簡潔俐落的風格融入家居，讓使用者盡情享受運動的同時，多功能轉換器材，實現運動器材亦是家具的可能。\n",
+      "longDescription": "考慮到兼具燈具的特性，將受力區切分成塊，讓燈光能夠從縫隙中透出，做出保有運動風格的燈具。\n\n並改變原本以填充方式作成的沙包，將內部以支架的形式支撐衝擊包，同時研究新的機構，確保打擊時的安全，以及打下去的手感。讓使用者盡情享受運動後，只要切換內置的光源，實現運動器材可以是客廳角落的時髦風景的可能性。\n",
+      "english": "LuminAX is boxing equipment that integrates into the home with a simple, neat style, allowing users to enjoy sports fully. The multifunctional design enables sports equipment to double as furniture, enhancing functionality and aesthetics.",
+      "english_detail": "The lamp’s block design allows light to shine through gaps, giving it a sporty style.\n\n Initially supported by brackets, new safety mechanisms were added. After exercising, users can turn on the built-in light to showcase sports equipment as a fashionable addition to the living room.",
+      "category": "舒適巢",
+      "images": {
+        "main": "/main/a109130020_work1_main.webp",
+        "preview": "/preview/a109130020_work1_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130020_work1_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130020_work1_detail2.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a109130020_work2",
+      "order": 22,
+      "title": {
+        "main": "自動化移動盆栽",
+        "sub": "依照植物日照及灌溉需求移動的盆栽",
+        "main_en": "NEO TERRA",
+        "sub_en": "An automatic moving potted plant"
+      },
+      "description": "NEO TERRA能自動獲取水分和陽光,提升植物的生存能力,讓植物健康成長。讓人在繁忙的工作日後,可以坐下好好休息,享受這盆植物為家中增添的生機。 ",
+      "longDescription": "受到動物行為的啟發，以盆栽模擬動物的行為，將靜態被動的等待，轉為主動的解決需求，自動獲取水分和陽光，提升植物的生存能力，讓植物健康成長，讓使用者能像養寵物一樣的去養植物。\n\n提供自動灌溉和光照調整功能，減少怕顧不好植物的擔憂，讓忙碌的都市人可以輕鬆養護植物同時好好享受植物帶來的療癒。",
+      "english": "NEO TERRA automatically obtains water and sunlight, improves plants' survival ability, and allows them to grow healthily. After a busy workday, people can sit down and rest well, enjoying the vitality this plant adds to the home.",
+      "english_detail": "Inspired by animal behavior, these potted plants simulate active care by automatically obtaining water and sunlight. They enhance plant survival, allowing users to care for them like pets while enjoying their healing benefits.\n\n Thus, they make it easy for busy urban dwellers to maintain plants effortlessly.",
+      "category": "冷火花",
+      "images": {
+        "main": "/main/a109130020_work2_main.webp",
+        "preview": "/preview/a109130020_work2_preview.webp",
+        "details": [
+          {
+            "image": "/detail/a109130020_work2_detail1.webp"
+          },
+          {
+            "image": "/detail/a109130020_work2_detail2.webp"
+          }
+        ]
+      }
+    }
+  ]
+}
