@@ -11,12 +11,12 @@ const ExhibitionOverlay = () => {
 
   // 檢查當前頁面是否是作品總覽、設計師、購買專刊、米蘭展區或新一代展區頁面
   const isRestrictedPage =
-    pathname === "/all-works" ||
-    pathname.startsWith("/all-works/") ||
-    pathname === "/designer" ||
-    pathname.startsWith("/designer/") ||
-    pathname === "/buy-catalog" ||
-    pathname.startsWith("/buy-catalog/") ||
+    // pathname === "/all-works" ||
+    // pathname.startsWith("/all-works/") ||
+    // pathname === "/designer" ||
+    // pathname.startsWith("/designer/") ||
+    // pathname === "/buy-catalog" ||
+    // pathname.startsWith("/buy-catalog/") ||
     pathname === "/online-exhibition/milan" ||
     pathname.startsWith("/online-exhibition/milan/") ||
     pathname === "/online-exhibition/young-designers" ||

@@ -96,6 +96,7 @@ import a108130060 from './all_json/a108130060.json'
 import a108130063 from './all_json/a108130063.json'
 import a108130066 from './all_json/a108130066.json'
 import a108130202 from './all_json/a108130202.json'
+import a110130010 from './all_json/a110130010.json'
 
 // 轉換 JSON 檔案為符合 Designer 介面的格式
 const transformDesignerData = (jsonData: any): Designer => {
@@ -173,7 +174,8 @@ export const designers: Designer[] = [
   transformDesignerData(a108130060),
   transformDesignerData(a108130063),
   transformDesignerData(a108130066),
-  transformDesignerData(a108130202)
+  transformDesignerData(a108130202),
+  transformDesignerData(a110130010)
 ]
 
 // 輔助函數：根據 ID 獲取設計師資料

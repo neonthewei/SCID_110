@@ -569,7 +569,7 @@ export default function BookTourPage() {
   return (
     <div
       className={`
-      bg-gray-50 relative overflow-hidden
+      bg-white relative overflow-hidden
       ${
         isSmallHeight
           ? "min-h-full pb-32"

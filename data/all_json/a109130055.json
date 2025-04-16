@@ -1,10 +1,10 @@
 {
-  "id": "a10913055",
+  "id": "a109130055",
   "name": {
     "zh": "許芯瑜",
     "pinyin": "Xin-Yu Xu"
   },
-  "image": "/face/a10913055_face.webp",
+  "image": "/face/a109130055_face.webp",
   "social": {
     "email": "xxu6338@gmail.com",
     "instagram": "https://www.instagram.com/shush_xu",
@@ -12,7 +12,7 @@
   },
   "works": [
     {
-      "id": "a10913055_work1",
+      "id": "a109130055_work1",
       "order": 21,
       "title": {
         "main": "TOTE cart",
@@ -26,20 +26,20 @@
       "english_detail": "This product promotes outdoor exploration for children aged 7 to 9. It offers freedom and achievement while allowing parents to enjoy relaxing outdoor time. \n\nThe light blue design, modern metal frame, and playful curved tubes appeal to children's tastes, combining style with fun.",
       "category": "舒適巢",
       "images": {
-        "main": "/main/a10913055_work1_main.webp",
-        "preview": "/preview/a10913055_work1_preview.webp",
+        "main": "/main/a109130055_work1_main.webp",
+        "preview": "/preview/a109130055_work1_preview.webp",
         "details": [
           {
-            "image": "/detail/a10913055_work1_detail1.webp"
+            "image": "/detail/a109130055_work1_detail1.webp"
           },
           {
-            "image": "/detail/a10913055_work1_detail2.webp"
+            "image": "/detail/a109130055_work1_detail2.webp"
           }
         ]
       }
     },
     {
-      "id": "a10913055_work2",
+      "id": "a109130055_work2",
       "order": 22,
       "title": {
         "main": "Ding.",
@@ -53,14 +53,14 @@
       "english_detail": "The backpack combines a toolset and observation box, making it a multifunctional exploration gear that enhances children's observation, learning, and hands-on skills. Designed for comfort, its adjustable straps ensure a secure fit, reducing strain during long exploration sessions.",
       "category": "舒適巢",
       "images": {
-        "main": "/main/a10913055_work2_main.webp",
-        "preview": "/preview/a10913055_work2_preview.webp",
+        "main": "/main/a109130055_work2_main.webp",
+        "preview": "/preview/a109130055_work2_preview.webp",
         "details": [
           {
-            "image": "/detail/a10913055_work2_detail1.webp"
+            "image": "/detail/a109130055_work2_detail1.webp"
           },
           {
-            "image": "/detail/a10913055_work2_detail2.webp"
+            "image": "/detail/a109130055_work2_detail2.webp"
           }
         ]
       }

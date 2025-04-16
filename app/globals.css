@@ -9,19 +9,19 @@
     font-weight: 600; /* Semibold */
     line-height: 1.5; /* 48px */
   }
-  
+
   .text-subtitle {
     font-size: 18px;
     font-weight: 400; /* Regular */
     line-height: 1.2; /* 19.2px */
   }
-  
+
   .text-body {
     font-size: 16px;
     font-weight: 400; /* Regular */
     line-height: 1.714; /* 24px */
   }
-  
+
   .text-caption {
     font-size: 14px;
     font-weight: 400; /* Regular */
@@ -109,7 +109,7 @@
   body {
     @apply bg-background text-foreground tracking-wider;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(249 250 251); /* This is the tailwind bg-gray-50 color */
+    background-color: #ffffff; /* 將背景色改為純白色 */
   }
 }
 
@@ -127,10 +127,10 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  
+
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 
@@ -275,7 +275,7 @@
   .bg-image-left {
     top: -10%;
   }
-  
+
   .bg-image-right {
     top: 30%;
   }
@@ -314,23 +314,23 @@
 
 @media (max-width: 768px) {
   .rain-drop {
-    animation-duration: 8s;  /* Reduce animation duration on mobile */
+    animation-duration: 8s; /* Reduce animation duration on mobile */
   }
 
   .falling-image {
-    animation-duration: 12s;  /* Reduce animation duration on mobile */
+    animation-duration: 12s; /* Reduce animation duration on mobile */
   }
 
   .snow-image {
-    animation-duration: 15s;  /* Reduce animation duration on mobile */
+    animation-duration: 15s; /* Reduce animation duration on mobile */
   }
 
   .animate-slow-spin {
-    animation-duration: 60s;  /* Slow down spin animation on mobile */
+    animation-duration: 60s; /* Slow down spin animation on mobile */
   }
 
   .animate-slow-spin-reverse {
-    animation-duration: 60s;  /* Slow down spin animation on mobile */
+    animation-duration: 60s; /* Slow down spin animation on mobile */
   }
 }
 
@@ -348,7 +348,7 @@
   .bg-image-container {
     width: 400px;
     height: 400px;
-    opacity: 0.6;  /* Reduce opacity on mobile for better performance */
+    opacity: 0.6; /* Reduce opacity on mobile for better performance */
   }
 }
 
@@ -379,17 +379,16 @@
 /* Cursor Styles */
 .cursor {
   pointer-events: none;
-  
+
   &__ball {
     position: fixed;
     top: 0;
     left: 0;
     mix-blend-mode: difference;
     z-index: 1000;
-    
+
     circle {
       fill: #f7f8fa;
     }
   }
 }
-

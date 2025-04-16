@@ -1,12 +1,12 @@
-"use client"
-import Image from "next/image"
-import { useState, useEffect, useRef, useMemo } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { useSearchParams } from "next/navigation"
-import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { getAllWorks, type WorkCategory } from "@/data/designers"
-import { useInView } from 'react-intersection-observer';
+"use client";
+import Image from "next/image";
+import { useState, useEffect, useRef, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { getAllWorks, type WorkCategory } from "@/data/designers";
+import { useInView } from "react-intersection-observer";
 
 const categories = [
   {
@@ -14,7 +14,8 @@ const categories = [
     name: "29°S～35°S",
     title: "溫工藝",
     subtitle: "工藝與材料",
-    description: "用雙手傳遞溫暖，塑造希望的形狀。這不僅是藝術，更是一種人與物之間的流動——",
+    description:
+      "用雙手傳遞溫暖，塑造希望的形狀。這不僅是藝術，更是一種人與物之間的流動——",
     longDescription: "從手心到物品，讓關懷不再只是語言，而是得以觸摸的溫度。",
     image: "/workbg/workbg1.png",
   },
@@ -24,7 +25,8 @@ const categories = [
     title: "舒適巢",
     subtitle: "家居與兒童",
     description: "室溫穩定而舒適，均勻地散布於空間中，帶來安心與放鬆。",
-    longDescription: "指尖觸碰木質與織物，感受微妙的溫差變化，讓身體自然沉浸在柔和與安穩之中。",
+    longDescription:
+      "指尖觸碰木質與織物，感受微妙的溫差變化，讓身體自然沉浸在柔和與安穩之中。",
     image: "/workbg/workbg2.png",
   },
   {
@@ -32,8 +34,10 @@ const categories = [
     name: "5°S、130～140°S",
     title: "冷火花",
     subtitle: "科技與載具",
-    description: "冰冷的材質勾勒出理性的輪廓，內裡卻蘊含精密的技術與人性化的考量。",
-    longDescription: "每次觸碰都能感受到隱藏其中的細緻，讓科技與生活在低調與溫暖之間達成微妙的平衡。",
+    description:
+      "冰冷的材質勾勒出理性的輪廓，內裡卻蘊含精密的技術與人性化的考量。",
+    longDescription:
+      "每次觸碰都能感受到隱藏其中的細緻，讓科技與生活在低調與溫暖之間達成微妙的平衡。",
     image: "/workbg/workbg3.png",
   },
   {
@@ -42,155 +46,170 @@ const categories = [
     title: "熱對話",
     subtitle: "社會與推測",
     description: "有價值的對話不僅是交換觀點，更是讓思維層層加溫。",
-    longDescription: "文化的演進、議題的探索、未來的推測，皆在不斷升溫的對話中翻騰、交融。",
+    longDescription:
+      "文化的演進、議題的探索、未來的推測，皆在不斷升溫的對話中翻騰、交融。",
     image: "/workbg/borkbg4.png",
   },
-]
+];
 
 export default function AllWorksContent() {
-  const searchParams = useSearchParams()
-  const categoryFromUrl = searchParams.get("category")
-  const [activeCategory, setActiveCategory] = useState<string>(categoryFromUrl || categories[0].id)
-  const [activeItemId, setActiveItemId] = useState<string | null>(null)
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down')
-  const [isMobile, setIsMobile] = useState(false)
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right')
-  const [isHovered, setIsHovered] = useState(false)
-  const lastScrollY = useRef(0)
-  const allWorks = getAllWorks()
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get("category");
+  const [activeCategory, setActiveCategory] = useState<string>(
+    categoryFromUrl || categories[0].id
+  );
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
+  const [isMobile, setIsMobile] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<"left" | "right">(
+    "right"
+  );
+  const [isHovered, setIsHovered] = useState(false);
+  const lastScrollY = useRef(0);
+  const allWorks = getAllWorks();
   const [visibleItems, setVisibleItems] = useState<number>(12); // Initial number of items to show
   const [ref, inView] = useInView({
     threshold: 0,
-    triggerOnce: false
+    triggerOnce: false,
   });
 
   // Filter works based on active category
   const filteredWorks = useMemo(() => {
     const filtered = activeCategory
-      ? allWorks.filter(work => work.category === activeCategory)
-      : allWorks
-    
+      ? allWorks.filter((work) => work.category === activeCategory)
+      : allWorks;
+
     // Sort works by their order property
     return filtered.sort((a, b) => {
       // If order is missing, default to a high number
-      const orderA = typeof a.order === 'number' ? a.order : 9999
-      const orderB = typeof b.order === 'number' ? b.order : 9999
-      return orderA - orderB
-    })
-  }, [activeCategory, allWorks])
+      const orderA = typeof a.order === "number" ? a.order : 9999;
+      const orderB = typeof b.order === "number" ? b.order : 9999;
+      return orderA - orderB;
+    });
+  }, [activeCategory, allWorks]);
 
   // 檢查 localStorage 中的分類
   useEffect(() => {
-    const savedCategory = localStorage.getItem('selectedCategory')
+    const savedCategory = localStorage.getItem("selectedCategory");
     if (savedCategory) {
-      setActiveCategory(savedCategory)
+      setActiveCategory(savedCategory);
       // 清除 localStorage，避免影響下次正常訪問
-      localStorage.removeItem('selectedCategory')
+      localStorage.removeItem("selectedCategory");
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
-      const isMobileView = window.innerWidth < 768
+      const isMobileView = window.innerWidth < 768;
       if (isMobile !== isMobileView) {
-        setIsMobile(isMobileView)
-        setActiveItemId(null)
+        setIsMobile(isMobileView);
+        setActiveItemId(null);
       }
-    }
+    };
 
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [isMobile])
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, [isMobile]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      setScrollDirection(currentScrollY > lastScrollY.current ? 'down' : 'up')
-      lastScrollY.current = currentScrollY
-    }
+      const currentScrollY = window.scrollY;
+      setScrollDirection(currentScrollY > lastScrollY.current ? "down" : "up");
+      lastScrollY.current = currentScrollY;
+    };
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    const currentWorks = allWorks.filter(work => work.category === activeCategory)
+    const currentWorks = allWorks.filter(
+      (work) => work.category === activeCategory
+    );
     if (currentWorks && currentWorks.length > 0 && !activeItemId) {
-      setActiveItemId(currentWorks[0].id)
+      setActiveItemId(currentWorks[0].id);
     }
-  }, [activeCategory, allWorks])
+  }, [activeCategory, allWorks]);
 
   useEffect(() => {
     if (categoryFromUrl) {
-      setActiveCategory(categoryFromUrl)
+      setActiveCategory(categoryFromUrl);
     }
-  }, [categoryFromUrl])
+  }, [categoryFromUrl]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const rect = entry.boundingClientRect
-            const viewHeight = window.innerHeight
-            const elementCenter = rect.top + rect.height / 2
-            const viewCenter = viewHeight / 2
-            const distanceFromCenter = Math.abs(elementCenter - viewCenter)
+            const rect = entry.boundingClientRect;
+            const viewHeight = window.innerHeight;
+            const elementCenter = rect.top + rect.height / 2;
+            const viewCenter = viewHeight / 2;
+            const distanceFromCenter = Math.abs(elementCenter - viewCenter);
 
             if (distanceFromCenter < rect.height * 0.5) {
-              setActiveItemId(entry.target.id)
+              setActiveItemId(entry.target.id);
             }
           } else {
             if (entry.target.id === activeItemId) {
-              setActiveItemId(null)
+              setActiveItemId(null);
             }
           }
-        })
+        });
       },
       {
         threshold: [0, 0.25, 0.5, 0.75, 1],
-        rootMargin: '-20% 0px -20% 0px'
+        rootMargin: "-20% 0px -20% 0px",
       }
-    )
+    );
 
-    const elements = document.querySelectorAll('.work-card')
-    elements.forEach((el) => observer.observe(el))
+    const elements = document.querySelectorAll(".work-card");
+    elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect()
-  }, [activeCategory, activeItemId])
+    return () => observer.disconnect();
+  }, [activeCategory, activeItemId]);
 
   // Load more items when scrolling
   useEffect(() => {
     if (inView) {
-      setVisibleItems(prev => Math.min(prev + 8, filteredWorks.length));
+      setVisibleItems((prev) => Math.min(prev + 8, filteredWorks.length));
     }
   }, [inView, filteredWorks.length]);
 
-  const currentCategoryIndex = categories.findIndex((c) => c.id === activeCategory)
-  const currentCategory = categories.find((c) => c.id === activeCategory)
+  const currentCategoryIndex = categories.findIndex(
+    (c) => c.id === activeCategory
+  );
+  const currentCategory = categories.find((c) => c.id === activeCategory);
 
   const handlePrevCategory = () => {
-    setSlideDirection('right')
-    const newIndex = (currentCategoryIndex - 1 + categories.length) % categories.length
-    setActiveCategory(categories[newIndex].id)
-  }
+    setSlideDirection("right");
+    const newIndex =
+      (currentCategoryIndex - 1 + categories.length) % categories.length;
+    setActiveCategory(categories[newIndex].id);
+  };
 
   const handleNextCategory = () => {
-    setSlideDirection('left')
-    const newIndex = (currentCategoryIndex + 1) % categories.length
-    setActiveCategory(categories[newIndex].id)
-  }
+    setSlideDirection("left");
+    const newIndex = (currentCategoryIndex + 1) % categories.length;
+    setActiveCategory(categories[newIndex].id);
+  };
 
   const runAutoSequence = () => {
     // Function kept for backward compatibility
     // No implementation needed as we're removing auto sequence
-  }
+  };
 
   return (
     <div className="relative min-h-screen bg-white">
       {/* Categories with gradient background */}
-      <motion.div className="relative h-[180px] md:h-[220px]" animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+      <motion.div
+        className="relative h-[180px] md:h-[220px]"
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Full gradient background */}
         <AnimatePresence initial={false} mode="sync">
           <motion.div
@@ -206,8 +225,8 @@ export default function AllWorksContent() {
               alt={currentCategory?.title || ""}
               fill
               className="object-cover md:object-center object-left"
-              style={{ 
-                objectPosition: isMobile ? "25% center" : "center"
+              style={{
+                objectPosition: isMobile ? "25% center" : "center",
               }}
             />
             {/* Add some decorative elements in background */}
@@ -234,7 +253,7 @@ export default function AllWorksContent() {
                 <ChevronLeft className="w-6 h-6" />
               </button>
             </div>
-            
+
             <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
               <button
                 onClick={handleNextCategory}
@@ -244,7 +263,7 @@ export default function AllWorksContent() {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-            
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory}
@@ -271,7 +290,9 @@ export default function AllWorksContent() {
                         <span className="w-[1px] h-3 bg-white/30"></span>
                         <span>{currentCategory?.subtitle}</span>
                       </div>
-                      <h1 className="text-3xl md:text-2xl font-bold text-white">{currentCategory?.title}</h1>
+                      <h1 className="text-3xl md:text-2xl font-bold text-white">
+                        {currentCategory?.title}
+                      </h1>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -282,8 +303,12 @@ export default function AllWorksContent() {
                       transition={{ duration: 0.3 }}
                       className="absolute inset-0"
                     >
-                      <p className="text-base text-white mb-0.5 leading-[1.4]">{currentCategory?.description}</p>
-                      <p className="text-base text-white px-4 leading-[1.4]">{currentCategory?.longDescription}</p>
+                      <p className="text-base text-white mb-0.5 leading-[1.4]">
+                        {currentCategory?.description}
+                      </p>
+                      <p className="text-base text-white px-4 leading-[1.4]">
+                        {currentCategory?.longDescription}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -319,7 +344,9 @@ export default function AllWorksContent() {
                         <span className="w-[1px] h-4 bg-white/30"></span>
                         <span>{currentCategory?.subtitle}</span>
                       </div>
-                      <h1 className="text-4xl font-bold text-white">{currentCategory?.title}</h1>
+                      <h1 className="text-4xl font-bold text-white">
+                        {currentCategory?.title}
+                      </h1>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -330,8 +357,12 @@ export default function AllWorksContent() {
                       transition={{ duration: 0.3 }}
                       className="absolute inset-0"
                     >
-                      <p className="text-base text-white mb-0.5 leading-[1.4]">{currentCategory?.description}</p>
-                      <p className="text-base text-white leading-[1.4]">{currentCategory?.longDescription}</p>
+                      <p className="text-base text-white mb-0.5 leading-[1.4]">
+                        {currentCategory?.description}
+                      </p>
+                      <p className="text-base text-white leading-[1.4]">
+                        {currentCategory?.longDescription}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -342,16 +373,16 @@ export default function AllWorksContent() {
                 <div key={category.id}>
                   <button
                     onClick={() => {
-                      setActiveCategory(category.id)
+                      setActiveCategory(category.id);
                     }}
                     onMouseEnter={() => {
                       if (!isMobile && category.id === activeCategory) {
-                        setIsHovered(true)
+                        setIsHovered(true);
                       }
                     }}
                     onMouseLeave={() => {
                       if (!isMobile) {
-                        setIsHovered(false)
+                        setIsHovered(false);
                       }
                     }}
                     className={`w-[140px] px-3 py-1.5 rounded-[16px] overflow-hidden transition-all duration-300 text-base whitespace-nowrap border
@@ -371,9 +402,9 @@ export default function AllWorksContent() {
       </motion.div>
 
       {/* Works Grid Container */}
-      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+      <div className="w-full max-w-[1920px] mx-auto px-6 sm:px-8 md:px-12 lg:px-20 xl:px-20">
         {/* Works Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-y-12 gap-x-3 sm:gap-y-16 sm:gap-x-4 mt-4 sm:mt-8 pb-12 sm:pb-16 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-y-12 gap-x-3 sm:gap-y-16 sm:gap-x-4 mt-4 sm:mt-8 pb-12 sm:pb-16 w-full">
           <AnimatePresence mode="popLayout">
             {filteredWorks.slice(0, visibleItems).map((work, index) => (
               <motion.div
@@ -382,33 +413,42 @@ export default function AllWorksContent() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ 
+                transition={{
                   duration: isMobile ? 0.3 : 0.5,
-                  delay: isMobile ? index * 0.03 : index * 0.05
+                  delay: isMobile ? index * 0.03 : index * 0.05,
                 }}
                 className="work-card group relative"
               >
                 <Link href={`/work/${work.id}`} className="block">
                   <div className="aspect-[3/2] relative overflow-hidden rounded-md">
                     <Image
-                      src={work.images.preview || work.images.main || "/placeholder.svg"}
+                      src={
+                        work.images.preview ||
+                        work.images.main ||
+                        "/placeholder.svg"
+                      }
                       alt={work.title.main}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       loading={index < 4 ? "eager" : "lazy"}
                       className={`object-cover transition-transform duration-300 rounded-md
-                        ${activeItemId === work.id ? 'scale-105 md:scale-100' : ''} 
+                        ${
+                          activeItemId === work.id
+                            ? "scale-105 md:scale-100"
+                            : ""
+                        } 
                         md:group-hover:scale-110`}
                     />
                   </div>
-                  <motion.div 
+                  {/* 隱藏作品標題
+                  <motion.div
                     className="mt-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ 
+                    transition={{
                       duration: isMobile ? 0.3 : 0.5,
-                      delay: isMobile ? index * 0.03 : index * 0.05
+                      delay: isMobile ? index * 0.03 : index * 0.05,
                     }}
                   >
                     <p className="text-base leading-tight text-left mb-1.5 text-gray-900 font-normal">
@@ -420,18 +460,18 @@ export default function AllWorksContent() {
                       </p>
                     )}
                   </motion.div>
+                  */}
                 </Link>
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
-        
+
         {/* Load more trigger */}
         {visibleItems < filteredWorks.length && (
           <div ref={ref} className="h-10 w-full" />
         )}
       </div>
     </div>
-  )
+  );
 }
-
