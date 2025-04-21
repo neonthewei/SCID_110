@@ -12,16 +12,24 @@ import {
 
 const previewImages = [
   {
-    url: "/book/book5.webp",
+    url: "/book/1.webp",
     alt: "專刊內頁預覽 1",
   },
   {
-    url: "/book/book6.webp",
+    url: "/book/2.webp",
     alt: "專刊內頁預覽 2",
   },
   {
-    url: "/book/book7.webp",
+    url: "/book/3.webp",
     alt: "專刊內頁預覽 3",
+  },
+  {
+    url: "/book/4.webp",
+    alt: "專刊內頁預覽 4",
+  },
+  {
+    url: "/book/5.webp",
+    alt: "專刊內頁預覽 5",
   },
 ];
 
@@ -162,8 +170,8 @@ export default function BuyCatalogPage() {
           內容搶先看
         </h2>
         <div className="overflow-hidden">
-          <div className="-mx-4 sm:-mx-8 lg:mx-auto lg:container lg:px-8 max-w-[1800px]">
-            <div className="grid gap-4 lg:gap-6">
+          <div className="mx-16 sm:mx-32 lg:mx-auto lg:container lg:px-32 max-w-[1400px]">
+            <div className="grid gap-8 lg:gap-16">
               {previewImages.map((image, index) => (
                 <div key={index} className="relative w-full">
                   <Image
