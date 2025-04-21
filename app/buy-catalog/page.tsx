@@ -1,45 +1,43 @@
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import CatalogViewer from '@/components/CatalogViewer'
-import { HelpCircle } from 'lucide-react'
+"use client";
+
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import CatalogViewer from "@/components/CatalogViewer";
+import { HelpCircle } from "lucide-react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
 const previewImages = [
   {
-    url: '/placeholder.svg',
-    alt: '專刊內頁預覽 - 目錄'
+    url: "/book/book5.webp",
+    alt: "專刊內頁預覽 1",
   },
   {
-    url: '/placeholder.svg',
-    alt: '專刊內頁預覽 - 作品集'
+    url: "/book/book6.webp",
+    alt: "專刊內頁預覽 2",
   },
   {
-    url: '/placeholder.svg',
-    alt: '專刊內頁預覽 - 設計師專訪'
+    url: "/book/book7.webp",
+    alt: "專刊內頁預覽 3",
   },
-  {
-    url: '/placeholder.svg',
-    alt: '專刊內頁預覽 - 團隊介紹'
-  }
-]
+];
 
 const productImages = [
   {
-    url: '/book/book2.jpg',
-    alt: 'TEMPO_BOND 棒_節奏 專刊背面'
+    url: "/book/book2.jpg",
+    alt: "TEMPO_BOND 棒_節奏 專刊背面",
   },
   {
-    url: '/book/book3.jpg',
-    alt: 'TEMPO_BOND 棒_節奏 專刊側面'
-  }
-]
+    url: "/book/book3.jpg",
+    alt: "TEMPO_BOND 棒_節奏 專刊側面",
+  },
+];
 
 export default function BuyCatalogPage() {
-  const isSoldOut = false // 控制販售狀態，預設為 false（立即購買）
+  const isSoldOut = false; // 控制販售狀態，預設為 false（立即購買）
 
   return (
     <main className="pb-8 pt-0">
@@ -62,7 +60,7 @@ export default function BuyCatalogPage() {
                   <br />
                   《TEMPO_BOND 棒_節奏》
                 </h1>
-                
+
                 <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
                   匯聚91件匠心巨作，由每位設計師親自整合作品內容，展現新銳設計師的創意火花！
                   刊物中不但能看到作品背後的製作秘辛，還包含了知名設計師的訪談及團隊工作幕後過程，
@@ -73,18 +71,31 @@ export default function BuyCatalogPage() {
               {/* 桌面版價格和購買按鈕 */}
               <div className="hidden lg:block space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-[22px] sm:text-[28px] font-semibold text-gray-800">售價 $999</span>
+                  <div className="space-y-1">
+                    <span className="text-[16px] text-gray-500 line-through">
+                      原價 $1,350
+                    </span>
+                    <div className="text-[22px] sm:text-[28px] font-semibold text-gray-800">
+                      優惠價 $1,100
+                    </div>
+                  </div>
                 </div>
 
-                <Button 
+                <Button
                   className={`w-full py-6 text-[15px] sm:text-[16px] rounded-2xl ${
-                    isSoldOut 
-                      ? 'bg-gray-200 hover:bg-gray-300 text-gray-500 cursor-not-allowed' 
-                      : 'bg-black hover:bg-gray-800 text-white'
+                    isSoldOut
+                      ? "bg-gray-200 hover:bg-gray-300 text-gray-500 cursor-not-allowed"
+                      : "bg-black hover:bg-gray-800 text-white"
                   }`}
                   disabled={isSoldOut}
+                  onClick={() =>
+                    window.open(
+                      "https://docs.google.com/forms/d/1bfce7JGfFTWZggUdbOeFLTOesKCGAT6mdujZA8PpXro/edit",
+                      "_blank"
+                    )
+                  }
                 >
-                  {isSoldOut ? '已結束販售' : '立即購買'}
+                  {isSoldOut ? "已結束販售" : "立即購買"}
                 </Button>
 
                 <div className="text-[13px] sm:text-sm text-gray-500 sm:text-[#9D9D9D] space-y-1">
@@ -100,16 +111,23 @@ export default function BuyCatalogPage() {
       {/* 手機版固定在底部的購買按鈕 */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 lg:hidden z-40">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-[22px] font-semibold text-gray-800">售價 $999</span>
+          <div className="space-y-1">
+            <span className="text-[14px] text-gray-500 line-through">
+              原價 $1,350
+            </span>
+            <div className="text-[22px] font-semibold text-gray-800">
+              優惠價 $1,100
+            </div>
+          </div>
           <Popover>
             <PopoverTrigger asChild>
               <button className="text-gray-400 hover:text-gray-600 transition-colors">
                 <HelpCircle className="w-5 h-5" />
               </button>
             </PopoverTrigger>
-            <PopoverContent 
-              className="w-[calc(100vw-32px)] p-4 bg-white rounded-xl shadow-lg mr-2" 
-              side="top" 
+            <PopoverContent
+              className="w-[calc(100vw-32px)] p-4 bg-white rounded-xl shadow-lg mr-2"
+              side="top"
               sideOffset={16}
               align="center"
             >
@@ -120,31 +138,40 @@ export default function BuyCatalogPage() {
             </PopoverContent>
           </Popover>
         </div>
-        <Button 
+        <Button
           className={`w-full py-6 text-[15px] rounded-2xl ${
-            isSoldOut 
-              ? 'bg-gray-200 hover:bg-gray-300 text-gray-500 cursor-not-allowed' 
-              : 'bg-black hover:bg-gray-800 text-white'
+            isSoldOut
+              ? "bg-gray-200 hover:bg-gray-300 text-gray-500 cursor-not-allowed"
+              : "bg-black hover:bg-gray-800 text-white"
           }`}
           disabled={isSoldOut}
+          onClick={() =>
+            window.open(
+              "https://docs.google.com/forms/d/1bfce7JGfFTWZggUdbOeFLTOesKCGAT6mdujZA8PpXro/edit",
+              "_blank"
+            )
+          }
         >
-          {isSoldOut ? '已結束販售' : '立即購買'}
+          {isSoldOut ? "已結束販售" : "立即購買"}
         </Button>
       </div>
 
       {/* 專刊預覽區域 */}
       <div className="mt-16 lg:mt-24 pb-16 lg:pb-32">
-        <h2 className="text-xl font-medium text-gray-800 text-center mb-12">內容搶先看</h2>
+        <h2 className="text-xl font-medium text-gray-800 text-center mb-12">
+          內容搶先看
+        </h2>
         <div className="overflow-hidden">
           <div className="-mx-4 sm:-mx-8 lg:mx-auto lg:container lg:px-8 max-w-[1800px]">
-            <div className="space-y-8 lg:space-y-12">
+            <div className="grid gap-4 lg:gap-6">
               {previewImages.map((image, index) => (
-                <div key={index} className="relative aspect-[16/9] w-full">
+                <div key={index} className="relative w-full">
                   <Image
                     src={image.url}
                     alt={image.alt}
-                    fill
-                    className="object-cover rounded-none sm:rounded-xl"
+                    width={1800}
+                    height={1200}
+                    className="w-full h-auto rounded-none sm:rounded-xl"
                     sizes="(max-width: 768px) 100vw, (max-width: 1600px) 90vw, 1800px"
                     priority={index === 0}
                   />
@@ -155,5 +182,5 @@ export default function BuyCatalogPage() {
         </div>
       </div>
     </main>
-  )
-} 
+  );
+}

@@ -419,7 +419,7 @@ export default function AllWorksContent() {
                 }}
                 className="work-card group relative"
               >
-                <Link href={`/work/${work.id}`} className="block">
+                <Link href={`/work/${work.id}?from=overview`} className="block">
                   <div className="aspect-[3/2] relative overflow-hidden rounded-md">
                     <Image
                       src={

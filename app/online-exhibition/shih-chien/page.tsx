@@ -30,7 +30,7 @@ export default function ShihChienExhibition() {
             src="/Shih.png"
             alt="Shih Chien Exhibition"
             fill
-            className="object-cover"
+            className="object-cover object-[center_bottom]"
             priority
           />
         </div>

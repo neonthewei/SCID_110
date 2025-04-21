@@ -1046,7 +1046,7 @@ const InteractivePlusGrid = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <img
-            src="/Group 16.png"
+            src="/home.webp"
             alt="Sense Mobile Header"
             className="w-full h-auto"
           />
@@ -1426,7 +1426,7 @@ const InteractivePlusGrid = () => {
         {/* CTA Button Overlay */}
         <div className="w-full h-48 absolute bottom-32 left-0 z-30 flex items-center justify-center">
           <button
-            className="bg-white text-black text-body font-medium py-2 px-4 rounded-[18px] flex items-center gap-2"
+            className="bg-white text-black text-body font-medium py-2 px-4 rounded-[18px] flex items-center gap-2 transition-all duration-300 hover:bg-gray-100 hover:scale-105"
             onClick={() => (window.location.href = "/book-tour")}
           >
             <svg
