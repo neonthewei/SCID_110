@@ -179,10 +179,10 @@ const Footer = () => {
               </span>
               <span className="text-sm text-neutral-400">|</span>
               <a
-                href="mailto:scid@g2.usc.edu.tw"
+                href="mailto:uscscid110@gmail.com"
                 className="text-sm text-neutral-900 hover:text-blue-600 transition-colors duration-300"
               >
-                scid@g2.usc.edu.tw
+                uscscid110@gmail.com
               </a>
             </div>
 
@@ -242,10 +242,10 @@ const Footer = () => {
                 No. 70, Dazhi St., Zhongshan Dist., Taipei City, 104
               </span>
               <a
-                href="mailto:scid@g2.usc.edu.tw"
+                href="mailto:uscscid110@gmail.com"
                 className="text-xs text-neutral-900 hover:text-blue-600 transition-colors duration-300 mt-1 block"
               >
-                scid@g2.usc.edu.tw
+                uscscid110@gmail.com
               </a>
             </div>
 
