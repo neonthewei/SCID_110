@@ -98,10 +98,7 @@ export default function BuyCatalogPage() {
                   }`}
                   disabled={isSoldOut}
                   onClick={() =>
-                    window.open(
-                      "https://docs.google.com/forms/d/1bfce7JGfFTWZggUdbOeFLTOesKCGAT6mdujZA8PpXro/edit",
-                      "_blank"
-                    )
+                    window.open("https://p.ecpay.com.tw/F772747", "_blank")
                   }
                 >
                   {isSoldOut ? "已結束販售" : "立即購買"}
@@ -155,10 +152,7 @@ export default function BuyCatalogPage() {
           }`}
           disabled={isSoldOut}
           onClick={() =>
-            window.open(
-              "https://docs.google.com/forms/d/1bfce7JGfFTWZggUdbOeFLTOesKCGAT6mdujZA8PpXro/edit",
-              "_blank"
-            )
+            window.open("https://p.ecpay.com.tw/F772747", "_blank")
           }
         >
           {isSoldOut ? "已結束販售" : "立即購買"}
