@@ -129,7 +129,7 @@ export default function WorkDetailClient({
         <div className="text-center max-w-md mx-auto px-4">
           <h1 className="text-[32px] font-bold mb-3">暫不開放</h1>
           <p className="text-[#9D9D9D] text-[15px] leading-[1.8] mb-10">
-            作品細節目前尚未開放瀏覽，敬請期待。
+            作品細節將於5/14開放瀏覽，敬請期待。
           </p>
           <button
             onClick={handleBackClick}

@@ -64,15 +64,16 @@ export default function BuyCatalogPage() {
             <div className="space-y-8 pb-24 lg:pb-0">
               <div className="space-y-4">
                 <h1 className="text-[22px] sm:text-[28px] font-semibold text-gray-800">
-                  2024 畢業展覽年度專刊
+                  2025畢業展覽年度專刊《°Sense》
                   <br />
-                  《TEMPO_BOND 棒_節奏》
                 </h1>
 
                 <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
-                  匯聚91件匠心巨作，由每位設計師親自整合作品內容，展現新銳設計師的創意火花！
-                  刊物中不但能看到作品背後的製作秘辛，還包含了知名設計師的訪談及團隊工作幕後過程，
-                  揭開四年裡我們累積的不同養分，讓我們翻開「棒節奏」，一起探索樣貌的無限可能。
+                  材質探索｜跨媒材 × 工藝實驗、設計思考｜觀點 × 議題 ×
+                  跨領域、創新提案｜產品 × 工藝 × 傳達
+                </p>
+                <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
+                  一本收錄了90件作品的設計刊物，從學生視角出發，充滿新鮮刺激與想法的碰撞；內頁呈現設計師們對設計的熱情，以及如火如荼的創作歷程，並收錄設計名師的專訪。期待與你們一同共感設計的溫度。
                 </p>
               </div>
 

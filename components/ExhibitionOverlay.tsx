@@ -73,7 +73,7 @@ const ExhibitionOverlay = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
           className="fixed top-16 left-0 right-0 bottom-0 bg-black backdrop-blur-sm z-40 flex flex-col items-center justify-center cursor-pointer"
-          aria-label="暫不開放"
+          aria-label="5/14開放"
           role="alert"
           onClick={handleOverlayClick}
           onKeyDown={(e) => e.key !== "o" && handleOverlayClick()}
@@ -85,7 +85,7 @@ const ExhibitionOverlay = () => {
             transition={{ delay: 0.1, duration: 0.4 }}
             className="text-white text-5xl font-bold text-center px-4 mb-6"
           >
-            暫不開放
+            5/14開放
           </motion.div>
 
           <motion.div
