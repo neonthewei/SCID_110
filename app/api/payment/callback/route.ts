@@ -1,19 +1,16 @@
 import { NextResponse } from "next/server";
-import ECPayPayment from "ecpay-payment";
-
-const ecpay = new ECPayPayment({
-  MerchantID: process.env.ECPAY_MERCHANT_ID || "",
-  HashKey: process.env.ECPAY_HASH_KEY || "",
-  HashIV: process.env.ECPAY_HASH_IV || "",
-});
+import { verifyCheckMacValue } from "@/lib/ecpay";
 
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
-    const data = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries()) as Record<
+      string,
+      string
+    >;
 
     // 驗證綠界回傳的資料
-    const isValid = ecpay.check_mac_value(data);
+    const isValid = verifyCheckMacValue(data);
 
     if (!isValid) {
       return NextResponse.json(

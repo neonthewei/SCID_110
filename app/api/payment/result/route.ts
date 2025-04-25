@@ -1,19 +1,16 @@
 import { NextResponse } from "next/server";
-import ECPayPayment from "ecpay-payment";
-
-const ecpay = new ECPayPayment({
-  MerchantID: process.env.ECPAY_MERCHANT_ID || "",
-  HashKey: process.env.ECPAY_HASH_KEY || "",
-  HashIV: process.env.ECPAY_HASH_IV || "",
-});
+import { verifyCheckMacValue } from "@/lib/ecpay";
 
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
-    const data = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries()) as Record<
+      string,
+      string
+    >;
 
     // 驗證綠界回傳的資料
-    const isValid = ecpay.check_mac_value(data);
+    const isValid = verifyCheckMacValue(data);
 
     if (!isValid) {
       return NextResponse.json(
@@ -22,7 +19,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // 處理訂單結果
+    // 處理付款結果
     const {
       MerchantTradeNo,
       RtnCode,
@@ -33,8 +30,8 @@ export async function POST(request: Request) {
       PaymentDate,
     } = data;
 
-    // TODO: 根據訂單結果更新訂單狀態
-    console.log("Order result:", {
+    // TODO: 根據付款結果更新訂單狀態
+    console.log("Payment result:", {
       MerchantTradeNo,
       RtnCode,
       RtnMsg,
@@ -46,9 +43,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Order result error:", error);
+    console.error("Payment result error:", error);
     return NextResponse.json(
-      { error: "Order result processing failed" },
+      { error: "Payment result processing failed" },
       { status: 500 }
     );
   }
