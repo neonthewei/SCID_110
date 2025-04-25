@@ -9,6 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import PaymentForm from "@/components/PaymentForm";
 
 const previewImages = [
   {
@@ -46,6 +47,10 @@ const productImages = [
 
 export default function BuyCatalogPage() {
   const isSoldOut = false; // 控制販售狀態，預設為 false（立即購買）
+  const orderId = `ORDER${Date.now()}`; // 生成唯一的訂單編號
+  const amount = 1100; // 商品價格
+  const description = "2025畢業展覽年度專刊《°Sense》"; // 商品描述
+  const items = ["2025畢業展覽年度專刊《°Sense》"]; // 商品項目
 
   return (
     <main className="pb-8 pt-0">
@@ -68,9 +73,12 @@ export default function BuyCatalogPage() {
                   <br />
                 </h1>
 
-                <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
-                  材質探索｜跨媒材 × 工藝實驗、設計思考｜觀點 × 議題 ×
-                  跨領域、創新提案｜產品 × 工藝 × 傳達
+                <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed whitespace-pre-line">
+                  材質探索｜跨媒材 × 工藝實驗
+                  <br />
+                  設計思考｜觀點 × 議題 × 跨領域
+                  <br />
+                  創新提案｜產品 × 工藝 × 傳達
                 </p>
                 <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
                   一本收錄了90件作品的設計刊物，從學生視角出發，充滿新鮮刺激與想法的碰撞；內頁呈現設計師們對設計的熱情，以及如火如荼的創作歷程，並收錄設計名師的專訪。期待與你們一同共感設計的溫度。
@@ -90,22 +98,14 @@ export default function BuyCatalogPage() {
                   </div>
                 </div>
 
-                <Button
-                  className={`w-full py-6 text-[15px] sm:text-[16px] rounded-2xl ${
-                    isSoldOut
-                      ? "bg-gray-200 hover:bg-gray-300 text-gray-500 cursor-not-allowed"
-                      : "bg-black hover:bg-gray-800 text-white"
-                  }`}
-                  disabled={isSoldOut}
-                  onClick={() =>
-                    window.open(
-                      "https://docs.google.com/forms/d/1bfce7JGfFTWZggUdbOeFLTOesKCGAT6mdujZA8PpXro/edit",
-                      "_blank"
-                    )
-                  }
-                >
-                  {isSoldOut ? "已結束販售" : "立即購買"}
-                </Button>
+                {!isSoldOut && (
+                  <PaymentForm
+                    orderId={orderId}
+                    amount={amount}
+                    description={description}
+                    items={items}
+                  />
+                )}
 
                 <div className="text-[13px] sm:text-sm text-gray-500 sm:text-[#9D9D9D] space-y-1">
                   <p>* 運費將於結帳時計算</p>
@@ -147,22 +147,14 @@ export default function BuyCatalogPage() {
             </PopoverContent>
           </Popover>
         </div>
-        <Button
-          className={`w-full py-6 text-[15px] rounded-2xl ${
-            isSoldOut
-              ? "bg-gray-200 hover:bg-gray-300 text-gray-500 cursor-not-allowed"
-              : "bg-black hover:bg-gray-800 text-white"
-          }`}
-          disabled={isSoldOut}
-          onClick={() =>
-            window.open(
-              "https://docs.google.com/forms/d/1bfce7JGfFTWZggUdbOeFLTOesKCGAT6mdujZA8PpXro/edit",
-              "_blank"
-            )
-          }
-        >
-          {isSoldOut ? "已結束販售" : "立即購買"}
-        </Button>
+        {!isSoldOut && (
+          <PaymentForm
+            orderId={orderId}
+            amount={amount}
+            description={description}
+            items={items}
+          />
+        )}
       </div>
 
       {/* 專刊預覽區域 */}
