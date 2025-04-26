@@ -1,57 +1,60 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { motion, AnimatePresence, PanInfo } from 'framer-motion'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CatalogViewerProps {
   images: {
-    url: string
-    alt: string
-  }[]
+    url: string;
+    alt: string;
+  }[];
 }
 
 export default function CatalogViewer({ images }: CatalogViewerProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
-  const [isFullscreen, setIsFullscreen] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handlePrevious = () => {
-    setDirection(-1)
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
-  }
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
   const handleNext = () => {
-    setDirection(1)
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
-  }
+    setDirection(1);
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const swipeThreshold = 50
+  const handleDragEnd = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ) => {
+    const swipeThreshold = 50;
     if (info.offset.x > swipeThreshold) {
-      handlePrevious()
+      handlePrevious();
     } else if (info.offset.x < -swipeThreshold) {
-      handleNext()
+      handleNext();
     }
-  }
+  };
 
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 300 : -300,
-      opacity: 0
+      opacity: 0,
     }),
     center: {
       zIndex: 1,
       x: 0,
-      opacity: 1
+      opacity: 1,
     },
     exit: (direction: number) => ({
       zIndex: 0,
       x: direction < 0 ? 300 : -300,
-      opacity: 0
-    })
-  }
+      opacity: 0,
+    }),
+  };
 
   return (
     <div className="w-full">
@@ -86,10 +89,10 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
             dragElastic={1}
             dragMomentum={false}
             onDragEnd={handleDragEnd}
-            transition={{ 
+            transition={{
               type: "spring",
               stiffness: 300,
-              damping: 30
+              damping: 30,
             }}
             className="relative w-full h-full cursor-grab active:cursor-grabbing touch-pan-x select-none"
             style={{ touchAction: "pan-x" }}
@@ -118,13 +121,15 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
             <button
               key={index}
               onClick={() => {
-                setDirection(index > currentIndex ? 1 : -1)
-                setCurrentIndex(index)
+                setDirection(index > currentIndex ? 1 : -1);
+                setCurrentIndex(index);
               }}
               className={`flex-shrink-0 relative w-12 aspect-square rounded-xl overflow-hidden
-                ${currentIndex === index 
-                  ? 'ring-2 ring-black' 
-                  : 'hover:ring-2 hover:ring-gray-300'}
+                ${
+                  currentIndex === index
+                    ? "ring-2 ring-black"
+                    : "hover:ring-2 hover:ring-gray-300"
+                }
                 transition-all duration-200 hover:opacity-80 active:opacity-60`}
             >
               <Image
@@ -192,5 +197,5 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
         )}
       </AnimatePresence>
     </div>
-  )
-} 
+  );
+}

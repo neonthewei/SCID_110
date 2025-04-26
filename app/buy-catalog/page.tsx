@@ -69,8 +69,11 @@ export default function BuyCatalogPage() {
                 </h1>
 
                 <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
-                  材質探索｜跨媒材 × 工藝實驗、設計思考｜觀點 × 議題 ×
-                  跨領域、創新提案｜產品 × 工藝 × 傳達
+                  材質探索｜跨媒材 × 工藝實驗
+                  <br />
+                  設計思考｜觀點 × 議題 × 跨領域
+                  <br />
+                  創新提案｜產品 × 工藝 × 傳達
                 </p>
                 <p className="text-[13px] sm:text-sm text-gray-600 sm:text-[#9D9D9D] leading-[1.8] sm:leading-relaxed">
                   一本收錄了90件作品的設計刊物，從學生視角出發，充滿新鮮刺激與想法的碰撞；內頁呈現設計師們對設計的熱情，以及如火如荼的創作歷程，並收錄設計名師的專訪。期待與你們一同共感設計的溫度。
@@ -82,7 +85,7 @@ export default function BuyCatalogPage() {
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
                     <span className="text-[16px] text-gray-500 line-through">
-                      原價 $1,350
+                      成本價 $1,350
                     </span>
                     <div className="text-[22px] sm:text-[28px] font-semibold text-gray-800">
                       優惠價 $1,100
@@ -119,7 +122,7 @@ export default function BuyCatalogPage() {
         <div className="flex items-center justify-between mb-3">
           <div className="space-y-1">
             <span className="text-[14px] text-gray-500 line-through">
-              原價 $1,350
+              成本價 $1,350
             </span>
             <div className="text-[22px] font-semibold text-gray-800">
               優惠價 $1,100
@@ -160,13 +163,13 @@ export default function BuyCatalogPage() {
       </div>
 
       {/* 專刊預覽區域 */}
-      <div className="mt-16 lg:mt-24 pb-16 lg:pb-32">
-        <h2 className="text-xl font-medium text-gray-800 text-center mb-12">
+      <div className="mt-16 lg:mt-24 pb-64 lg:pb-32">
+        <h2 className="text-xl font-medium text-gray-800 text-center mb-2">
           內容搶先看
         </h2>
         <div className="overflow-hidden">
-          <div className="mx-16 sm:mx-32 lg:mx-auto lg:container lg:px-32 max-w-[1400px]">
-            <div className="grid gap-8 lg:gap-16">
+          <div className="px-0 sm:mx-32 lg:mx-auto lg:container lg:px-32 max-w-[1400px]">
+            <div className="grid gap-12 lg:gap-16">
               {previewImages.map((image, index) => (
                 <div key={index} className="relative w-full">
                   <Image
