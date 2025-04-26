@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CatalogViewerProps {
@@ -14,52 +13,130 @@ interface CatalogViewerProps {
 
 export default function CatalogViewer({ images }: CatalogViewerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [currentX, setCurrentX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useRef(0);
+
+  useEffect(() => {
+    const updateContainerWidth = () => {
+      if (containerRef.current) {
+        containerWidth.current = containerRef.current.offsetWidth;
+      }
+    };
+
+    updateContainerWidth();
+    window.addEventListener("resize", updateContainerWidth);
+    return () => window.removeEventListener("resize", updateContainerWidth);
+  }, []);
+
+  useEffect(() => {
+    if (sliderRef.current && !isDragging) {
+      sliderRef.current.style.transition = "transform 0.2s ease-out";
+      sliderRef.current.style.transform = `translateX(${-currentIndex * 100}%)`;
+    }
+  }, [currentIndex, isDragging]);
 
   const handlePrevious = () => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => {
-    const swipeThreshold = 50;
-    if (info.offset.x > swipeThreshold) {
-      handlePrevious();
-    } else if (info.offset.x < -swipeThreshold) {
-      handleNext();
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    } else {
+      setCurrentIndex(images.length - 1);
     }
   };
 
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 300 : -300,
-      opacity: 0,
-    }),
+  const handleNext = () => {
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setCurrentIndex(0);
+    }
+  };
+
+  // Mouse events
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+    setCurrentX(e.clientX);
+
+    if (sliderRef.current) {
+      sliderRef.current.style.transition = "none";
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    setCurrentX(e.clientX);
+
+    if (sliderRef.current) {
+      const deltaX = e.clientX - startX;
+      const translateXValue = -currentIndex * containerWidth.current + deltaX;
+      sliderRef.current.style.transform = `translateX(${translateXValue}px)`;
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+
+    const deltaX = currentX - startX;
+    const threshold = containerWidth.current * 0.25;
+
+    if (deltaX > threshold && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    } else if (deltaX < -threshold && currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+
+    setIsDragging(false);
+  };
+
+  // Touch events
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+    setCurrentX(e.touches[0].clientX);
+
+    if (sliderRef.current) {
+      sliderRef.current.style.transition = "none";
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    setCurrentX(e.touches[0].clientX);
+
+    if (sliderRef.current) {
+      const deltaX = e.touches[0].clientX - startX;
+      const translateXValue = -currentIndex * containerWidth.current + deltaX;
+      sliderRef.current.style.transform = `translateX(${translateXValue}px)`;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!isDragging) return;
+
+    const deltaX = currentX - startX;
+    const threshold = containerWidth.current * 0.25;
+
+    if (deltaX > threshold && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    } else if (deltaX < -threshold && currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+
+    setIsDragging(false);
   };
 
   return (
     <div className="w-full">
       {/* 主要預覽圖 */}
-      <div className="relative aspect-square w-full mx-auto overflow-hidden touch-pan-x group">
+      <div
+        className="relative aspect-[39/38] sm:aspect-square w-full mx-auto overflow-hidden group"
+        ref={containerRef}
+      >
         {/* Navigation Buttons */}
         <button
           onClick={handlePrevious}
@@ -76,37 +153,32 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
           <ChevronRight className="w-6 h-6 text-black" />
         </button>
 
-        <AnimatePresence mode="wait" initial={false} custom={direction}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            dragMomentum={false}
-            onDragEnd={handleDragEnd}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-              damping: 30,
-            }}
-            className="relative w-full h-full cursor-grab active:cursor-grabbing touch-pan-x select-none"
-            style={{ touchAction: "pan-x" }}
-          >
-            <Image
-              src={images[currentIndex].url}
-              alt={images[currentIndex].alt}
-              fill
-              className="object-cover pointer-events-none"
-              priority
-              draggable={false}
-            />
-          </motion.div>
-        </AnimatePresence>
+        {/* Sliding images container */}
+        <div
+          ref={sliderRef}
+          className="flex w-full h-full transition-transform cursor-grab active:cursor-grabbing select-none"
+          style={{ transform: `translateX(${-currentIndex * 100}%)` }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="flex-shrink-0 w-full h-full relative">
+              <Image
+                src={image.url}
+                alt={image.alt}
+                fill
+                className="object-cover pointer-events-none"
+                priority={index === currentIndex}
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
 
         {/* 固定在容器右下角的頁碼 */}
         <div className="absolute bottom-4 right-8 z-10 text-sm text-white bg-black/50 rounded-full w-12 h-6 flex items-center justify-center md:hidden">
@@ -121,7 +193,6 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
             <button
               key={index}
               onClick={() => {
-                setDirection(index > currentIndex ? 1 : -1);
                 setCurrentIndex(index);
               }}
               className={`flex-shrink-0 relative w-12 aspect-square rounded-xl overflow-hidden
@@ -145,57 +216,46 @@ export default function CatalogViewer({ images }: CatalogViewerProps) {
         </div>
       </div>
 
-      {/* Fullscreen Modal */}
-      <AnimatePresence>
-        {isFullscreen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+      {/* Fullscreen Modal - Simplified without animations */}
+      {isFullscreen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          onClick={() => setIsFullscreen(false)}
+        >
+          <button
             onClick={() => setIsFullscreen(false)}
+            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 hover:bg-black/70"
           >
-            <button
-              onClick={() => setIsFullscreen(false)}
-              className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 hover:bg-black/70"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="white"
+              className="w-6 h-6"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <motion.div
-              className="relative w-full h-full"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.7}
-              onDragEnd={handleDragEnd}
-            >
-              <Image
-                src={images[currentIndex].url}
-                alt={images[currentIndex].alt}
-                fill
-                className="object-contain"
-                priority
-                sizes="100vw"
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
               />
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
-                {currentIndex + 1} / {images.length}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </svg>
+          </button>
+          <div className="relative w-full h-full">
+            <Image
+              src={images[currentIndex].url}
+              alt={images[currentIndex].alt}
+              fill
+              className="object-contain"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
+              {currentIndex + 1} / {images.length}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

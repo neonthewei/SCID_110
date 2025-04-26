@@ -631,10 +631,10 @@ export default function BookTourPage() {
             填寫預約表單
           </h1>
           <div className="block sm:hidden">
-            <p className="text-[13px] sm:text-body text-[#7D7D7D]">
+            <p className="text-caption sm:text-body text-[#7D7D7D]">
               展覽期間 (04/24 - 05/18) 導覽時段依日期而不同
             </p>
-            <p className="text-[13px] sm:text-body text-[#7D7D7D]">
+            <p className="text-caption sm:text-body text-[#7D7D7D]">
               精華導覽20分鐘，一起窺探展區精選作品。
             </p>
           </div>
@@ -656,7 +656,7 @@ export default function BookTourPage() {
               <div className="flex flex-col items-center sm:flex-row sm:items-center">
                 <div className="flex flex-row items-center">
                   <span
-                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-[13px] sm:text-subtitle transition-colors duration-300 ${
+                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-caption sm:text-subtitle transition-colors duration-300 ${
                       currentStep === 1
                         ? "border-black bg-black text-white"
                         : "border-gray-300"
@@ -665,7 +665,7 @@ export default function BookTourPage() {
                     1
                   </span>
                   <span
-                    className={`ml-2 text-[13px] sm:text-subtitle text-center ${
+                    className={`ml-2 text-caption sm:text-subtitle text-center ${
                       currentStep === 1 ? "text-black" : "text-gray-400"
                     }`}
                   >
@@ -681,7 +681,7 @@ export default function BookTourPage() {
               <div className="flex flex-col items-center sm:flex-row sm:items-center">
                 <div className="flex flex-row items-center">
                   <span
-                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-[13px] sm:text-subtitle transition-colors duration-300 ${
+                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-caption sm:text-subtitle transition-colors duration-300 ${
                       currentStep === 2
                         ? "border-black bg-black text-white"
                         : "border-gray-300"
@@ -690,7 +690,7 @@ export default function BookTourPage() {
                     2
                   </span>
                   <span
-                    className={`ml-2 text-[13px] sm:text-subtitle text-center ${
+                    className={`ml-2 text-caption sm:text-subtitle text-center ${
                       currentStep === 2 ? "text-black" : "text-gray-400"
                     }`}
                   >
@@ -705,12 +705,12 @@ export default function BookTourPage() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 gap-6">
                   <div>
-                    <label className="block text-[13px] sm:text-body text-gray-700">
+                    <label className="block text-caption sm:text-body text-gray-700">
                       參觀日期
                     </label>
                     <select
                       {...register("date", { required: "請選擇參觀日期" })}
-                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-[13px] sm:text-body"
+                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-caption sm:text-body"
                     >
                       {AVAILABLE_DATES.map((date) => (
                         <option key={date} value={date}>
@@ -724,14 +724,14 @@ export default function BookTourPage() {
                       ))}
                     </select>
                     {errors.date && (
-                      <p className="mt-1 text-[11px] sm:text-caption text-red-600">
+                      <p className="mt-1 text-caption text-red-600">
                         {errors.date.message}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-[13px] sm:text-body text-gray-700 mb-3">
+                    <label className="block text-caption sm:text-body text-gray-700 mb-3">
                       參觀時間
                     </label>
                     {timeSlots.length > 0 ? (
@@ -762,7 +762,7 @@ export default function BookTourPage() {
                                 <div className="absolute top-1 right-1 w-3 h-3 rounded-full hidden peer-checked:block bg-black"></div>
                               )}
                               <span
-                                className={`text-[13px] sm:text-body font-medium
+                                className={`text-caption sm:text-body font-medium
                                 ${
                                   !slot.available
                                     ? "text-gray-300"
@@ -773,7 +773,7 @@ export default function BookTourPage() {
                                 {slot.label}
                               </span>
                               {slot.available && (
-                                <span className="block text-[11px] sm:text-caption text-gray-500 mt-1">
+                                <span className="block text-caption text-gray-500 mt-1">
                                   剩餘{" "}
                                   <span className="font-medium text-gray-700">
                                     {slot.remainingSpots}
@@ -782,7 +782,7 @@ export default function BookTourPage() {
                                 </span>
                               )}
                               {!slot.available && slot.remainingSpots <= 0 && (
-                                <span className="block text-[11px] sm:text-caption text-gray-300 mt-1">
+                                <span className="block text-caption text-gray-300 mt-1">
                                   已額滿
                                 </span>
                               )}
@@ -791,12 +791,12 @@ export default function BookTourPage() {
                         ))}
                       </div>
                     ) : (
-                      <p className="py-4 text-[13px] sm:text-body text-center text-gray-500 border-2 border-gray-100 rounded-2xl bg-gray-50">
+                      <p className="py-4 text-caption sm:text-body text-center text-gray-500 border-2 border-gray-100 rounded-2xl bg-gray-50">
                         此日無可預約時段
                       </p>
                     )}
                     {errors.time && (
-                      <p className="mt-2 text-[11px] sm:text-caption text-red-600">
+                      <p className="mt-2 text-caption text-red-600">
                         {errors.time.message}
                       </p>
                     )}
@@ -808,7 +808,7 @@ export default function BookTourPage() {
                     type="button"
                     onClick={handleNextStep}
                     disabled={!watchDate || !watchTime}
-                    className="inline-flex justify-center rounded-2xl border border-transparent bg-black py-3 px-6 text-[13px] sm:text-subtitle text-white shadow-sm hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:bg-black"
+                    className="inline-flex justify-center rounded-2xl border border-transparent bg-black py-3 px-6 text-caption sm:text-subtitle text-white shadow-sm hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:bg-black"
                   >
                     下一步
                   </button>
@@ -821,23 +821,23 @@ export default function BookTourPage() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label className="block text-[13px] sm:text-body text-gray-700">
+                    <label className="block text-caption sm:text-body text-gray-700">
                       姓名
                     </label>
                     <input
                       type="text"
                       {...register("name", { required: "請輸入姓名" })}
-                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-[13px] sm:text-body"
+                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-caption sm:text-body"
                     />
                     {errors.name && (
-                      <p className="mt-1 text-[11px] sm:text-caption text-red-600">
+                      <p className="mt-1 text-caption text-red-600">
                         {errors.name.message}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-[13px] sm:text-body text-gray-700">
+                    <label className="block text-caption sm:text-body text-gray-700">
                       電子郵件
                     </label>
                     <input
@@ -849,33 +849,33 @@ export default function BookTourPage() {
                           message: "請輸入有效的電子郵件地址",
                         },
                       })}
-                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-[13px] sm:text-body"
+                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-caption sm:text-body"
                     />
                     {errors.email && (
-                      <p className="mt-1 text-[11px] sm:text-caption text-red-600">
+                      <p className="mt-1 text-caption text-red-600">
                         {errors.email.message}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-[13px] sm:text-body text-gray-700">
+                    <label className="block text-caption sm:text-body text-gray-700">
                       電話
                     </label>
                     <input
                       type="tel"
                       {...register("phone", { required: "請輸入電話號碼" })}
-                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-[13px] sm:text-body"
+                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-caption sm:text-body"
                     />
                     {errors.phone && (
-                      <p className="mt-1 text-[11px] sm:text-caption text-red-600">
+                      <p className="mt-1 text-caption text-red-600">
                         {errors.phone.message}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-[13px] sm:text-body text-gray-700">
+                    <label className="block text-caption sm:text-body text-gray-700">
                       參觀人數
                     </label>
                     <input
@@ -885,10 +885,10 @@ export default function BookTourPage() {
                         min: { value: 1, message: "至少1人" },
                         max: { value: 15, message: "最多15人" },
                       })}
-                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-[13px] sm:text-body"
+                      className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-caption sm:text-body"
                     />
                     {errors.participants && (
-                      <p className="mt-1 text-[11px] sm:text-caption text-red-600">
+                      <p className="mt-1 text-caption text-red-600">
                         {errors.participants.message}
                       </p>
                     )}
@@ -899,7 +899,7 @@ export default function BookTourPage() {
                   <div className="rounded-md bg-red-50 p-4">
                     <div className="flex">
                       <div className="ml-3">
-                        <h3 className="text-[13px] sm:text-subtitle text-red-800">
+                        <h3 className="text-caption sm:text-subtitle text-red-800">
                           {error}
                         </h3>
                       </div>
@@ -911,14 +911,14 @@ export default function BookTourPage() {
                   <button
                     type="button"
                     onClick={handlePrevStep}
-                    className="inline-flex justify-center rounded-2xl border border-gray-300 bg-white py-3 px-6 text-[13px] sm:text-body text-gray-700 shadow-sm hover:bg-gray-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                    className="inline-flex justify-center rounded-2xl border border-gray-300 bg-white py-3 px-6 text-caption sm:text-body text-gray-700 shadow-sm hover:bg-gray-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                   >
                     返回
                   </button>
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="inline-flex justify-center rounded-2xl border border-transparent bg-black py-3 px-6 text-[13px] sm:text-body text-white shadow-sm hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:bg-black"
+                    className="inline-flex justify-center rounded-2xl border border-transparent bg-black py-3 px-6 text-caption sm:text-body text-white shadow-sm hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:bg-black"
                   >
                     {isLoading ? "提交中..." : "提交預約"}
                   </button>
@@ -930,19 +930,17 @@ export default function BookTourPage() {
 
         {/* 注意事項 */}
         <div className="bg-white shadow rounded-2xl p-6 mb-8">
-          <p className="text-[15px] sm:text-subtitle text-gray-900 mb-3">
-            注意事項
-          </p>
+          <p className="text-subtitle text-gray-900 mb-3">注意事項</p>
           <ul className="space-y-2.5">
-            <li className="flex items-center text-[13px] sm:text-body text-gray-500">
+            <li className="flex items-center text-caption sm:text-body text-gray-500">
               <span className="w-1 h-1 bg-gray-400 rounded-full mr-2"></span>
               每日導覽時間不同，請查看預約表選擇合適的時段
             </li>
-            <li className="flex items-center text-[13px] sm:text-body text-gray-500">
+            <li className="flex items-center text-caption sm:text-body text-gray-500">
               <span className="w-1 h-1 bg-gray-400 rounded-full mr-2"></span>
               務必注意資訊填寫正確
             </li>
-            <li className="flex items-center text-[13px] sm:text-body text-gray-500">
+            <li className="flex items-center text-caption sm:text-body text-gray-500">
               <span className="w-1 h-1 bg-gray-400 rounded-full mr-2"></span>
               預約成功會於2天內以EMAIL通知
             </li>
@@ -957,16 +955,16 @@ export default function BookTourPage() {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-[11px] sm:text-caption text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">
                       姓名
                     </th>
-                    <th className="px-6 py-3 text-left text-[11px] sm:text-caption text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">
                       日期
                     </th>
-                    <th className="px-6 py-3 text-left text-[11px] sm:text-caption text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">
                       時間
                     </th>
-                    <th className="px-6 py-3 text-left text-[11px] sm:text-caption text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-caption text-gray-500 uppercase tracking-wider">
                       人數
                     </th>
                   </tr>
@@ -974,10 +972,10 @@ export default function BookTourPage() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {bookings.map((booking, index) => (
                     <tr key={index}>
-                      <td className="px-6 py-4 whitespace-nowrap text-[13px] sm:text-body text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-caption sm:text-body text-gray-900">
                         {booking.name}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-[13px] sm:text-body text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-caption sm:text-body text-gray-500">
                         {new Date(booking.date).toLocaleDateString("zh-TW", {
                           year: "numeric",
                           month: "2-digit",
@@ -985,10 +983,10 @@ export default function BookTourPage() {
                           weekday: "long",
                         })}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-[13px] sm:text-body text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-caption sm:text-body text-gray-500">
                         {booking.time}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-[13px] sm:text-body text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-caption sm:text-body text-gray-500">
                         {booking.participants}
                       </td>
                     </tr>
