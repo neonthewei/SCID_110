@@ -1,20 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { getAllWorks, type WorkCategory } from "@/data/designers"
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { getAllWorks, type WorkCategory } from "@/data/designers";
 
-const categories: WorkCategory[] = ["舒適巢", "溫工藝", "熱對話", "冷火花"]
+const categories: WorkCategory[] = ["舒適巢", "溫工藝", "熱對話", "冷火花"];
 
 export default function WorkPage() {
-  const [selectedCategory, setSelectedCategory] = useState<WorkCategory | "全部">("全部")
-  const works = getAllWorks()
+  const [selectedCategory, setSelectedCategory] = useState<
+    WorkCategory | "全部"
+  >("全部");
+  const works = getAllWorks();
 
-  const filteredWorks = selectedCategory === "全部" 
-    ? works 
-    : works.filter(work => work.category === selectedCategory)
+  const filteredWorks =
+    selectedCategory === "全部"
+      ? works
+      : works.filter((work) => work.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-white">
@@ -77,5 +80,5 @@ export default function WorkPage() {
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}

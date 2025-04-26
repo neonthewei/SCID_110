@@ -69,6 +69,22 @@ export default function WorkDetailClient({
   const designerId = searchParams.get("id");
   const work = getWorkById(params.id);
   const designer = work ? getDesignerByWorkId(params.id) : undefined;
+  const [showNotOpenMessage, setShowNotOpenMessage] = useState(
+    fromDesigner || fromOverview
+  );
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() === "f") {
+        setShowNotOpenMessage(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   // 處理返回按鈕點擊事件
   const handleBackClick = useCallback(() => {
@@ -90,7 +106,7 @@ export default function WorkDetailClient({
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev === 1 ? 0 : 1));
-    }, 3000); // Change image every 3 seconds
+    }, 2000); // Change image every 2 seconds
 
     return () => clearInterval(interval);
   }, [isHovered]);
@@ -123,7 +139,7 @@ export default function WorkDetailClient({
   }
 
   // 如果從總覽頁面或設計師頁面進入，顯示暫不開放訊息
-  if (fromOverview || fromDesigner) {
+  if ((fromOverview || fromDesigner) && showNotOpenMessage) {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white">
         <div className="text-center max-w-md mx-auto px-4">
@@ -174,7 +190,7 @@ export default function WorkDetailClient({
             {/* Product Image */}
             <div className="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-2 lg:mb-0">
               <Image
-                src={work.images.preview || work.images.main}
+                src={work.images.main}
                 alt={work.title.main}
                 fill
                 className="object-contain"
@@ -226,42 +242,51 @@ export default function WorkDetailClient({
 
                   {/* Social Media Links */}
                   <div className="flex items-center gap-6 ml-auto mt-2 md:mt-0">
-                    <Link
-                      href="#"
-                      className="text-[#9D9D9D] hover:text-black transition-colors"
-                      aria-label="Email"
-                      tabIndex={0}
-                    >
-                      <Mail className="w-[18px] h-[18px]" />
-                    </Link>
-                    <Link
-                      href="#"
-                      className="text-[#9D9D9D] hover:text-black transition-colors"
-                      aria-label="Instagram"
-                      tabIndex={0}
-                    >
-                      <svg
-                        className="w-[18px] h-[18px]"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
+                    {designer.social?.email && (
+                      <Link
+                        href={`mailto:${designer.social.email}`}
+                        className="text-[#9D9D9D] hover:text-black transition-colors"
+                        aria-label="Email"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                      </svg>
-                    </Link>
-                    <Link
-                      href="#"
-                      className="text-[#9D9D9D] hover:text-black transition-colors"
-                      aria-label="Behance"
-                      tabIndex={0}
-                    >
-                      <svg
-                        className="w-[18px] h-[18px]"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
+                        <Mail className="w-[18px] h-[18px]" />
+                      </Link>
+                    )}
+                    {designer.social?.instagram && (
+                      <Link
+                        href={designer.social.instagram}
+                        className="text-[#9D9D9D] hover:text-black transition-colors"
+                        aria-label="Instagram"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
-                      </svg>
-                    </Link>
+                        <svg
+                          className="w-[18px] h-[18px]"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                      </Link>
+                    )}
+                    {designer.social?.behance && (
+                      <Link
+                        href={designer.social.behance}
+                        className="text-[#9D9D9D] hover:text-black transition-colors"
+                        aria-label="Behance"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <svg
+                          className="w-[18px] h-[18px]"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+                        </svg>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -299,11 +324,31 @@ export default function WorkDetailClient({
 
               {/* Design Concept Image */}
               <div
-                className="relative w-full order-1 lg:order-2"
+                className="relative w-full order-1 lg:order-2 group"
                 style={{ aspectRatio: "1200/600" }}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
+                {/* Navigation Buttons */}
+                <button
+                  onClick={() =>
+                    setCurrentImageIndex((prev) => (prev === 0 ? 1 : 0))
+                  }
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+                <button
+                  onClick={() =>
+                    setCurrentImageIndex((prev) => (prev === 1 ? 0 : 1))
+                  }
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+
                 {/* Left click area */}
                 <div
                   className="absolute left-0 top-0 w-1/2 h-full z-10 cursor-pointer"
@@ -362,7 +407,9 @@ export default function WorkDetailClient({
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentImageIndex ? "bg-white" : "bg-white/50"
+                        index === currentImageIndex
+                          ? "bg-black/40"
+                          : "bg-black/20"
                       }`}
                       aria-label={`Go to image ${index + 1}`}
                     />
