@@ -64,6 +64,7 @@ export default function DesignerPage() {
     });
 
   const handleDesignerClick = (designerId: string) => {
+    // 只在手機版上處理點擊事件
     if (window.innerWidth < 640) {
       setActiveDesignerId(activeDesignerId === designerId ? null : designerId);
     }
@@ -89,7 +90,7 @@ export default function DesignerPage() {
 
   return (
     <div className="min-h-screen relative bg-white">
-      <div className="mx-auto max-w-[1160px] relative z-[30]">
+      <div className="mx-auto max-w-[1160px] relative z-[30] min-h-screen">
         <div className="px-8 sm:px-8 md:px-16 lg:px-24 pt-8 pb-20 text-center">
           <motion.div
             key="header"
@@ -162,11 +163,7 @@ export default function DesignerPage() {
                 animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5 }}
                 className="group"
-                onClick={() => {
-                  if (window.innerWidth < 640) {
-                    handleDesignerClick(designer.id);
-                  }
-                }}
+                onClick={() => handleDesignerClick(designer.id)}
                 onMouseEnter={() => {
                   if (window.innerWidth >= 640) {
                     setActiveDesignerId(designer.id);
@@ -178,13 +175,14 @@ export default function DesignerPage() {
                   }
                 }}
               >
-                <div className="bg-white transform transition-all duration-300 w-full mx-auto rounded-lg overflow-hidden relative aspect-[3/4]">
+                <div className="bg-white transform transition-all duration-300 w-full mx-auto rounded-lg overflow-hidden relative aspect-[3/4] min-h-[200px]">
                   <Image
                     src={
                       designer.image || "/placeholder.svg?height=600&width=400"
                     }
                     alt={designer.name.zh}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 sm:group-hover:scale-105"
                   />
                   <div
@@ -274,73 +272,6 @@ export default function DesignerPage() {
                       </div>
                     </div>
                   </div>
-                  {designer.social && (
-                    <div
-                      className={`absolute top-4 right-4 flex gap-2 ${
-                        activeDesignerId === designer.id
-                          ? "sm:opacity-100 opacity-100"
-                          : "sm:group-hover:opacity-100 opacity-0"
-                      } transition-opacity duration-300`}
-                    >
-                      {designer.social.email && (
-                        <a
-                          href={`mailto:${designer.social.email}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-8 h-8 flex items-center justify-center rounded-full bg-black/15 backdrop-blur-md backdrop-saturate-150 border border-white/30 text-white hover:bg-black/25 transition-colors"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                            className="w-4 h-4"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                            />
-                          </svg>
-                        </a>
-                      )}
-                      {designer.social.instagram && (
-                        <a
-                          href={`https://instagram.com/${designer.social.instagram}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-8 h-8 flex items-center justify-center rounded-full bg-black/15 backdrop-blur-md backdrop-saturate-150 border border-white/30 text-white hover:bg-black/25 transition-colors"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            className="w-4 h-4"
-                          >
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                          </svg>
-                        </a>
-                      )}
-                      {designer.social.behance && (
-                        <a
-                          href={`https://behance.net/${designer.social.behance}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-8 h-8 flex items-center justify-center rounded-full bg-black/15 backdrop-blur-md backdrop-saturate-150 border border-white/30 text-white hover:bg-black/25 transition-colors"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            className="w-4 h-4"
-                          >
-                            <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
-                  )}
                 </div>
               </motion.div>
             ))}
@@ -869,9 +800,10 @@ export default function DesignerPage() {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-[20]">
+      <div className="absolute top-0 left-0 w-full h-screen overflow-hidden pointer-events-none z-[20]">
+        {/* 桌面版的背景圖片顯示邏輯 */}
         {filteredDesigners.map((designer) => (
-          <div key={designer.id}>
+          <div key={designer.id} className="hidden sm:block">
             {/* Left background image */}
             <img
               src={`/reserve/${
@@ -906,21 +838,78 @@ export default function DesignerPage() {
             />
           </div>
         ))}
-        {/* Default background images when no designer is selected */}
-        <img
-          src="/reserve/reserve_bg_1.png"
-          alt=""
-          className={`bg-image-container bg-image-left transition-opacity duration-500 animate-slow-spin-reverse ${
-            activeDesignerId ? "opacity-0" : "opacity-100"
-          }`}
-        />
-        <img
-          src="/reserve/reserve_bg_2.png"
-          alt=""
-          className={`bg-image-container bg-image-right transition-opacity duration-500 animate-slow-spin ${
-            activeDesignerId ? "opacity-0" : "opacity-100"
-          }`}
-        />
+
+        {/* 手機版的背景圖片顯示邏輯 */}
+        {activeDesignerId &&
+          filteredDesigners.map(
+            (designer) =>
+              designer.id === activeDesignerId && (
+                <div key={`mobile-${designer.id}`} className="block sm:hidden">
+                  {/* Left background image */}
+                  <img
+                    src={`/reserve/${
+                      designer.works[0]?.category === "冷火花"
+                        ? "reserve_bg_1.png"
+                        : designer.works[0]?.category === "熱對話"
+                        ? "reserve_bg_2.png"
+                        : designer.works[0]?.category === "舒適巢"
+                        ? "reserve_bg_3.png"
+                        : "reserve_bg_4.png"
+                    }`}
+                    alt=""
+                    className="bg-image-container bg-image-left transition-opacity duration-500 animate-slow-spin-reverse opacity-100"
+                  />
+                  {/* Right background image */}
+                  <img
+                    src={`/reserve/${
+                      designer.works[1]?.category === "冷火花"
+                        ? "reserve_bg_1.png"
+                        : designer.works[1]?.category === "熱對話"
+                        ? "reserve_bg_2.png"
+                        : designer.works[1]?.category === "舒適巢"
+                        ? "reserve_bg_3.png"
+                        : "reserve_bg_4.png"
+                    }`}
+                    alt=""
+                    className="bg-image-container bg-image-right transition-opacity duration-500 animate-slow-spin opacity-100"
+                  />
+                </div>
+              )
+          )}
+
+        {/* Default background images for desktop */}
+        <div className="hidden sm:block">
+          <img
+            src="/reserve/reserve_bg_1.png"
+            alt=""
+            className={`bg-image-container bg-image-left transition-opacity duration-500 animate-slow-spin-reverse ${
+              activeDesignerId ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <img
+            src="/reserve/reserve_bg_2.png"
+            alt=""
+            className={`bg-image-container bg-image-right transition-opacity duration-500 animate-slow-spin ${
+              activeDesignerId ? "opacity-0" : "opacity-100"
+            }`}
+          />
+        </div>
+
+        {/* Default background images for mobile when no designer is selected */}
+        {!activeDesignerId && (
+          <div className="block sm:hidden">
+            <img
+              src="/reserve/reserve_bg_1.png"
+              alt=""
+              className="bg-image-container bg-image-left transition-opacity duration-500 animate-slow-spin-reverse opacity-100"
+            />
+            <img
+              src="/reserve/reserve_bg_2.png"
+              alt=""
+              className="bg-image-container bg-image-right transition-opacity duration-500 animate-slow-spin opacity-100"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

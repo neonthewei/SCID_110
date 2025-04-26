@@ -332,6 +332,24 @@
   .animate-slow-spin-reverse {
     animation-duration: 60s; /* Slow down spin animation on mobile */
   }
+
+  .bg-image-container {
+    width: 400px;
+    height: 400px;
+    opacity: 0.8; /* 提高手機版的不透明度 */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* 平滑過渡效果 */
+    z-index: 10; /* 確保圖片始終在頂層 */
+  }
+
+  .bg-image-left {
+    left: -50%; /* 調整左側圖片位置 */
+    top: 0%; /* 將左側圖片往上移 */
+  }
+
+  .bg-image-right {
+    right: -50%; /* 調整右側圖片位置 */
+    top: 55%;
+  }
 }
 
 /* Add will-change for better performance */
@@ -341,15 +359,6 @@
 .animate-slow-spin,
 .animate-slow-spin-reverse {
   will-change: transform;
-}
-
-/* Optimize background image container for mobile */
-@media (max-width: 768px) {
-  .bg-image-container {
-    width: 400px;
-    height: 400px;
-    opacity: 0.6; /* Reduce opacity on mobile for better performance */
-  }
 }
 
 .falling-image {
