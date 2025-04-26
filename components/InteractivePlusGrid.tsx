@@ -1044,7 +1044,7 @@ const InteractivePlusGrid = () => {
     <div className="w-full flex flex-col items-center relative overflow-x-hidden">
       <div className="w-full flex justify-center items-center bg-white relative">
         {/* Mobile Image */}
-        <div className="block md:hidden w-full">
+        <div className="block md:hidden w-full pt-4">
           <img
             src="/home.webp"
             alt="Sense Mobile Header"
@@ -1154,7 +1154,7 @@ const InteractivePlusGrid = () => {
           ref={conceptRef}
           className="w-full relative z-30 min-h-screen flex flex-col justify-center"
         >
-          <div className="max-w-[800px] md:max-w-[850px] lg:max-w-[900px] xl:max-w-[1000px] 2xl:max-w-[1100px] md:ml-[12%] lg:ml-[15%] xl:ml-[18%] 2xl:ml-[16%] mx-auto px-4 md:px-6 lg:px-8 xl:px-10 relative">
+          <div className="max-w-[800px] md:max-w-[850px] lg:max-w-[900px] xl:max-w-[1000px] 2xl:max-w-[1100px] md:ml-[12%] lg:ml-[15%] xl:ml-[18%] 2xl:ml-[16%] mx-auto px-4 md:px-6 lg:px-8 xl:px-10 relative pt-20 md:pt-0">
             {/* Small rotating image above text */}
             <div className="absolute -top-64 right-[75%] w-[300px] hidden md:block">
               {bgImages.map((img, index) => (
@@ -1195,7 +1195,7 @@ const InteractivePlusGrid = () => {
               style={{ opacity: textOpacity1 }}
               className="mb-8 md:text-left text-center"
             >
-              <h2 className="text-title text-white tracking-wide">
+              <h2 className="text-2xl md:text-title text-white tracking-wide font-bold">
                 °<span className="text-white">Sense</span> 展覽概念
               </h2>
             </motion.div>
@@ -1205,7 +1205,7 @@ const InteractivePlusGrid = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 style={{ opacity: textOpacity2 }}
-                className="text-body text-gray-300 space-y-0 md:text-left text-center"
+                className="text-body text-gray-300 space-y-0 md:text-left text-center px-2 md:px-0"
               >
                 <p>「溫度」承載著互動的軌跡，透過觸碰映現；</p>
                 <p>
@@ -1218,7 +1218,7 @@ const InteractivePlusGrid = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
                 style={{ opacity: textOpacity3 }}
-                className="text-body text-gray-300 space-y-0 md:text-left text-center"
+                className="text-body text-gray-300 space-y-0 md:text-left text-center md:block hidden"
               >
                 <p>面對世界的廣闊，我們懷抱最真誠而純粹的心、謙卑與同理，</p>
                 <p>以設計的手法為所見與聞注入暖意。</p>
@@ -1309,7 +1309,7 @@ const InteractivePlusGrid = () => {
           {/* Mobile View */}
           <div className="md:hidden relative">
             {/* Circle Display */}
-            <div className="w-[300px] h-[300px] mx-auto relative">
+            <div className="w-[250px] h-[250px] mx-auto relative">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
@@ -1341,7 +1341,7 @@ const InteractivePlusGrid = () => {
             </div>
 
             {/* Title with Navigation Buttons */}
-            <div className="relative mt-8">
+            <div className="relative mt-10 px-10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
@@ -1354,42 +1354,51 @@ const InteractivePlusGrid = () => {
                   transition={{ duration: 0.3 }}
                   className="text-center mb-2"
                 >
-                  <p className="text-caption text-gray-400 mb-3">
+                  <p className="text-caption text-gray-400 mb-3 hidden">
                     {categoryDescriptions[activeIndex].temperature} |{" "}
                     {categoryDescriptions[activeIndex].description}
                   </p>
-                  <h3 className="text-subtitle text-white font-bold mb-3">
-                    {categoryDescriptions[activeIndex].zhName}
-                  </h3>
-                  <p className="text-body text-gray-400 max-w-[600px] mx-auto leading-relaxed">
-                    {formatDescription(
-                      categoryDescriptions[activeIndex].longDescription
-                    )}
-                  </p>
+                  <div className="flex items-center justify-between mb-4">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSlideDirection("right");
+                        setActiveIndex((prev) => (prev - 1 + 4) % 4);
+                      }}
+                      className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                      aria-label="Previous category"
+                    >
+                      <ChevronLeft className="w-7 h-7" />
+                    </button>
+                    <h3 className="text-2xl text-white font-bold mx-2">
+                      {categoryDescriptions[activeIndex].zhName}
+                    </h3>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSlideDirection("left");
+                        setActiveIndex((prev) => (prev + 1) % 4);
+                      }}
+                      className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                      aria-label="Next category"
+                    >
+                      <ChevronRight className="w-7 h-7" />
+                    </button>
+                  </div>
+                  <div className="h-20 flex items-center justify-center">
+                    <p className="text-body text-gray-400 max-w-[600px] mx-auto leading-relaxed px-4">
+                      {activeIndex === 0 &&
+                        "從手心到物品，讓關懷不再只是語言，而是得以觸摸的溫度。"}
+                      {activeIndex === 1 &&
+                        "指尖觸碰木質與織物，讓身體自然沉浸在柔和與安穩之中。"}
+                      {activeIndex === 2 &&
+                        "每次觸碰都能感受到隱藏其中的細緻，讓科技與生活達成平衡。"}
+                      {activeIndex === 3 &&
+                        "文化的演進與議題的探索，皆在不斷升溫的對話中翻騰與交融。"}
+                    </p>
+                  </div>
                 </motion.div>
               </AnimatePresence>
-
-              <button
-                onClick={() => {
-                  setSlideDirection("right");
-                  setActiveIndex((prev) => (prev - 1 + 4) % 4);
-                }}
-                className="absolute left-4 top-2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-                aria-label="Previous category"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-
-              <button
-                onClick={() => {
-                  setSlideDirection("left");
-                  setActiveIndex((prev) => (prev + 1) % 4);
-                }}
-                className="absolute right-4 top-2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-                aria-label="Next category"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
             </div>
           </div>
         </div>
