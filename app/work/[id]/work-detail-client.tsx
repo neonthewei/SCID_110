@@ -69,7 +69,7 @@ export default function WorkDetailClient({
   const designerId = searchParams.get("id");
   const work = getWorkById(params.id);
   const designer = work ? getDesignerByWorkId(params.id) : undefined;
-  const [showNotOpenMessage, setShowNotOpenMessage] = useState(false);
+  const [showNotOpenMessage, setShowNotOpenMessage] = useState(true);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

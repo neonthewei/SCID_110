@@ -21,7 +21,7 @@ export default function ShihChienExhibition() {
   }, []);
 
   return (
-    <div className="min-h-screen pb-24 relative bg-gray-50">
+    <div className="min-h-screen pb-24 relative bg-white">
       {/* Hero Section with Gradient and Image */}
       <div className="relative h-[40vh] sm:h-[50vh] bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500">
         {/* Background Image */}
@@ -128,19 +128,32 @@ export default function ShihChienExhibition() {
         </div>
       </div>
 
+      {/* 3D Virtual Tour Section (Always Visible) */}
+      <div className="px-2 md:px-6 lg:px-32 pt-3 pb-6 sm:pb-16">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="relative aspect-[16/9] w-full">
+            <iframe
+              src="https://my.matterport.com/show/?m=vZb1g8SUyTD"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"
+              className="absolute inset-0 rounded-none sm:rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Transportation Information Section */}
       <div className="px-2 md:px-6 lg:px-32 py-6 sm:py-16">
         <div className="max-w-[1280px] mx-auto">
-          <h2 className="text-lg sm:text-2xl font-bold text-[#7D7D7D] mb-6 sm:mb-8">
-            交通資訊
-          </h2>
-
           <div className="flex flex-col md:flex-row gap-8 md:gap-12">
             {/* Left Column - Transportation Details */}
             <div className="w-full md:w-[40%]">
               <div className="space-y-4 max-w-[420px]">
                 {/* MRT Information */}
-                <div className="bg-white rounded-[16px] p-7">
+                <div className="bg-gray-50 rounded-[16px] p-7">
                   <h3 className="font-semibold text-[20px] mb-4">捷運</h3>
                   <p className="text-[#666] text-[15px] leading-relaxed">
                     搭乘捷運建議於
@@ -154,7 +167,7 @@ export default function ShihChienExhibition() {
                 </div>
 
                 {/* Bus Information */}
-                <div className="bg-white rounded-[16px] p-7">
+                <div className="bg-gray-50 rounded-[16px] p-7">
                   <h3 className="font-semibold text-[20px] mb-4">公車</h3>
                   <p className="text-[#666] text-[15px] leading-relaxed">
                     搭乘{" "}
@@ -211,27 +224,6 @@ export default function ShihChienExhibition() {
           </div>
         </div>
       </div>
-
-      {/* 3D Virtual Tour Section */}
-      {showContent && (
-        <div className="px-2 md:px-6 lg:px-32 py-6 sm:py-16">
-          <div className="max-w-[1280px] mx-auto">
-            <h2 className="text-lg sm:text-2xl font-bold text-[#7D7D7D] mb-6 sm:mb-8">
-              3D 虛擬展場
-            </h2>
-            <div className="relative aspect-[16/9] w-full">
-              <iframe
-                src="https://my.matterport.com/show/?m=Srdq49wjRh4"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allowFullScreen
-                className="absolute inset-0 rounded-none sm:rounded-xl"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Image Grid Section */}
       {showContent && (
