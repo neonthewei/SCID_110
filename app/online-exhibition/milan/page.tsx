@@ -1,32 +1,38 @@
-"use client"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function MilanExhibition() {
   return (
-    <div className="min-h-screen pb-24 relative bg-gray-50">
+    <div className="min-h-screen pb-24 relative bg-white">
       {/* Hero Section with Gradient and Image */}
-      <div className="relative h-[40vh] sm:h-[50vh] bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500">
+      <div className="relative w-full bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="relative w-full z-0">
           <Image
             src="/milan.png"
             alt="Milan Exhibition"
-            fill
-            className="object-cover"
+            layout="responsive"
+            width={1440}
+            height={404}
+            className="object-contain"
             priority
           />
         </div>
-        
+
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
-        
+
         {/* Gradient bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-2 z-20" style={{
-          background: 'linear-gradient(90deg, #D25B83 0%, #D8D82C 20%, #71AE2D 40%, #5BADB7 60%, #60B2CF 80%, #FFFFFF 100%)'
-        }} />
-        
+        <div
+          className="absolute bottom-0 left-0 right-0 h-2 z-20"
+          style={{
+            background:
+              "linear-gradient(90deg, #D25B83 0%, #D8D82C 20%, #71AE2D 40%, #5BADB7 60%, #60B2CF 80%, #FFFFFF 100%)",
+          }}
+        />
+
         {/* Content */}
         <div className="relative z-20 h-full">
           <motion.div
@@ -39,14 +45,16 @@ export default function MilanExhibition() {
               <h1 className="text-[22px] sm:text-[36px] font-semibold mb-1 sm:mb-2 text-center sm:text-left">
                 米蘭展區 Milano, Italy
               </h1>
-              <p className="text-[14px] sm:text-[18px] opacity-90 sm:opacity-100 text-center sm:text-left">2025 米蘭設計週展出作品</p>
+              <p className="text-[14px] sm:text-[18px] opacity-90 sm:opacity-100 text-center sm:text-left">
+                2025 米蘭設計週展出作品
+              </p>
             </div>
           </motion.div>
         </div>
       </div>
 
       {/* Info Section */}
-      <div className="px-4 md:px-8 lg:px-16 py-6 sm:py-16">
+      <div className="px-2 md:px-6 lg:px-32 py-6 sm:py-16">
         <div className="max-w-[1280px] mx-auto">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16">
             {/* Left Column - Exhibition Details */}
@@ -55,22 +63,36 @@ export default function MilanExhibition() {
                 <div className="space-y-4 sm:space-y-0">
                   <div className="sm:pb-2">
                     <div className="flex items-center">
-                      <h3 className="text-[#7D7D7D] w-[64px] sm:w-16 flex-shrink-0 text-left text-[13px] sm:text-sm font-medium">日期</h3>
-                      <p className="text-[#9D9D9D] text-[13px] sm:text-sm">2023.04.18 - 2023.04.23</p>
+                      <h3 className="text-[#7D7D7D] w-[64px] sm:w-16 flex-shrink-0 text-left text-[13px] sm:text-sm font-medium">
+                        日期
+                      </h3>
+                      <p className="text-[#9D9D9D] text-[13px] sm:text-sm">
+                        2023.04.18 - 2023.04.23
+                      </p>
                     </div>
                   </div>
                   <div className="sm:pb-2">
                     <div className="flex items-center">
-                      <h3 className="text-[#7D7D7D] w-[64px] sm:w-16 flex-shrink-0 text-left text-[13px] sm:text-sm font-medium">時間</h3>
-                      <p className="text-[#9D9D9D] text-[13px] sm:text-sm">9:30 ～ 18:30</p>
+                      <h3 className="text-[#7D7D7D] w-[64px] sm:w-16 flex-shrink-0 text-left text-[13px] sm:text-sm font-medium">
+                        時間
+                      </h3>
+                      <p className="text-[#9D9D9D] text-[13px] sm:text-sm">
+                        9:30 ～ 18:30
+                      </p>
                     </div>
                   </div>
                   <div>
                     <div className="flex items-start">
-                      <h3 className="text-[#7D7D7D] w-[64px] sm:w-16 flex-shrink-0 text-left text-[13px] sm:text-sm font-medium">地點</h3>
+                      <h3 className="text-[#7D7D7D] w-[64px] sm:w-16 flex-shrink-0 text-left text-[13px] sm:text-sm font-medium">
+                        地點
+                      </h3>
                       <div className="text-[#9D9D9D] text-[13px] sm:text-sm">
-                        <span className="block sm:inline">Via Fabio Filzi 25/A</span>
-                        <span className="block text-[#9D9D9D]/80 mt-0.5 sm:mt-0 sm:inline sm:before:content-['_']">（P.12 20124 Milano, Italia）</span>
+                        <span className="block sm:inline">
+                          Via Fabio Filzi 25/A
+                        </span>
+                        <span className="block text-[#9D9D9D]/80 mt-0.5 sm:mt-0 sm:inline sm:before:content-['_']">
+                          （P.12 20124 Milano, Italia）
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -84,9 +106,10 @@ export default function MilanExhibition() {
             {/* Right Column - Description */}
             <div className="flex-1 md:pl-8">
               <p className="text-[#9D9D9D] text-[13px] sm:text-sm leading-[1.8] sm:leading-relaxed text-center sm:text-left">
-                In ONE KM² CLUSTER IN TAIPEI exhibition, we focused on the Taipei Old City
-                Manufacturing Center, creation of 20 unique pieces, demonstrating the harmonious
-                blend of traditional industrial materials with modern creativity.
+                In ONE KM² CLUSTER IN TAIPEI exhibition, we focused on the
+                Taipei Old City Manufacturing Center, creation of 20 unique
+                pieces, demonstrating the harmonious blend of traditional
+                industrial materials with modern creativity.
               </p>
             </div>
           </div>
@@ -94,69 +117,104 @@ export default function MilanExhibition() {
       </div>
 
       {/* Image Grid Section */}
-      <div className="px-4 md:px-8 lg:px-16 py-6 sm:py-16">
-        <div className="max-w-[1280px] mx-auto space-y-8 sm:space-y-16">
-          {/* First Image Group */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            <div className="space-y-2 sm:space-y-4">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Left image description"
-                  fill
-                  className="object-cover rounded-none sm:rounded-xl"
-                />
+      <div className="px-2 md:px-6 lg:px-32 py-6 sm:py-16">
+        <div className="max-w-[1280px] mx-auto space-y-8 sm:space-y-64">
+          {/* 主內容加上左右間距 */}
+          <div className="space-y-12">
+            {/* 第一行：左圖右文 */}
+            <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 md:gap-16 items-center mb-0">
+              <div className="w-full md:w-1/2">
+                <div className="relative aspect-[12/7] w-full">
+                  <Image
+                    src="/milan/AA2D6087-1604-4F48-93A1-4CA7083861A2.jpg"
+                    alt="展品照1"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
               </div>
-              <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
-                【左】實踐工設教師宮保睿與日本當代設計工作室we+共同創辦人安藤 北斗(Hokuto Ando)討論未來學術合作可能。
-              </p>
+              <div className="w-full md:w-1/2 flex items-center">
+                <div className="text-[#7D7D7D] text-[15px] leading-relaxed">
+                  實踐工設將透過作品呈現學生對於材質應用、工藝美學與設計思維的深度探索，並展現如何將傳統技藝與前瞻性設計概念相融合，以回應全球當代社會的需求與未來挑戰。
+                </div>
+              </div>
             </div>
-            <div className="space-y-2 sm:space-y-4">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Right image description"
-                  fill
-                  className="object-cover rounded-none sm:rounded-xl"
-                />
+            {/* 第二行：左圖右文 */}
+            <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-8 md:gap-16 items-center mb-0">
+              <div className="w-full md:w-1/2">
+                <div className="relative aspect-[12/7] w-full">
+                  <Image
+                    src="/milan/DSC_2929.jpg"
+                    alt="展品照2"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
               </div>
-              <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
-                【右】參展同學向觀展者介紹展品結構特色。
-              </p>
+              <div className="w-full md:w-1/2 flex items-center">
+                <div className="text-[#7D7D7D] text-[15px] leading-relaxed">
+                  在台灣，設計承載著土地的記憶與未來的想像，遊走於傳統與創新之間，回應著環境、材料與人的動態關係。我們以在地文化為根基，探尋家的可能性——它如何適應、如何變形、如何回應行為與感知，在日常的細微處展現無限的流動性。
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Second Image Group */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            <div className="space-y-2 sm:space-y-4">
-              <div className="relative aspect-[4/3] w-full">
+          {/* 其餘圖片區塊... */}
+          <div className="space-y-12">
+            {/* 第四行：兩張橫向排列 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4">
+              <div className="relative aspect-[12/7] w-full">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Left image description"
+                  src="/milan/DSC_2905.jpg"
+                  alt="室內互動照1"
                   fill
-                  className="object-cover rounded-none sm:rounded-xl"
+                  className="object-cover rounded-lg"
                 />
               </div>
-              <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
-                【左】圖片說明文字
-              </p>
+              <div className="relative aspect-[12/7] w-full">
+                <Image
+                  src="/milan/IMG_2099.jpg"
+                  alt="室內互動照2"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
             </div>
-            <div className="space-y-2 sm:space-y-4">
-              <div className="relative aspect-[4/3] w-full">
+            {/* 第五行：三張橫向排列（固定高度 350px） */}
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-4 items-stretch">
+              {/* 左邊：展品細節1 */}
+              <div className="relative h-[350px] w-full sm:col-span-1">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Right image description"
+                  src="/milan/DSC_1854.jpg"
+                  alt="展品細節1"
                   fill
-                  className="object-cover rounded-none sm:rounded-xl"
+                  className="object-cover rounded-lg"
                 />
               </div>
-              <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
-                【右】圖片說明文字
-              </p>
+              {/* 中間：展品細節3（寬度加大 col-span-2） */}
+              <div className="relative h-[350px] w-full sm:col-span-2">
+                <Image
+                  src="/milan/777C7205-251D-4851-BF64-91D6B7C72EFF.jpg"
+                  alt="展品細節3"
+                  fill
+                  className="object-cover rounded-lg"
+                  style={{ objectPosition: "center" }}
+                />
+              </div>
+              {/* 右邊：展品細節2 */}
+              <div className="relative h-[350px] w-full sm:col-span-1">
+                <Image
+                  src="/milan/7297BB0D-0627-4D33-836B-556B3E6B4288.jpg"
+                  alt="展品細節2"
+                  fill
+                  className="object-cover rounded-lg"
+                  style={{ objectPosition: "20% 50%" }}
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}

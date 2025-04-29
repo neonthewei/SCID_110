@@ -139,8 +139,61 @@ export default function ShihChienExhibition() {
               frameBorder="0"
               allowFullScreen
               allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"
-              className="absolute inset-0 rounded-none sm:rounded-xl"
+              className="absolute inset-0 rounded-lg"
             />
+          </div>
+        </div>
+      </div>
+
+      {/* Image Gallery Section */}
+      <div className="px-2 md:px-6 lg:px-32 py-6 sm:py-16">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {/* First row - full width */}
+            <div className="space-y-2 sm:space-y-4 md:col-span-3 mb-16 sm:mb-24">
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src="/shih/DSC05611.jpg"
+                  alt="實踐展區照片 5"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Second row - full width (DSC04431.jpg) */}
+            <div className="space-y-2 sm:space-y-4 md:col-span-3 mb-6 sm:mb-8">
+              <div className="relative h-[400px] w-full">
+                <Image
+                  src="/shih/DSC04431.jpg"
+                  alt="實踐展區照片 1"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Third row - 1/3 and 2/3 (reversed) */}
+            <div className="space-y-2 sm:space-y-4">
+              <div className="relative h-[300px] w-full">
+                <Image
+                  src="/shih/DSC04441.jpg"
+                  alt="實踐展區照片 3"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            </div>
+            <div className="space-y-2 sm:space-y-4 md:col-span-2">
+              <div className="relative h-[300px] w-full">
+                <Image
+                  src="/shih/DSC05496.jpg"
+                  alt="實踐展區照片 4"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -217,7 +270,7 @@ export default function ShihChienExhibition() {
                   src="/地圖 RGB.png"
                   alt="Transportation Map to Exhibition"
                   fill
-                  className="object-contain rounded-none sm:rounded-xl"
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -237,7 +290,7 @@ export default function ShihChienExhibition() {
                     src="/placeholder.svg"
                     alt="Left image description"
                     fill
-                    className="object-cover rounded-none sm:rounded-xl"
+                    className="object-cover"
                   />
                 </div>
                 <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -250,7 +303,7 @@ export default function ShihChienExhibition() {
                     src="/placeholder.svg"
                     alt="Right image description"
                     fill
-                    className="object-cover rounded-none sm:rounded-xl"
+                    className="object-cover"
                   />
                 </div>
                 <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -267,7 +320,7 @@ export default function ShihChienExhibition() {
                     src="/placeholder.svg"
                     alt="Left image description"
                     fill
-                    className="object-cover rounded-none sm:rounded-xl"
+                    className="object-cover"
                   />
                 </div>
                 <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">
@@ -280,7 +333,7 @@ export default function ShihChienExhibition() {
                     src="/placeholder.svg"
                     alt="Right image description"
                     fill
-                    className="object-cover rounded-none sm:rounded-xl"
+                    className="object-cover"
                   />
                 </div>
                 <p className="text-[13px] sm:text-sm text-[#9D9D9D] leading-relaxed">

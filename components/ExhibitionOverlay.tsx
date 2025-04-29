@@ -17,8 +17,8 @@ const ExhibitionOverlay = () => {
     // pathname.startsWith("/designer/") ||
     // pathname === "/buy-catalog" ||
     // pathname.startsWith("/buy-catalog/") ||
-    pathname === "/online-exhibition/milan" ||
-    pathname.startsWith("/online-exhibition/milan/") ||
+    // pathname === "/online-exhibition/milan" ||
+    // pathname.startsWith("/online-exhibition/milan/") ||
     pathname === "/online-exhibition/young-designers" ||
     pathname.startsWith("/online-exhibition/young-designers/");
 

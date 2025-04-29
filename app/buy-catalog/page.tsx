@@ -85,11 +85,8 @@ export default function BuyCatalogPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="text-[22px] sm:text-title font-semibold text-gray-800">
-                      優惠價 $1,100
+                      售價 $1,350
                     </div>
-                    <span className="text-body text-gray-500 line-through">
-                      成本價 $1,350
-                    </span>
                     <Popover>
                       <PopoverTrigger asChild>
                         <button className="text-gray-400 hover:text-gray-600 transition-colors ml-2">
@@ -119,7 +116,7 @@ export default function BuyCatalogPage() {
                   }`}
                   disabled={isSoldOut}
                   onClick={() =>
-                    window.open("https://p.ecpay.com.tw/F772747", "_blank")
+                    window.open("https://p.ecpay.com.tw/CFD4B18", "_blank")
                   }
                 >
                   {isSoldOut ? "已結束販售" : "立即購買"}
@@ -135,30 +132,27 @@ export default function BuyCatalogPage() {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <div className="text-[22px] font-semibold text-gray-800">
-              優惠價 $1,100
+              售價 $1,350
             </div>
-            <span className="text-caption text-gray-500 line-through">
-              成本價 $1,350
-            </span>
+            <Popover>
+              <PopoverTrigger asChild>
+                <button className="text-gray-400 hover:text-gray-600 transition-colors">
+                  <HelpCircle className="w-5 h-5" />
+                </button>
+              </PopoverTrigger>
+              <PopoverContent
+                className="w-[calc(100vw-32px)] p-4 bg-white rounded-xl shadow-lg mr-2"
+                side="top"
+                sideOffset={16}
+                align="center"
+              >
+                <div className="text-caption text-gray-500 space-y-2">
+                  <p>* 運費將於結帳時計算</p>
+                  <p>* 預計出貨時間：訂購後 7-14 個工作天</p>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
-          <Popover>
-            <PopoverTrigger asChild>
-              <button className="text-gray-400 hover:text-gray-600 transition-colors">
-                <HelpCircle className="w-5 h-5" />
-              </button>
-            </PopoverTrigger>
-            <PopoverContent
-              className="w-[calc(100vw-32px)] p-4 bg-white rounded-xl shadow-lg mr-2"
-              side="top"
-              sideOffset={16}
-              align="center"
-            >
-              <div className="text-caption text-gray-500 space-y-2">
-                <p>* 運費將於結帳時計算</p>
-                <p>* 預計出貨時間：訂購後 7-14 個工作天</p>
-              </div>
-            </PopoverContent>
-          </Popover>
         </div>
         <Button
           className={`w-full py-6 text-subtitle rounded-2xl ${
@@ -168,7 +162,7 @@ export default function BuyCatalogPage() {
           }`}
           disabled={isSoldOut}
           onClick={() =>
-            window.open("https://p.ecpay.com.tw/F772747", "_blank")
+            window.open("https://p.ecpay.com.tw/CFD4B18", "_blank")
           }
         >
           {isSoldOut ? "已結束販售" : "立即購買"}
