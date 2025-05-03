@@ -21,7 +21,7 @@
         "sub_en": "A chair that adjusts distance and connection"
       },
       "description": "傳統公共座椅的設計通常是固定的，無法適應人與人之間的社交需求變化。本設計的目標是透過結構性的改變，讓座位間距能夠靈活調整，從而適應不同的場景需求。",
-      "longDescription": "0/1 Distance 是一張針對社交需求變化而設計的公共座椅，特別是在疫情之後。\n我想做一張可以自由切換「靠近」與「保持距離」的椅子，而不是一成不變的固定座椅。\n透過鋁擠型材的運用，這張椅子可以讓使用者滑動座位，調整彼此之間的距離，讓人們能依照需求自由\n決定想靠多近、或離多遠。",
+      "longDescription": "0/1 Distance 是一張針對社交需求變化而設計的公共座椅，特別是在疫情之後。我想做一張可以自由切換「靠近」與「保持距離」的椅子，而不是一成不變的固定座椅。\n\n透過鋁擠型材的運用，這張椅子可以讓使用者滑動座位，調整彼此之間的距離，讓人們能依照需求自由決定想靠多近、或離多遠。",
       "english": "Traditional public seating is typically fixed and unable to accommodate changing social needs. This design focuses on structural flexibility, enabling adjustable seat spacing to adapt to various environments, enhancing user comfort and the freedom to choose their preferred distance.",
       "english_detail": "0/1 Distance is a public seating design that responds to changing social needs, especially in a post-pandemic world. I wanted to create a seat that can switch between togetherness and personal space — something traditional benches can’t do.\nBy using aluminum extrusion profiles, this chair allows users to slide and adjust the spacing between seats, so people can choose how close or far they want to sit from others.",
       "category": "溫工藝",
@@ -30,10 +30,10 @@
         "preview": "/preview/a110130049_work1_preview.webp",
         "details": [
           {
-            "image": "/detail/a110130049_work1_detail1.webp"
+            "image": "/detail/a110130049_work2_detail1.webp"
           },
           {
-            "image": "/detail/a110130049_work1_detail2.webp"
+            "image": "/detail/a110130049_work2_detail2.webp"
           }
         ]
       }
@@ -48,7 +48,7 @@
         "sub_en": "Acoustic Design and Perforated Streamlined Speaker"
       },
       "description": "以水波與聲音的動態關係為靈感，透過流線形態與鏤空結構，詮釋聲波的擴散、回響與共鳴。就像水滴落入湖面，漣漪一圈圈擴展，聲音也在空間中穿透、反射、融合。",
-      "longDescription": "設計靈感來自於聲音與水波的相似性——當聲音在空間中傳遞，如同水滴落入湖面，激起一圈圈擴展的漣漪，不斷向外延伸。以流線型的輪廓與鏤空的有機結構，視覺化聲音的流動軌跡。高頻清晰對準耳朵、中頻均衡擴散、低頻透過地面反射增強沉浸感。球狀單元以0°、15°、30°旋轉層疊，強化音場立體感，鏤空結構調節共鳴並減少駐波。",
+      "longDescription": "設計靈感來自於聲音與水波的相似性——當聲音在空間中傳遞，如同水滴落入湖面，激起一圈圈擴展的漣漪，不斷向外延伸。以流線型的輪廓與鏤空的有機結構，視覺化聲音的流動軌跡。\n\n高頻清晰對準耳朵、中頻均衡擴散、低頻透過地面反射增強沉浸感。球狀單元以0°、15°、30°旋轉層疊，強化音場立體感，鏤空結構調節共鳴並減少駐波。",
       "english": "\"Ripple Sound\" is inspired by the dynamic relationship between water waves and sound. Through its streamlined form and perforated structure, it visualizes the sound waves' diffusion, echo, and resonance. Like a droplet falling into a lake, creating expanding ripples, the sound penetrates, reflects, and merges within the space.",
       "english_detail": "The design is inspired by the similarity between sound and water waves—when sound travels through space, it resembles a water droplet falling into a lake, creating ripples that continuously expand outward. This speaker features a streamlined silhouette and an organically perforated structure, visualizing the dynamic flow of sound. It transforms the listening experience beyond just hearing, allowing sound to interact with the surrounding space.Highs are directed to the ears, mids are evenly diffused, and lows are enhanced by ground reflection for immersion. Spherical units stacked at 0°, 15°, and 30° enhance spatial sound. The hollow structure adjusts resonance and reduces standing waves.",
       "category": "舒適巢",

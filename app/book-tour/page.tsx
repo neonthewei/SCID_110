@@ -22,23 +22,23 @@ interface BookingResponse {
 }
 
 const AVAILABLE_DATES = [
-  "2024-04-24",
-  "2024-04-25",
-  "2024-04-28",
-  "2024-04-29",
-  "2024-04-30",
-  "2024-05-01",
-  "2024-05-02",
-  "2024-05-03",
-  "2024-05-04",
-  "2024-05-05",
-  "2024-05-06",
-  "2024-05-07",
-  "2024-05-14",
-  "2024-05-15",
-  "2024-05-16",
-  "2024-05-17",
-  "2024-05-18",
+  "2025-04-24",
+  "2025-04-25",
+  "2025-04-28",
+  "2025-04-29",
+  "2025-04-30",
+  "2025-05-01",
+  "2025-05-02",
+  "2025-05-03",
+  "2025-05-04",
+  "2025-05-05",
+  "2025-05-06",
+  "2025-05-07",
+  "2025-05-14",
+  "2025-05-15",
+  "2025-05-16",
+  "2025-05-17",
+  "2025-05-18",
 ];
 
 // 每一天特定的時段安排
@@ -52,7 +52,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
   }>
 > = {
   // 4月
-  "2024-04-24": [
+  "2025-04-24": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -66,7 +66,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-04-25": [
+  "2025-04-25": [
     {
       value: "15:00-15:20",
       label: "15:00 - 15:20",
@@ -74,7 +74,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-04-28": [
+  "2025-04-28": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -88,7 +88,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-04-29": [
+  "2025-04-29": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -102,7 +102,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-04-30": [
+  "2025-04-30": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -117,7 +117,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
     },
   ],
   // 5月
-  "2024-05-01": [
+  "2025-05-01": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -131,7 +131,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-02": [
+  "2025-05-02": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -145,7 +145,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-03": [
+  "2025-05-03": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -165,7 +165,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-04": [
+  "2025-05-04": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -185,7 +185,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-05": [
+  "2025-05-05": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -199,7 +199,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-06": [
+  "2025-05-06": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -213,7 +213,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-07": [
+  "2025-05-07": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -227,7 +227,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-14": [
+  "2025-05-14": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -241,7 +241,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-15": [
+  "2025-05-15": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -255,7 +255,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-16": [
+  "2025-05-16": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -269,7 +269,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-17": [
+  "2025-05-17": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -289,7 +289,7 @@ const DATE_SPECIFIC_TIME_SLOTS: Record<
       remainingSpots: 15,
     },
   ],
-  "2024-05-18": [
+  "2025-05-18": [
     {
       value: "11:00-11:20",
       label: "11:00 - 11:20",
@@ -348,7 +348,9 @@ export default function BookTourPage() {
     formState: { errors },
   } = useForm<TourBooking>({
     defaultValues: {
-      date: AVAILABLE_DATES[0],
+      date:
+        AVAILABLE_DATES.filter((date) => new Date(date) > new Date())[0] ||
+        AVAILABLE_DATES[0],
       time: "",
       name: "",
       email: "",
@@ -712,7 +714,9 @@ export default function BookTourPage() {
                       {...register("date", { required: "請選擇參觀日期" })}
                       className="mt-1 block w-full rounded-2xl border-gray-300 shadow-sm focus:border-black focus:ring-black transition-colors duration-300 py-3 px-4 text-caption sm:text-body"
                     >
-                      {AVAILABLE_DATES.map((date) => (
+                      {AVAILABLE_DATES.filter(
+                        (date) => new Date(date) > new Date()
+                      ).map((date) => (
                         <option key={date} value={date}>
                           {new Date(date).toLocaleDateString("zh-TW", {
                             year: "numeric",

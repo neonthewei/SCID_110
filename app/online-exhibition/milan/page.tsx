@@ -11,7 +11,7 @@ export default function MilanExhibition() {
         {/* Background Image */}
         <div className="relative w-full z-0">
           <Image
-            src="/milan.png"
+            src="/milan.jpg"
             alt="Milan Exhibition"
             layout="responsive"
             width={1440}
@@ -67,7 +67,7 @@ export default function MilanExhibition() {
                         日期
                       </h3>
                       <p className="text-[#9D9D9D] text-[13px] sm:text-sm">
-                        2023.04.18 - 2023.04.23
+                        2025.04.08-2025.04.13
                       </p>
                     </div>
                   </div>
@@ -77,7 +77,7 @@ export default function MilanExhibition() {
                         時間
                       </h3>
                       <p className="text-[#9D9D9D] text-[13px] sm:text-sm">
-                        9:30 ～ 18:30
+                        13:30-16:00
                       </p>
                     </div>
                   </div>
@@ -88,10 +88,10 @@ export default function MilanExhibition() {
                       </h3>
                       <div className="text-[#9D9D9D] text-[13px] sm:text-sm">
                         <span className="block sm:inline">
-                          Via Fabio Filzi 25/A
+                          Via Marco Aurelio
                         </span>
                         <span className="block text-[#9D9D9D]/80 mt-0.5 sm:mt-0 sm:inline sm:before:content-['_']">
-                          （P.12 20124 Milano, Italia）
+                          （20127 Milano Mi, Italy）
                         </span>
                       </div>
                     </div>
@@ -106,10 +106,12 @@ export default function MilanExhibition() {
             {/* Right Column - Description */}
             <div className="flex-1 md:pl-8">
               <p className="text-[#9D9D9D] text-[13px] sm:text-sm leading-[1.8] sm:leading-relaxed text-center sm:text-left">
-                In ONE KM² CLUSTER IN TAIPEI exhibition, we focused on the
-                Taipei Old City Manufacturing Center, creation of 20 unique
-                pieces, demonstrating the harmonious blend of traditional
-                industrial materials with modern creativity.
+                Home is not merely a place of shelter baut an ongoing action. It
+                shifts with the movement of our footsteps, grows with the
+                passage of light and shadow, and extends through the
+                interweaving of perception. Home is not a static structure but a
+                way of interacting with the world - an ever-unfolding journey
+                through time and space.
               </p>
             </div>
           </div>

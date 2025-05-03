@@ -13,21 +13,21 @@
   "works": [
     {
       "id": "a108130202_work1",
-      "order": 17,
+      "order": 1,
       "title": {
         "main": "MUFFA-specchio",
         "sub": "用更精小尺寸的模具做油壓，挑戰產品的可能性",
         "main_en": "MUFFA-specchio",
         "sub_en": "Smaller-sized molds present multiple possibilities"
       },
-      "description": "Specchio 強調金屬模具油壓技術不僅限於基本形態，還能透過摺紙去做造型發想，突破原有的簡單造型，找到更複雜的折法及結構，呈現多元可能性。\n\n",
-      "longDescription": "台灣傳統工業技法金屬油壓，specchio系列突破不只是單純油壓技術，透過複雜的折板、結構以及更細小尺寸的模具做出此產品，整體營造出金屬的冰冷感。Specchio強調金屬模具油壓技術不僅限於基本形態，還能透過更複雜的折法與結構呈現多元可能性。外觀上用摺紙去造型發想，從摺紙中找到不一樣的結構。\n",
+      "description": "Specchio 強調金屬模具油壓技術不僅限於基本形態，還能透過摺紙去做造型發想，突破原有的簡單造型，找到更複雜的折法及結構，呈現多元可能性。",
+      "longDescription": "台灣傳統工業技法金屬油壓，specchio系列突破不只是單純油壓技術，透過複雜的折板、結構以及更細小尺寸的模具做出此產品，整體營造出金屬的冰冷感。\n\nSpecchio強調金屬模具油壓技術不僅限於基本形態，還能透過更複雜的折法與結構呈現多元可能性。外觀上用摺紙去造型發想，從摺紙中找到不一樣的結構。",
       "english": "Specchio emphasizes that metal mold hydraulic technology is not limited to basic forms but can also be used to create shapes through origami, breaking through the original simple shapes, finding more complex folding methods and structures, and presenting multiple possibilities.\n",
       "english_detail": "Taiwan's Specchio series utilizes advanced metal hydraulic pressure techniques with complex folding plates and smaller molds, creating a distinctive cold metal aesthetic.Inspired by origami, it demonstrates that metal mold hydraulic technology can go beyond basic forms to explore diverse structural possibilities.\n",
       "category": "溫工藝",
       "images": {
         "main": "/main/a108130202_work1_main.webp",
-        "preview": "/preview/a108130202_work1_preview.webp",
+        "preview": "/preview/a108130202_work2_preview.webp",
         "details": [
           {
             "image": "/detail/a108130202_work1_detail1.webp"
@@ -43,7 +43,7 @@
     },
     {
       "id": "a108130202_work2",
-      "order": 1,
+      "order": 17,
       "title": {
         "main": "MUFFA-tata",
         "sub": "以烘焙模具造型油壓出的趣味椅子組合",
@@ -57,7 +57,7 @@
       "category": "溫工藝",
       "images": {
         "main": "/main/a108130202_work2_main.webp",
-        "preview": "/preview/a108130202_work2_preview.webp",
+        "preview": "/preview/a108130202_work1_preview.webp",
         "details": [
           {
             "image": "/detail/a108130202_work2_detail1.webp"

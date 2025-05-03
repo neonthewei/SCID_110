@@ -13,7 +13,7 @@
   "works": [
     {
       "id": "a110130010_work1",
-      "order": 5,
+      "order": 12,
       "title": {
         "main": "MONOARC",
         "sub": "單點式吊床",
@@ -21,7 +21,7 @@
         "sub_en": "One-Point Hammock"
       },
       "description": "monoarc透過等腰三角形的架構，其懸掛點為可調結構，再搭配單邊調節器，可根據環境條件或個人需求靈活調整高度與傾斜角度，打造最適合自己的休憩方式。",
-      "longDescription": "主繩貫穿懸掛器的夾持結構，當繩索受到兩側向下施力時，內部的摩擦裝置會咬住繩索，防止其滑動，確保單點懸掛的穩定性。單邊調節器能改變主繩的長度，從而影響吊床的傾斜角度，使用者可以根據自己的需求調整使吊床達到理想的傾斜度，無論是想稍微仰躺還是更為平躺，都能靈活適應，為探索者提供更自由的體驗。\n",
+      "longDescription": "主繩貫穿懸掛器的夾持結構，當繩索受到兩側向下施力時，內部的摩擦裝置會咬住繩索，防止其滑動，確保單點懸掛的穩定性。\n\n單邊調節器能改變主繩的長度，從而影響吊床的傾斜角度，使用者可以根據自己的需求調整使吊床達到理想的傾斜度，無論是想稍微仰躺還是更為平躺，都能靈活適應，為探索者提供更自由的體驗。",
       "english": "Monoarc has an isosceles triangle structure with an adjustable suspension point. With a unilateral adjuster, the height and tilt angle can be flexibly adjusted according to environmental conditions or personal needs to create a resting style that suits you best.",
       "english_detail": "The main rope runs through the clamping structure of the suspension device. When a downward force is applied on both sides of the rope, the internal friction mechanism grips the rope to prevent it from slipping, ensuring the stability of the single-point suspension. A single-sided adjuster allows for changes in the length of the main rope, thereby adjusting the hammock's tilt angle. Users can modify the tilt to suit their preferences, whether they want to recline slightly or lie more flat. This flexibility offers explorers a freer and more adaptable experience.",
       "category": "冷火花",
@@ -46,7 +46,7 @@
     },
     {
       "id": "a110130010_work2",
-      "order": 12,
+      "order": 5,
       "title": {
         "main": "Ursa Minor",
         "sub": "觀星帳篷",
@@ -54,7 +54,7 @@
         "sub_en": "Starry Sky Camping Experience"
       },
       "description": "Ursa Minor實現單人帳篷從完全封閉到全景開放的變化，讓使用者能在帳棚內觀賞夜空美景。帳篷頂部有兩個觀景窗，讓使用者能在帳棚內盡與自然的連結。",
-      "longDescription": "已提供觀星體驗為核心，讓使用者無須離開就得到欣賞夜空的體驗，創造\"睡在星空下\"的全新露營方式，並且可根據需求調整觀星窗口的大小以此來適應不同的環境。可調節的拉鍊的可調節性，允許使用者調整窗戶開合，讓帳篷能夠在不同露營需求下靈活運作，無論是觀星、休息、還是保持隱私，都能達到效果。\n",
+      "longDescription": "已提供觀星體驗為核心，讓使用者無須離開就得到欣賞夜空的體驗，創造睡在星空下的全新露營方式，並且可根據需求調整觀星窗口的大小以此來適應不同的環境。\n\n可調節的拉鍊的可調節性，允許使用者調整窗戶開合，讓帳篷能夠在不同露營需求下靈活運作，無論是觀星、休息、還是保持隱私，都能達到效果。",
       "english": "The Ursa Minor solo tent seamlessly transitions from fully enclosed to panoramic open, allowing users to enjoy stunning night sky views from within. It features two skylight windows and a spacious and comfortable interior, enhancing the stargazing experience and deepening the connection with nature.",
       "english_detail": "By offering a stargazing experience at its core, this design allows users to enjoy the beauty of the night sky without leaving their tent, creating a whole new way of camping—\"sleeping under the stars.\" The stargazing window can be sized to suit different environments and needs. The adjustable zipper system lets users control the window's opening, making the tent versatile for various camping scenarios—whether for stargazing, resting, or maintaining privacy.",
       "category": "冷火花",

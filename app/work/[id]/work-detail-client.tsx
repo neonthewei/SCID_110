@@ -69,7 +69,7 @@ export default function WorkDetailClient({
   const designerId = searchParams.get("id");
   const work = getWorkById(params.id);
   const designer = work ? getDesignerByWorkId(params.id) : undefined;
-  const [showNotOpenMessage, setShowNotOpenMessage] = useState(true);
+  const [showNotOpenMessage, setShowNotOpenMessage] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -100,25 +100,30 @@ export default function WorkDetailClient({
 
   // Auto-play functionality
   useEffect(() => {
-    if (isHovered) return;
+    if (isHovered || !work) return;
 
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev === 1 ? 0 : 1));
+      setCurrentImageIndex((prev) => (prev + 1) % work.images.details.length);
     }, 2000); // Change image every 2 seconds
 
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isHovered, work]);
 
   // 獲取當前作品分類的主題色
   const themeColor = work ? categoryColors[work.category] : "#9AB534";
 
   const handlePrevImage = useCallback(() => {
-    setCurrentImageIndex((prev) => (prev === 0 ? 1 : 0));
-  }, []);
+    if (!work) return;
+    setCurrentImageIndex(
+      (prev) =>
+        (prev - 1 + work.images.details.length) % work.images.details.length
+    );
+  }, [work]);
 
   const handleNextImage = useCallback(() => {
-    setCurrentImageIndex((prev) => (prev === 1 ? 0 : 1));
-  }, []);
+    if (!work) return;
+    setCurrentImageIndex((prev) => (prev + 1) % work.images.details.length);
+  }, [work]);
 
   if (!work || !designer) {
     return (
@@ -128,26 +133,6 @@ export default function WorkDetailClient({
           <button
             onClick={() => router.back()}
             className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            返回
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // 如果從總覽頁面或設計師頁面進入，顯示暫不開放訊息
-  if ((fromOverview || fromDesigner) && showNotOpenMessage) {
-    return (
-      <div className="fixed inset-0 flex flex-col items-center justify-center bg-white">
-        <div className="text-center max-w-md mx-auto px-4">
-          <h1 className="text-[32px] font-bold mb-3">暫不開放</h1>
-          <p className="text-[#9D9D9D] text-[15px] leading-[1.8] mb-10">
-            作品細節將於5/14開放瀏覽，敬請期待。
-          </p>
-          <button
-            onClick={handleBackClick}
-            className="inline-flex items-center justify-center h-12 px-8 bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors duration-300"
           >
             返回
           </button>
@@ -329,18 +314,14 @@ export default function WorkDetailClient({
               >
                 {/* Navigation Buttons */}
                 <button
-                  onClick={() =>
-                    setCurrentImageIndex((prev) => (prev === 0 ? 1 : 0))
-                  }
+                  onClick={handlePrevImage}
                   className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
                 </button>
                 <button
-                  onClick={() =>
-                    setCurrentImageIndex((prev) => (prev === 1 ? 0 : 1))
-                  }
+                  onClick={handleNextImage}
                   className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 hover:bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20"
                   aria-label="Next image"
                 >
@@ -350,15 +331,13 @@ export default function WorkDetailClient({
                 {/* Left click area */}
                 <div
                   className="absolute left-0 top-0 w-1/2 h-full z-10 cursor-pointer"
-                  onClick={() =>
-                    setCurrentImageIndex((prev) => (prev === 0 ? 1 : 0))
-                  }
+                  onClick={handlePrevImage}
                   role="button"
                   aria-label="Previous image"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      setCurrentImageIndex((prev) => (prev === 0 ? 1 : 0));
+                      handlePrevImage();
                     }
                   }}
                 />
@@ -366,20 +345,18 @@ export default function WorkDetailClient({
                 {/* Right click area */}
                 <div
                   className="absolute right-0 top-0 w-1/2 h-full z-10 cursor-pointer"
-                  onClick={() =>
-                    setCurrentImageIndex((prev) => (prev === 1 ? 0 : 1))
-                  }
+                  onClick={handleNextImage}
                   role="button"
                   aria-label="Next image"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      setCurrentImageIndex((prev) => (prev === 1 ? 0 : 1));
+                      handleNextImage();
                     }
                   }}
                 />
 
-                {work.images.details.slice(0, 2).map((detail, index) => (
+                {work.images.details.map((detail, index) => (
                   <div
                     key={index}
                     className={`absolute inset-0 transition-opacity duration-500 ${
@@ -400,7 +377,7 @@ export default function WorkDetailClient({
 
                 {/* Dots Indicator */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
-                  {[0, 1].map((index) => (
+                  {work.images.details.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
