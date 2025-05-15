@@ -89,7 +89,7 @@ export default function YoungDesignersExhibition() {
                           南港展覽館2館1樓
                         </span>
                         <span className="block text-[#9D9D9D]/80 mt-0.5 sm:mt-0 sm:inline sm:before:content-['_']">
-                          （A-24展區）
+                          （A-31展區）
                         </span>
                       </div>
                     </div>
@@ -126,12 +126,12 @@ export default function YoungDesignersExhibition() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div className="relative aspect-[12/7] w-full flex items-center">
+            <div className="relative aspect-[12/7] w-full flex items-center overflow-hidden rounded-lg">
               <Image
                 src="/young/DSC09089.jpg"
                 alt="作品照2"
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover scale-125 w-full h-full"
               />
             </div>
           </div>
