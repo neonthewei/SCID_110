@@ -19,8 +19,7 @@ const ExhibitionOverlay = () => {
     // pathname.startsWith("/buy-catalog/") ||
     // pathname === "/online-exhibition/milan" ||
     // pathname.startsWith("/online-exhibition/milan/") ||
-    pathname === "/online-exhibition/young-designers" ||
-    pathname.startsWith("/online-exhibition/young-designers/");
+    false; // Removed young designers exhibition restriction
 
   // 確保當路由變化時，重新評估是否顯示覆蓋層
   useEffect(() => {
